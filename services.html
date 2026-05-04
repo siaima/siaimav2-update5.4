@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tổng quan Dịch vụ · SIA Innovation Marketing Agency</title>
+  <meta name="description" content="Khám phá hệ sinh thái dịch vụ của SIA: SIA IMA, SIA Event và SIA Hub.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wdth,wght@0,75..125,100..700;1,75..125,100..700&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Project CSS -->
+  <link rel="stylesheet" href="assets/css/variables.css?v=12">
+  <link rel="stylesheet" href="assets/css/base.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=12">
+  <link rel="stylesheet" href="assets/css/animations.css?v=12">
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('sia-theme') ||
+              (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="SIA Innovation Marketing Agency">
+      <img class="logo-img no-transition"
+           src="assets/images/logo/sia-logo.png"
+           data-src-light="assets/images/logo/sia-logo.png"
+           data-src-dark="assets/images/logo/sia-logo-white.png"
+           alt="SIA" height="36">
+    </a>
+
+    <nav class="nav-menu" aria-label="Primary">
+      <a class="nav-item" href="index.html">
+        <span data-lang="vi">Về SIA IMA</span>
+        <span data-lang="en" hidden>About SIA</span>
+      </a>
+      <a class="nav-item active" href="services.html">
+        <span data-lang="vi">Dịch vụ</span>
+        <span data-lang="en" hidden>Services</span>
+      </a>
+      <a class="nav-item" href="community.html">
+        <span data-lang="vi">Cộng đồng</span>
+        <span data-lang="en" hidden>Community</span>
+      </a>
+      <a class="nav-item" href="showcase.html">
+        <span data-lang="vi">Showcase</span>
+        <span data-lang="en" hidden>Showcase</span>
+      </a>
+      <a class="nav-item" href="blog.html">
+        <span data-lang="vi">Blog</span>
+        <span data-lang="en" hidden>Blog</span>
+      </a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="vi" onclick="setLang('vi')">VI</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+
+      <button class="icon-btn theme-toggle" onclick="toggleTheme()" aria-label="Chuyển chế độ sáng/tối" aria-pressed="false">
+        <svg class="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </button>
+
+      <a href="contact.html" class="btn btn--primary btn--pill nav-cta" style="padding: 10px 18px; font-size: 13px;">
+        <span data-lang="vi">Liên hệ ngay</span>
+        <span data-lang="en" hidden>Contact us</span>
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a class="nav-item" href="index.html"><span data-lang="vi">Về SIA IMA</span><span data-lang="en" hidden>About SIA</span></a>
+  <a class="nav-item active" href="services.html"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+  <a class="nav-item" href="community.html"><span data-lang="vi">Cộng đồng</span><span data-lang="en" hidden>Community</span></a>
+  <a class="nav-item" href="showcase.html"><span data-lang="vi">Showcase</span><span data-lang="en" hidden>Showcase</span></a>
+  <a class="nav-item" href="blog.html"><span data-lang="vi">Blog</span><span data-lang="en" hidden>Blog</span></a>
+  <div class="mobile-actions">
+    <a href="contact.html" class="btn btn--primary btn--pill btn--lg">
+      <span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span>
+    </a>
+  </div>
+</div>
+
+<main>
+
+<!-- ═══════════ 01 PAGE HERO ═══════════ -->
+<section class="page-hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="page-hero__inner">
+      <div class="hero-eyebrow" data-hero>
+        <span class="dot"></span>
+        <span data-lang="vi">Hệ sinh thái dịch vụ</span>
+        <span data-lang="en" hidden>Service ecosystem</span>
+      </div>
+
+      <h1 class="page-hero__title" data-hero>
+        <span data-lang="vi">Giải pháp toàn diện từ <em>chiến lược</em> đến <em>chuyển đổi</em></span>
+        <span data-lang="en" hidden>Comprehensive solutions from <em>strategy</em> to <em>conversion</em></span>
+      </h1>
+
+      <p class="page-hero__subtitle" data-hero>
+        <span data-lang="vi">Với 3 trụ cột chuyên môn, SIA đồng hành từ big idea đến kết quả đo được — kết nối chiến lược thương hiệu, hệ sinh thái creator và năng lực triển khai thực chiến.</span>
+        <span data-lang="en" hidden>With 3 specialist pillars, SIA supports brands from big ideas to measurable results by connecting strategy, creator ecosystems, and execution capability.</span>
+      </p>
+
+      <div class="services-hero-stats" data-hero>
+        <div class="services-hero-stat">
+          <div class="services-hero-stat__num">5<span>+</span></div>
+          <div class="services-hero-stat__label">
+            <span data-lang="vi">Năm kinh nghiệm</span><span data-lang="en" hidden>Years experience</span>
+          </div>
+        </div>
+        <div class="services-hero-stat">
+          <div class="services-hero-stat__num">3</div>
+          <div class="services-hero-stat__label">
+            <span data-lang="vi">Trụ cột dịch vụ</span><span data-lang="en" hidden>Service pillars</span>
+          </div>
+        </div>
+        <div class="services-hero-stat">
+          <div class="services-hero-stat__num">80<span>+</span></div>
+          <div class="services-hero-stat__label">
+            <span data-lang="vi">Thương hiệu đồng hành</span><span data-lang="en" hidden>Brands partnered</span>
+          </div>
+        </div>
+        <div class="services-hero-stat">
+          <div class="services-hero-stat__num">1.5K<span>+</span></div>
+          <div class="services-hero-stat__label">
+            <span data-lang="vi">Creators</span><span data-lang="en" hidden>Creators</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 02 PILLARS (3 trụ cột) ═══════════ -->
+<section class="section" id="pillars">
+  <div class="container">
+    <div class="pillar-grid" data-stagger>
+      
+      <!-- IMA -->
+      <article class="pillar-card" data-stagger-item>
+        <div class="pillar-card__brand pillar-card__brand--ima" aria-label="SIA IMA">
+          <img class="pillar-card__logo pillar-card__logo--default" src="assets/images/logo/SIA-inno-logo/SIA-innovation-logo.png" alt="SIA IMA logo">
+          <img class="pillar-card__logo pillar-card__logo--hover" src="assets/images/logo/SIA-inno-logo/SIA-innovation-logo-white.png" alt="" aria-hidden="true">
+        </div>
+        <p class="pillar-card__desc">
+          <span data-lang="vi">Innovation Marketing Agency — từ định vị thương hiệu, PR tích hợp, creator marketing đến kết nối giao thương local & global.</span>
+          <span data-lang="en" hidden>Innovation Marketing Agency — from brand positioning, integrated PR, and creator marketing to local-global business matching.</span>
+        </p>
+        <ul class="pillar-card__list">
+          <li>Brand Strategy & Big Idea</li>
+          <li>PR & Integrated Comms</li>
+          <li>KOL/KOC Creator Marketing</li>
+          <li>Community Growth & Business Matching</li>
+        </ul>
+        <a href="services-ima.html" class="pillar-card__link card-stretch-link">
+          <span data-lang="vi">Xem chi tiết</span><span data-lang="en" hidden>View details</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <!-- Event -->
+      <article class="pillar-card" data-stagger-item>
+        <div class="pillar-card__brand pillar-card__brand--event" aria-label="SIA Event">
+          <img class="pillar-card__logo pillar-card__logo--default" src="assets/images/logo/SIA-event-logo/SIA-event-logo.png" alt="SIA Event logo">
+          <img class="pillar-card__logo pillar-card__logo--hover" src="assets/images/logo/SIA-event-logo/SIA-event-logo-white.png" alt="" aria-hidden="true">
+        </div>
+        <p class="pillar-card__desc">
+          <span data-lang="vi">Brand Experience — sự kiện doanh nghiệp, hội thảo, workshop và trải nghiệm O2O. Thổi hồn câu chuyện thương hiệu vào từng khoảnh khắc.</span>
+          <span data-lang="en" hidden>Brand Experience — corporate events, seminars, workshops and O2O experiences. Bringing brand stories to life in every moment.</span>
+        </p>
+        <ul class="pillar-card__list">
+          <li>Corporate events</li>
+          <li>Seminars & workshops</li>
+          <li>Brand Experience O2O</li>
+          <li>Roadshow & activation</li>
+        </ul>
+        <a href="services-event.html" class="pillar-card__link card-stretch-link" style="color:var(--secondary)">
+          <span data-lang="vi">Xem chi tiết</span><span data-lang="en" hidden>View details</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <!-- Hub -->
+      <article class="pillar-card" data-stagger-item>
+        <div class="pillar-card__brand pillar-card__brand--hub" aria-label="SIA Hub">
+          <img class="pillar-card__logo pillar-card__logo--default" src="assets/images/logo/SIAhub-logo/SIAhub-logo-new1.png" alt="SIA Hub logo">
+          <img class="pillar-card__logo pillar-card__logo--hover" src="assets/images/logo/SIAhub-logo/SIAhub-logo-new1-white.png" alt="" aria-hidden="true">
+        </div>
+        <p class="pillar-card__desc">
+          <span data-lang="vi">Influencer Marketing · Social Commerce · Creator Ecosystem với 8 cụm ngành trọng tâm, bao gồm cụm du lịch - F&B - hospitality.</span>
+          <span data-lang="en" hidden>Influencer Marketing · Social Commerce · Creator Ecosystem across 8 core industry clusters, including travel - F&B - hospitality.</span>
+        </p>
+        <ul class="pillar-card__list">
+          <li>KOL / KOC / UGC campaigns</li>
+          <li>Affiliate marketing</li>
+          <li>Livestream & social commerce</li>
+          <li>8-industry growth clusters</li>
+        </ul>
+        <a href="services-hub.html" class="pillar-card__link card-stretch-link">
+          <span data-lang="vi">Xem chi tiết</span><span data-lang="en" hidden>View details</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 03 PRINCIPLES (4 nguyên tắc) ═══════════ -->
+<section class="section section--alt" id="principles">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow">
+        <span data-lang="vi">Nguyên tắc làm việc</span>
+        <span data-lang="en" hidden>Our principles</span>
+      </span>
+      <h2>
+        <span data-lang="vi">Bốn tiêu chuẩn cho <em style="color:var(--primary);font-style:italic">mỗi dự án</em></span>
+        <span data-lang="en" hidden>Four standards for <em style="color:var(--primary);font-style:italic">every project</em></span>
+      </h2>
+    </div>
+
+    <div class="principles-grid" data-stagger>
+      <div class="principle-card" data-stagger-item>
+        <div class="principle-card__num">01</div>
+        <h3 class="principle-card__title">Ownership</h3>
+        <p class="principle-card__desc">
+          <span data-lang="vi">Chúng tôi coi thương hiệu của bạn như của chính mình. Mọi giải pháp đều hướng tới lợi ích dài hạn và hiệu quả thực tế.</span>
+          <span data-lang="en" hidden>We treat your brand as our own. Every solution is aimed at long-term benefits and real-world efficiency.</span>
+        </p>
+      </div>
+
+      <div class="principle-card" data-stagger-item>
+        <div class="principle-card__num">02</div>
+        <h3 class="principle-card__title">Creativity</h3>
+        <p class="principle-card__desc">
+          <span data-lang="vi">Sáng tạo không chỉ là thẩm mỹ, mà là cách giải quyết vấn đề kinh doanh bằng những góc nhìn mới mẻ và độc bản.</span>
+          <span data-lang="en" hidden>Creativity isn't just aesthetics, it's solving business problems with fresh, unique perspectives.</span>
+        </p>
+      </div>
+
+      <div class="principle-card" data-stagger-item>
+        <div class="principle-card__num">03</div>
+        <h3 class="principle-card__title">Data-driven</h3>
+        <p class="principle-card__desc">
+          <span data-lang="vi">Từ insight đến đo lường, mọi chiến dịch đều được neo giữ bởi dữ liệu để đảm bảo độ chính xác và tối ưu liên tục.</span>
+          <span data-lang="en" hidden>From insight to measurement, every campaign is anchored in data to ensure precision and continuous optimisation.</span>
+        </p>
+      </div>
+
+      <div class="principle-card" data-stagger-item>
+        <div class="principle-card__num">04</div>
+        <h3 class="principle-card__title">Community</h3>
+        <p class="principle-card__desc">
+          <span data-lang="vi">Chúng tôi không chỉ tiếp cận người dùng, chúng tôi xây dựng cộng đồng gắn kết xung quanh thương hiệu của bạn.</span>
+          <span data-lang="en" hidden>We don't just reach users, we build engaged communities around your brand.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo/sia-logo-white.png" alt="SIA" height="40">
+        <p>
+          SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">
+          <span data-lang="vi">Dịch vụ</span>
+          <span data-lang="en" hidden>Services</span>
+        </div>
+        <ul class="footer-list">
+          <li><a href="services-ima.html">SIA IMA</a></li>
+          <li><a href="services-event.html">SIA Event</a></li>
+          <li><a href="services-hub.html">SIA Hub</a></li>
+          <li><a href="services-ima.html">Creative Mega Livestream</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">
+          <span data-lang="vi">Công ty</span>
+          <span data-lang="en" hidden>Company</span>
+        </div>
+        <ul class="footer-list">
+          <li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li>
+          <li><a href="showcase.html">Showcase</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">
+          <span data-lang="vi">Liên hệ</span>
+          <span data-lang="en" hidden>Contact</span>
+        </div>
+        <ul class="footer-list">
+          <li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li>
+          <li><a href="tel:0988441630">0988 441 630</a></li>
+          <li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 SIA Innovation Marketing Agency — All rights reserved.</span>
+      <span>
+        <a href="#" style="color:inherit;">Privacy</a> ·
+        <a href="#" style="color:inherit;">Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<!-- Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Project JS -->
+<script src="assets/js/theme.js?v=13"></script>
+<script src="assets/js/swiper-init.js?v=13"></script>
+<script src="assets/js/main.js?v=13"></script>
+
+</body>
+</html>

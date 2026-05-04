@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIA Hub · Influencer & Social Commerce — SIA Innovation Marketing Agency</title>
+  <meta name="description" content="SIA Hub — hệ sinh thái KOL/KOC/UGC/Affiliate, KOC Hub community, e-commerce và livestream commerce biến thương hiệu thành doanh thu.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wdth,wght@0,75..125,100..700;1,75..125,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="assets/css/variables.css?v=12">
+  <link rel="stylesheet" href="assets/css/base.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=12">
+  <link rel="stylesheet" href="assets/css/animations.css?v=12">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    (function () {
+      var t = localStorage.getItem('sia-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <style>
+    .industry-grid--eight {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 1023px) {
+      .industry-grid--eight {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .industry-grid--eight {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="SIA Innovation Marketing Agency">
+      <img class="logo-img no-transition" src="assets/images/logo/sia-logo.png"
+           data-src-light="assets/images/logo/sia-logo.png"
+           data-src-dark="assets/images/logo/sia-logo-white.png"
+           alt="SIA" height="36">
+    </a>
+    <nav class="nav-menu" aria-label="Primary">
+      <a class="nav-item" href="index.html">
+        <span data-lang="vi">Về SIA IMA</span>
+        <span data-lang="en" hidden>About SIA</span>
+      </a>
+      <a class="nav-item active" href="services.html">
+        <span data-lang="vi">Dịch vụ</span>
+        <span data-lang="en" hidden>Services</span>
+      </a>
+      <a class="nav-item" href="community.html">
+        <span data-lang="vi">Cộng đồng</span>
+        <span data-lang="en" hidden>Community</span>
+      </a>
+      <a class="nav-item" href="showcase.html">Showcase</a>
+      <a class="nav-item" href="blog.html">Blog</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="vi" onclick="setLang('vi')">VI</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="icon-btn theme-toggle" onclick="toggleTheme()" aria-label="Chuyển chế độ sáng/tối">
+        <svg class="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+      </button>
+      <a href="contact.html" class="btn btn--primary btn--pill nav-cta" style="padding: 10px 18px; font-size: 13px;">
+        <span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span>
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a class="nav-item" href="index.html"><span data-lang="vi">Về SIA IMA</span><span data-lang="en" hidden>About SIA</span></a>
+  <a class="nav-item active" href="services.html"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+  <a class="nav-item" href="community.html"><span data-lang="vi">Cộng đồng</span><span data-lang="en" hidden>Community</span></a>
+  <a class="nav-item" href="showcase.html">Showcase</a>
+  <a class="nav-item" href="blog.html">Blog</a>
+  <div class="mobile-actions">
+    <a href="contact.html" class="btn btn--primary btn--pill btn--lg"><span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span></a>
+  </div>
+</div>
+
+<main>
+
+<!-- 01 SERVICE HERO -->
+<section class="service-hero service-hero--hub" id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <nav class="breadcrumb" data-hero>
+      <a href="index.html"><span data-lang="vi">Trang chủ</span><span data-lang="en" hidden>Home</span></a>
+      <span>/</span>
+      <a href="index.html#services"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+      <span>/</span>
+      <span class="breadcrumb__current">SIA Hub</span>
+    </nav>
+
+    <div class="service-hero__grid">
+      <div class="service-hero__text">
+        <div class="service-hero__badge" data-hero>
+          <span class="service-hero__badge-dot"></span>
+          <span data-lang="vi">Trụ cột chuyên môn 03</span>
+          <span data-lang="en" hidden>Pillar 03</span>
+        </div>
+
+        <h1 class="service-hero__title" data-hero>
+          <span class="service-hero__title-name">SIA Hub</span>
+          <span data-lang="vi" class="service-hero__title-desc">Influencer Marketing <em>& Social Commerce</em></span>
+          <span data-lang="en" hidden class="service-hero__title-desc">Influencer Marketing <em>& Social Commerce</em></span>
+        </h1>
+
+        <p class="service-hero__subtitle" data-hero>
+          <span data-lang="vi">Hệ sinh thái KOL/KOC/UGC/Affiliate và KOC Hub community — biến câu chuyện thương hiệu thành doanh thu trên TikTok Shop, Shopee Live và Facebook Commerce.</span>
+          <span data-lang="en" hidden>A full KOL/KOC/UGC/Affiliate and KOC Hub community ecosystem — turning brand stories into revenue on TikTok Shop, Shopee Live and Facebook Commerce.</span>
+        </p>
+
+        <div class="service-hero__actions" data-hero>
+          <a href="contact.html" class="btn btn--primary btn--pill btn--lg">
+            <span data-lang="vi">Nhận tư vấn Hub</span><span data-lang="en" hidden>Get Hub consultation</span>
+            <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#deliverables" class="btn btn--ghost btn--pill btn--lg">
+            <span data-lang="vi">Xem giải pháp</span><span data-lang="en" hidden>View solutions</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-hero__visual" data-hero>
+        <div class="service-hero__kpi-card">
+          <div class="service-hero__kpi">
+            <div class="service-hero__kpi-num">1K<span>+</span></div>
+            <div class="service-hero__kpi-label"><span data-lang="vi">Creator trong network</span><span data-lang="en" hidden>Creators in network</span></div>
+          </div>
+          <div class="service-hero__kpi">
+            <div class="service-hero__kpi-num">50B<span>+</span></div>
+            <div class="service-hero__kpi-label"><span data-lang="vi">GMV / năm</span><span data-lang="en" hidden>Annual GMV</span></div>
+          </div>
+          <div class="service-hero__kpi">
+            <div class="service-hero__kpi-num">4.2x</div>
+            <div class="service-hero__kpi-label"><span data-lang="vi">ROAS trung bình</span><span data-lang="en" hidden>Avg. ROAS</span></div>
+          </div>
+          <div class="service-hero__kpi">
+            <div class="service-hero__kpi-num">200<span>+</span></div>
+            <div class="service-hero__kpi-label"><span data-lang="vi">Brand đã hợp tác</span><span data-lang="en" hidden>Partnered brands</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 02 · 8 NGÀNH HÀNG THẾ MẠNH ═══════════ -->
+<section class="section section--alt" id="industries">
+  <div class="container">
+    <div class="section-header text-center" data-animate>
+      <h2>
+        <span data-lang="vi">8 Ngành hàng <em style="color:var(--primary);font-style:italic">thế mạnh</em></span>
+        <span data-lang="en" hidden>8 Core <em style="color:var(--primary);font-style:italic">industries</em></span>
+      </h2>
+      <p>
+        <span data-lang="vi">SIA Hub đồng hành cùng thương hiệu trên 8 nhóm ngành, trong đó nhóm du lịch - F&B - hospitality được tích hợp thành một cụm tăng trưởng.</span>
+        <span data-lang="en" hidden>SIA Hub partners with brands across 8 industry clusters, with travel - F&B - hospitality integrated as one growth vertical.</span>
+      </p>
+    </div>
+    
+    <div class="industry-grid industry-grid--eight" data-stagger>
+      <article class="industry-card" data-stagger-item>
+        <div class="industry-card__icon">
+          <span aria-hidden="true" style="font-size:24px;">💄</span>
+        </div>
+        <h3 class="industry-card__title">Beauty & Personal Care</h3>
+        <p class="industry-card__desc"><span data-lang="vi">Skincare, makeup, mỹ phẩm, nước hoa.</span><span data-lang="en" hidden>Skincare, makeup, cosmetics, perfumes.</span></p>
+      </article>
+
+      <article class="industry-card" data-stagger-item>
+        <div class="industry-card__icon">
+          <span aria-hidden="true" style="font-size:24px;">🛒</span>
+        </div>
+        <h3 class="industry-card__title">FMCG & Consumer Goods</h3>
+        <p class="industry-card__desc"><span data-lang="vi">Đồ uống, thực phẩm đóng gói, đồ gia dụng.</span><span data-lang="en" hidden>Beverages, packaged food, household goods.</span></p>
+      </article>
+
+      <article class="industry-card" data-stagger-item>
+        <div class="industry-card__icon">
+          <span aria-hidden="true" style="font-size:24px;">🏪</span>
+        </div>
+        <h3 class="industry-card__title">Retail & E-commerce</h3>
+        <p class="industry-card__desc"><span data-lang="vi">Thương hiệu bán lẻ, sàn TMĐT, D2C brand.</span><span data-lang="en" hidden>Retail brands, e-commerce platforms, D2C brands.</span></p>
+      </article>
+
+      <article class="industry-card" data-stagger-item>
+        <div class="industry-card__icon">
+          <span aria-hidden="true" style="font-size:24px;">💊</span>
+        </div>
+        <h3 class="industry-card__title">Healthcare & Wellness</h3>
+        <p class="industry-card__desc"><span data-lang="vi">Dược phẩm, TPCN, phòng khám, spa.</span><span data-lang="en" hidden>Pharmaceutical, supplements, clinics, spa.</span></p>
+      </article>
+
+      <article class="industry-card" data-stagger-item>
+        <div class="industry-card__icon">
+          <span aria-hidden="true" style="font-size:24px;">🏦</span>
+        </div>
+        <h3 class="industry-card__title">Banking & Finance</h3>
+        <p class="industry-card__desc"><span data-lang="vi">Ngân hàng, ví điện tử, fintech, bảo hiểm.</span><span data-lang="en" hidden>Banks, e-wallets, fintech, insurance.</span></p>
+      </article>
+
+      <article class="industry-card" data-stagger-item>
+        <div class="industry-card__icon">
+          <span aria-hidden="true" style="font-size:24px;">🤖</span>
+        </div>
+        <h3 class="industry-card__title">Tech & AI (Edtech)</h3>
+        <p class="industry-card__desc"><span data-lang="vi">App công nghệ, SaaS, edtech, nền tảng học trực tuyến.</span><span data-lang="en" hidden>Tech apps, SaaS, edtech, online learning platforms.</span></p>
+      </article>
+
+      <article class="industry-card" data-stagger-item>
+        <div class="industry-card__icon">
+          <span aria-hidden="true" style="font-size:24px;">🌏</span>
+        </div>
+        <h3 class="industry-card__title">Travel - F&B - Hospitality</h3>
+        <p class="industry-card__desc"><span data-lang="vi">Gộp nhóm ngành 07-08-09: du lịch, nhà hàng, khách sạn.</span><span data-lang="en" hidden>Merged verticals 07-08-09: travel, F&B, and hospitality.</span></p>
+      </article>
+
+      <article class="industry-card" data-stagger-item>
+        <div class="industry-card__icon">
+          <span aria-hidden="true" style="font-size:24px;">👗</span>
+        </div>
+        <h3 class="industry-card__title">Fashion & Mobility</h3>
+        <p class="industry-card__desc"><span data-lang="vi">Thời trang, phụ kiện, ô tô - xe máy - xe điện.</span><span data-lang="en" hidden>Fashion, accessories, automotive and mobility services.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 DELIVERABLES -->
+<section class="section" id="deliverables">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow"><span data-lang="vi">Giải pháp Hub</span><span data-lang="en" hidden>Hub solutions</span></span>
+      <h2><span data-lang="vi">6 giải pháp <em style="color:var(--primary);font-style:italic">creator-led commerce</em></span><span data-lang="en" hidden>6 <em style="color:var(--primary);font-style:italic">creator-led commerce</em> solutions</span></h2>
+    </div>
+    <div class="deliverable-grid" data-stagger>
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">01</div>
+        <h3><span data-lang="vi">KOL/KOC Campaign</span><span data-lang="en" hidden>KOL/KOC Campaign</span></h3>
+        <p><span data-lang="vi">Chiến dịch creator full-funnel — từ casting, brief, sản xuất đến đo lường ROAS theo từng tier.</span><span data-lang="en" hidden>Full-funnel creator campaigns — casting, brief, production and tier-based ROAS measurement.</span></p>
+        <ul class="deliverable-card__list">
+          <li><span data-lang="vi">Casting & shortlist creator</span><span data-lang="en" hidden>Creator casting & shortlist</span></li>
+          <li><span data-lang="vi">Brief & content direction</span><span data-lang="en" hidden>Brief & content direction</span></li>
+          <li><span data-lang="vi">Báo cáo ROAS theo tier</span><span data-lang="en" hidden>Tier-based ROAS report</span></li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">02</div>
+        <h3><span data-lang="vi">Affiliate & UGC Engine</span><span data-lang="en" hidden>Affiliate & UGC Engine</span></h3>
+        <p><span data-lang="vi">Hệ thống affiliate & UGC dài hạn — seeding sản phẩm, cộng tác viên nội dung, dashboard hoa hồng minh bạch.</span><span data-lang="en" hidden>Long-term affiliate & UGC systems — product seeding, content collaborators, transparent commission dashboard.</span></p>
+        <ul class="deliverable-card__list">
+          <li><span data-lang="vi">Seeding 100–500 creator</span><span data-lang="en" hidden>Seeding 100–500 creators</span></li>
+          <li><span data-lang="vi">Affiliate link tracking</span><span data-lang="en" hidden>Affiliate link tracking</span></li>
+          <li><span data-lang="vi">Dashboard hoa hồng</span><span data-lang="en" hidden>Commission dashboard</span></li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card deliverable-card--highlight" data-stagger-item>
+        <div class="deliverable-card__num">03</div>
+        <div class="deliverable-card__badge">★ <span data-lang="vi">Nổi bật</span><span data-lang="en" hidden>Signature</span></div>
+        <h3>KOC Hub Community</h3>
+        <p><span data-lang="vi">Cộng đồng 500+ KOC exclusive — brand ambassador chuyên sâu theo ngành, độc quyền cho các chiến dịch lớn.</span><span data-lang="en" hidden>A 500+ exclusive KOC community — vertical brand ambassadors reserved for flagship campaigns.</span></p>
+        <ul class="deliverable-card__list">
+          <li><span data-lang="vi">500+ KOC exclusive</span><span data-lang="en" hidden>500+ exclusive KOCs</span></li>
+          <li><span data-lang="vi">Training & workshop định kỳ</span><span data-lang="en" hidden>Regular training & workshops</span></li>
+          <li><span data-lang="vi">Ưu tiên chiến dịch flagship</span><span data-lang="en" hidden>Priority on flagship campaigns</span></li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">04</div>
+        <h3><span data-lang="vi">Livestream Commerce</span><span data-lang="en" hidden>Livestream Commerce</span></h3>
+        <p><span data-lang="vi">Livestream marathon trên TikTok Shop, Shopee Live & Facebook — host chuyên nghiệp, kịch bản tối ưu CVR.</span><span data-lang="en" hidden>Livestream marathons across TikTok Shop, Shopee Live & Facebook — pro hosts, CVR-optimised scripts.</span></p>
+        <ul class="deliverable-card__list">
+          <li><span data-lang="vi">Host & scripting</span><span data-lang="en" hidden>Host & scripting</span></li>
+          <li><span data-lang="vi">Multi-platform setup</span><span data-lang="en" hidden>Multi-platform setup</span></li>
+          <li><span data-lang="vi">Realtime CVR optimisation</span><span data-lang="en" hidden>Realtime CVR optimisation</span></li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">05</div>
+        <h3><span data-lang="vi">Social Commerce Shop</span><span data-lang="en" hidden>Social Commerce Shop</span></h3>
+        <p><span data-lang="vi">Set-up & vận hành TikTok Shop, Shopee Mall — tối ưu listing, ads & chăm sóc đơn hàng theo tiêu chuẩn ngành.</span><span data-lang="en" hidden>TikTok Shop & Shopee Mall setup & operations — listing, ads and order-care optimised to industry standards.</span></p>
+        <ul class="deliverable-card__list">
+          <li><span data-lang="vi">Shop setup & onboarding</span><span data-lang="en" hidden>Shop setup & onboarding</span></li>
+          <li><span data-lang="vi">Listing & ads optimisation</span><span data-lang="en" hidden>Listing & ads optimisation</span></li>
+          <li><span data-lang="vi">CS & order management</span><span data-lang="en" hidden>CS & order management</span></li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">06</div>
+        <h3><span data-lang="vi">Phân tích & Insight</span><span data-lang="en" hidden>Analytics & Insight</span></h3>
+        <p><span data-lang="vi">Dashboard đa kênh, phân tích hành vi creator & người mua — kim chỉ nam cho chiến dịch quý tiếp theo.</span><span data-lang="en" hidden>Multi-channel dashboards, creator & buyer behaviour analytics — a compass for next-quarter campaigns.</span></p>
+        <ul class="deliverable-card__list">
+          <li><span data-lang="vi">Dashboard realtime</span><span data-lang="en" hidden>Realtime dashboard</span></li>
+          <li><span data-lang="vi">Creator & buyer insight</span><span data-lang="en" hidden>Creator & buyer insight</span></li>
+          <li><span data-lang="vi">Quarterly roadmap</span><span data-lang="en" hidden>Quarterly roadmap</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow"><span data-lang="vi">Quy trình làm việc</span><span data-lang="en" hidden>How we work</span></span>
+      <h2><span data-lang="vi">5 bước từ <em style="color:var(--primary);font-style:italic">brief</em> đến <em style="color:var(--primary);font-style:italic">GMV</em></span><span data-lang="en" hidden>5 steps from <em style="color:var(--primary);font-style:italic">brief</em> to <em style="color:var(--primary);font-style:italic">GMV</em></span></h2>
+    </div>
+    <div class="process-timeline" data-stagger>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 01</div>
+        <h3><span data-lang="vi">Product Audit</span><span data-lang="en" hidden>Product Audit</span></h3>
+        <p><span data-lang="vi">Đánh giá sản phẩm, USP, định giá, review hiện có — lựa chọn góc tiếp cận tốt nhất cho creator.</span><span data-lang="en" hidden>Assess product, USP, pricing, existing reviews — pick the best angle for creators.</span></p>
+        <div class="process-timeline__time">2–3 <span data-lang="vi">ngày</span><span data-lang="en" hidden>days</span></div>
+      </div>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 02</div>
+        <h3><span data-lang="vi">Creator Matching</span><span data-lang="en" hidden>Creator Matching</span></h3>
+        <p><span data-lang="vi">Lọc data 1K+ creator, xuất shortlist tier, dự báo CPV/CPA, brief content.</span><span data-lang="en" hidden>Filter 1K+ creator data, export tiered shortlist, forecast CPV/CPA, content brief.</span></p>
+        <div class="process-timeline__time">3–7 <span data-lang="vi">ngày</span><span data-lang="en" hidden>days</span></div>
+      </div>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 03</div>
+        <h3><span data-lang="vi">Sản xuất & Seeding</span><span data-lang="en" hidden>Production & Seeding</span></h3>
+        <p><span data-lang="vi">Content creator sản xuất, seeding mẫu, review chéo — QA đảm bảo đúng brand tone.</span><span data-lang="en" hidden>Creator content production, sample seeding, cross-review — QA for brand tone.</span></p>
+        <div class="process-timeline__time">2–4 <span data-lang="vi">tuần</span><span data-lang="en" hidden>weeks</span></div>
+      </div>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 04</div>
+        <h3><span data-lang="vi">Go-live & Livestream</span><span data-lang="en" hidden>Go-live & Livestream</span></h3>
+        <p><span data-lang="vi">Booking lịch, livestream marathon, boost ads, tối ưu script dựa trên CVR realtime.</span><span data-lang="en" hidden>Schedule slots, livestream marathons, boost ads, optimise script on realtime CVR.</span></p>
+        <div class="process-timeline__time">4–12 <span data-lang="vi">tuần</span><span data-lang="en" hidden>weeks</span></div>
+      </div>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 05</div>
+        <h3><span data-lang="vi">Scale & Báo cáo</span><span data-lang="en" hidden>Scale & Report</span></h3>
+        <p><span data-lang="vi">Leaderboard creator tốt nhất, double-down budget, báo cáo chi tiết và roadmap quý sau.</span><span data-lang="en" hidden>Top-creator leaderboard, double-down budget, detailed report and next-quarter roadmap.</span></p>
+        <div class="process-timeline__time">3–5 <span data-lang="vi">ngày</span><span data-lang="en" hidden>days</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 PRICING -->
+<section class="section section--alt" id="pricing">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow"><span data-lang="vi">Gói dịch vụ</span><span data-lang="en" hidden>Service packages</span></span>
+      <h2><span data-lang="vi">Chọn gói phù hợp với <em style="color:var(--primary);font-style:italic">mục tiêu GMV</em></span><span data-lang="en" hidden>Pick a package that matches <em style="color:var(--primary);font-style:italic">your GMV goal</em></span></h2>
+      <p><span data-lang="vi">Giá tham khảo. Có thể kết hợp retainer hàng tháng hoặc chiến dịch theo quý.</span><span data-lang="en" hidden>Indicative pricing. Can be combined as monthly retainer or per-quarter campaigns.</span></p>
+    </div>
+    <div class="pricing-grid" data-stagger>
+      <article class="pricing-card" data-stagger-item>
+        <div class="pricing-card__tier">Seed</div>
+        <div class="pricing-card__price">80M<span>+ VND</span></div>
+        <p class="pricing-card__desc"><span data-lang="vi">Brand mới cần test creator và format content.</span><span data-lang="en" hidden>New brands testing creators and content formats.</span></p>
+        <ul class="pricing-card__features">
+          <li>20–50 KOC seeding</li>
+          <li><span data-lang="vi">5 content creator UGC</span><span data-lang="en" hidden>5 UGC content creators</span></li>
+          <li><span data-lang="vi">1 livestream thử nghiệm</span><span data-lang="en" hidden>1 pilot livestream</span></li>
+          <li><span data-lang="vi">Báo cáo cơ bản</span><span data-lang="en" hidden>Basic report</span></li>
+        </ul>
+        <a href="contact.html" class="btn btn--ghost btn--pill"><span data-lang="vi">Nhận báo giá</span><span data-lang="en" hidden>Get quote</span></a>
+      </article>
+      <article class="pricing-card pricing-card--featured" data-stagger-item>
+        <div class="pricing-card__badge"><span data-lang="vi">Phổ biến</span><span data-lang="en" hidden>Most popular</span></div>
+        <div class="pricing-card__tier">Scale</div>
+        <div class="pricing-card__price">300M<span>+ VND</span></div>
+        <p class="pricing-card__desc"><span data-lang="vi">Chiến dịch 3–6 tháng tăng trưởng GMV mạnh.</span><span data-lang="en" hidden>3–6 month campaigns for aggressive GMV growth.</span></p>
+        <ul class="pricing-card__features">
+          <li>100–300 creator</li>
+          <li>Affiliate + UGC engine</li>
+          <li>4–8 livestream / tháng</li>
+          <li>Social commerce shop setup</li>
+          <li><span data-lang="vi">Dashboard & insight monthly</span><span data-lang="en" hidden>Monthly dashboard & insight</span></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary btn--pill"><span data-lang="vi">Nhận báo giá</span><span data-lang="en" hidden>Get quote</span></a>
+      </article>
+      <article class="pricing-card" data-stagger-item>
+        <div class="pricing-card__tier">Flagship</div>
+        <div class="pricing-card__price">800M<span>+ VND</span></div>
+        <p class="pricing-card__desc"><span data-lang="vi">Mega campaign & Mega Livestream với KOC Hub.</span><span data-lang="en" hidden>Mega campaigns & Mega Livestream with KOC Hub.</span></p>
+        <ul class="pricing-card__features">
+          <li>KOC Hub 500+ exclusive</li>
+          <li>Creative Mega Livestream</li>
+          <li>Multi-platform social commerce</li>
+          <li>Dedicated GMV growth team</li>
+          <li>Retainer 6–12 tháng</li>
+        </ul>
+        <a href="contact.html" class="btn btn--ghost btn--pill"><span data-lang="vi">Nhận báo giá</span><span data-lang="en" hidden>Get quote</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 06 CTA -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-banner" data-animate>
+      <h2><span data-lang="vi">Sẵn sàng <em style="color:var(--primary);font-style:italic">tăng tốc GMV?</em></span><span data-lang="en" hidden>Ready to <em style="color:var(--primary);font-style:italic">accelerate GMV?</em></span></h2>
+      <p><span data-lang="vi">30 phút tư vấn miễn phí — phác thảo creator mix, dự báo CVR & GMV.</span><span data-lang="en" hidden>A free 30-minute consultation — sketch your creator mix, forecast CVR & GMV.</span></p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn--primary btn--lg btn--pill">
+          <span data-lang="vi">Đặt lịch tư vấn</span><span data-lang="en" hidden>Book a call</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="services-ima.html" class="btn btn--ghost btn--lg btn--pill">→ SIA IMA</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo/sia-logo-white.png" alt="SIA" height="40">
+        <p>SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg></a>
+        </div>
+      </div>
+      <div><div class="footer-title"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></div><ul class="footer-list"><li><a href="services-ima.html">SIA IMA</a></li><li><a href="services-event.html">SIA Event</a></li><li><a href="services-hub.html">SIA Hub</a></li><li><a href="services-ima.html">Creative Mega Livestream</a></li></ul></div>
+      <div><div class="footer-title"><span data-lang="vi">Công ty</span><span data-lang="en" hidden>Company</span></div><ul class="footer-list"><li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li><li><a href="showcase.html">Showcase</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li></ul></div>
+      <div><div class="footer-title"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></div><ul class="footer-list"><li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li><li><a href="tel:0988441630">0988 441 630</a></li><li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SIA Innovation Marketing Agency — All rights reserved.</span>
+      <span><a href="#" style="color:inherit;">Privacy</a> · <a href="#" style="color:inherit;">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="assets/js/theme.js?v=13"></script>
+<script src="assets/js/swiper-init.js?v=13"></script>
+<script src="assets/js/main.js?v=13"></script>
+
+</body>
+</html>

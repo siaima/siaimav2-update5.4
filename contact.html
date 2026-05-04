@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ · SIA Innovation Marketing Agency</title>
+  <meta name="description" content="Liên hệ SIA IMA — tư vấn chiến lược marketing tích hợp, Creative Mega Livestream, sự kiện & creator. 14 Ngõ Bệ, Tân Bình · 0988 441 630.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wdth,wght@0,75..125,100..700;1,75..125,100..700&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Project CSS (cache-bust via version query) -->
+  <link rel="stylesheet" href="assets/css/variables.css?v=12">
+  <link rel="stylesheet" href="assets/css/base.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=12">
+  <link rel="stylesheet" href="assets/css/animations.css?v=12">
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Prevent theme flash -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('sia-theme') ||
+              (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="SIA Innovation Marketing Agency">
+      <img class="logo-img no-transition"
+           src="assets/images/logo/sia-logo.png"
+           data-src-light="assets/images/logo/sia-logo.png"
+           data-src-dark="assets/images/logo/sia-logo-white.png"
+           alt="SIA" height="36">
+    </a>
+
+        <nav class="nav-menu" aria-label="Primary">
+      <a class="nav-item" href="index.html">
+        <span data-lang="vi">Về SIA IMA</span>
+        <span data-lang="en" hidden>About SIA</span>
+      </a>
+      <a class="nav-item" href="services.html">
+        <span data-lang="vi">Dịch vụ</span>
+        <span data-lang="en" hidden>Services</span>
+      </a>
+      <a class="nav-item" href="community.html">
+        <span data-lang="vi">Cộng đồng</span>
+        <span data-lang="en" hidden>Community</span>
+      </a>
+      <a class="nav-item" href="showcase.html">Showcase</a>
+      <a class="nav-item" href="blog.html">Blog</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="vi" onclick="setLang('vi')">VI</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+
+      <button class="icon-btn theme-toggle" onclick="toggleTheme()" aria-label="Chuyển chế độ sáng/tối" aria-pressed="false">
+        <svg class="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </button>
+
+      <a href="#contact-form" class="btn btn--primary btn--pill nav-cta" style="padding: 10px 18px; font-size: 13px;">
+        <span data-lang="vi">Gửi brief</span>
+        <span data-lang="en" hidden>Send brief</span>
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a class="nav-item" href="index.html"><span data-lang="vi">Về SIA IMA</span><span data-lang="en" hidden>About SIA</span></a>
+  <a class="nav-item" href="services.html"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+  <a class="nav-item" href="community.html"><span data-lang="vi">Cộng đồng</span><span data-lang="en" hidden>Community</span></a>
+  <a class="nav-item" href="showcase.html">Showcase</a>
+  <a class="nav-item" href="blog.html">Blog</a>
+  <div class="mobile-actions">
+    <a href="contact.html" class="btn btn--primary btn--pill btn--lg"><span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span></a>
+  </div>
+</div>
+
+<main>
+
+<!-- ═══════════ 01 HERO ═══════════ -->
+<section class="page-hero page-hero--contact" id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="page-hero__inner">
+      <div class="hero-eyebrow" data-hero>
+        <span class="dot"></span>
+        <span data-lang="vi">Sẵn sàng nhận brief — trả lời trong 24h</span>
+        <span data-lang="en" hidden>Ready to receive briefs — reply within 24h</span>
+      </div>
+
+      <h1 class="page-hero__title" data-hero>
+        <span data-lang="vi">Cùng chúng tôi <em>khởi động</em> hành trình kế tiếp của thương hiệu</span>
+        <span data-lang="en" hidden>Let's <em>kick off</em> your brand's next chapter together</span>
+      </h1>
+
+      <p class="page-hero__subtitle" data-hero>
+        <span data-lang="vi">Gửi brief, đặt lịch tư vấn 30 phút hoặc ghé thăm văn phòng — chúng tôi lắng nghe, phân tích và phác thảo hướng đi đầu tiên hoàn toàn miễn phí.</span>
+        <span data-lang="en" hidden>Send a brief, schedule a free 30-minute consultation, or drop by our office — we'll listen, analyse and sketch the first direction at no cost.</span>
+      </p>
+
+      <div class="page-hero__quick" data-hero>
+        <a href="tel:0988441630" class="quick-chip">
+          <span class="quick-chip__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <span class="quick-chip__body">
+            <span class="quick-chip__label"><span data-lang="vi">Gọi trực tiếp</span><span data-lang="en" hidden>Call</span></span>
+            <span class="quick-chip__value">0988 441 630</span>
+          </span>
+        </a>
+        <a href="mailto:sia.agency@siagroupco.com" class="quick-chip">
+          <span class="quick-chip__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+          <span class="quick-chip__body">
+            <span class="quick-chip__label"><span data-lang="vi">Email</span><span data-lang="en" hidden>Email</span></span>
+            <span class="quick-chip__value">sia.agency@siagroupco.com</span>
+          </span>
+        </a>
+        <a href="https://m.me/siaagency" class="quick-chip" target="_blank" rel="noopener">
+          <span class="quick-chip__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </span>
+          <span class="quick-chip__body">
+            <span class="quick-chip__label"><span data-lang="vi">Messenger</span><span data-lang="en" hidden>Messenger</span></span>
+            <span class="quick-chip__value">m.me/siaagency</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 02 CONTACT FORM + INFO ═══════════ -->
+<section class="section section--alt" id="contact-form">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow">
+        <span data-lang="vi">Gửi brief dự án</span>
+        <span data-lang="en" hidden>Send project brief</span>
+      </span>
+      <h2>
+        <span data-lang="vi">Kể cho chúng tôi nghe về <em style="color:var(--primary);font-style:italic">bài toán</em> của bạn</span>
+        <span data-lang="en" hidden>Tell us about <em style="color:var(--primary);font-style:italic">your challenge</em></span>
+      </h2>
+      <p>
+        <span data-lang="vi">Thông tin càng chi tiết, tư vấn càng chính xác. Chúng tôi cam kết phản hồi trong 24h làm việc.</span>
+        <span data-lang="en" hidden>The more details, the sharper our response. We guarantee a reply within 24 business hours.</span>
+      </p>
+    </div>
+
+    <div class="contact-wrap" data-animate>
+      <!-- Left: Info -->
+      <div class="contact-info">
+        <h3>
+          <span data-lang="vi">Thông tin liên hệ</span>
+          <span data-lang="en" hidden>Contact information</span>
+        </h3>
+        <p>
+          <span data-lang="vi">Gặp trực tiếp đội ngũ SIA hoặc liên lạc qua kênh bạn thấy tiện nhất.</span>
+          <span data-lang="en" hidden>Meet the SIA team in person or reach us through your preferred channel.</span>
+        </p>
+        <ul class="contact-info-list">
+          <li>
+            <span class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div>
+              <div class="ci-label"><span data-lang="vi">Văn phòng</span><span data-lang="en" hidden>Office</span></div>
+              <div class="ci-value">14 Ngõ Bệ, Tân Bình, TP.HCM</div>
+            </div>
+          </li>
+          <li>
+            <span class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div>
+              <div class="ci-label"><span data-lang="vi">Hotline</span><span data-lang="en" hidden>Hotline</span></div>
+              <a href="tel:0988441630" class="ci-value" style="color:inherit;">0988 441 630</a>
+            </div>
+          </li>
+          <li>
+            <span class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <div>
+              <div class="ci-label">Email</div>
+              <a href="mailto:sia.agency@siagroupco.com" class="ci-value" style="color:inherit;">sia.agency@siagroupco.com</a>
+            </div>
+          </li>
+          <li>
+            <span class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            <div>
+              <div class="ci-label"><span data-lang="vi">Giờ làm việc</span><span data-lang="en" hidden>Office hours</span></div>
+              <div class="ci-value"><span data-lang="vi">Thứ 2 – Thứ 6: 9:00 – 18:00</span><span data-lang="en" hidden>Mon – Fri: 9AM – 6PM</span></div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="contact-socials">
+          <span class="contact-socials__label">
+            <span data-lang="vi">Theo dõi SIA</span>
+            <span data-lang="en" hidden>Follow SIA</span>
+          </span>
+          <div class="contact-socials__list">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.2 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.004-.104z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <form class="contact-form" onsubmit="return handleContactSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="f-name">
+              <span data-lang="vi">Họ và tên</span><span data-lang="en" hidden>Full name</span> *
+            </label>
+            <input class="form-input" id="f-name" name="name" type="text" required placeholder="Nguyễn Văn A">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-company">
+              <span data-lang="vi">Công ty</span><span data-lang="en" hidden>Company</span>
+            </label>
+            <input class="form-input" id="f-company" name="company" type="text" placeholder="SIA Group">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="f-email">Email *</label>
+            <input class="form-input" id="f-email" name="email" type="email" required placeholder="ban@congty.vn">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-phone">
+              <span data-lang="vi">Số điện thoại</span><span data-lang="en" hidden>Phone</span>
+            </label>
+            <input class="form-input" id="f-phone" name="phone" type="tel" placeholder="0988 441 630">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            <span data-lang="vi">Quan tâm dịch vụ</span><span data-lang="en" hidden>Service of interest</span>
+          </label>
+          <div class="service-chips" role="group">
+            <label class="service-chip">
+              <input type="checkbox" name="service" value="IMA">
+              <span>SIA IMA</span>
+            </label>
+            <label class="service-chip">
+              <input type="checkbox" name="service" value="Event">
+              <span>SIA Event</span>
+            </label>
+            <label class="service-chip">
+              <input type="checkbox" name="service" value="Hub">
+              <span>SIA Hub</span>
+            </label>
+            <label class="service-chip">
+              <input type="checkbox" name="service" value="Livestream">
+              <span>Creative Mega Livestream</span>
+            </label>
+            <label class="service-chip">
+              <input type="checkbox" name="service" value="Other">
+              <span data-lang="vi">Khác</span><span data-lang="en" hidden>Other</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="f-budget">
+              <span data-lang="vi">Ngân sách dự kiến</span><span data-lang="en" hidden>Estimated budget</span>
+            </label>
+            <select class="form-select" id="f-budget" name="budget">
+              <option value=""><span data-lang="vi">— Chọn ngân sách —</span></option>
+              <option value="lt-50m">&lt; 50 triệu</option>
+              <option value="50-200m">50 – 200 triệu</option>
+              <option value="200-500m">200 – 500 triệu</option>
+              <option value="500m-1b">500 triệu – 1 tỷ</option>
+              <option value="gt-1b">&gt; 1 tỷ</option>
+              <option value="tbd">TBD / cần tư vấn</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-timeline">
+              <span data-lang="vi">Thời gian triển khai</span><span data-lang="en" hidden>Timeline</span>
+            </label>
+            <select class="form-select" id="f-timeline" name="timeline">
+              <option value=""><span data-lang="vi">— Khi nào bắt đầu? —</span></option>
+              <option value="asap"><span data-lang="vi">Ngay lập tức</span></option>
+              <option value="1m"><span data-lang="vi">Trong 1 tháng</span></option>
+              <option value="3m"><span data-lang="vi">1 – 3 tháng</span></option>
+              <option value="6m"><span data-lang="vi">3 – 6 tháng</span></option>
+              <option value="flex"><span data-lang="vi">Linh hoạt</span></option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="f-message">
+            <span data-lang="vi">Chi tiết nhu cầu</span><span data-lang="en" hidden>Brief details</span> *
+          </label>
+          <textarea class="form-textarea" id="f-message" name="message" rows="5" required placeholder="Mô tả ngắn về sản phẩm, mục tiêu chiến dịch, nhóm khách hàng mục tiêu, kết quả mong đợi..."></textarea>
+        </div>
+
+        <label class="form-consent">
+          <input type="checkbox" required>
+          <span data-lang="vi">Tôi đồng ý để SIA lưu trữ thông tin và liên hệ lại qua các kênh trên.</span>
+          <span data-lang="en" hidden>I agree that SIA may store my information and contact me via the channels above.</span>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn--primary btn--pill btn--lg">
+            <span data-lang="vi">Gửi brief ngay</span>
+            <span data-lang="en" hidden>Send brief now</span>
+            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="form-note">
+            <span data-lang="vi">Chúng tôi sẽ phản hồi trong 24h làm việc.</span>
+            <span data-lang="en" hidden>We'll reply within 24 business hours.</span>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 03 OFFICE / MAP ═══════════ -->
+<section class="section" id="office">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow">
+        <span data-lang="vi">Ghé văn phòng</span>
+        <span data-lang="en" hidden>Visit our office</span>
+      </span>
+      <h2>
+        <span data-lang="vi">Hẹn gặp trực tiếp tại <em style="color:var(--primary);font-style:italic">Sài Gòn</em></span>
+        <span data-lang="en" hidden>Meet us in <em style="color:var(--primary);font-style:italic">Saigon</em></span>
+      </h2>
+    </div>
+
+    <div class="office-grid" data-animate>
+      <div class="office-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.5!2d106.65!3d10.80!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ4JzAwLjAiTiAxMDbCsDM5JzAwLjAiRQ!5e0!3m2!1sen!2s!4v1712000000000"
+          width="100%" height="100%"
+          style="border:0;"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="SIA Innovation Marketing Agency office location">
+        </iframe>
+        <div class="office-map__overlay">
+          <div class="office-map__pin">
+            <div class="office-map__pulse"></div>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="office-info">
+        <div class="office-info__row">
+          <div class="office-info__label">
+            <span data-lang="vi">Văn phòng SIA</span>
+            <span data-lang="en" hidden>SIA Office</span>
+          </div>
+          <div class="office-info__value">14 Ngõ Bệ, Tân Bình, TP.HCM</div>
+        </div>
+        <div class="office-info__row">
+          <div class="office-info__label">
+            <span data-lang="vi">Giờ làm việc</span>
+            <span data-lang="en" hidden>Office hours</span>
+          </div>
+          <div class="office-info__value">
+            <span data-lang="vi">Thứ 2 – Thứ 6: 9:00 – 18:00</span>
+            <span data-lang="en" hidden>Mon – Fri: 9:00 AM – 6:00 PM</span>
+          </div>
+        </div>
+        <div class="office-info__row">
+          <div class="office-info__label">
+            <span data-lang="vi">Di chuyển</span>
+            <span data-lang="en" hidden>Directions</span>
+          </div>
+          <div class="office-info__value">
+            <span data-lang="vi">Gần sân bay Tân Sơn Nhất · 15 phút từ Q.1</span>
+            <span data-lang="en" hidden>Near Tan Son Nhat Airport · 15 min from District 1</span>
+          </div>
+        </div>
+
+        <a href="https://maps.google.com/?q=14+Ngo+Be+Tan+Binh+HCM" target="_blank" rel="noopener" class="btn btn--ghost btn--pill office-info__cta">
+          <span data-lang="vi">Mở trên Google Maps</span>
+          <span data-lang="en" hidden>Open in Google Maps</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 04 FAQ ═══════════ -->
+<section class="section section--alt" id="faq">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow">
+        <span data-lang="vi">Câu hỏi thường gặp</span>
+        <span data-lang="en" hidden>FAQ</span>
+      </span>
+      <h2>
+        <span data-lang="vi">Những điều bạn <em style="color:var(--primary);font-style:italic">thường hỏi</em> trước khi bắt đầu</span>
+        <span data-lang="en" hidden>What you <em style="color:var(--primary);font-style:italic">often ask</em> before we start</span>
+      </h2>
+    </div>
+
+    <div class="faq-list" data-stagger x-data="{ open: 0 }">
+      <div class="faq-item" data-stagger-item>
+        <button class="faq-item__q" @click="open = open === 1 ? null : 1" :aria-expanded="open === 1">
+          <span>
+            <span data-lang="vi">SIA có làm dự án quy mô nhỏ không?</span>
+            <span data-lang="en" hidden>Does SIA take on small projects?</span>
+          </span>
+          <svg class="faq-item__arrow" :class="{ 'is-open': open === 1 }" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-item__a" x-show="open === 1" x-collapse>
+          <p>
+            <span data-lang="vi">Có. Chúng tôi nhận cả dự án tư vấn chiến lược ngắn (1-2 tuần), chiến dịch mini và gói creative production linh hoạt. Ngân sách bắt đầu từ 30 triệu đồng.</span>
+            <span data-lang="en" hidden>Yes. We take on short strategy sprints (1-2 weeks), mini campaigns and flexible creative production packages. Budgets start from 30 million VND.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-stagger-item>
+        <button class="faq-item__q" @click="open = open === 2 ? null : 2" :aria-expanded="open === 2">
+          <span>
+            <span data-lang="vi">Thời gian tư vấn và báo giá mất bao lâu?</span>
+            <span data-lang="en" hidden>How long does consultation and quotation take?</span>
+          </span>
+          <svg class="faq-item__arrow" :class="{ 'is-open': open === 2 }" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-item__a" x-show="open === 2" x-collapse>
+          <p>
+            <span data-lang="vi">Sau khi nhận brief, chúng tôi phản hồi trong 24h. Cuộc tư vấn 30 phút miễn phí được đặt lịch trong 2-3 ngày làm việc. Đề xuất và báo giá chính thức giao trong 5-7 ngày tuỳ độ phức tạp.</span>
+            <span data-lang="en" hidden>After receiving your brief, we reply within 24h. A free 30-minute consultation is scheduled within 2-3 business days. A full proposal and quote is delivered in 5-7 days depending on complexity.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-stagger-item>
+        <button class="faq-item__q" @click="open = open === 3 ? null : 3" :aria-expanded="open === 3">
+          <span>
+            <span data-lang="vi">SIA có ký NDA để bảo mật brief không?</span>
+            <span data-lang="en" hidden>Does SIA sign an NDA for brief confidentiality?</span>
+          </span>
+          <svg class="faq-item__arrow" :class="{ 'is-open': open === 3 }" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-item__a" x-show="open === 3" x-collapse>
+          <p>
+            <span data-lang="vi">Có. Mọi brief và thông tin khách hàng đều được bảo mật. Chúng tôi sẵn sàng ký NDA trước khi bạn chia sẻ thông tin chi tiết, chỉ cần yêu cầu qua email.</span>
+            <span data-lang="en" hidden>Yes. All briefs and client information are confidential. We're happy to sign an NDA before you share detailed information — just request it via email.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-stagger-item>
+        <button class="faq-item__q" @click="open = open === 4 ? null : 4" :aria-expanded="open === 4">
+          <span>
+            <span data-lang="vi">Có thể làm việc với đội ngũ SIA remote không?</span>
+            <span data-lang="en" hidden>Can we work with SIA remotely?</span>
+          </span>
+          <svg class="faq-item__arrow" :class="{ 'is-open': open === 4 }" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-item__a" x-show="open === 4" x-collapse>
+          <p>
+            <span data-lang="vi">Hoàn toàn được. SIA đang làm việc với khách hàng ở Hà Nội, Đà Nẵng, Singapore, Bangkok. Chúng tôi sử dụng Notion, Slack, Zoom cho workflow và sẵn sàng công tác khi cần.</span>
+            <span data-lang="en" hidden>Absolutely. SIA works with clients in Hanoi, Da Nang, Singapore, Bangkok. We use Notion, Slack, and Zoom for workflow and travel on-site when needed.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-stagger-item>
+        <button class="faq-item__q" @click="open = open === 5 ? null : 5" :aria-expanded="open === 5">
+          <span>
+            <span data-lang="vi">Đo lường kết quả campaign như thế nào?</span>
+            <span data-lang="en" hidden>How do you measure campaign results?</span>
+          </span>
+          <svg class="faq-item__arrow" :class="{ 'is-open': open === 5 }" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-item__a" x-show="open === 5" x-collapse>
+          <p>
+            <span data-lang="vi">Mỗi campaign đều có KPI rõ ràng ngay từ đầu: Reach, Engagement, CTR, CPM, Conversion, GMV. Chúng tôi dùng dashboard Looker Studio / Metabase để khách hàng theo dõi real-time.</span>
+            <span data-lang="en" hidden>Every campaign has clear KPIs from day one: Reach, Engagement, CTR, CPM, Conversion, GMV. We use Looker Studio / Metabase dashboards so clients can track results in real time.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo/sia-logo-white.png" alt="SIA" height="40">
+        <p>
+          SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></div>
+        <ul class="footer-list">
+          <li><a href="services-ima.html">SIA IMA</a></li>
+          <li><a href="services-event.html">SIA Event</a></li>
+          <li><a href="services-hub.html">SIA Hub</a></li>
+          <li><a href="services-ima.html">Creative Mega Livestream</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title"><span data-lang="vi">Công ty</span><span data-lang="en" hidden>Company</span></div>
+        <ul class="footer-list">
+          <li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li>
+          <li><a href="showcase.html">Showcase</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></div>
+        <ul class="footer-list">
+          <li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li>
+          <li><a href="tel:0988441630">0988 441 630</a></li>
+          <li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 SIA Innovation Marketing Agency — All rights reserved.</span>
+      <span>
+        <a href="#" style="color:inherit;">Privacy</a> ·
+        <a href="#" style="color:inherit;">Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- Form handler -->
+<script>
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const note = form.querySelector('.form-note');
+    btn.disabled = true;
+    btn.innerHTML = '<span data-lang="vi">Đang gửi...</span><span data-lang="en" hidden>Sending...</span>';
+    setTimeout(() => {
+      form.reset();
+      btn.innerHTML = '<span data-lang="vi">✓ Đã gửi! Cảm ơn bạn</span><span data-lang="en" hidden>✓ Sent! Thank you</span>';
+      if (note) note.textContent = 'Chúng tôi sẽ liên hệ lại trong 24h tới.';
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<span data-lang="vi">Gửi brief ngay</span><span data-lang="en" hidden>Send brief now</span><svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+      }, 4000);
+    }, 1000);
+    return false;
+  }
+</script>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<!-- Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Project JS -->
+<script src="assets/js/theme.js?v=13"></script>
+<script src="assets/js/swiper-init.js?v=13"></script>
+<script src="assets/js/main.js?v=13"></script>
+
+</body>
+</html>

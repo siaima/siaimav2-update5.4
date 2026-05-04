@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIA Event · Brand Experience — SIA Innovation Marketing Agency</title>
+  <meta name="description" content="SIA Event — tổ chức sự kiện doanh nghiệp, hội thảo, workshop, Brand Experience O2O kết nối thương hiệu với khách hàng qua trải nghiệm thật.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wdth,wght@0,75..125,100..700;1,75..125,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="assets/css/variables.css?v=12">
+  <link rel="stylesheet" href="assets/css/base.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=12">
+  <link rel="stylesheet" href="assets/css/animations.css?v=12">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    (function () {
+      var t = localStorage.getItem('sia-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="SIA Innovation Marketing Agency">
+      <img class="logo-img no-transition" src="assets/images/logo/sia-logo.png"
+           data-src-light="assets/images/logo/sia-logo.png"
+           data-src-dark="assets/images/logo/sia-logo-white.png"
+           alt="SIA" height="36">
+    </a>
+        <nav class="nav-menu" aria-label="Primary">
+      <a class="nav-item" href="index.html">
+        <span data-lang="vi">Về SIA IMA</span>
+        <span data-lang="en" hidden>About SIA</span>
+      </a>
+      <a class="nav-item active" href="services.html">
+        <span data-lang="vi">Dịch vụ</span>
+        <span data-lang="en" hidden>Services</span>
+      </a>
+      <a class="nav-item" href="community.html">
+        <span data-lang="vi">Cộng đồng</span>
+        <span data-lang="en" hidden>Community</span>
+      </a>
+      <a class="nav-item" href="showcase.html">Showcase</a>
+      <a class="nav-item" href="blog.html">Blog</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="vi" onclick="setLang('vi')">VI</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="icon-btn theme-toggle" onclick="toggleTheme()" aria-label="Chuyển chế độ sáng/tối">
+        <svg class="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+      </button>
+      <a href="contact.html" class="btn btn--primary btn--pill nav-cta" style="padding: 10px 18px; font-size: 13px;">
+        <span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span>
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a class="nav-item" href="index.html"><span data-lang="vi">Về SIA IMA</span><span data-lang="en" hidden>About SIA</span></a>
+  <a class="nav-item active" href="services.html"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+  <a class="nav-item" href="community.html"><span data-lang="vi">Cộng đồng</span><span data-lang="en" hidden>Community</span></a>
+  <a class="nav-item" href="showcase.html">Showcase</a>
+  <a class="nav-item" href="blog.html">Blog</a>
+  <div class="mobile-actions">
+    <a href="contact.html" class="btn btn--primary btn--pill btn--lg"><span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span></a>
+  </div>
+</div>
+
+<main>
+
+<!-- 01 SERVICE HERO -->
+<section class="service-hero service-hero--event" id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <nav class="breadcrumb" data-hero>
+      <a href="index.html"><span data-lang="vi">Trang chủ</span><span data-lang="en" hidden>Home</span></a>
+      <span>/</span>
+      <a href="index.html#services"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+      <span>/</span>
+      <span class="breadcrumb__current">SIA Event</span>
+    </nav>
+
+    <div class="service-hero__grid">
+      <div class="service-hero__text">
+        <div class="service-hero__badge" data-hero>
+          <span class="service-hero__badge-dot"></span>
+          <span data-lang="vi">Trụ cột chuyên môn 02</span>
+          <span data-lang="en" hidden>Pillar 02</span>
+        </div>
+
+        <h1 class="service-hero__title" data-hero>
+          <span class="service-hero__title-name">SIA Event</span>
+          <span data-lang="vi" class="service-hero__title-desc">Brand Experience <em>& Corporate Events</em></span>
+          <span data-lang="en" hidden class="service-hero__title-desc">Brand Experience <em>& Corporate Events</em></span>
+        </h1>
+
+        <p class="service-hero__subtitle" data-hero>
+          <span data-lang="vi">Biến mỗi buổi sự kiện thành điểm chạm mạnh mẽ giữa thương hiệu và khách hàng — từ hội thảo chuyên ngành, workshop đến activation O2O tầm cỡ quốc tế.</span>
+          <span data-lang="en" hidden>Turn every event into a meaningful brand-customer touchpoint — from industry seminars and workshops to international-grade O2O activations.</span>
+        </p>
+
+        <div class="service-hero__actions" data-hero>
+          <a href="contact.html" class="btn btn--primary btn--pill btn--lg">
+            <span data-lang="vi">Nhận tư vấn sự kiện</span><span data-lang="en" hidden>Get event consultation</span>
+            <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#deliverables" class="btn btn--ghost btn--pill btn--lg">
+            <span data-lang="vi">Xem loại hình sự kiện</span><span data-lang="en" hidden>View event formats</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-hero__visual" data-hero>
+        <div class="service-hero__kpi-card">
+          <div class="service-hero__kpi">
+            <div class="service-hero__kpi-num">80<span>+</span></div>
+            <div class="service-hero__kpi-label"><span data-lang="vi">Sự kiện / năm</span><span data-lang="en" hidden>Events / year</span></div>
+          </div>
+          <div class="service-hero__kpi">
+            <div class="service-hero__kpi-num">12K<span>+</span></div>
+            <div class="service-hero__kpi-label"><span data-lang="vi">Khách tham dự / mùa</span><span data-lang="en" hidden>Attendees / season</span></div>
+          </div>
+          <div class="service-hero__kpi">
+            <div class="service-hero__kpi-num">95%</div>
+            <div class="service-hero__kpi-label"><span data-lang="vi">Hài lòng khách mời</span><span data-lang="en" hidden>Guest satisfaction</span></div>
+          </div>
+          <div class="service-hero__kpi">
+            <div class="service-hero__kpi-num">48h</div>
+            <div class="service-hero__kpi-label"><span data-lang="vi">Dựng setup sân khấu</span><span data-lang="en" hidden>Stage setup window</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 DELIVERABLES -->
+<section class="section section--alt" id="deliverables">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow"><span data-lang="vi">Loại hình sự kiện</span><span data-lang="en" hidden>Event formats</span></span>
+      <h2><span data-lang="vi">6 loại hình <em style="color:var(--primary);font-style:italic">dịch vụ SIA Event</em></span><span data-lang="en" hidden>6 <em style="color:var(--primary);font-style:italic">SIA Event</em> service formats</span></h2>
+    </div>
+    <div class="deliverable-grid" data-stagger>
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">01</div>
+        <h3><span data-lang="vi">CONFERENCE - Hội thảo B2B</span><span data-lang="en" hidden>Conference - B2B Seminar</span></h3>
+        <p><span data-lang="vi">Thiết kế agenda & nội dung theo ngành, curation diễn giả C-level/Founder/chuyên gia, data khách mời chọn lọc và truyền thông trước-trong-sau sự kiện.</span><span data-lang="en" hidden>Industry-specific agenda and content, C-level/founder speaker curation, curated guest data, and full pre-during-post communications.</span></p>
+        <ul class="deliverable-card__list">
+          <li><span data-lang="vi">Concept & Content Development</span><span data-lang="en" hidden>Concept & Content Development</span></li>
+          <li><span data-lang="vi">Business Matching Session</span><span data-lang="en" hidden>Business Matching Session</span></li>
+          <li><span data-lang="vi">Content recap & media coverage</span><span data-lang="en" hidden>Content recap & media coverage</span></li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">02</div>
+        <h3><span data-lang="vi">CUSTOM WORKSHOP</span><span data-lang="en" hidden>Custom Workshop</span></h3>
+        <p><span data-lang="vi">Workshop concept theo brief/mục tiêu brand, curation khách tham dự từ tệp nữ cao cấp & doanh nhân, tích hợp brand experience xuyên suốt.</span><span data-lang="en" hidden>Workshop concepts tailored to brand brief and goals, curated attendees, and integrated brand experience throughout.</span></p>
+        <ul class="deliverable-card__list">
+          <li><span data-lang="vi">Facilitator & diễn giả phù hợp</span><span data-lang="en" hidden>Right facilitators & speakers</span></li>
+          <li><span data-lang="vi">Content production tại workshop</span><span data-lang="en" hidden>On-site content production</span></li>
+          <li><span data-lang="vi">Follow-up data & insight</span><span data-lang="en" hidden>Follow-up data & insight</span></li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card deliverable-card--highlight" data-stagger-item>
+        <div class="deliverable-card__num">03</div>
+        <div class="deliverable-card__badge">★ <span data-lang="vi">Nổi bật</span><span data-lang="en" hidden>Signature</span></div>
+        <h3><span data-lang="vi">Brand Experience O2O</span><span data-lang="en" hidden>Brand Experience O2O</span></h3>
+        <p><span data-lang="vi">Thiết kế hành trình activation O2O từ concept sáng tạo, OOH activation, livestream tích hợp đến social amplification và đo lường chuyển đổi.</span><span data-lang="en" hidden>Design end-to-end O2O activation journeys from concept and OOH activation to integrated livestream, social amplification, and conversion measurement.</span></p>
+        <ul class="deliverable-card__list">
+          <li><span data-lang="vi">Creator & KOC seeding</span><span data-lang="en" hidden>Creator & KOC seeding</span></li>
+          <li><span data-lang="vi">Online conversion layer</span><span data-lang="en" hidden>Online conversion layer</span></li>
+          <li><span data-lang="vi">Data & measurement</span><span data-lang="en" hidden>Data & measurement</span></li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">04</div>
+        <h3><span data-lang="vi">EXHIBITION</span><span data-lang="en" hidden>Exhibition</span></h3>
+        <p><span data-lang="vi">Thiết kế concept gian hàng theo brand identity, kế hoạch engagement tại booth, booking KOL/KOC tạo traffic và business matching tại triển lãm.</span><span data-lang="en" hidden>Booth concept design based on brand identity, in-booth engagement planning, KOL/KOC traffic generation, and exhibition business matching.</span></p>
+        <ul class="deliverable-card__list">
+          <li><span data-lang="vi">Livestream từ gian hàng</span><span data-lang="en" hidden>Booth livestream</span></li>
+          <li><span data-lang="vi">Business matching</span><span data-lang="en" hidden>Business matching</span></li>
+          <li><span data-lang="vi">Media coverage xuyên suốt</span><span data-lang="en" hidden>Full media coverage</span></li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">05</div>
+        <h3><span data-lang="vi">LAUNCH EVENT & PRESS CON</span><span data-lang="en" hidden>Launch Event & Press Conference</span></h3>
+        <p><span data-lang="vi">Concept & creative direction cho buổi ra mắt, kịch bản chương trình, booking báo chí/KOL và setup không gian trải nghiệm thương hiệu.</span><span data-lang="en" hidden>Concept and creative direction for launch, program scripting, press/KOL booking, and immersive brand-space setup.</span></p>
+        <ul class="deliverable-card__list">
+          <li><span data-lang="vi">Livestream & content production</span><span data-lang="en" hidden>Livestream & content production</span></li>
+          <li><span data-lang="vi">Press kit & media coverage</span><span data-lang="en" hidden>Press kit & media coverage</span></li>
+          <li><span data-lang="vi">Báo cáo truyền thông sau event</span><span data-lang="en" hidden>Post-event media report</span></li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">06</div>
+        <h3><span data-lang="vi">Activation & Roadshow</span><span data-lang="en" hidden>Activation & Roadshow</span></h3>
+        <p><span data-lang="vi">Roadshow đa điểm tại các thành phố trọng điểm, concept theo từng địa phương, creator seeding từng điểm và social content theo từng chặng.</span><span data-lang="en" hidden>Multi-city roadshows with localised concepts, creator seeding per location, and stage-by-stage social content.</span></p>
+        <ul class="deliverable-card__list">
+          <li><span data-lang="vi">Sampling & brand experience trực tiếp</span><span data-lang="en" hidden>On-ground sampling & brand experience</span></li>
+          <li><span data-lang="vi">Creator/KOC seeding toàn tuyến</span><span data-lang="en" hidden>Full-route creator/KOC seeding</span></li>
+          <li><span data-lang="vi">Data & báo cáo tổng hợp</span><span data-lang="en" hidden>Data capture & consolidated reporting</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow"><span data-lang="vi">Quy trình làm việc</span><span data-lang="en" hidden>How we work</span></span>
+      <h2><span data-lang="vi">5 bước từ <em style="color:var(--primary);font-style:italic">concept</em> đến <em style="color:var(--primary);font-style:italic">show-time</em></span><span data-lang="en" hidden>5 steps from <em style="color:var(--primary);font-style:italic">concept</em> to <em style="color:var(--primary);font-style:italic">show-time</em></span></h2>
+    </div>
+    <div class="process-timeline" data-stagger>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 01</div>
+        <h3><span data-lang="vi">Brief & Concept</span><span data-lang="en" hidden>Brief & Concept</span></h3>
+        <p><span data-lang="vi">Đồng chủ trì workshop với ban tổ chức — mục tiêu, đối tượng, thông điệp và KPI.</span><span data-lang="en" hidden>Co-facilitated workshop with organisers — goals, audience, message and KPIs.</span></p>
+        <div class="process-timeline__time">3–5 <span data-lang="vi">ngày</span><span data-lang="en" hidden>days</span></div>
+      </div>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 02</div>
+        <h3><span data-lang="vi">Thiết kế & Kịch bản</span><span data-lang="en" hidden>Design & Script</span></h3>
+        <p><span data-lang="vi">3D mock-up sân khấu, kịch bản phút-phút, playlist nghệ thuật và checklist production.</span><span data-lang="en" hidden>3D stage mock-ups, minute-by-minute script, art playlist and production checklist.</span></p>
+        <div class="process-timeline__time">1–2 <span data-lang="vi">tuần</span><span data-lang="en" hidden>weeks</span></div>
+      </div>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 03</div>
+        <h3><span data-lang="vi">Sản xuất & Huy động</span><span data-lang="en" hidden>Production & Crew</span></h3>
+        <p><span data-lang="vi">Đặt địa điểm, booking artist, tuyển crew, đặt thiết bị AV và dàn dựng trang trí.</span><span data-lang="en" hidden>Venue booking, artist casting, crew hiring, AV equipment and decor buildout.</span></p>
+        <div class="process-timeline__time">3–8 <span data-lang="vi">tuần</span><span data-lang="en" hidden>weeks</span></div>
+      </div>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 04</div>
+        <h3><span data-lang="vi">Show-time & Vận hành</span><span data-lang="en" hidden>Show-time & Ops</span></h3>
+        <p><span data-lang="vi">Show director on-site, crew 20-50 người, livestream & truyền thông đa kênh.</span><span data-lang="en" hidden>On-site show director, 20–50-person crew, livestream & multi-channel comms.</span></p>
+        <div class="process-timeline__time">1–3 <span data-lang="vi">ngày</span><span data-lang="en" hidden>days</span></div>
+      </div>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 05</div>
+        <h3><span data-lang="vi">Recap & Báo cáo</span><span data-lang="en" hidden>Recap & Report</span></h3>
+        <p><span data-lang="vi">Video recap, ảnh, báo cáo khảo sát khách mời — đầu vào cho mùa sự kiện tiếp theo.</span><span data-lang="en" hidden>Recap video, photos, guest-survey report — inputs for the next event season.</span></p>
+        <div class="process-timeline__time">1–2 <span data-lang="vi">tuần</span><span data-lang="en" hidden>weeks</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PRICING -->
+<section class="section section--alt" id="pricing">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow"><span data-lang="vi">Gói dịch vụ</span><span data-lang="en" hidden>Service packages</span></span>
+      <h2><span data-lang="vi">Chọn gói phù hợp với <em style="color:var(--primary);font-style:italic">quy mô sự kiện</em></span><span data-lang="en" hidden>Pick a package that matches <em style="color:var(--primary);font-style:italic">your event scale</em></span></h2>
+      <p><span data-lang="vi">Giá tham khảo theo scale khách mời. Mọi dự án đều có báo giá riêng sau khi nhận brief.</span><span data-lang="en" hidden>Indicative pricing by guest scale. Every project gets a custom quote after briefing.</span></p>
+    </div>
+    <div class="pricing-grid" data-stagger>
+      <article class="pricing-card" data-stagger-item>
+        <div class="pricing-card__tier">Intimate</div>
+        <div class="pricing-card__price">120M<span>+ VND</span></div>
+        <p class="pricing-card__desc"><span data-lang="vi">Sự kiện 50–200 khách, workshop, họp báo ngắn.</span><span data-lang="en" hidden>50–200 guest events, workshops, short press con.</span></p>
+        <ul class="pricing-card__features">
+          <li><span data-lang="vi">Concept + kịch bản</span><span data-lang="en" hidden>Concept + script</span></li>
+          <li><span data-lang="vi">Sân khấu & trang trí cơ bản</span><span data-lang="en" hidden>Basic stage & decor</span></li>
+          <li>MC + crew on-site</li>
+          <li><span data-lang="vi">Recap photo + video</span><span data-lang="en" hidden>Recap photo + video</span></li>
+        </ul>
+        <a href="contact.html" class="btn btn--ghost btn--pill"><span data-lang="vi">Nhận báo giá</span><span data-lang="en" hidden>Get quote</span></a>
+      </article>
+      <article class="pricing-card pricing-card--featured" data-stagger-item>
+        <div class="pricing-card__badge"><span data-lang="vi">Phổ biến</span><span data-lang="en" hidden>Most popular</span></div>
+        <div class="pricing-card__tier">Signature</div>
+        <div class="pricing-card__price">500M<span>+ VND</span></div>
+        <p class="pricing-card__desc"><span data-lang="vi">Launch event, hội thảo, gala 300–800 khách.</span><span data-lang="en" hidden>Launches, seminars, 300–800 guest galas.</span></p>
+        <ul class="pricing-card__features">
+          <li><span data-lang="vi">Kịch bản đa tầng + 3D mock-up</span><span data-lang="en" hidden>Multi-layer script + 3D mock-up</span></li>
+          <li>LED wall + light design</li>
+          <li>Artist + multi-camera livestream</li>
+          <li>Brand activation + sampling</li>
+          <li><span data-lang="vi">Báo cáo media sau sự kiện</span><span data-lang="en" hidden>Post-event media report</span></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary btn--pill"><span data-lang="vi">Nhận báo giá</span><span data-lang="en" hidden>Get quote</span></a>
+      </article>
+      <article class="pricing-card" data-stagger-item>
+        <div class="pricing-card__tier">Mega</div>
+        <div class="pricing-card__price">1.5B<span>+ VND</span></div>
+        <p class="pricing-card__desc"><span data-lang="vi">Đại hội, conference quốc tế, roadshow đa tỉnh.</span><span data-lang="en" hidden>Congresses, international conferences, multi-city roadshows.</span></p>
+        <ul class="pricing-card__features">
+          <li>1000+ <span data-lang="vi">khách mời</span><span data-lang="en" hidden>guests</span></li>
+          <li>International speaker network</li>
+          <li>Multi-venue / multi-day run</li>
+          <li>Dedicated PM team</li>
+          <li>Full integration w/ IMA + Hub</li>
+        </ul>
+        <a href="contact.html" class="btn btn--ghost btn--pill"><span data-lang="vi">Nhận báo giá</span><span data-lang="en" hidden>Get quote</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 05 PAST EVENTS SHOWCASE -->
+<section class="section" id="past-events">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow"><span data-lang="vi">Dự án tiêu biểu</span><span data-lang="en" hidden>Featured Projects</span></span>
+      <h2><span data-lang="vi">Các sự kiện mang dấu ấn <em style="color:var(--primary);font-style:italic">SIA</em></span><span data-lang="en" hidden>Events with the <em style="color:var(--primary);font-style:italic">SIA signature</em></span></h2>
+    </div>
+
+    <div class="case-grid" data-stagger data-latest-showcase="services-event">
+      <article class="case-card case-card--item" data-stagger-item>
+        <div class="case-card__media case-card__media--blue">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">Brand Experience · Banking · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">Ngân hàng X — Gala tri ân 2,000 khách VIP</span>
+            <span data-lang="en" hidden>Bank X — Gala dinner for 2,000 VIP clients</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Sự kiện 3 ngày tích hợp gala tối, workshop, triển lãm tương tác — NPS 9.2/10.</span>
+            <span data-lang="en" hidden>A 3-day event with gala dinner, workshops and interactive exhibition — NPS 9.2/10.</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>2,000 <small>guests</small></span>
+            <span>9.2/10 <small>NPS</small></span>
+          </div>
+          <a href="showcase-detail.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="case-card case-card--item" data-stagger-item>
+        <div class="case-card__media case-card__media--dark">
+          <span class="case-card__tag">IMA</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">Integrated Campaign · FMCG · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">Sữa Y — Chiến dịch "Nuôi dưỡng ước mơ" 360°</span>
+            <span data-lang="en" hidden>Milk Y — "Nurturing dreams" 360° campaign</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">PR, social, TVC, KOL — tăng brand love 38% sau 3 tháng và đạt top-of-mind trong phân khúc.</span>
+            <span data-lang="en" hidden>PR, social, TVC, KOL — brand love +38% in 3 months and top-of-mind in the segment.</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>+38% <small>brand love</small></span>
+            <span>18M <small>reach</small></span>
+          </div>
+          <a href="showcase-detail.html" class="case-card__link"><span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="case-card case-card--item" data-stagger-item>
+        <div class="case-card__media case-card__media--orange">
+          <span class="case-card__tag">Hub</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">Influencer · Fashion · 2026</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">Thời trang Z — 120 KOC đồng loạt kích hoạt Spring Drop</span>
+            <span data-lang="en" hidden>Fashion Z — 120 KOCs simultaneously activate Spring Drop</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Chiến dịch Affiliate + UGC kết hợp KOC Hub — GMV 2.8 tỷ trong 72h ra mắt bộ sưu tập.</span>
+            <span data-lang="en" hidden>Affiliate + UGC with KOC Hub — 2.8B VND GMV in 72h of collection launch.</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>2.8B <small>GMV</small></span>
+            <span>120 <small>KOCs</small></span>
+          </div>
+          <a href="showcase-detail.html" class="case-card__link"><span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="case-card case-card--item" data-stagger-item>
+        <div class="case-card__media case-card__media--blue">
+          <span class="case-card__tag">IMA</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">Brand Launch · F&B · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">Cà phê P — Ra mắt dòng premium, 100K đơn/tháng sau 90 ngày</span>
+            <span data-lang="en" hidden>Coffee P — Premium line launch, 100K orders/mo in 90 days</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Chiến lược positioning, sampling, flagship event và creator seeding đồng bộ.</span>
+            <span data-lang="en" hidden>Synchronised positioning strategy, sampling, flagship event and creator seeding.</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100K <small>đơn/mo</small></span>
+            <span>+62% <small>aware</small></span>
+          </div>
+          <a href="showcase-detail.html" class="case-card__link"><span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="case-card case-card--item" data-stagger-item>
+        <div class="case-card__media case-card__media--dark">
+          <span class="case-card__tag">Livestream</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">Livestream · Beauty · 2026</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">Mỹ phẩm Q — 6h livestream cán mốc 2 tỷ GMV</span>
+            <span data-lang="en" hidden>Beauty Q — 6h livestream hits 2B VND GMV</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Studio production + 6 host luân phiên + AR try-on filter tích hợp.</span>
+            <span data-lang="en" hidden>Studio production + 6 rotating hosts + integrated AR try-on filter.</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>2B <small>GMV</small></span>
+            <span>540K <small>viewers</small></span>
+          </div>
+          <a href="showcase-detail.html" class="case-card__link"><span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="case-card case-card--item" data-stagger-item>
+        <div class="case-card__media case-card__media--orange">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">Hội thảo chuyên ngành · Tech · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">Tech Summit — 500 lãnh đạo công nghệ Đông Nam Á</span>
+            <span data-lang="en" hidden>Tech Summit — 500 Southeast Asian tech leaders</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Concept sân khấu immersive, panel tương tác đa chiều và experiential zone theo chủ đề.</span>
+            <span data-lang="en" hidden>Immersive stage concept, multi-layer interactive panels and themed experiential zones.</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>500 <small>leaders</small></span>
+            <span>92% <small>CSAT</small></span>
+          </div>
+          <a href="showcase-detail.html" class="case-card__link"><span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+    
+    <div class="text-center mt-8" data-animate>
+      <a href="showcase.html" class="btn btn--ghost btn--pill btn--lg">
+        <span data-lang="vi">Xem tất cả case studies</span><span data-lang="en" hidden>View all case studies</span>
+        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 06 CTA -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-banner" data-animate>
+      <h2><span data-lang="vi">Sự kiện sắp tới, bắt đầu <em style="color:var(--primary);font-style:italic">từ đâu?</em></span><span data-lang="en" hidden>Planning an event — <em style="color:var(--primary);font-style:italic">where to start?</em></span></h2>
+      <p><span data-lang="vi">30 phút tư vấn miễn phí — định hình concept, timeline và budget sơ bộ.</span><span data-lang="en" hidden>A free 30-minute consultation — shape your concept, timeline and preliminary budget.</span></p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn--primary btn--lg btn--pill">
+          <span data-lang="vi">Đặt lịch tư vấn</span><span data-lang="en" hidden>Book a call</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="services-hub.html" class="btn btn--ghost btn--lg btn--pill">→ SIA Hub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo/sia-logo-white.png" alt="SIA" height="40">
+        <p>SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg></a>
+        </div>
+      </div>
+      <div><div class="footer-title"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></div><ul class="footer-list"><li><a href="services-ima.html">SIA IMA</a></li><li><a href="services-event.html">SIA Event</a></li><li><a href="services-hub.html">SIA Hub</a></li><li><a href="services-ima.html">Creative Mega Livestream</a></li></ul></div>
+      <div><div class="footer-title"><span data-lang="vi">Công ty</span><span data-lang="en" hidden>Company</span></div><ul class="footer-list"><li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li><li><a href="showcase.html">Showcase</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li></ul></div>
+      <div><div class="footer-title"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></div><ul class="footer-list"><li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li><li><a href="tel:0988441630">0988 441 630</a></li><li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SIA Innovation Marketing Agency — All rights reserved.</span>
+      <span><a href="#" style="color:inherit;">Privacy</a> · <a href="#" style="color:inherit;">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="assets/js/theme.js?v=13"></script>
+<script src="assets/js/swiper-init.js?v=13"></script>
+<script src="assets/js/main.js?v=13"></script>
+<script src="assets/js/latest-showcase.js?v=2"></script>
+
+</body>
+</html>

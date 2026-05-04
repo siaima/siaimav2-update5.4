@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog · Insight & Tư duy chiến lược — SIA Innovation Marketing Agency</title>
+  <meta name="description" content="Insight, case study và quan điểm chiến lược về marketing, truyền thông, livestream commerce và creator economy từ SIA IMA.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wdth,wght@0,75..125,100..700;1,75..125,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="assets/css/variables.css?v=12">
+  <link rel="stylesheet" href="assets/css/base.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=12">
+  <link rel="stylesheet" href="assets/css/animations.css?v=12">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    (function () {
+      var t = localStorage.getItem('sia-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="SIA Innovation Marketing Agency">
+      <img class="logo-img no-transition" src="assets/images/logo/sia-logo.png"
+           data-src-light="assets/images/logo/sia-logo.png"
+           data-src-dark="assets/images/logo/sia-logo-white.png"
+           alt="SIA" height="36">
+    </a>
+        <nav class="nav-menu" aria-label="Primary">
+      <a class="nav-item" href="index.html">
+        <span data-lang="vi">Về SIA IMA</span>
+        <span data-lang="en" hidden>About SIA</span>
+      </a>
+      <a class="nav-item" href="services.html">
+        <span data-lang="vi">Dịch vụ</span>
+        <span data-lang="en" hidden>Services</span>
+      </a>
+      <a class="nav-item" href="community.html">
+        <span data-lang="vi">Cộng đồng</span>
+        <span data-lang="en" hidden>Community</span>
+      </a>
+      <a class="nav-item" href="showcase.html">Showcase</a>
+      <a class="nav-item active" href="blog.html">Blog</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="vi" onclick="setLang('vi')">VI</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="icon-btn theme-toggle" onclick="toggleTheme()" aria-label="Chuyển chế độ sáng/tối">
+        <svg class="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+      </button>
+      <a href="contact.html" class="btn btn--primary btn--pill nav-cta" style="padding: 10px 18px; font-size: 13px;">
+        <span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span>
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+
+<div class="mobile-menu" id="mobileMenu">
+  <a class="nav-item" href="index.html"><span data-lang="vi">Về SIA IMA</span><span data-lang="en" hidden>About SIA</span></a>
+  <a class="nav-item" href="services.html"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+  <a class="nav-item" href="community.html"><span data-lang="vi">Cộng đồng</span><span data-lang="en" hidden>Community</span></a>
+  <a class="nav-item" href="showcase.html">Showcase</a>
+  <a class="nav-item active" href="blog.html">Blog</a>
+  <a class="nav-item" href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a>
+  <div class="mobile-actions">
+    <a href="contact.html" class="btn btn--primary btn--pill btn--lg"><span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span></a>
+  </div>
+</div>
+
+<main x-data="{ filter: 'all', search: '' }">
+
+<!-- 01 HERO -->
+<section class="page-hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="page-hero__inner">
+      <span class="section-eyebrow" data-hero><span data-lang="vi">Blog & Insight</span><span data-lang="en" hidden>Blog & Insight</span></span>
+      <h1 class="page-hero__title" data-hero>
+        <span data-lang="vi">Insight <em style="color:var(--primary);font-style:italic">chiến lược</em> — đọc để <em style="color:var(--primary);font-style:italic">đi xa hơn</em></span>
+        <span data-lang="en" hidden><em style="color:var(--primary);font-style:italic">Strategic</em> insight — read to <em style="color:var(--primary);font-style:italic">go further</em></span>
+      </h1>
+      <p class="page-hero__subtitle" data-hero>
+        <span data-lang="vi">Quan điểm, framework và case study thực chiến từ đội ngũ SIA — marketing, livestream commerce, creator economy và brand building tại Việt Nam.</span>
+        <span data-lang="en" hidden>Perspectives, frameworks and battle-tested case studies from the SIA team — marketing, livestream commerce, creator economy and brand building in Vietnam.</span>
+      </p>
+
+      <!-- Search + categories -->
+      <div class="blog-controls" data-hero>
+        <div class="blog-search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="search" x-model="search" placeholder="Tìm bài viết, chủ đề, tag..." aria-label="Search blog">
+        </div>
+        <div class="filter-chips" role="tablist" aria-label="Filter categories">
+          <button class="filter-chip" :class="{ 'is-active': filter === 'all' }" @click="filter = 'all'">
+            <span data-lang="vi">Tất cả</span><span data-lang="en" hidden>All</span>
+            <span class="filter-chip__count">18</span>
+          </button>
+          <button class="filter-chip" :class="{ 'is-active': filter === 'strategy' }" @click="filter = 'strategy'">
+            <span data-lang="vi">Chiến lược</span><span data-lang="en" hidden>Strategy</span>
+            <span class="filter-chip__count">6</span>
+          </button>
+          <button class="filter-chip" :class="{ 'is-active': filter === 'commerce' }" @click="filter = 'commerce'">
+            <span data-lang="vi">Livestream Commerce</span><span data-lang="en" hidden>Livestream Commerce</span>
+            <span class="filter-chip__count">5</span>
+          </button>
+          <button class="filter-chip" :class="{ 'is-active': filter === 'creator' }" @click="filter = 'creator'">
+            <span data-lang="vi">Creator Economy</span><span data-lang="en" hidden>Creator Economy</span>
+            <span class="filter-chip__count">4</span>
+          </button>
+          <button class="filter-chip" :class="{ 'is-active': filter === 'brand' }" @click="filter = 'brand'">
+            <span data-lang="vi">Brand Building</span><span data-lang="en" hidden>Brand Building</span>
+            <span class="filter-chip__count">3</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 FEATURED ARTICLE -->
+<section class="section section--tight" id="featured" x-show="filter === 'all' || filter === 'commerce'">
+  <div class="container">
+    <article class="blog-feature" data-animate>
+      <a href="blog-detail.html" class="blog-feature__media">
+        <div class="blog-feature__image" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);">
+          <span class="blog-feature__tag">★ <span data-lang="vi">Nổi bật</span><span data-lang="en" hidden>Featured</span></span>
+        </div>
+      </a>
+      <div class="blog-feature__body">
+        <div class="blog-feature__meta">
+          <span class="tag tag--primary">Livestream Commerce</span>
+          <time datetime="2026-04-12">12 Apr 2026</time>
+          <span>·</span>
+          <span>12 min read</span>
+        </div>
+        <h2 class="blog-feature__title">
+          <a href="blog-detail.html">
+            <span data-lang="vi">Mega Livestream 5 tỷ/đêm: Điều gì thực sự diễn ra sau 4 giờ on-air?</span>
+            <span data-lang="en" hidden>5B VND Mega Livestream: What actually happens in those 4 on-air hours?</span>
+          </a>
+        </h2>
+        <p class="blog-feature__excerpt">
+          <span data-lang="vi">Phân tích chi tiết kịch bản, chiến lược SKU, đội host và công cụ realtime dashboard giúp chuyển đổi tăng 3.8x so với livestream thông thường.</span>
+          <span data-lang="en" hidden>A detailed look at scripts, SKU strategy, host teams and realtime dashboards that lift conversion 3.8x versus ordinary livestreams.</span>
+        </p>
+        <div class="blog-feature__author">
+          <div class="blog-feature__avatar" aria-hidden="true">MA</div>
+          <div>
+            <div class="blog-feature__author-name">Minh Anh Nguyen</div>
+            <div class="blog-feature__author-role"><span data-lang="vi">Head of Livestream</span><span data-lang="en" hidden>Head of Livestream</span></div>
+          </div>
+        </div>
+        <a href="blog-detail.html" class="btn btn--primary btn--pill">
+          <span data-lang="vi">Đọc bài viết</span><span data-lang="en" hidden>Read article</span>
+          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 03 ARTICLE GRID -->
+<section class="section" id="articles">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow"><span data-lang="vi">Bài viết mới</span><span data-lang="en" hidden>Latest articles</span></span>
+      <h2><span data-lang="vi">Khám phá theo <em style="color:var(--primary);font-style:italic">chủ đề</em> bạn quan tâm</span><span data-lang="en" hidden>Browse by <em style="color:var(--primary);font-style:italic">topic</em> you care about</span></h2>
+    </div>
+
+    <div class="blog-grid" data-stagger>
+
+      <article class="blog-card" data-stagger-item data-cat="strategy" x-show="filter === 'all' || filter === 'strategy'">
+        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));"></div></a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta"><span class="tag">Strategy</span><time>10 Apr 2026</time></div>
+          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">Brand architecture: Khi nào nên tách, khi nào nên gộp?</span><span data-lang="en" hidden>Brand architecture: When to split, when to consolidate?</span></a></h3>
+          <p class="blog-card__excerpt"><span data-lang="vi">Bài học từ 30 portfolio lớn tại Việt Nam: đâu là tín hiệu thực sự để cắt sub-brand.</span><span data-lang="en" hidden>Lessons from 30 big portfolios in Vietnam: the real signals to cut sub-brands.</span></p>
+          <div class="blog-card__footer"><span>8 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-stagger-item data-cat="commerce" x-show="filter === 'all' || filter === 'commerce'">
+        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--orange-400), var(--primary));"></div></a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta"><span class="tag tag--primary">Commerce</span><time>08 Apr 2026</time></div>
+          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">TikTok Shop 2026: 7 xu hướng mọi brand Việt phải biết</span><span data-lang="en" hidden>TikTok Shop 2026: 7 trends every VN brand must know</span></a></h3>
+          <p class="blog-card__excerpt"><span data-lang="vi">Phân tích algorithm mới và chiến thuật hoạt động với các flagship shop.</span><span data-lang="en" hidden>Dissecting the new algorithm and what flagship shops do differently.</span></p>
+          <div class="blog-card__footer"><span>10 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-stagger-item data-cat="creator" x-show="filter === 'all' || filter === 'creator'">
+        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--secondary-light), var(--blue-600));"></div></a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta"><span class="tag">Creator</span><time>05 Apr 2026</time></div>
+          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">KOC hay KOL? Bảng công cụ chọn đúng creator mỗi giai đoạn</span><span data-lang="en" hidden>KOC or KOL? A decision matrix for every funnel stage</span></a></h3>
+          <p class="blog-card__excerpt"><span data-lang="vi">Framework chọn creator theo mục tiêu awareness / consideration / conversion.</span><span data-lang="en" hidden>A framework for picking creators by awareness / consideration / conversion goals.</span></p>
+          <div class="blog-card__footer"><span>7 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-stagger-item data-cat="brand" x-show="filter === 'all' || filter === 'brand'">
+        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--orange-200), var(--orange-400));"></div></a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta"><span class="tag">Brand</span><time>02 Apr 2026</time></div>
+          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">Brand love là gì và đo bằng cách nào?</span><span data-lang="en" hidden>What is brand love and how to measure it?</span></a></h3>
+          <p class="blog-card__excerpt"><span data-lang="vi">3 chỉ số thực sự phản ánh sức khoẻ thương hiệu — vượt xa NPS.</span><span data-lang="en" hidden>3 metrics that truly reflect brand health — beyond NPS.</span></p>
+          <div class="blog-card__footer"><span>6 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-stagger-item data-cat="strategy" x-show="filter === 'all' || filter === 'strategy'">
+        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--gray-700), var(--black));"></div></a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta"><span class="tag">Strategy</span><time>28 Mar 2026</time></div>
+          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">GenZ Việt mua gì, xem gì & vì sao?</span><span data-lang="en" hidden>What GenZ Vietnam buys, watches & why</span></a></h3>
+          <p class="blog-card__excerpt"><span data-lang="vi">Dữ liệu khảo sát 2500 bạn GenZ Việt & những insight ít ai bàn.</span><span data-lang="en" hidden>A 2500-respondent survey of Vietnamese GenZ, with rarely-discussed insights.</span></p>
+          <div class="blog-card__footer"><span>11 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-stagger-item data-cat="commerce" x-show="filter === 'all' || filter === 'commerce'">
+        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--primary), var(--orange-700));"></div></a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta"><span class="tag tag--primary">Commerce</span><time>22 Mar 2026</time></div>
+          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">Shopee Mall vs TikTok Shop: Đặt chân đâu trước?</span><span data-lang="en" hidden>Shopee Mall vs TikTok Shop: Where to go first?</span></a></h3>
+          <p class="blog-card__excerpt"><span data-lang="vi">Playbook chọn platform theo danh mục sản phẩm và giá trị AOV.</span><span data-lang="en" hidden>A platform-selection playbook by category and AOV.</span></p>
+          <div class="blog-card__footer"><span>9 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-stagger-item data-cat="creator" x-show="filter === 'all' || filter === 'creator'">
+        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--blue-300), var(--secondary));"></div></a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta"><span class="tag">Creator</span><time>18 Mar 2026</time></div>
+          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">UGC: Cách brand Việt đang làm đúng (và sai)</span><span data-lang="en" hidden>UGC: What VN brands get right (and wrong)</span></a></h3>
+          <p class="blog-card__excerpt"><span data-lang="vi">10 ví dụ thực tế: khi UGC tạo niềm tin, khi nó phá vỡ thương hiệu.</span><span data-lang="en" hidden>10 real examples: when UGC builds trust, when it breaks a brand.</span></p>
+          <div class="blog-card__footer"><span>8 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-stagger-item data-cat="strategy" x-show="filter === 'all' || filter === 'strategy'">
+        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--orange-300), var(--orange-600));"></div></a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta"><span class="tag">Strategy</span><time>12 Mar 2026</time></div>
+          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">360° campaign hay luôn là câu trả lời?</span><span data-lang="en" hidden>Is 360° always the right answer?</span></a></h3>
+          <p class="blog-card__excerpt"><span data-lang="vi">Khi nào chiến dịch tập trung 1 channel lại hiệu quả hơn 360°.</span><span data-lang="en" hidden>When a single-channel focus outperforms 360°.</span></p>
+          <div class="blog-card__footer"><span>6 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-stagger-item data-cat="brand" x-show="filter === 'all' || filter === 'brand'">
+        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--surface-2), var(--warm-gray));"></div></a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta"><span class="tag">Brand</span><time>05 Mar 2026</time></div>
+          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">Tone of voice: Công cụ khác biệt mà brand Việt bỏ quên</span><span data-lang="en" hidden>Tone of voice: The differentiator VN brands forget</span></a></h3>
+          <p class="blog-card__excerpt"><span data-lang="vi">Framework 4 chiều xây TOV và ví dụ thực tế từ 5 brand hàng đầu.</span><span data-lang="en" hidden>A 4-axis TOV framework with real examples from 5 top brands.</span></p>
+          <div class="blog-card__footer"><span>7 min read</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="showcase-loadmore" data-animate>
+      <a href="#" class="btn btn--ghost btn--pill btn--lg">
+        <span data-lang="vi">Tải thêm bài viết</span><span data-lang="en" hidden>Load more</span>
+      </a>
+      <p class="showcase-loadmore__note"><span data-lang="vi">Đang hiển thị 9 / 18 bài viết</span><span data-lang="en" hidden>Showing 9 of 18 posts</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 04 NEWSLETTER -->
+<section class="section section--alt" id="newsletter">
+  <div class="container">
+    <div class="newsletter" data-animate>
+      <div class="newsletter__text">
+        <span class="section-eyebrow"><span data-lang="vi">Nhận insight mới</span><span data-lang="en" hidden>Get new insights</span></span>
+        <h2><span data-lang="vi">Đăng ký nhận bản tin <em style="color:var(--primary);font-style:italic">SIA Weekly</em></span><span data-lang="en" hidden>Subscribe to <em style="color:var(--primary);font-style:italic">SIA Weekly</em></span></h2>
+        <p><span data-lang="vi">Mỗi thứ Sáu — 1 insight, 1 case study, 1 framework thực chiến. Không spam.</span><span data-lang="en" hidden>Every Friday — 1 insight, 1 case study, 1 battle-tested framework. No spam.</span></p>
+      </div>
+      <form class="newsletter__form" onsubmit="event.preventDefault(); this.querySelector('button').textContent = '✓ Đã đăng ký'; this.reset();">
+        <input type="email" required placeholder="you@brand.com" aria-label="Email">
+        <button type="submit" class="btn btn--primary btn--pill">
+          <span data-lang="vi">Đăng ký</span><span data-lang="en" hidden>Subscribe</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo/sia-logo-white.png" alt="SIA" height="40">
+        <p>SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg></a>
+        </div>
+      </div>
+      <div><div class="footer-title"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></div><ul class="footer-list"><li><a href="services-ima.html">SIA IMA</a></li><li><a href="services-event.html">SIA Event</a></li><li><a href="services-hub.html">SIA Hub</a></li><li><a href="services-ima.html">Creative Mega Livestream</a></li></ul></div>
+      <div><div class="footer-title"><span data-lang="vi">Công ty</span><span data-lang="en" hidden>Company</span></div><ul class="footer-list"><li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li><li><a href="showcase.html">Showcase</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li></ul></div>
+      <div><div class="footer-title"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></div><ul class="footer-list"><li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li><li><a href="tel:0988441630">0988 441 630</a></li><li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SIA Innovation Marketing Agency — All rights reserved.</span>
+      <span><a href="#" style="color:inherit;">Privacy</a> · <a href="#" style="color:inherit;">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="assets/js/theme.js?v=13"></script>
+<script src="assets/js/swiper-init.js?v=13"></script>
+<script src="assets/js/main.js?v=13"></script>
+
+</body>
+</html>

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Showcase · SIA Innovation Marketing Agency</title>
+  <meta name="description" content="Showcase SIA IMA — tuyển tập case study marketing tích hợp, Creative Mega Livestream, sự kiện doanh nghiệp và creator campaigns.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wdth,wght@0,75..125,100..700;1,75..125,100..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="assets/css/variables.css?v=12">
+  <link rel="stylesheet" href="assets/css/base.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=12">
+  <link rel="stylesheet" href="assets/css/animations.css?v=12">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('sia-theme') ||
+              (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="SIA Innovation Marketing Agency">
+      <img class="logo-img no-transition" src="assets/images/logo/sia-logo.png"
+           data-src-light="assets/images/logo/sia-logo.png"
+           data-src-dark="assets/images/logo/sia-logo-white.png"
+           alt="SIA" height="36">
+    </a>
+        <nav class="nav-menu" aria-label="Primary">
+      <a class="nav-item" href="index.html">
+        <span data-lang="vi">Về SIA IMA</span>
+        <span data-lang="en" hidden>About SIA</span>
+      </a>
+      <a class="nav-item" href="services.html">
+        <span data-lang="vi">Dịch vụ</span>
+        <span data-lang="en" hidden>Services</span>
+      </a>
+      <a class="nav-item" href="community.html">
+        <span data-lang="vi">Cộng đồng</span>
+        <span data-lang="en" hidden>Community</span>
+      </a>
+      <a class="nav-item active" href="showcase.html">Showcase</a>
+      <a class="nav-item" href="blog.html">Blog</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="vi" onclick="setLang('vi')">VI</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="icon-btn theme-toggle" onclick="toggleTheme()" aria-label="Chuyển chế độ sáng/tối">
+        <svg class="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </button>
+      <a href="contact.html" class="btn btn--primary btn--pill nav-cta" style="padding: 10px 18px; font-size: 13px;">
+        <span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span>
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a class="nav-item" href="index.html"><span data-lang="vi">Về SIA IMA</span><span data-lang="en" hidden>About SIA</span></a>
+  <a class="nav-item" href="services.html"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+  <a class="nav-item" href="community.html"><span data-lang="vi">Cộng đồng</span><span data-lang="en" hidden>Community</span></a>
+  <a class="nav-item active" href="showcase.html">Showcase</a>
+  <a class="nav-item" href="blog.html">Blog</a>
+  <div class="mobile-actions">
+    <a href="contact.html" class="btn btn--primary btn--pill btn--lg"><span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span></a>
+  </div>
+</div>
+
+<main>
+
+<!-- 01 HERO -->
+<section class="page-hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="page-hero__inner">
+      <div class="hero-eyebrow" data-hero>
+        <span class="dot"></span>
+        <span data-lang="vi">Showcase · Case studies</span>
+        <span data-lang="en" hidden>Showcase · Case studies</span>
+      </div>
+      <h1 class="page-hero__title" data-hero>
+        <span data-lang="vi">Chiến dịch thương hiệu có <em>kết quả đo lường được</em></span>
+        <span data-lang="en" hidden>Brand campaigns with <em>measurable results</em></span>
+      </h1>
+      <p class="page-hero__subtitle" data-hero>
+        <span data-lang="vi">Hơn 150 chiến dịch triển khai cho 80+ thương hiệu trong 5 năm — từ Creative Mega Livestream, brand experience đến KOC commerce. Mỗi case study dưới đây đều có KPI cụ thể.</span>
+        <span data-lang="en" hidden>Over 150 campaigns delivered for 80+ brands in 5 years — from Creative Mega Livestream and brand experience to KOC commerce. Every case study below has concrete KPIs.</span>
+      </p>
+      <div class="page-hero__stats" data-hero>
+        <div class="page-hero__stat">
+          <div class="page-hero__stat-num">150<span>+</span></div>
+          <div class="page-hero__stat-label"><span data-lang="vi">Chiến dịch</span><span data-lang="en" hidden>Campaigns</span></div>
+        </div>
+        <div class="page-hero__stat">
+          <div class="page-hero__stat-num">80<span>+</span></div>
+          <div class="page-hero__stat-label"><span data-lang="vi">Thương hiệu</span><span data-lang="en" hidden>Brands</span></div>
+        </div>
+        <div class="page-hero__stat">
+          <div class="page-hero__stat-num">50B<span>+</span></div>
+          <div class="page-hero__stat-label"><span data-lang="vi">Attendees livestream</span><span data-lang="en" hidden>VND livestream GMV</span></div>
+        </div>
+        <div class="page-hero__stat">
+          <div class="page-hero__stat-num">25M<span>+</span></div>
+          <div class="page-hero__stat-label"><span data-lang="vi">Reach / tháng</span><span data-lang="en" hidden>Reach / month</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 FILTERS + GRID -->
+<section class="section section--alt" id="cases">
+  <div class="container" x-data="{ filter: 'all' }">
+    <div class="showcase-controls" data-animate>
+      <div class="showcase-filters">
+        <button class="filter-chip" :class="{ active: filter === 'all' }" @click="filter = 'all'">
+          <span data-lang="vi">Tất cả</span><span data-lang="en" hidden>All</span>
+          <span class="filter-chip__count">19</span>
+        </button>
+        <button class="filter-chip" :class="{ active: filter === 'ima' }" @click="filter = 'ima'">IMA <span class="filter-chip__count">0</span></button>
+        <button class="filter-chip" :class="{ active: filter === 'event' }" @click="filter = 'event'">Event <span class="filter-chip__count">19</span></button>
+        <button class="filter-chip" :class="{ active: filter === 'hub' }" @click="filter = 'hub'">Hub <span class="filter-chip__count">0</span></button>
+        <button class="filter-chip" :class="{ active: filter === 'livestream' }" @click="filter = 'livestream'">Livestream <span class="filter-chip__count">0</span></button>
+      </div>
+      <div class="showcase-sort">
+        <label for="sort" class="sort-label"><span data-lang="vi">Sắp xếp:</span><span data-lang="en" hidden>Sort:</span></label>
+        <select class="form-select sort-select" id="sort">
+          <option><span data-lang="vi">Mới nhất</span></option>
+          <option><span data-lang="vi">Nổi bật</span></option>
+          <option><span data-lang="vi">Hiệu quả cao nhất</span></option>
+        </select>
+      </div>
+    </div>
+
+    <!-- FEATURED CASE (large hero card) -->
+    <article class="case-feature" data-animate :class="{ 'is-hidden': !['all','livestream','hub'].includes(filter) }">
+      <div class="case-feature__media case-feature__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.28), rgba(16,18,24,.28)), url('assets/images/Eventimage/Hình ảnh sự kiện 2026/CHINA ASEAN DIGITAL ECONOMY & OPENCLAW AI INDUSTRY APPLICATION SYMPOSIUM/Ảnh sự kiện/A7404444.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <span class="case-card__tag">Featured</span>
+        <div class="case-feature__numbers">
+          <div>
+            <div class="case-feature__num">1500+</div>
+            <div class="case-feature__num-label">Attendees</div>
+          </div>
+          <div>
+            <div class="case-feature__num">01</div>
+            <div class="case-feature__num-label"><span data-lang="vi">Sự kiện</span><span data-lang="en" hidden>Viewers</span></div>
+          </div>
+          <div>
+            <div class="case-feature__num">2026</div>
+            <div class="case-feature__num-label"><span data-lang="vi">Năm</span><span data-lang="en" hidden>Orders</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-feature__body">
+        <div class="case-feature__meta">
+          <span class="case-feature__cat">Trí tuệ nhân tạo & Vận hành doanh nghiệp</span>
+          <span class="case-feature__date">17/04/2026 · 2026</span>
+        </div>
+        <h2 class="case-feature__title">
+          <span data-lang="vi">CHINA ASEAN DIGITAL ECONOMY & OPENCLAW AI INDUSTRY APPLICATION SYMPOSIUM</span>
+          <span data-lang="en" hidden>CHINA ASEAN DIGITAL ECONOMY & OPENCLAW AI INDUSTRY APPLICATION SYMPOSIUM</span>
+        </h2>
+        <p class="case-feature__desc">
+          <span data-lang="vi">Hội thảo về trí tuệ nhân tạo quy tụ các chuyên gia hàng đầu từ Silicon Valley và Trung Quốc. Sự kiện tập trung vào việc chuyển đổi từ dùng AI để hỗ trợ sang AI tự vận hành toàn bộ quy trình…</span>
+          <span data-lang="en" hidden>Hội thảo về trí tuệ nhân tạo quy tụ các chuyên gia hàng đầu từ Silicon Valley và Trung Quốc. Sự kiện tập trung vào việc chuyển đổi từ dùng AI để hỗ trợ sang AI tự vận hành toàn bộ quy trình…</span>
+        </p>
+        <div class="case-feature__tags">
+          <span class="tag tag--primary">Livestream</span>
+          <span class="tag">TikTok Shop</span>
+          <span class="tag">Beauty</span>
+          <span class="tag">Performance</span>
+        </div>
+        <a href="showcase-china-asean-digital-economy-openclaw-ai-industry-application-symposium.html" class="btn btn--primary btn--pill">
+          <span data-lang="vi">Xem chi tiết case</span><span data-lang="en" hidden>View full case</span>
+          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- CASE GRID -->
+    <div class="case-grid" data-stagger>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/Sự kiện VERY DEMURE, VERY MINDFUL/Ảnh sự kiện/473285213_122128388174403251_1689216600735940338_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Trí tuệ nhân tạo & Vận hành doanh nghiệp · 2026</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">CHINA ASEAN DIGITAL ECONOMY & OPENCLAW AI INDUSTRY APPLICATION SYMPOSIUM</span>
+            <span data-lang="en" hidden>CHINA ASEAN DIGITAL ECONOMY & OPENCLAW AI INDUSTRY APPLICATION SYMPOSIUM</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Hội thảo về trí tuệ nhân tạo quy tụ các chuyên gia hàng đầu từ Silicon Valley và Trung Quốc. Sự kiện tập trung vào việc chuyển đổi từ …</span>
+            <span data-lang="en" hidden>Hội thảo về trí tuệ nhân tạo quy tụ các chuyên gia hàng đầu từ Silicon Valley và Trung Quốc. Sự kiện tập trung vào việc chuyển đổi từ …</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>1500+ <small>attendees</small></span>
+            <span>17/04 <small>event date</small></span>
+          </div>
+          <a href="showcase-china-asean-digital-economy-openclaw-ai-industry-application-symposium.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2026/SHE RISE %232 - CHẤM PHẨY/Ảnh sự kiện/647452312_122164766036403251_2622446514461473799_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Phụ nữ & Sức khỏe tinh thần · 2026</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">SHE RISE #2 - CHẤM PHẨY</span>
+            <span data-lang="en" hidden>SHE RISE #2 - CHẤM PHẨY</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Không gian thư giãn dành cho phụ nữ hiện đại tạm rời xa áp lực với những vai trò trong xã hội để phục hồi năng lượng thông qua buổi ch…</span>
+            <span data-lang="en" hidden>Không gian thư giãn dành cho phụ nữ hiện đại tạm rời xa áp lực với những vai trò trong xã hội để phục hồi năng lượng thông qua buổi ch…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>05/03 <small>event date</small></span>
+          </div>
+          <a href="showcase-she-rise-2-cham-phay.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2026/SHE RISE %232 - CHẤM PHẨY/Ảnh sự kiện/647452312_122164766036403251_2622446514461473799_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Phụ nữ & Phong cách sống · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">SHE RISE: FROM SOUL TO SHINE - KHAI MỞ VẺ ĐẸP TỪ BÊN TRONG</span>
+            <span data-lang="en" hidden>SHE RISE: FROM SOUL TO SHINE - KHAI MỞ VẺ ĐẸP TỪ BÊN TRONG</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Sự kiện dành riêng cho phái đẹp nhằm kết nối và tái tạo năng lượng thông qua buổi panel talk truyền cảm hứng và workshop trải nghiệm c…</span>
+            <span data-lang="en" hidden>Sự kiện dành riêng cho phái đẹp nhằm kết nối và tái tạo năng lượng thông qua buổi panel talk truyền cảm hứng và workshop trải nghiệm c…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>40+ <small>attendees</small></span>
+            <span>17/12 <small>event date</small></span>
+          </div>
+          <a href="showcase-she-rise-from-soul-to-shine-khai-mo-ve-dep-tu-ben-trong.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2026/SHE RISE %232 - CHẤM PHẨY/Ảnh sự kiện/647452312_122164766036403251_2622446514461473799_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Thời trang & Phong cách sống · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">SỰ KIỆN VERY DEMURE, VERY MINDFUL</span>
+            <span data-lang="en" hidden>SỰ KIỆN VERY DEMURE, VERY MINDFUL</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Workshop kết hợp trưng bày thời trang và panel talk truyền cảm hứng dành riêng cho phái đẹp. Sự kiện tập trung vào việc định hình phon…</span>
+            <span data-lang="en" hidden>Workshop kết hợp trưng bày thời trang và panel talk truyền cảm hứng dành riêng cho phái đẹp. Sự kiện tập trung vào việc định hình phon…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>01/11 <small>event date</small></span>
+          </div>
+          <a href="showcase-su-kien-very-demure-very-mindful.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/Sự kiện VERY DEMURE, VERY MINDFUL/Ảnh sự kiện/473285213_122128388174403251_1689216600735940338_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Thương mại điện tử & Truyền thông số · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">WORKSHOP 1: ĐÀO TẠO KOC INHOUSE AFFILIATE & LIVESTREAM CHO DOANH NGHIỆP</span>
+            <span data-lang="en" hidden>WORKSHOP 1: ĐÀO TẠO KOC INHOUSE AFFILIATE & LIVESTREAM CHO DOANH NGHIỆP</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Buổi đào tạo thực chiến về cách xây dựng đội ngũ KOC nội bộ, triển khai chiến lược Affiliate Booking và thiết lập hệ thống Livestream …</span>
+            <span data-lang="en" hidden>Buổi đào tạo thực chiến về cách xây dựng đội ngũ KOC nội bộ, triển khai chiến lược Affiliate Booking và thiết lập hệ thống Livestream …</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>23/09 <small>event date</small></span>
+          </div>
+          <a href="showcase-workshop-1-dao-tao-koc-inhouse-affiliate-livestream-cho-doanh-nghiep.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/KOC Connect with Kotex – Hành trình Affiliate_ Từ đơn đầu tiên đến 1000 đơn/579274134_806685565534913_549673301829335587_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Marketing & Thương hiệu · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">KOC Connect with Kotex – Hành trình Affiliate: Từ đơn đầu tiên đến 1000 đơn</span>
+            <span data-lang="en" hidden>KOC Connect with Kotex – Hành trình Affiliate: Từ đơn đầu tiên đến 1000 đơn</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Buổi chia sẻ chuyên sâu dành cho các KOC mới bắt đầu, tập trung vào lộ trình phát triển doanh số Affiliate và cách xây dựng uy tín để …</span>
+            <span data-lang="en" hidden>Buổi chia sẻ chuyên sâu dành cho các KOC mới bắt đầu, tập trung vào lộ trình phát triển doanh số Affiliate và cách xây dựng uy tín để …</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>11/09 <small>event date</small></span>
+          </div>
+          <a href="showcase-koc-connect-with-kotex-hanh-trinh-affiliate-tu-don-dau-tien-den-1000-don.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/ 𝗥𝗔𝗜𝗦𝗘 𝗣𝗛𝗢𝗘𝗡𝗜𝗫  - “CHIẾN LƯỢC TỐI ƯU, MỞ LỐI DOANH THU” TRONG NGÀNH THỜI TRANG/496927002_122141518988403251_4916848024923122942_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Kinh doanh · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">SỰ KIỆN RAISE PHOENIX - CHIẾN LƯỢC TỐI ƯU, MỞ LỐI DOANH THU”TRONG NGÀNH THỜI TRANG</span>
+            <span data-lang="en" hidden>SỰ KIỆN RAISE PHOENIX - CHIẾN LƯỢC TỐI ƯU, MỞ LỐI DOANH THU”TRONG NGÀNH THỜI TRANG</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Sự kiện quy tụ các nhà sáng lập và chuyên gia ngành thời trang để chia sẻ chiến lược tối ưu vận hành, tăng trưởng doanh thu và ứng dụn…</span>
+            <span data-lang="en" hidden>Sự kiện quy tụ các nhà sáng lập và chuyên gia ngành thời trang để chia sẻ chiến lược tối ưu vận hành, tăng trưởng doanh thu và ứng dụn…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>200+ <small>attendees</small></span>
+            <span>05/09 <small>event date</small></span>
+          </div>
+          <a href="showcase-su-kien-raise-phoenix-chien-luoc-toi-uu-mo-loi-doanh-thu-trong-nganh-thoi-trang.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/ PHỤ NỮ & KINH DOANH BỀN VỮNG/518268148_122147879702403251_7736318125554093655_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Kinh doanh bền vững · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">WORKSHOP PHỤ NỮ & KINH DOANH BỀN VỮNG</span>
+            <span data-lang="en" hidden>WORKSHOP PHỤ NỮ & KINH DOANH BỀN VỮNG</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Sự kiện kết nối các nữ lãnh đạo và chuyên gia đầu tư để thảo luận về vai trò của phái nữ trong việc dẫn dắt sản xuất - tiêu dùng có tr…</span>
+            <span data-lang="en" hidden>Sự kiện kết nối các nữ lãnh đạo và chuyên gia đầu tư để thảo luận về vai trò của phái nữ trong việc dẫn dắt sản xuất - tiêu dùng có tr…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>23/07 <small>event date</small></span>
+          </div>
+          <a href="showcase-workshop-phu-nu-kinh-doanh-ben-vung.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/RAISE REVOLUTION 01_ BẠN LÀ AI, A.I LÀ BẠN – NHÂN HIỆU NÂNG TẦM ẢNH HƯỞNG, THƯƠNG HIỆU DẪN LỐI THÀNH CÔNG/Ảnh sự kiện/539197101_122099213594995449_3735038674806166459_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Công nghệ & Nhiếp ảnh · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">RAISE REVOLUTION 01: BẠN LÀ AI, A.I LÀ BẠN – NHÂN HIỆU NÂNG TẦM ẢNH HƯỞNG, THƯƠNG HIỆU DẪN LỐI THÀNH CÔNG</span>
+            <span data-lang="en" hidden>RAISE REVOLUTION 01: BẠN LÀ AI, A.I LÀ BẠN – NHÂN HIỆU NÂNG TẦM ẢNH HƯỞNG, THƯƠNG HIỆU DẪN LỐI THÀNH CÔNG</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Sự kiện kết nối cộng đồng nhiếp ảnh và truyền thông, tập trung vào việc ứng dụng trí tuệ nhân tạo (A.I) để nâng tầm nhân hiệu và tư du…</span>
+            <span data-lang="en" hidden>Sự kiện kết nối cộng đồng nhiếp ảnh và truyền thông, tập trung vào việc ứng dụng trí tuệ nhân tạo (A.I) để nâng tầm nhân hiệu và tư du…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>05/06 <small>event date</small></span>
+          </div>
+          <a href="showcase-raise-revolution-01-ban-la-ai-a-i-la-ban-nhan-hieu-nang-tam-anh-huong-thuong-hieu-dan-loi.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/THE SOCIAL COMMERCE ERA 3_ KOC & Hành Trình Vạn Đơn_ Chuẩn Thuế – Chuẩn Kỹ Năng – Chuẩn Công Cụ/596264590_828398443363625_7065896201367231726_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Thương mại điện tử & Pháp lý · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">WORKSHOP 3: KOC & Hành Trình Vạn Đơn: Chuẩn Thuế – Chuẩn Kỹ Năng – Chuẩn Công Cụ</span>
+            <span data-lang="en" hidden>WORKSHOP 3: KOC & Hành Trình Vạn Đơn: Chuẩn Thuế – Chuẩn Kỹ Năng – Chuẩn Công Cụ</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Buổi đào tạo tập trung vào việc chuẩn hóa kiến thức pháp lý (thuế thu nhập cá nhân cho KOC), kỹ năng bán hàng qua livestream và ứng dụ…</span>
+            <span data-lang="en" hidden>Buổi đào tạo tập trung vào việc chuẩn hóa kiến thức pháp lý (thuế thu nhập cá nhân cho KOC), kỹ năng bán hàng qua livestream và ứng dụ…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>12/05 <small>event date</small></span>
+          </div>
+          <a href="showcase-workshop-3-koc-hanh-trinh-van-don-chuan-thue-chuan-ky-nang-chuan-cong-cu.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/THE SOCIAL COMMERCE ERA 2_ BỨT PHÁ DOANH THU VỚI BOOKING AFFILIATE & LIVESTREAM - TỐI ƯU CHI PHÍ CÙNG AI AUTOMATION/577815652_800818889454914_8237483154733257035_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Công nghệ & Thương mại điện tử · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">WORKSHOP 2: Bứt phá doanh thu với Booking Affiliate & Livestream - Tối ưu chi phí cùng AI Automation</span>
+            <span data-lang="en" hidden>WORKSHOP 2: Bứt phá doanh thu với Booking Affiliate & Livestream - Tối ưu chi phí cùng AI Automation</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Buổi đào tạo chuyên sâu về vận hành hệ thống KOC/KOL Affiliate, kỹ thuật livestream chuyên nghiệp từ Canon và ứng dụng AI Automation đ…</span>
+            <span data-lang="en" hidden>Buổi đào tạo chuyên sâu về vận hành hệ thống KOC/KOL Affiliate, kỹ thuật livestream chuyên nghiệp từ Canon và ứng dụng AI Automation đ…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>11/04 <small>event date</small></span>
+          </div>
+          <a href="showcase-workshop-2-but-pha-doanh-thu-voi-booking-affiliate-livestream-toi-uu-chi-phi-cung-ai-autom.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/RAISE REVOLUTION 02_ XU HƯỚNG ẢNH CƯỚI 2026/Ảnh sự kiện/544752543_122151220622403251_7389017209454687531_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Nhiếp ảnh & Dịch vụ · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">RAISE REVOLUTION 02: XU HƯỚNG ẢNH CƯỚI 2026</span>
+            <span data-lang="en" hidden>RAISE REVOLUTION 02: XU HƯỚNG ẢNH CƯỚI 2026</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Workshop chuyên sâu giải mã xu hướng ảnh cưới năm 2026. Sự kiện giúp các nhiếp ảnh gia dự đoán hướng đi của thị trường, cập nhật phong…</span>
+            <span data-lang="en" hidden>Workshop chuyên sâu giải mã xu hướng ảnh cưới năm 2026. Sự kiện giúp các nhiếp ảnh gia dự đoán hướng đi của thị trường, cập nhật phong…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>200+ <small>attendees</small></span>
+            <span>09/04 <small>event date</small></span>
+          </div>
+          <a href="showcase-raise-revolution-02-xu-huong-anh-cuoi-2026.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/Workshop Nghệ thuật thu hồi nợ và chuẩn hóa pháp lý/AGENDA/472316623_122126947982403251_2395808047053406922_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Tài chính và pháp lý · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">Workshop Nghệ thuật thu hồi nợ và chuẩn hóa pháp lý</span>
+            <span data-lang="en" hidden>Workshop Nghệ thuật thu hồi nợ và chuẩn hóa pháp lý</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Buổi workshop chuyên sâu tập trung vào việc cung cấp các giải pháp thiết thực cho doanh nghiệp trong việc quản trị rủi ro pháp lý và t…</span>
+            <span data-lang="en" hidden>Buổi workshop chuyên sâu tập trung vào việc cung cấp các giải pháp thiết thực cho doanh nghiệp trong việc quản trị rủi ro pháp lý và t…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>01/04 <small>event date</small></span>
+          </div>
+          <a href="showcase-workshop-nghe-thuat-thu-hoi-no-va-chuan-hoa-phap-ly.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/NÂNG CAO HIỆU SUẤT SALE MARKETING - SỰ KIỆN NGÀNH HEALTHCARE & BEAUTY/Ảnh sự kiện/486619406_122135273846403251_2313425255559421070_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Y tế & Làm đẹp · 2025</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">NÂNG CAO HIỆU SUẤT SALE MARKETING - SỰ KIỆN NGÀNH HEALTHCARE & BEAUTY</span>
+            <span data-lang="en" hidden>NÂNG CAO HIỆU SUẤT SALE MARKETING - SỰ KIỆN NGÀNH HEALTHCARE & BEAUTY</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Hội thảo chuyên sâu kết hợp kết nối tuyển dụng dành riêng cho nhân sự cấp cao trong lĩnh vực Y tế và Thẩm mỹ. Chia sẻ các chiến lược t…</span>
+            <span data-lang="en" hidden>Hội thảo chuyên sâu kết hợp kết nối tuyển dụng dành riêng cho nhân sự cấp cao trong lĩnh vực Y tế và Thẩm mỹ. Chia sẻ các chiến lược t…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>15/03 <small>event date</small></span>
+          </div>
+          <a href="showcase-nang-cao-hieu-suat-sale-marketing-su-kien-nganh-healthcare-beauty.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2024/RAISE - HÀNH TRÌNH TỪ CĂN BẾP NHỎ ĐẾN SHARK TANK_ Nâng cấp nông sản - Kết tinh ẩm thực/485362590_617477371122401_3853991064192536309_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Khởi nghiệp F&B · 2024</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">RAISE - HÀNH TRÌNH TỪ CĂN BẾP NHỎ ĐẾN SHARK TANK: Nâng cấp nông sản - Kết tinh ẩm thực</span>
+            <span data-lang="en" hidden>RAISE - HÀNH TRÌNH TỪ CĂN BẾP NHỎ ĐẾN SHARK TANK: Nâng cấp nông sản - Kết tinh ẩm thực</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Không gian chia sẻ thực chiến dành cho những ai đang ấp ủ đam mê khởi nghiệp, gặp gỡ trực tiếp các Founder từng gọi vốn thành công trê…</span>
+            <span data-lang="en" hidden>Không gian chia sẻ thực chiến dành cho những ai đang ấp ủ đam mê khởi nghiệp, gặp gỡ trực tiếp các Founder từng gọi vốn thành công trê…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>18/12 <small>event date</small></span>
+          </div>
+          <a href="showcase-raise-hanh-trinh-tu-can-bep-nho-den-shark-tank-nang-cap-nong-san-ket-tinh-am-thuc.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2024/ SỰ KIỆN THE K.O.C SERIES - TỪ SỞ THÍCH ĐẾN THU NHẬP_ REVIEWER /Poster.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Sáng tạo nội dung · 2024</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">SỰ KIỆN THE K.O.C SERIES - TỪ SỞ THÍCH ĐẾN THU NHẬP: REVIEWER</span>
+            <span data-lang="en" hidden>SỰ KIỆN THE K.O.C SERIES - TỪ SỞ THÍCH ĐẾN THU NHẬP: REVIEWER</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Buổi chia sẻ thực chiến dành riêng cho các KOC/KOL muốn tối ưu hóa thu nhập, mang đến kiến thức cần thiết cho KOC/KOL: công thức xây k…</span>
+            <span data-lang="en" hidden>Buổi chia sẻ thực chiến dành riêng cho các KOC/KOL muốn tối ưu hóa thu nhập, mang đến kiến thức cần thiết cho KOC/KOL: công thức xây k…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>14/12 <small>event date</small></span>
+          </div>
+          <a href="showcase-su-kien-the-k-o-c-series-tu-so-thich-den-thu-nhap-reviewer.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2024/KINH DOANH TỪ GỐC RỄ/484471201_615302678006537_4093829814536509893_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Quản trị tài chính & sức khỏe · 2024</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">KINH DOANH ĐÚNG TỪ GỐC RỄ</span>
+            <span data-lang="en" hidden>KINH DOANH ĐÚNG TỪ GỐC RỄ</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Buổi chia sẻ chuyên sâu giúp xây dựng nền tảng phát triển bền vững dành cho tệp doanh nhân: chiến lược quản lý tài chính hiệu quả và g…</span>
+            <span data-lang="en" hidden>Buổi chia sẻ chuyên sâu giúp xây dựng nền tảng phát triển bền vững dành cho tệp doanh nhân: chiến lược quản lý tài chính hiệu quả và g…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>11/09 <small>event date</small></span>
+          </div>
+          <a href="showcase-kinh-doanh-dung-tu-goc-re.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2024/RAISE - Tối ưu hoá doanh thu_ Kết hợp sức mạnh của AI và truyền thông đa kênh/481057069_605926988944106_7102314350920048131_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Công nghệ AI & Truyền thông · 2024</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">RAISE - TỐI ƯU HOÁ DOANH THU: Kết hợp sức mạnh của AI và truyền thông đa kênh</span>
+            <span data-lang="en" hidden>RAISE - TỐI ƯU HOÁ DOANH THU: Kết hợp sức mạnh của AI và truyền thông đa kênh</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Khách tham dự sẽ được trực tiếp trải nghiệm các công nghệ truyền thông hiện đại (AI, Hologram, Surround 7.1), khám phá quy trình thực …</span>
+            <span data-lang="en" hidden>Khách tham dự sẽ được trực tiếp trải nghiệm các công nghệ truyền thông hiện đại (AI, Hologram, Surround 7.1), khám phá quy trình thực …</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>100+ <small>attendees</small></span>
+            <span>23/08 <small>event date</small></span>
+          </div>
+          <a href="showcase-raise-toi-uu-hoa-doanh-thu-ket-hop-suc-manh-cua-ai-va-truyen-thong-da-kenh.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+        <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2026/WORLD IP DAY 2026/Ảnh sự kiện/13.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <span class="case-card__tag">Event</span>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span data-lang="vi">SIA Event · Sở hữu trí tuệ & Thể thao · 2026</span>
+          </div>
+          <h3 class="case-card__title">
+            <span data-lang="vi">WORLD IP DAY 2026</span>
+            <span data-lang="en" hidden>WORLD IP DAY 2026</span>
+          </h3>
+          <p class="case-card__desc">
+            <span data-lang="vi">Sự kiện quốc gia thường niên về Sở hữu Trí tuệ với chủ để năm 2026 là thể thao nhằm tôn vinh sự đổi mới và sáng tạo trong ngành thể th…</span>
+            <span data-lang="en" hidden>Sự kiện quốc gia thường niên về Sở hữu Trí tuệ với chủ để năm 2026 là thể thao nhằm tôn vinh sự đổi mới và sáng tạo trong ngành thể th…</span>
+          </p>
+          <div class="case-card__kpis">
+            <span>1000+ <small>attendees</small></span>
+            <span>23.24 <small>event date</small></span>
+          </div>
+          <a href="showcase-world-ip-day-2026.html" class="case-card__link">
+            <span data-lang="vi">Chi tiết</span><span data-lang="en" hidden>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div class="showcase-loadmore" data-animate>
+      <button class="btn btn--ghost btn--pill btn--lg">
+        <span data-lang="vi">Xem thêm case studies</span>
+        <span data-lang="en" hidden>Load more cases</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <p class="showcase-loadmore__note" data-loadmore-note><span data-lang="vi">Đang hiển thị 19 trên 19 case studies</span><span data-lang="en" hidden>Showing 19 of 19 case studies</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 LOGO WALL CLIENTS -->
+<section class="section section--tight" id="clients">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow">
+        <span data-lang="vi">Khách hàng đồng hành</span>
+        <span data-lang="en" hidden>Clients we work with</span>
+      </span>
+      <h2>
+        <span data-lang="vi">80+ thương hiệu tin tưởng — từ <em style="color:var(--primary);font-style:italic">FMCG</em> đến <em style="color:var(--primary);font-style:italic">Tech</em></span>
+        <span data-lang="en" hidden>80+ brands trust SIA — from <em style="color:var(--primary);font-style:italic">FMCG</em> to <em style="color:var(--primary);font-style:italic">Tech</em></span>
+      </h2>
+    </div>
+  </div>
+  <div class="logo-wall" data-animate>
+    <div class="swiper logo-wall-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><div class="logo-chip">Unilever</div></div>
+        <div class="swiper-slide"><div class="logo-chip">VinGroup</div></div>
+        <div class="swiper-slide"><div class="logo-chip">Masan</div></div>
+        <div class="swiper-slide"><div class="logo-chip">TH True Milk</div></div>
+        <div class="swiper-slide"><div class="logo-chip">Techcombank</div></div>
+        <div class="swiper-slide"><div class="logo-chip">Viettel</div></div>
+        <div class="swiper-slide"><div class="logo-chip">Shopee</div></div>
+        <div class="swiper-slide"><div class="logo-chip">TikTok Shop</div></div>
+        <div class="swiper-slide"><div class="logo-chip">Samsung</div></div>
+        <div class="swiper-slide"><div class="logo-chip">Honda</div></div>
+        <div class="swiper-slide"><div class="logo-chip">Pepsi</div></div>
+        <div class="swiper-slide"><div class="logo-chip">L'Oréal</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 CTA -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-banner" data-animate>
+      <h2>
+        <span data-lang="vi">Dự án kế tiếp sẽ là <em style="color:var(--primary);font-style:italic">câu chuyện</em> của bạn</span>
+        <span data-lang="en" hidden>The next project will be <em style="color:var(--primary);font-style:italic">your story</em></span>
+      </h2>
+      <p>
+        <span data-lang="vi">Gửi brief ngay, chúng tôi trả lời trong 24h và đề xuất concept miễn phí.</span>
+        <span data-lang="en" hidden>Send a brief — we reply within 24h with a free concept.</span>
+      </p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn--primary btn--lg btn--pill">
+          <span data-lang="vi">Gửi brief dự án</span><span data-lang="en" hidden>Send project brief</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER (shared) -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo/sia-logo-white.png" alt="SIA" height="40">
+        <p>SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></div>
+        <ul class="footer-list">
+          <li><a href="services-ima.html">SIA IMA</a></li>
+          <li><a href="services-event.html">SIA Event</a></li>
+          <li><a href="services-hub.html">SIA Hub</a></li>
+          <li><a href="services-ima.html">Creative Mega Livestream</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title"><span data-lang="vi">Công ty</span><span data-lang="en" hidden>Company</span></div>
+        <ul class="footer-list">
+          <li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li>
+          <li><a href="showcase.html">Showcase</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></div>
+        <ul class="footer-list">
+          <li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li>
+          <li><a href="tel:0988441630">0988 441 630</a></li>
+          <li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SIA Innovation Marketing Agency — All rights reserved.</span>
+      <span><a href="#" style="color:inherit;">Privacy</a> · <a href="#" style="color:inherit;">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="assets/js/theme.js?v=13"></script>
+<script src="assets/js/swiper-init.js?v=13"></script>
+<script src="assets/js/main.js?v=13"></script>
+
+</body>
+</html>

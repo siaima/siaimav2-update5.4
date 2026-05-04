@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cộng đồng · SIA Innovation Marketing Agency</title>
+  <meta name="description" content="Khám phá hệ sinh thái cộng đồng của SIA: SIA KOC Hub, SIA Business Network và SIA Next Gen.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wdth,wght@0,75..125,100..700;1,75..125,100..700&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Project CSS -->
+  <link rel="stylesheet" href="assets/css/variables.css?v=12">
+  <link rel="stylesheet" href="assets/css/base.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=13">
+  <link rel="stylesheet" href="assets/css/animations.css?v=12">
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    (function () {
+      var t = localStorage.getItem('sia-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-container">
+    <a href="/" class="nav-logo" aria-label="SIA Innovation Marketing Agency">
+      <img class="logo-img no-transition"
+           src="assets/images/logo/sia-logo.png"
+           data-src-light="assets/images/logo/sia-logo.png"
+           data-src-dark="assets/images/logo/sia-logo-white.png"
+           alt="SIA" height="36">
+    </a>
+
+    <nav class="nav-menu" aria-label="Primary">
+      <a class="nav-item" href="index.html">
+        <span data-lang="vi">Về SIA IMA</span>
+        <span data-lang="en" hidden>About SIA</span>
+      </a>
+      <a class="nav-item" href="services.html">
+        <span data-lang="vi">Dịch vụ</span>
+        <span data-lang="en" hidden>Services</span>
+      </a>
+      <a class="nav-item active" href="community.html">
+        <span data-lang="vi">Cộng đồng</span>
+        <span data-lang="en" hidden>Community</span>
+      </a>
+      <a class="nav-item" href="showcase.html">
+        <span data-lang="vi">Showcase</span>
+        <span data-lang="en" hidden>Showcase</span>
+      </a>
+      <a class="nav-item" href="blog.html">
+        <span data-lang="vi">Blog</span>
+        <span data-lang="en" hidden>Blog</span>
+      </a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="vi" onclick="setLang('vi')">VI</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+
+      <button class="icon-btn theme-toggle" onclick="toggleTheme()" aria-label="Chuyển chế độ sáng/tối" aria-pressed="false">
+        <svg class="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </button>
+
+      <a href="contact.html" class="btn btn--primary btn--pill nav-cta" style="padding: 10px 18px; font-size: 13px;">
+        <span data-lang="vi">Liên hệ ngay</span>
+        <span data-lang="en" hidden>Contact us</span>
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a class="nav-item" href="index.html"><span data-lang="vi">Về SIA IMA</span><span data-lang="en" hidden>About SIA</span></a>
+  <a class="nav-item" href="services.html"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+  <a class="nav-item active" href="community.html"><span data-lang="vi">Cộng đồng</span><span data-lang="en" hidden>Community</span></a>
+  <a class="nav-item" href="showcase.html"><span data-lang="vi">Showcase</span><span data-lang="en" hidden>Showcase</span></a>
+  <a class="nav-item" href="blog.html"><span data-lang="vi">Blog</span><span data-lang="en" hidden>Blog</span></a>
+  <div class="mobile-actions">
+    <a href="contact.html" class="btn btn--primary btn--pill btn--lg">
+      <span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span>
+    </a>
+  </div>
+</div>
+
+<main>
+
+<!-- 01 HERO -->
+<section class="page-hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="page-hero__inner">
+      <span class="section-eyebrow" data-hero><span data-lang="vi">Cộng đồng</span><span data-lang="en" hidden>Community</span></span>
+      <h1 class="page-hero__title" data-hero>
+        <span data-lang="vi">Kết nối để cùng <em style="color:var(--primary);font-style:italic">tăng trưởng</em> bền vững</span>
+        <span data-lang="en" hidden>Connecting to <em style="color:var(--primary);font-style:italic">grow</em> sustainably together</span>
+      </h1>
+      <p class="page-hero__subtitle" data-hero>
+        <span data-lang="vi">Hệ sinh thái kết nối Doanh nhân, Creator và Thế hệ trẻ (Sinh viên). Nơi hội tụ những nhà kiến tạo để cùng nhau chia sẻ, học hỏi và tạo ra giá trị mới cho thị trường.</span>
+        <span data-lang="en" hidden>An ecosystem connecting Entrepreneurs, Creators, and the Next Generation (Students). A convergence point for creators to share, learn, and create new market value.</span>
+      </p>
+
+      <div class="community-grid" data-stagger style="margin-top: 48px;">
+        <!-- SIA KOC Hub -->
+        <article class="community-card community-card--creators" data-stagger-item>
+          <div class="community-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="community-card__title">SIA KOC Hub</h3>
+          <p class="community-card__desc">
+            <span data-lang="vi">Mạng lưới 1.500+ KOL, KOC và Content Creators. Nơi ươm mầm tài năng, cung cấp campaign đều đặn và giải pháp tăng trưởng thu nhập.</span>
+            <span data-lang="en" hidden>Network of 1,500+ KOLs, KOCs, and Content Creators. A place to nurture talent, provide regular campaigns, and solutions for income growth.</span>
+          </p>
+          <ul class="community-card__list">
+            <li>Mega Livestream Campaign</li>
+            <li>Affiliate &amp; Social Commerce</li>
+            <li>Creator Training Workshops</li>
+          </ul>
+        </article>
+
+        <!-- SIA Business Network -->
+        <article class="community-card community-card--founders" data-stagger-item>
+          <div class="community-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+          </div>
+          <h3 class="community-card__title">SIA Business Network</h3>
+          <p class="community-card__desc">
+            <span data-lang="vi">Cộng đồng dành riêng cho CMO, Brand Managers và Doanh nhân. Cập nhật xu hướng marketing mới nhất và case study thực chiến.</span>
+            <span data-lang="en" hidden>Exclusive community for CMOs, Brand Managers, and Entrepreneurs. Stay updated with the latest marketing trends and practical case studies.</span>
+          </p>
+          <ul class="community-card__list">
+            <li>Brand Innovation Forum</li>
+            <li>Executive Networking</li>
+            <li>Market Insight Reports</li>
+          </ul>
+        </article>
+
+        <!-- SIA Next Gen -->
+        <article class="community-card community-card--students" data-stagger-item>
+          <div class="community-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+          </div>
+          <h3 class="community-card__title">SIA Next Gen</h3>
+          <p class="community-card__desc">
+            <span data-lang="vi">Không gian đồng hành cùng các bạn Sinh viên và Câu lạc bộ Marketing. Định hướng nghề nghiệp và cơ hội thực tập, cọ xát thực tế.</span>
+            <span data-lang="en" hidden>A companion space for Students and Marketing Clubs. Career orientation, internship opportunities, and practical exposure.</span>
+          </p>
+          <ul class="community-card__list">
+            <li>University Talkshows</li>
+            <li>Marketing Competitions</li>
+            <li>Internship Programs</li>
+          </ul>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══════════ NEW SECTION 1: GEN COMMUNITY ═══════════ -->
+<section class="section" id="sia-community">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow">// SIA ECOSYSTEM</span>
+      <h2>
+        <span data-lang="vi">Cộng đồng <em style="color:var(--primary);font-style:italic">SIA</em></span>
+        <span data-lang="en" hidden>SIA <em style="color:var(--primary);font-style:italic">Community</em></span>
+      </h2>
+      <p>
+        <span data-lang="vi">Hệ sinh thái hội tụ 1.500+ Creator, Chuyên gia và Doanh nhân — nơi kiến tạo giá trị, chia sẻ kiến thức và bứt phá doanh thu.</span>
+        <span data-lang="en" hidden>An ecosystem of 1,500+ Creators, Experts, and Entrepreneurs — a place to create value, share knowledge, and breakthrough revenue.</span>
+      </p>
+    </div>
+
+    <div class="gen-timeline timeline-events-swiper community-events-swiper swiper" id="community-timeline" data-animate>
+      <div class="gen-timeline-track swiper-wrapper">
+        <div class="gen-timeline-item swiper-slide">
+          <div class="gen-timeline-dot"></div>
+          <div class="gen-timeline-header">
+            <div class="gen-timeline-date">23 · 09 · 2025</div>
+            <span class="gen-timeline-tag gen-timeline-tag--brand">E-Commerce</span>
+          </div>
+          <div class="gen-timeline-title">WORKSHOP 1: ĐÀO TẠO KOC INHOUSE AFFILIATE & LIVESTREAM CHO DOANH NGHIỆP</div>
+          <div class="gen-timeline-sub">Thương mại điện tử & Truyền thông số · SIA</div>
+          <div class="gen-timeline-desc">
+            <span data-lang="vi">Buổi đào tạo thực chiến về cách xây dựng đội ngũ KOC nội bộ, triển khai chiến lược Affiliate Booking và thiết lập hệ th…</span>
+            <span data-lang="en" hidden>Buổi đào tạo thực chiến về cách xây dựng đội ngũ KOC nội bộ, triển khai chiến lược Affiliate Booking và thiết lập hệ th…</span>
+          </div>
+          <a href="showcase-workshop-1-dao-tao-koc-inhouse-affiliate-livestream-cho-doanh-nghiep.html" class="gen-timeline-link card-stretch-link">TÌM HIỂU THÊM →</a>
+        </div>
+        <div class="gen-timeline-item swiper-slide">
+          <div class="gen-timeline-dot"></div>
+          <div class="gen-timeline-header">
+            <div class="gen-timeline-date">01 · 11 · 2025</div>
+            <span class="gen-timeline-tag gen-timeline-tag--brand">Lifestyle</span>
+          </div>
+          <div class="gen-timeline-title">SỰ KIỆN VERY DEMURE, VERY MINDFUL</div>
+          <div class="gen-timeline-sub">Thời trang & Phong cách sống · SIA</div>
+          <div class="gen-timeline-desc">
+            <span data-lang="vi">Workshop kết hợp trưng bày thời trang và panel talk truyền cảm hứng dành riêng cho phái đẹp. Sự kiện tập trung vào việc…</span>
+            <span data-lang="en" hidden>Workshop kết hợp trưng bày thời trang và panel talk truyền cảm hứng dành riêng cho phái đẹp. Sự kiện tập trung vào việc…</span>
+          </div>
+          <a href="showcase-su-kien-very-demure-very-mindful.html" class="gen-timeline-link card-stretch-link">TÌM HIỂU THÊM →</a>
+        </div>
+        <div class="gen-timeline-item swiper-slide">
+          <div class="gen-timeline-dot"></div>
+          <div class="gen-timeline-header">
+            <div class="gen-timeline-date">17 · 12 · 2025</div>
+            <span class="gen-timeline-tag gen-timeline-tag--brand">Women</span>
+          </div>
+          <div class="gen-timeline-title">SHE RISE: FROM SOUL TO SHINE - KHAI MỞ VẺ ĐẸP TỪ BÊN TRONG</div>
+          <div class="gen-timeline-sub">Phụ nữ & Phong cách sống · SIA</div>
+          <div class="gen-timeline-desc">
+            <span data-lang="vi">Sự kiện dành riêng cho phái đẹp nhằm kết nối và tái tạo năng lượng thông qua buổi panel talk truyền cảm hứng và worksho…</span>
+            <span data-lang="en" hidden>Sự kiện dành riêng cho phái đẹp nhằm kết nối và tái tạo năng lượng thông qua buổi panel talk truyền cảm hứng và worksho…</span>
+          </div>
+          <a href="showcase-she-rise-from-soul-to-shine-khai-mo-ve-dep-tu-ben-trong.html" class="gen-timeline-link card-stretch-link">TÌM HIỂU THÊM →</a>
+        </div>
+        <div class="gen-timeline-item swiper-slide">
+          <div class="gen-timeline-dot"></div>
+          <div class="gen-timeline-header">
+            <div class="gen-timeline-date">05 · 03 · 2026</div>
+            <span class="gen-timeline-tag gen-timeline-tag--brand">Women</span>
+          </div>
+          <div class="gen-timeline-title">SHE RISE #2 - CHẤM PHẨY</div>
+          <div class="gen-timeline-sub">Phụ nữ & Sức khỏe tinh thần · SIA</div>
+          <div class="gen-timeline-desc">
+            <span data-lang="vi">Không gian thư giãn dành cho phụ nữ hiện đại tạm rời xa áp lực với những vai trò trong xã hội để phục hồi năng lượng th…</span>
+            <span data-lang="en" hidden>Không gian thư giãn dành cho phụ nữ hiện đại tạm rời xa áp lực với những vai trò trong xã hội để phục hồi năng lượng th…</span>
+          </div>
+          <a href="showcase-she-rise-2-cham-phay.html" class="gen-timeline-link card-stretch-link">TÌM HIỂU THÊM →</a>
+        </div>
+        <div class="gen-timeline-item swiper-slide" style="border-color:var(--primary);">
+          <div class="gen-timeline-dot gen-timeline-dot--live"></div>
+          <div class="gen-timeline-header">
+            <div class="gen-timeline-date" style="color:var(--primary)">17 · 04 · 2026</div>
+            <span class="gen-timeline-tag gen-timeline-tag--brand">Event</span>
+          </div>
+          <div class="gen-timeline-title">CHINA ASEAN DIGITAL ECONOMY & OPENCLAW AI INDUSTRY APPLICATION SYMPOSIUM</div>
+          <div class="gen-timeline-sub">Trí tuệ nhân tạo & Vận hành doanh nghiệp · SIA</div>
+          <div class="gen-timeline-desc">
+            <span data-lang="vi">Hội thảo về trí tuệ nhân tạo quy tụ các chuyên gia hàng đầu từ Silicon Valley và Trung Quốc. Sự kiện tập trung vào việc…</span>
+            <span data-lang="en" hidden>Hội thảo về trí tuệ nhân tạo quy tụ các chuyên gia hàng đầu từ Silicon Valley và Trung Quốc. Sự kiện tập trung vào việc…</span>
+          </div>
+          <a href="showcase-china-asean-digital-economy-openclaw-ai-industry-application-symposium.html" class="gen-timeline-link card-stretch-link">XEM CHI TIẾT →</a>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+<div class="gen-stats-grid" data-stagger>
+      <div class="gen-stat-card" data-stagger-item>
+        <div class="gen-stat-val">1.500+</div>
+        <div class="gen-stat-title">CREATORS & KOCs</div>
+        <div class="gen-stat-desc">
+          <span data-lang="vi">Tham gia mạng lưới Affiliate & Social Commerce</span>
+          <span data-lang="en" hidden>Active in Affiliate & Social Commerce network</span>
+        </div>
+      </div>
+      <div class="gen-stat-card" data-stagger-item>
+        <div class="gen-stat-val">50+</div>
+        <div class="gen-stat-title">CHUYÊN GIA & DIỄN GIẢ</div>
+        <div class="gen-stat-desc">
+          <span data-lang="vi">Đồng hành trong các diễn đàn & workshop</span>
+          <span data-lang="en" hidden>Partners in forums & workshops</span>
+        </div>
+      </div>
+      <div class="gen-stat-card" data-stagger-item>
+        <div class="gen-stat-val">30+</div>
+        <div class="gen-stat-title">TRƯỜNG ĐẠI HỌC</div>
+        <div class="gen-stat-desc" style="margin-top:8px;">
+          <span data-lang="vi">Kết nối qua các CLB Marketing sinh viên</span>
+          <span data-lang="en" hidden>Connected via Student Marketing Clubs</span>
+        </div>
+      </div>
+      <div class="gen-stat-card" data-stagger-item>
+        <div class="gen-stat-val">500+</div>
+        <div class="gen-stat-title">THƯƠNG HIỆU</div>
+        <div class="gen-stat-desc" style="margin-top:8px;">
+          <span data-lang="vi">Đã hợp tác & triển khai chiến dịch cùng SIA</span>
+          <span data-lang="en" hidden>Partnered & launched campaigns with SIA</span>
+        </div>
+      </div>
+    </div>
+    <div class="gen-chart-container" data-animate>
+      <!-- ROLE CHART -->
+      <div class="gen-chart-card">
+        <div class="gen-chart-header">
+          <span data-lang="vi">PHÂN BỔ THEO VAI TRÒ</span>
+          <span data-lang="en" hidden>COMMUNITY BY ROLE</span>
+        </div>
+        
+        <div class="gen-bar-row">
+          <div class="gen-bar-label">Creators / KOCs</div>
+          <div class="gen-bar-track"><div class="gen-bar-fill" style="width: 45%; background:var(--primary);">45%</div></div>
+        </div>
+        <div class="gen-bar-row">
+          <div class="gen-bar-label">Students & Next Gen</div>
+          <div class="gen-bar-track"><div class="gen-bar-fill" style="width: 25%; background:var(--secondary-light);">25%</div></div>
+        </div>
+        <div class="gen-bar-row">
+          <div class="gen-bar-label">Marketers & Managers</div>
+          <div class="gen-bar-track"><div class="gen-bar-fill" style="width: 15%; background:var(--secondary);">15%</div></div>
+        </div>
+        <div class="gen-bar-row">
+          <div class="gen-bar-label">Founders & C-Level</div>
+          <div class="gen-bar-track"><div class="gen-bar-fill" style="width: 10%; background:var(--primary-dark);">10%</div></div>
+        </div>
+        <div class="gen-bar-row">
+          <div class="gen-bar-label">Others</div>
+          <div class="gen-bar-track"><div class="gen-bar-fill" style="width: 5%; background:var(--border-strong); color:var(--text-secondary);">5%</div></div>
+        </div>
+        
+        <div class="gen-chart-note">
+          <span data-lang="vi">* Dữ liệu ước tính dựa trên tương tác các chiến dịch và sự kiện cộng đồng của SIA.</span>
+          <span data-lang="en" hidden>* Estimated data based on SIA's campaigns and community event interactions.</span>
+        </div>
+      </div>
+
+      <!-- SECTOR CHART -->
+      <div class="gen-chart-card">
+        <div class="gen-chart-header">
+          <span data-lang="vi">LĨNH VỰC HOẠT ĐỘNG CHÍNH</span>
+          <span data-lang="en" hidden>KEY ACTIVE SECTORS</span>
+        </div>
+        
+        <div class="gen-bar-row">
+          <div class="gen-bar-label">FMCG & Beauty</div>
+          <div class="gen-bar-track"><div class="gen-bar-fill" style="width: 40%; background:var(--primary);">40%</div></div>
+        </div>
+        <div class="gen-bar-row">
+          <div class="gen-bar-label">Tech & Electronics</div>
+          <div class="gen-bar-track"><div class="gen-bar-fill" style="width: 25%; background:var(--secondary-light);">25%</div></div>
+        </div>
+        <div class="gen-bar-row">
+          <div class="gen-bar-label">E-commerce Platforms</div>
+          <div class="gen-bar-track"><div class="gen-bar-fill" style="width: 20%; background:var(--secondary);">20%</div></div>
+        </div>
+        <div class="gen-bar-row">
+          <div class="gen-bar-label">F&B & Lifestyle</div>
+          <div class="gen-bar-track"><div class="gen-bar-fill" style="width: 10%; background:var(--primary-dark);">10%</div></div>
+        </div>
+        <div class="gen-bar-row">
+          <div class="gen-bar-label">Others</div>
+          <div class="gen-bar-track"><div class="gen-bar-fill" style="width: 5%; background:var(--border-strong); color:var(--text-secondary);">5%</div></div>
+        </div>
+        
+        <div class="gen-chart-note">
+          <span data-lang="vi">* Cơ cấu lĩnh vực của đối tác và nhãn hàng đồng hành cùng SIA.</span>
+          <span data-lang="en" hidden>* Sector breakdown of SIA's partners and partner brands.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ NEW SECTION 3: SPONSORS ═══════════ -->
+<section class="section" id="sponsors" style="background: var(--bg-page);">
+  <div class="container">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; margin-bottom: 40px;" data-animate>
+      <div>
+        <h2 style="font-size: 40px; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <span data-lang="vi">Mạng lưới <span style="background: linear-gradient(135deg, var(--secondary) 0%, #7CC4D8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Đối tác</span></span>
+          <span data-lang="en" hidden>Our <span style="background: linear-gradient(135deg, var(--secondary) 0%, #7CC4D8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Partners</span></span>
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--text-secondary); border: 1px solid var(--border-default); padding: 4px 12px; border-radius: 100px; display: inline-block;">FEATURED PARTNERS</span>
+        </h2>
+        <p style="font-size: 15px; color: var(--text-secondary);">
+          <span data-lang="vi">Các thương hiệu và nền tảng tiêu biểu đã đồng hành cùng mạng lưới SIA.</span>
+          <span data-lang="en" hidden>Featured brands and platforms from the SIA network.</span>
+        </p>
+      </div>
+      <div style="margin-top: 8px;">
+        <a href="partnership.html" class="btn btn--outline btn--pill">
+          <span data-lang="vi">Trở thành Đối tác →</span>
+          <span data-lang="en" hidden>Become a Partner →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-4 gen-sponsor-grid" data-stagger>
+      <div class="gen-sponsor-card" data-stagger-item><img class="gen-sponsor-logo" src="assets/images/partnerlogo/P-TIKTOK.jpg" alt="TikTok"></div>
+      <div class="gen-sponsor-card" data-stagger-item><img class="gen-sponsor-logo" src="assets/images/partnerlogo/P-SHOPEE.jpg" alt="Shopee"></div>
+      <div class="gen-sponsor-card" data-stagger-item><img class="gen-sponsor-logo" src="assets/images/partnerlogo/P-LAZADA.jpg" alt="Lazada"></div>
+      <div class="gen-sponsor-card" data-stagger-item><img class="gen-sponsor-logo" src="assets/images/partnerlogo/P-ZALO.jpg" alt="Zalo"></div>
+      <div class="gen-sponsor-card" data-stagger-item><img class="gen-sponsor-logo" src="assets/images/partnerlogo/P-HARAVAN.jpg" alt="Haravan"></div>
+      <div class="gen-sponsor-card" data-stagger-item><img class="gen-sponsor-logo" src="assets/images/partnerlogo/P-UPBASE.jpg" alt="Upbase"></div>
+      <div class="gen-sponsor-card" data-stagger-item><img class="gen-sponsor-logo" src="assets/images/partnerlogo/P-LEMON8.jpg" alt="Lemon8"></div>
+      <div class="gen-sponsor-card" data-stagger-item><img class="gen-sponsor-logo" src="assets/images/partnerlogo/B-BYTEDANCE.jpg" alt="ByteDance"></div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; font-size: 14px; color: var(--text-secondary); max-width: 600px; margin-left: auto; margin-right: auto;" data-animate>
+      <span data-lang="vi">Kết nối thương hiệu của bạn với hơn 1.500+ Creator và chuyên gia hàng đầu. Các đối tác đồng hành cùng SIA năm 2025 đã đạt mức tăng trưởng x4 doanh thu mục tiêu.</span>
+      <span data-lang="en" hidden>Put your brand in front of 1,500+ Creators and top experts. SIA partners in 2025 saw 4x their pipeline revenue target.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ NEW SECTION 2: WHY ATTEND & SPEAKERS ═══════════ -->
+<section class="section section--alt" id="gen-why-attend">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow">// VÌ SAO CHỌN SIA</span>
+      <h2>
+        <span data-lang="vi">Tại sao nên đồng hành cùng <em style="color:var(--primary);font-style:italic">mạng lưới SIA</em></span>
+        <span data-lang="en" hidden>Why partner with <em style="color:var(--primary);font-style:italic">SIA Network</em></span>
+      </h2>
+      <p>
+        <span data-lang="vi">Dù bạn là một Creator đang tìm định hướng, một Brand Manager cần tối ưu chuyển đổi, hay Sinh viên muốn học hỏi thực chiến.</span>
+        <span data-lang="en" hidden>Whether you are a Creator seeking direction, a Brand Manager optimizing conversion, or a Student wanting practical knowledge.</span>
+      </p>
+    </div>
+
+    <!-- TABS -->
+    <div x-data="{ tab: 'creators' }" data-animate>
+      <div class="gen-tabs">
+        <button class="gen-tab-btn" :class="{ 'active': tab === 'creators' }" @click="tab = 'creators'">Creators & KOCs</button>
+        <button class="gen-tab-btn" :class="{ 'active': tab === 'brands' }" @click="tab = 'brands'">Brands & Platforms</button>
+        <button class="gen-tab-btn" :class="{ 'active': tab === 'students' }" @click="tab = 'students'">Students & Next Gen</button>
+        <button class="gen-tab-btn" :class="{ 'active': tab === 'experts' }" @click="tab = 'experts'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          Chuyên gia
+        </button>
+      </div>
+
+      <div class="gen-tab-content">
+        <!-- LEFT CONTENT -->
+        <div class="gen-tab-left">
+          <div style="font-size:16px; font-weight:700; color:var(--primary); margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            <span x-show="tab === 'creators'">Creators & KOCs</span>
+            <span x-show="tab === 'brands'">Brands & Platforms</span>
+            <span x-show="tab === 'students'">Students & Next Gen</span>
+            <span x-show="tab === 'experts'">Chuyên gia</span>
+          </div>
+          
+          <h3 x-show="tab === 'creators'">Bứt phá thu nhập với Social Commerce.</h3>
+          <p x-show="tab === 'creators'">Trở thành một phần của KOC Hub với 1.500+ creators. Nhận booking đều đặn, tham gia Mega Livestream và được đào tạo kỹ năng thực chiến.</p>
+
+          <h3 x-show="tab === 'brands'" style="display:none;">Tối ưu hóa chuyển đổi qua chiến dịch tích hợp.</h3>
+          <p x-show="tab === 'brands'" style="display:none;">Kết nối với mạng lưới creator đa dạng và hệ sinh thái sự kiện của SIA. Triển khai các chiến dịch Mega Livestream mang lại GMV đột phá.</p>
+
+          <h3 x-show="tab === 'students'" style="display:none;">Khởi đầu sự nghiệp Marketing vững chắc.</h3>
+          <p x-show="tab === 'students'" style="display:none;">Tham gia giải case study toàn quốc, học hỏi từ CMOs hàng đầu và cơ hội thực tập trực tiếp tại các dự án lớn của SIA.</p>
+
+          <h3 x-show="tab === 'experts'" style="display:none;">Chia sẻ tầm nhìn, dẫn dắt thế hệ mới.</h3>
+          <p x-show="tab === 'experts'" style="display:none;">Đóng góp tiếng nói trong các diễn đàn Brand Innovation, chia sẻ case study tại các sự kiện ngành quy mô lớn với hàng nghìn người tham dự.</p>
+
+          
+          <div class="gen-tab-stats">
+            <div class="gen-stat-card" style="padding: 24px;">
+              <div class="gen-stat-val" style="font-size:24px;">150+</div>
+              <div class="gen-stat-title" style="font-size:9px;">CHIẾN DỊCH / NĂM</div>
+            </div>
+            <div class="gen-stat-card" style="padding: 24px;">
+              <div class="gen-stat-val" style="font-size:24px;">50B+</div>
+              <div class="gen-stat-title" style="font-size:9px;">VND GMV LIVESTREAM</div>
+            </div>
+            <div class="gen-stat-card" style="padding: 24px;">
+              <div class="gen-stat-val" style="font-size:24px;">10+</div>
+              <div class="gen-stat-title" style="font-size:9px;">SỰ KIỆN QUY MÔ LỚN</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="gen-tab-right">
+          <div class="gen-checklist-box">
+            <div class="gen-checklist-title">HỆ SINH THÁI ĐỐI TÁC</div>
+            <div class="gen-check-item">
+              <div class="gen-check-icon">✓</div> TikTok Shop
+            </div>
+            <div class="gen-check-item">
+              <div class="gen-check-icon">✓</div> Shopee
+            </div>
+            <div class="gen-check-item">
+              <div class="gen-check-icon">✓</div> Meta
+            </div>
+            <div class="gen-check-item">
+              <div class="gen-check-icon">✓</div> L'Oréal
+            </div>
+            <div class="gen-check-item">
+              <div class="gen-check-icon">✓</div> Unilever
+            </div>
+            <div class="gen-check-item">
+              <div class="gen-check-icon">✓</div> Samsung
+            </div>
+            <div style="font-size:11px; color:var(--text-secondary); margin-top:32px;">+ Cùng hơn 500 thương hiệu hàng đầu.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPEAKERS -->
+    <div style="margin-top:80px;" data-animate>
+      <div class="gen-speaker-header">
+        <div>
+          <span class="section-eyebrow">// CHUYÊN GIA ĐỒNG HÀNH</span>
+          <h2 style="font-size:40px; margin-bottom:8px;">
+            <span data-lang="vi">Gặp gỡ <em style="color:var(--primary);font-style:italic">Chuyên gia</em> & Diễn giả</span>
+            <span data-lang="en" hidden>Meet our <em style="color:var(--primary);font-style:italic">Experts</em> & Speakers</span>
+            <span style="font-size:12px; font-weight:600; font-style:normal; font-family:var(--font-body); letter-spacing:0.1em; color:var(--text-secondary); border:1px solid var(--border-default); padding:4px 12px; border-radius:100px; margin-left:12px; vertical-align:middle;">SIA NETWORK</span>
+          </h2>
+          <p style="font-size:14px; max-width:500px;">
+            <span data-lang="vi">Hơn 50+ chuyên gia đến từ các nền tảng, agency và tập đoàn đa quốc gia đã chia sẻ kiến thức tại mạng lưới SIA.</span>
+            <span data-lang="en" hidden>Over 50+ experts from platforms, agencies, and multinational corporations have shared knowledge across the SIA network.</span>
+          </p>
+        </div>
+        <div>
+          <a href="partnership.html" class="btn btn--outline btn--pill btn--sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; vertical-align:text-bottom;"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            <span data-lang="vi">Trở thành Diễn giả →</span>
+            <span data-lang="en" hidden>Become a Speaker →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-bottom:16px;">
+        <span data-lang="vi">DIỄN GIẢ TIÊU BIỂU</span>
+        <span data-lang="en" hidden>FEATURED SPEAKERS</span>
+      </div>
+      <div class="gen-speaker-grid" data-stagger style="margin-bottom:32px;">
+        <!-- HÀNG 1 -->
+        <div class="gen-speaker-card" data-stagger-item>
+          <img src="https://i.pravatar.cc/150?u=12" class="gen-speaker-avatar" alt="Speaker 1">
+          <div class="gen-speaker-info">
+            <div class="gen-speaker-name">Nguyen Van A</div>
+            <div class="gen-speaker-title">Marketing Director</div>
+            <div class="gen-speaker-company">Unilever</div>
+            <div class="gen-speaker-tag">Brand Strategy</div>
+          </div>
+        </div>
+        <div class="gen-speaker-card" data-stagger-item>
+          <img src="https://i.pravatar.cc/150?u=22" class="gen-speaker-avatar" alt="Speaker 2">
+          <div class="gen-speaker-info">
+            <div class="gen-speaker-name">Tran Thi B</div>
+            <div class="gen-speaker-title">Head of Social Commerce</div>
+            <div class="gen-speaker-company">TikTok Shop</div>
+            <div class="gen-speaker-tag">Livestream Growth</div>
+          </div>
+        </div>
+        <div class="gen-speaker-card" data-stagger-item>
+          <img src="https://i.pravatar.cc/150?u=33" class="gen-speaker-avatar" alt="Speaker 3">
+          <div class="gen-speaker-info">
+            <div class="gen-speaker-name">Le Van C</div>
+            <div class="gen-speaker-title">Founder & CEO</div>
+            <div class="gen-speaker-company">Schannel</div>
+            <div class="gen-speaker-tag">Creator Economy</div>
+          </div>
+        </div>
+
+        <!-- HÀNG 2 -->
+        <div class="gen-speaker-card" data-stagger-item>
+          <img src="https://i.pravatar.cc/150?u=44" class="gen-speaker-avatar" alt="Speaker 4">
+          <div class="gen-speaker-info">
+            <div class="gen-speaker-name">Pham Thi D</div>
+            <div class="gen-speaker-title">Creative Director</div>
+            <div class="gen-speaker-company">Ogilvy</div>
+            <div class="gen-speaker-tag">Integrated Campaign</div>
+          </div>
+        </div>
+        <div class="gen-speaker-card" data-stagger-item>
+          <img src="https://i.pravatar.cc/150?u=55" class="gen-speaker-avatar" alt="Speaker 5">
+          <div class="gen-speaker-info">
+            <div class="gen-speaker-name">Hoang Van E</div>
+            <div class="gen-speaker-title">E-commerce Head</div>
+            <div class="gen-speaker-company">Shopee</div>
+            <div class="gen-speaker-tag">Mega Sales</div>
+          </div>
+        </div>
+        <div class="gen-speaker-card" data-stagger-item>
+          <img src="https://i.pravatar.cc/150?u=66" class="gen-speaker-avatar" alt="Speaker 6">
+          <div class="gen-speaker-info">
+            <div class="gen-speaker-name">Vo Thi F</div>
+            <div class="gen-speaker-title">CMO</div>
+            <div class="gen-speaker-company">L'Oréal</div>
+            <div class="gen-speaker-tag">Beauty Marketing</div>
+          </div>
+        </div>
+
+        <!-- HÀNG 3 -->
+        <div class="gen-speaker-card" data-stagger-item>
+          <img src="https://i.pravatar.cc/150?u=77" class="gen-speaker-avatar" alt="Speaker 7">
+          <div class="gen-speaker-info">
+            <div class="gen-speaker-name">Vu Van G</div>
+            <div class="gen-speaker-title">Partner</div>
+            <div class="gen-speaker-company">Metub Network</div>
+            <div class="gen-speaker-tag">MCN Strategy</div>
+          </div>
+        </div>
+        <div class="gen-speaker-card" data-stagger-item>
+          <img src="https://i.pravatar.cc/150?u=88" class="gen-speaker-avatar" alt="Speaker 8">
+          <div class="gen-speaker-info">
+            <div class="gen-speaker-name">Truong Thi H</div>
+            <div class="gen-speaker-title">Head of Marketing</div>
+            <div class="gen-speaker-company">Samsung</div>
+            <div class="gen-speaker-tag">Tech Branding</div>
+          </div>
+        </div>
+        <div class="gen-speaker-card" data-stagger-item>
+          <img src="https://i.pravatar.cc/150?u=99" class="gen-speaker-avatar" alt="Speaker 9">
+          <div class="gen-speaker-info">
+            <div class="gen-speaker-name">Dang Van I</div>
+            <div class="gen-speaker-title">Director</div>
+            <div class="gen-speaker-company">WebTV Asia</div>
+            <div class="gen-speaker-tag">Content Production</div>
+          </div>
+        </div>
+
+        <!-- HÀNG 4 -->
+        <div class="gen-speaker-card" data-stagger-item>
+          <img src="https://i.pravatar.cc/150?u=101" class="gen-speaker-avatar" alt="Speaker 10">
+          <div class="gen-speaker-info">
+            <div class="gen-speaker-name">Dinh Thi K</div>
+            <div class="gen-speaker-title">Agency Lead</div>
+            <div class="gen-speaker-company">Meta</div>
+            <div class="gen-speaker-tag">Social Strategy</div>
+          </div>
+        </div>
+        <div class="gen-speaker-card" data-stagger-item>
+          <img src="https://i.pravatar.cc/150?u=111" class="gen-speaker-avatar" alt="Speaker 11">
+          <div class="gen-speaker-info">
+            <div class="gen-speaker-name">Ngo Van L</div>
+            <div class="gen-speaker-title">Lecturer</div>
+            <div class="gen-speaker-company">RMIT University</div>
+            <div class="gen-speaker-tag">Academic Research</div>
+          </div>
+        </div>
+        <div class="gen-speaker-card" data-stagger-item>
+          <img src="https://i.pravatar.cc/150?u=121" class="gen-speaker-avatar" alt="Speaker 12">
+          <div class="gen-speaker-info">
+            <div class="gen-speaker-name">Bui Thi M</div>
+            <div class="gen-speaker-title">Managing Director</div>
+            <div class="gen-speaker-company">Yeah1</div>
+            <div class="gen-speaker-tag">Media Ecosystem</div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo/sia-logo-white.png" alt="SIA" height="40">
+        <p>
+          SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">
+          <span data-lang="vi">Dịch vụ</span>
+          <span data-lang="en" hidden>Services</span>
+        </div>
+        <ul class="footer-list">
+          <li><a href="services-ima.html">SIA IMA</a></li>
+          <li><a href="services-event.html">SIA Event</a></li>
+          <li><a href="services-hub.html">SIA Hub</a></li>
+          <li><a href="services-ima.html">Creative Mega Livestream</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">
+          <span data-lang="vi">Công ty</span>
+          <span data-lang="en" hidden>Company</span>
+        </div>
+        <ul class="footer-list">
+          <li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li>
+          <li><a href="showcase.html">Showcase</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">
+          <span data-lang="vi">Liên hệ</span>
+          <span data-lang="en" hidden>Contact</span>
+        </div>
+        <ul class="footer-list">
+          <li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li>
+          <li><a href="tel:0988441630">0988 441 630</a></li>
+          <li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 SIA Innovation Marketing Agency — All rights reserved.</span>
+      <span>
+        <a href="#" style="color:inherit;">Privacy</a> ·
+        <a href="#" style="color:inherit;">Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<!-- Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Project JS -->
+<script src="assets/js/theme.js?v=13"></script>
+<script src="assets/js/swiper-init.js?v=16"></script>
+<script src="assets/js/main.js?v=13"></script>
+
+</body>
+</html>

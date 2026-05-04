@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký Đối tác · SIA Innovation Marketing Agency</title>
+  <meta name="description" content="Liên hệ SIA IMA — tư vấn chiến lược marketing tích hợp, Creative Mega Livestream, sự kiện & creator. 14 Ngõ Bệ, Tân Bình · 0988 441 630.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wdth,wght@0,75..125,100..700;1,75..125,100..700&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Project CSS (cache-bust via version query) -->
+  <link rel="stylesheet" href="assets/css/variables.css?v=12">
+  <link rel="stylesheet" href="assets/css/base.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=12">
+  <link rel="stylesheet" href="assets/css/animations.css?v=12">
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Prevent theme flash -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('sia-theme') ||
+              (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="SIA Innovation Marketing Agency">
+      <img class="logo-img no-transition"
+           src="assets/images/logo/sia-logo.png"
+           data-src-light="assets/images/logo/sia-logo.png"
+           data-src-dark="assets/images/logo/sia-logo-white.png"
+           alt="SIA" height="36">
+    </a>
+
+        <nav class="nav-menu" aria-label="Primary">
+      <a class="nav-item" href="index.html">
+        <span data-lang="vi">Về SIA IMA</span>
+        <span data-lang="en" hidden>About SIA</span>
+      </a>
+      <a class="nav-item" href="services.html">
+        <span data-lang="vi">Dịch vụ</span>
+        <span data-lang="en" hidden>Services</span>
+      </a>
+      <a class="nav-item" href="community.html">
+        <span data-lang="vi">Cộng đồng</span>
+        <span data-lang="en" hidden>Community</span>
+      </a>
+      <a class="nav-item" href="showcase.html">Showcase</a>
+      <a class="nav-item" href="blog.html">Blog</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="vi" onclick="setLang('vi')">VI</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+
+      <button class="icon-btn theme-toggle" onclick="toggleTheme()" aria-label="Chuyển chế độ sáng/tối" aria-pressed="false">
+        <svg class="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </button>
+
+      <a href="#contact-form" class="btn btn--primary btn--pill nav-cta" style="padding: 10px 18px; font-size: 13px;">
+        <span data-lang="vi">Gửi brief</span>
+        <span data-lang="en" hidden>Send brief</span>
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a class="nav-item" href="index.html"><span data-lang="vi">Về SIA IMA</span><span data-lang="en" hidden>About SIA</span></a>
+  <a class="nav-item" href="services.html"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+  <a class="nav-item" href="community.html"><span data-lang="vi">Cộng đồng</span><span data-lang="en" hidden>Community</span></a>
+  <a class="nav-item" href="showcase.html">Showcase</a>
+  <a class="nav-item" href="blog.html">Blog</a>
+  <div class="mobile-actions">
+    <a href="contact.html" class="btn btn--primary btn--pill btn--lg"><span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span></a>
+  </div>
+</div>
+
+<main>
+<!-- ═══════════ 01 HERO ═══════════ -->
+<section class="page-hero page-hero--contact" id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="page-hero__inner">
+      <div class="hero-eyebrow" data-hero>
+        <span class="dot"></span>
+        <span data-lang="vi">SIA Partnership 2026</span>
+        <span data-lang="en" hidden>SIA Partnership 2026</span>
+      </div>
+
+      <h1 class="page-hero__title" data-hero>
+        <span data-lang="vi">Đăng ký trở thành <em style="color:var(--primary);font-style:italic">Đối tác</em> của SIA</span>
+        <span data-lang="en" hidden>Register to become an SIA <em style="color:var(--primary);font-style:italic">Partner</em></span>
+      </h1>
+
+      <p class="page-hero__subtitle" data-hero>
+        <span data-lang="vi">Điểm qua các sự kiện gần đây: Hơn 150+ chiến dịch và sự kiện, quy tụ 10.000+ người tham dự cùng 500+ thương hiệu đồng hành. Vui lòng điền form bên dưới để đăng ký trở thành Diễn giả (Speaker), Nhà tài trợ (Sponsor), hoặc Đơn vị triển lãm (Exhibitor).</span>
+        <span data-lang="en" hidden>Recent highlights: Over 150+ campaigns and events, gathering 10,000+ attendees and 500+ brands. Please fill out the form below to register as a Speaker, Sponsor, or Exhibitor.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 02 FORM ═══════════ -->
+<section class="section section--alt" id="registration-form">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow">
+        <span data-lang="vi">Thông tin đăng ký</span>
+        <span data-lang="en" hidden>Registration Info</span>
+      </span>
+      <h2>
+        <span data-lang="vi">Trở thành một phần của <em style="color:var(--primary);font-style:italic">Mạng lưới SIA</em></span>
+        <span data-lang="en" hidden>Become part of the <em style="color:var(--primary);font-style:italic">SIA Network</em></span>
+      </h2>
+      <p>
+        <span data-lang="vi">Vui lòng điền thông tin chi tiết dưới đây. Đội ngũ đối tác của chúng tôi sẽ liên hệ lại trong vòng 24 giờ.</span>
+        <span data-lang="en" hidden>Please provide your details below. Our partnership team will contact you within 24 hours.</span>
+      </p>
+    </div>
+
+    <div class="contact-wrap" style="max-width: 800px; margin: 0 auto; display: block;" data-animate>
+      <form class="contact-form" style="width: 100%;" onsubmit="return handleContactSubmit(event)">
+        
+        <!-- Contact Info -->
+        <h3 class="text-h4 mb-4"><span data-lang="vi">Thông tin liên hệ</span><span data-lang="en" hidden>Contact Info</span></h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label"><span data-lang="vi">Tên</span><span data-lang="en" hidden>First Name</span> *</label>
+            <input class="form-input" type="text" required placeholder="Nguyễn">
+          </div>
+          <div class="form-group">
+            <label class="form-label"><span data-lang="vi">Họ</span><span data-lang="en" hidden>Last Name</span> *</label>
+            <input class="form-input" type="text" required placeholder="Văn A">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">
+              <span data-lang="vi">Email liên hệ</span><span data-lang="en" hidden>Email Address</span> *
+            </label>
+            <input class="form-input" type="email" required placeholder="email@company.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label"><span data-lang="vi">Số điện thoại</span><span data-lang="en" hidden>Phone Number</span></label>
+            <input class="form-input" type="tel" placeholder="0988 441 630">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">
+            <span data-lang="vi">Hồ sơ LinkedIn</span><span data-lang="en" hidden>LinkedIn Profile</span>
+          </label>
+          <input class="form-input" type="url" placeholder="https://linkedin.com/in/yourprofile">
+        </div>
+
+        <div style="height: 1px; background: var(--border-default); margin: var(--space-8) 0;"></div>
+
+        <!-- Business Info -->
+        <h3 class="text-h4 mb-4"><span data-lang="vi">Thông tin doanh nghiệp</span><span data-lang="en" hidden>Business Info</span></h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label"><span data-lang="vi">Tên công ty</span><span data-lang="en" hidden>Company Name</span> *</label>
+            <input class="form-input" type="text" required placeholder="SIA Group">
+          </div>
+          <div class="form-group">
+            <label class="form-label"><span data-lang="vi">Chức vụ</span><span data-lang="en" hidden>Job Title</span> *</label>
+            <input class="form-input" type="text" required placeholder="Marketing Director">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label"><span data-lang="vi">Website công ty</span><span data-lang="en" hidden>Company Website</span> *</label>
+          <input class="form-input" type="url" required placeholder="https://siagroupco.com">
+        </div>
+
+        <div style="height: 1px; background: var(--border-default); margin: var(--space-8) 0;"></div>
+
+        <!-- Participation Role -->
+        <h3 class="text-h4 mb-4"><span data-lang="vi">Vai trò tham gia</span><span data-lang="en" hidden>Participation Role</span></h3>
+        <div class="form-group">
+          <label class="form-label">
+            <span data-lang="vi">Bạn muốn tham gia với vai trò nào:</span><span data-lang="en" hidden>What roles do you want to present:</span> *
+          </label>
+          <div class="service-chips" role="group">
+            <label class="service-chip">
+              <input type="checkbox" name="role" value="speaker">
+              <span>Speaker</span>
+            </label>
+            <label class="service-chip">
+              <input type="checkbox" name="role" value="exhibitor">
+              <span>Exhibitor</span>
+            </label>
+            <label class="service-chip">
+              <input type="checkbox" name="role" value="sponsor" checked>
+              <span>Sponsor</span>
+            </label>
+          </div>
+        </div>
+        <p class="text-small mb-4">
+          <span data-lang="vi">Nếu bạn muốn trở thành nhà tài trợ, vui lòng xem trước tài liệu <a href="#" class="text-primary" style="text-decoration:underline;">Sponsor Deck</a>.</span>
+          <span data-lang="en" hidden>If you are looking forward to becoming our sponsor, please check our <a href="#" class="text-primary" style="text-decoration:underline;">Sponsor Deck</a>.</span>
+        </p>
+        
+        <div style="height: 1px; background: var(--border-default); margin: var(--space-8) 0;"></div>
+
+        <!-- Additional Information -->
+        <div class="form-group">
+          <label class="form-label" style="text-transform: none; letter-spacing: 0; font-size: var(--body-m); margin-bottom: 12px;">
+            <span data-lang="vi">Bạn có sẵn sàng tiếp nhận hồ sơ ứng tuyển từ các ứng viên cho tổ chức/công ty của mình trong sự kiện của chúng tôi không?</span>
+            <span data-lang="en" hidden>Would you be open to receiving Resumes for Job Applications to your organization/company during our event?</span> *
+          </label>
+          <div class="service-chips" role="group">
+            <label class="service-chip">
+              <input type="radio" name="resumes" value="yes" required>
+              <span><span data-lang="vi">Có</span><span data-lang="en" hidden>Yes</span></span>
+            </label>
+            <label class="service-chip">
+              <input type="radio" name="resumes" value="no" required>
+              <span><span data-lang="vi">Không</span><span data-lang="en" hidden>No</span></span>
+            </label>
+            <label class="service-chip">
+              <input type="radio" name="resumes" value="discuss_later" required>
+              <span><span data-lang="vi">Trao đổi sau</span><span data-lang="en" hidden>Discuss Later</span></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group mt-6">
+          <label class="form-label" for="f-message">
+            <span data-lang="vi">Thông tin bổ sung</span><span data-lang="en" hidden>Additional Information</span>
+          </label>
+          <p class="text-caption mb-2">
+            <span data-lang="vi">Vui lòng để lại yêu cầu bổ sung của bạn tại đây</span><span data-lang="en" hidden>Feel free to leave your additional request here</span>
+          </p>
+          <textarea class="form-textarea" id="f-message" rows="4" placeholder="Bạn có yêu cầu hoặc câu hỏi nào cụ thể không?"></textarea>
+        </div>
+
+        <label class="form-consent mt-6">
+          <input type="checkbox" required>
+          <span data-lang="vi">Tôi xác nhận các thông tin trên là chính xác và đồng ý để SIA liên hệ.</span>
+          <span data-lang="en" hidden>I confirm the information above is accurate and agree to be contacted by SIA.</span>
+        </label>
+
+        <div class="form-actions mt-8">
+          <button type="submit" class="btn btn--primary btn--pill btn--lg">
+            <span data-lang="vi">Gửi đăng ký</span>
+            <span data-lang="en" hidden>Submit Registration</span>
+            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="form-note">
+            <span data-lang="vi">Chúng tôi sẽ phản hồi trong 24h làm việc.</span>
+            <span data-lang="en" hidden>We'll reply within 24 business hours.</span>
+          </p>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo/sia-logo-white.png" alt="SIA" height="40">
+        <p>
+          SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></div>
+        <ul class="footer-list">
+          <li><a href="services-ima.html">SIA IMA</a></li>
+          <li><a href="services-event.html">SIA Event</a></li>
+          <li><a href="services-hub.html">SIA Hub</a></li>
+          <li><a href="services-ima.html">Creative Mega Livestream</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title"><span data-lang="vi">Công ty</span><span data-lang="en" hidden>Company</span></div>
+        <ul class="footer-list">
+          <li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li>
+          <li><a href="showcase.html">Showcase</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></div>
+        <ul class="footer-list">
+          <li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li>
+          <li><a href="tel:0988441630">0988 441 630</a></li>
+          <li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 SIA Innovation Marketing Agency — All rights reserved.</span>
+      <span>
+        <a href="#" style="color:inherit;">Privacy</a> ·
+        <a href="#" style="color:inherit;">Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- Form handler -->
+<script>
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const note = form.querySelector('.form-note');
+    btn.disabled = true;
+    btn.innerHTML = '<span data-lang="vi">Đang gửi...</span><span data-lang="en" hidden>Sending...</span>';
+    setTimeout(() => {
+      form.reset();
+      btn.innerHTML = '<span data-lang="vi">✓ Đã gửi! Cảm ơn bạn</span><span data-lang="en" hidden>✓ Sent! Thank you</span>';
+      if (note) note.textContent = 'Chúng tôi sẽ liên hệ lại trong 24h tới.';
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<span data-lang="vi">Gửi brief ngay</span><span data-lang="en" hidden>Send brief now</span><svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+      }, 4000);
+    }, 1000);
+    return false;
+  }
+</script>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<!-- Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Project JS -->
+<script src="assets/js/theme.js?v=13"></script>
+<script src="assets/js/swiper-init.js?v=13"></script>
+<script src="assets/js/main.js?v=13"></script>
+
+</body>
+</html>

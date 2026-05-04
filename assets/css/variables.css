@@ -1,0 +1,162 @@
+/* ===== SIA Design Tokens ===== */
+
+:root {
+  /* Primary */
+  --primary:        #E8502A;
+  --primary-light:  #F07A5C;
+  --primary-dark:   #C43A1A;
+
+  /* Secondary */
+  --secondary:       #2C6E8A;
+  --secondary-light: #4A90A8;
+  --secondary-dark:  #1A4F65;
+
+  /* Neutral */
+  --black:     #0D0D0D;
+  --gray-700:  #3D3D3D;
+  --gray-500:  #6E6E6E;
+  --gray-300:  #B8B8B8;
+  --gray-100:  #F0F0F0;
+  --gray-50:   #F8F8F8;
+  --white:     #FFFFFF;
+  --warm-gray: #E8E0D4;
+  --surface-1: #F5F2EE;
+  --surface-2: #EAE4DC;
+  --disabled:  #D6D6D6;
+
+  /* Semantic */
+  --success: #2A8A4A;
+  --warning: #D4A017;
+  --error:   #C43A1A;
+  --info:    #2C6E8A;
+
+  /* Orange ramp */
+  --orange-100: #FFF0EB;
+  --orange-200: #FFD4C2;
+  --orange-300: #FFB89A;
+  --orange-400: #FF9C72;
+  --orange-500: #E8502A;
+  --orange-600: #C43A1A;
+  --orange-700: #9E2D10;
+  --orange-800: #7A2008;
+
+  /* Blue ramp */
+  --blue-100: #EBF4F8;
+  --blue-200: #C2DDE8;
+  --blue-300: #9AC6D8;
+  --blue-400: #72AEC8;
+  --blue-500: #2C6E8A;
+  --blue-600: #1A4F65;
+  --blue-700: #0E3548;
+  --blue-800: #071E2C;
+
+  /* Semantic UI mappings — Light mode */
+  --bg-page:       #FAFAF8;
+  --bg-surface:    #FFFFFF;
+  --bg-surface-2:  #F5F2EE;
+  --text-primary:   #0D0D0D;
+  --text-secondary: #6E6E6E;
+  --text-tertiary:  #B8B8B8;
+  --border-default: #F0F0F0;
+  --border-strong:  #B8B8B8;
+  --shadow-sm: 0 1px 2px rgba(13,13,13,0.04), 0 2px 6px rgba(13,13,13,0.04);
+  --shadow-md: 0 4px 12px rgba(13,13,13,0.06), 0 8px 24px rgba(13,13,13,0.04);
+  --shadow-lg: 0 12px 32px rgba(13,13,13,0.08), 0 24px 60px rgba(13,13,13,0.06);
+
+  /* Card gradient surface (subtle) — light mode */
+  --card-bg-gradient: linear-gradient(180deg, #FFFFFF 0%, #FAF7F3 100%);
+  --card-bg-gradient-alt: linear-gradient(180deg, #FCFAF7 0%, #F2EDE6 100%);
+  --card-border-gradient: linear-gradient(135deg, rgba(13,13,13,0.04) 0%, rgba(13,13,13,0.14) 50%, rgba(13,13,13,0.04) 100%);
+
+  /* Typography */
+  --text-display: 72px;
+  --text-h1: 56px;
+  --text-h2: 40px;
+  --text-h3: 32px;
+  --text-h4: 24px;
+  --body-l: 18px;
+  --body-m: 16px;
+  --body-s: 14px;
+  --caption: 12px;
+  --label: 11px;
+
+  /* Spacing (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --section-pad: 96px;
+
+  /* Border radius */
+  --radius:      6px;
+  --radius-lg:   12px;
+  --radius-pill: 100px;
+
+  /* Nav */
+  --nav-height: 72px;
+
+  /* Container */
+  --container-max: 1320px;
+  --container-wide: 1440px;
+}
+
+/* ===== Dark mode ===== */
+[data-theme="dark"] {
+  --bg-page:       #0D0D0D;
+  --bg-surface:    #1A1A1A;
+  --bg-surface-2:  #242424;
+  --text-primary:   #F0F0F0;
+  --text-secondary: #B8B8B8;
+  --text-tertiary:  #6E6E6E;
+  --border-default: #2A2A2A;
+  --border-strong:  #3D3D3D;
+
+  --primary:       #F07A5C;
+  --primary-light: #FF9A7A;
+  --primary-dark:  #E8502A;
+
+  --warm-gray: #2A2520;
+  --surface-1: #1E1C1A;
+  --surface-2: #242220;
+
+  --orange-100: rgba(240,122,92,0.12);
+  --blue-100:   rgba(114,174,200,0.12);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.24), 0 2px 6px rgba(0,0,0,0.24);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.32), 0 8px 24px rgba(0,0,0,0.24);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.4), 0 24px 60px rgba(0,0,0,0.32);
+
+  /* Card gradient surface (subtle) — dark mode */
+  --card-bg-gradient: linear-gradient(180deg, #1F1F1F 0%, #141414 100%);
+  --card-bg-gradient-alt: linear-gradient(180deg, #1A1A1A 0%, #101010 100%);
+  --card-border-gradient: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.14) 50%, rgba(255,255,255,0.04) 100%);
+}
+
+/* ===== Responsive scale ===== */
+@media (max-width: 1023px) {
+  :root {
+    --text-display: 56px;
+    --text-h1: 40px;
+    --text-h2: 30px;
+    --text-h3: 22px;
+    --section-pad: 64px;
+    --nav-height: 60px;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --text-display: 40px;
+    --text-h1: 30px;
+    --text-h2: 22px;
+    --text-h3: 18px;
+    --body-m: 14px;
+    --section-pad: 48px;
+    --nav-height: 56px;
+  }
+}

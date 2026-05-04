@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mega Livestream 5 tỷ/đêm — Blog | SIA Innovation Marketing Agency</title>
+  <meta name="description" content="Phân tích kịch bản, chiến lược SKU, đội host và dashboard realtime giúp Mega Livestream đạt 3.8x CVR so với livestream thông thường.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wdth,wght@0,75..125,100..700;1,75..125,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="assets/css/variables.css?v=12">
+  <link rel="stylesheet" href="assets/css/base.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=12">
+  <link rel="stylesheet" href="assets/css/animations.css?v=12">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    (function () {
+      var t = localStorage.getItem('sia-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="SIA Innovation Marketing Agency">
+      <img class="logo-img no-transition" src="assets/images/logo/sia-logo.png"
+           data-src-light="assets/images/logo/sia-logo.png"
+           data-src-dark="assets/images/logo/sia-logo-white.png"
+           alt="SIA" height="36">
+    </a>
+        <nav class="nav-menu" aria-label="Primary">
+      <a class="nav-item" href="index.html">
+        <span data-lang="vi">Về SIA IMA</span>
+        <span data-lang="en" hidden>About SIA</span>
+      </a>
+      <a class="nav-item" href="services.html">
+        <span data-lang="vi">Dịch vụ</span>
+        <span data-lang="en" hidden>Services</span>
+      </a>
+      <a class="nav-item" href="community.html">
+        <span data-lang="vi">Cộng đồng</span>
+        <span data-lang="en" hidden>Community</span>
+      </a>
+      <a class="nav-item" href="showcase.html">Showcase</a>
+      <a class="nav-item active" href="blog.html">Blog</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="vi" onclick="setLang('vi')">VI</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="icon-btn theme-toggle" onclick="toggleTheme()" aria-label="Chuyển chế độ sáng/tối">
+        <svg class="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+      </button>
+      <a href="contact.html" class="btn btn--primary btn--pill nav-cta" style="padding: 10px 18px; font-size: 13px;">
+        <span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span>
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a class="nav-item" href="index.html"><span data-lang="vi">Về SIA IMA</span><span data-lang="en" hidden>About SIA</span></a>
+  <a class="nav-item" href="services.html"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+  <a class="nav-item" href="community.html"><span data-lang="vi">Cộng đồng</span><span data-lang="en" hidden>Community</span></a>
+  <a class="nav-item" href="showcase.html">Showcase</a>
+  <a class="nav-item active" href="blog.html">Blog</a>
+  <div class="mobile-actions">
+    <a href="contact.html" class="btn btn--primary btn--pill btn--lg"><span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span></a>
+  </div>
+</div>
+
+<main>
+
+<!-- 01 DETAIL HERO -->
+<section class="detail-hero" id="hero">
+  <div class="container">
+    <nav class="breadcrumb" data-hero>
+      <a href="index.html"><span data-lang="vi">Trang chủ</span><span data-lang="en" hidden>Home</span></a>
+      <span>/</span>
+      <a href="blog.html">Blog</a>
+      <span>/</span>
+      <span class="breadcrumb__current">Mega Livestream 5 tỷ</span>
+    </nav>
+
+    <div class="detail-hero__inner">
+      <div class="detail-hero__meta" data-hero>
+        <span class="tag tag--primary">Livestream Commerce</span>
+        <time datetime="2026-04-12">12 Apr 2026</time>
+        <span>·</span>
+        <span>12 min read</span>
+      </div>
+      <h1 class="detail-hero__title" data-hero>
+        <span data-lang="vi">Mega Livestream 5 tỷ/đêm: Điều gì thực sự diễn ra sau <em style="color:var(--primary);font-style:italic">4 giờ on-air?</em></span>
+        <span data-lang="en" hidden>5B VND Mega Livestream: What really happens in those <em style="color:var(--primary);font-style:italic">4 on-air hours?</em></span>
+      </h1>
+      <p class="detail-hero__subtitle" data-hero>
+        <span data-lang="vi">Phân tích chi tiết kịch bản, chiến lược SKU, đội host và công cụ realtime dashboard giúp chuyển đổi tăng 3.8x so với livestream thông thường.</span>
+        <span data-lang="en" hidden>A deep dive into the scripts, SKU strategy, host teams and realtime dashboards that lift conversion 3.8x versus ordinary livestreams.</span>
+      </p>
+    </div>
+
+    <div class="detail-hero__cover" data-hero style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--orange-700) 100%);"></div>
+  </div>
+</section>
+
+<!-- 02 ARTICLE BODY with TOC -->
+<section class="section" id="body">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 240px 1fr; gap: var(--space-12); align-items: start;" class="article-layout">
+      <aside class="article-toc" data-animate>
+        <div class="article-toc__title"><span data-lang="vi">Mục lục</span><span data-lang="en" hidden>Contents</span></div>
+        <ol>
+          <li><a href="#why-livestream"><span data-lang="vi">Vì sao livestream bùng nổ</span><span data-lang="en" hidden>Why livestream exploded</span></a></li>
+          <li><a href="#script"><span data-lang="vi">Kịch bản 8 chapter</span><span data-lang="en" hidden>8-chapter script</span></a></li>
+          <li><a href="#sku"><span data-lang="vi">Chiến lược SKU combo</span><span data-lang="en" hidden>SKU combo strategy</span></a></li>
+          <li><a href="#host"><span data-lang="vi">Đội host 45 phút</span><span data-lang="en" hidden>45-minute host team</span></a></li>
+          <li><a href="#dashboard"><span data-lang="vi">Realtime dashboard</span><span data-lang="en" hidden>Realtime dashboard</span></a></li>
+          <li><a href="#takeaways"><span data-lang="vi">5 bài học</span><span data-lang="en" hidden>5 takeaways</span></a></li>
+        </ol>
+      </aside>
+
+      <article class="article-body" data-animate>
+        <p style="font-size: var(--body-l); color: var(--text-secondary);"><strong><span data-lang="vi">TL;DR.</span><span data-lang="en" hidden>TL;DR.</span></strong>
+           <span data-lang="vi"> Mega Livestream là format 4-8h có kịch bản như một "show truyền hình", vận hành như một ê-kíp phim trường — không phải một người bán hàng online. Bài này mổ xẻ 5 yếu tố tạo nên chênh lệch 3.8x CVR.</span>
+           <span data-lang="en" hidden> Mega Livestream is a 4–8h format scripted like a TV show and run like a film crew — not a single online seller. This piece dissects the 5 factors that create a 3.8x CVR gap.</span>
+        </p>
+
+        <h2 id="why-livestream"><span data-lang="vi">1. Vì sao livestream Việt bùng nổ 2024–2026</span><span data-lang="en" hidden>1. Why Vietnam livestream exploded 2024–2026</span></h2>
+        <p><span data-lang="vi">TikTok Shop chính thức mở tại Việt Nam cuối 2022, nhưng chính giai đoạn 2024–2026 là lúc hành vi mua livestream trở thành chuẩn mặc định của người dùng Việt. GMV tổng ngành đạt 12 tỷ USD (2025) và dự báo tăng 40% trong 2026.</span>
+           <span data-lang="en" hidden>TikTok Shop launched in Vietnam in late 2022, but 2024–2026 is when livestream-buying became default behaviour for Vietnamese users. Industry GMV hit $12B in 2025 with a 40% projected growth in 2026.</span>
+        </p>
+
+        <blockquote><span data-lang="vi">"Gen Z Việt không còn 'search rồi mua' — họ 'xem livestream rồi mua'. Khoảng cách giữa giải trí và mua hàng đã biến mất."</span>
+                    <span data-lang="en" hidden>"Vietnamese Gen Z no longer 'searches then buys' — they 'watch livestream then buy'. The gap between entertainment and commerce has disappeared."</span></blockquote>
+
+        <h2 id="script"><span data-lang="vi">2. Kịch bản 8 chapter — bí mật của giữ chân</span><span data-lang="en" hidden>2. 8-chapter script — the retention secret</span></h2>
+        <p><span data-lang="vi">Một livestream 4 tiếng không ngắt không phải là bán hàng 4 tiếng. Chúng tôi chia 4 giờ thành 8 chapter, mỗi chapter 30 phút. Mỗi chapter có cấu trúc 3 giai đoạn: warm-up (5') → deal / reveal (20') → transition (5').</span>
+           <span data-lang="en" hidden>A 4-hour uninterrupted livestream isn't 4 hours of selling. We split 4 hours into 8 chapters of 30 minutes, each with 3 beats: warm-up (5'), deal/reveal (20'), transition (5').</span>
+        </p>
+
+        <figure class="article-figure" style="background: linear-gradient(135deg, var(--primary) 0%, var(--orange-600) 100%);"></figure>
+
+        <h3><span data-lang="vi">Ví dụ một chapter</span><span data-lang="en" hidden>Example chapter</span></h3>
+        <ul>
+          <li><strong>Warm-up:</strong> <span data-lang="vi">Host chào viewer mới, "teaser" deal sắp tới, mini-game voucher</span><span data-lang="en" hidden>Host greets new viewers, teases upcoming deals, runs a voucher mini-game</span></li>
+          <li><strong>Climax:</strong> <span data-lang="vi">Flash sale 15', demo combo, unbox sản phẩm mới</span><span data-lang="en" hidden>15-minute flash sale, combo demo, new-product unboxing</span></li>
+          <li><strong>Transition:</strong> <span data-lang="vi">Tri ân top buyer, teaser chapter kế tiếp, đổi host</span><span data-lang="en" hidden>Top-buyer shoutouts, next-chapter teaser, host swap</span></li>
+        </ul>
+
+        <h2 id="sku"><span data-lang="vi">3. Chiến lược SKU combo</span><span data-lang="en" hidden>3. SKU combo strategy</span></h2>
+        <p><span data-lang="vi">48 SKU trong 4 tiếng nghe có vẻ nhiều, nhưng thực ra chỉ có 6 "SKU thật" được nhân lên thành 48 combo khác nhau. Mỗi combo được thiết kế để phục vụ một nhóm khách hàng: newbie (giá < 500K), loyal (< 1.5M), VIP (mua gói 3M+).</span>
+           <span data-lang="en" hidden>48 SKUs in 4 hours sounds like a lot, but there are only 6 "real SKUs" expanded into 48 combos. Each combo targets a shopper tier: newbie (under 500K), loyal (under 1.5M), VIP (3M+ bundles).</span>
+        </p>
+
+        <h2 id="host"><span data-lang="vi">4. Đội host luân phiên 45 phút</span><span data-lang="en" hidden>4. Host team rotating every 45 minutes</span></h2>
+        <p><span data-lang="vi">Một host chỉ duy trì năng lượng tốt trong khoảng 45–60 phút. 3 host chính luân phiên, lồng ghép với 1 "celeb guest" mỗi 2 chapter — tạo hiệu ứng mới liên tục cho viewer.</span>
+           <span data-lang="en" hidden>One host can only hold peak energy for 45–60 minutes. Three hosts rotate, interleaved with a celebrity guest every two chapters — creating a constant novelty lift for viewers.</span>
+        </p>
+
+        <h2 id="dashboard"><span data-lang="vi">5. Realtime dashboard — quyết định mỗi 15 phút</span><span data-lang="en" hidden>5. Realtime dashboard — decisions every 15 minutes</span></h2>
+        <p><span data-lang="vi">Mỗi 15 phút, team production họp nhanh 2 phút review: GMV, CVR, AOV, retention. Nếu CVR drop, swap SKU ngay. Nếu retention drop, inject thêm mini-game. Không ai đợi đến cuối show để "rút kinh nghiệm".</span>
+           <span data-lang="en" hidden>Every 15 minutes the production team huddles for a 2-minute review: GMV, CVR, AOV, retention. If CVR drops, swap SKU now. If retention drops, inject another mini-game. Nobody waits for the post-show retrospective.</span>
+        </p>
+
+        <h2 id="takeaways"><span data-lang="vi">5 bài học cho brand Việt</span><span data-lang="en" hidden>5 takeaways for Vietnamese brands</span></h2>
+        <ol>
+          <li><span data-lang="vi">Livestream không phải là "bán hàng online" — đó là "show".</span><span data-lang="en" hidden>Livestream isn't "online selling" — it's a show.</span></li>
+          <li><span data-lang="vi">Kịch bản 30 phút chia chapter quan trọng hơn 1 script 4 giờ liền.</span><span data-lang="en" hidden>A 30-minute chaptered script beats a 4-hour monolithic one.</span></li>
+          <li><span data-lang="vi">Đừng bán SKU. Bán combo — theo tầng khách.</span><span data-lang="en" hidden>Don't sell SKUs. Sell combos — tiered by shopper.</span></li>
+          <li><span data-lang="vi">Đổi host mỗi 45 phút. Energy drop = sales drop.</span><span data-lang="en" hidden>Rotate hosts every 45 min. Energy drop = sales drop.</span></li>
+          <li><span data-lang="vi">Dashboard realtime mỗi 15 phút, không phải sau show.</span><span data-lang="en" hidden>Realtime dashboard every 15 min, not post-show.</span></li>
+        </ol>
+
+        <!-- Author box -->
+        <div class="author-box">
+          <div class="author-box__avatar">MA</div>
+          <div class="author-box__body">
+            <div class="author-box__name">Minh Anh Nguyen</div>
+            <div class="author-box__role"><span data-lang="vi">Head of Livestream · SIA IMA</span><span data-lang="en" hidden>Head of Livestream · SIA IMA</span></div>
+            <p class="author-box__bio"><span data-lang="vi">8 năm trong livestream commerce Đông Nam Á, từng vận hành hơn 120 Mega Livestream cho brand quốc tế và Việt.</span><span data-lang="en" hidden>8 years in Southeast Asia livestream commerce, operating 120+ Mega Livestreams for international and Vietnamese brands.</span></p>
+          </div>
+        </div>
+
+        <div class="article-share">
+          <span><span data-lang="vi">Chia sẻ</span><span data-lang="en" hidden>Share</span></span>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2h3.308l-7.227 8.26L22.8 22h-6.67l-5.214-6.82L4.9 22H1.586l7.73-8.836L1.2 2h6.837l4.713 6.231zm-1.16 18.036h1.83L7.085 3.868H5.119z"/></svg></a>
+          <a href="#" aria-label="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 RELATED -->
+<section class="section section--alt" id="related">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow"><span data-lang="vi">Đọc thêm</span><span data-lang="en" hidden>Keep reading</span></span>
+      <h2><span data-lang="vi">Các bài viết <em style="color:var(--primary);font-style:italic">liên quan</em></span><span data-lang="en" hidden><em style="color:var(--primary);font-style:italic">Related</em> articles</span></h2>
+    </div>
+    <div class="related-grid" data-stagger>
+      <article class="blog-card" data-stagger-item>
+        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--orange-400), var(--primary));"></div></a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta"><span class="tag tag--primary">Commerce</span><time>08 Apr 2026</time></div>
+          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">TikTok Shop 2026: 7 xu hướng brand Việt phải biết</span><span data-lang="en" hidden>TikTok Shop 2026: 7 trends every VN brand must know</span></a></h3>
+          <p class="blog-card__excerpt"><span data-lang="vi">Phân tích algorithm mới và chiến thuật của flagship shop.</span><span data-lang="en" hidden>Dissecting the new algorithm and what flagship shops do.</span></p>
+        </div>
+      </article>
+      <article class="blog-card" data-stagger-item>
+        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--secondary-light), var(--blue-600));"></div></a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta"><span class="tag">Creator</span><time>05 Apr 2026</time></div>
+          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">KOC hay KOL? Bảng công cụ chọn đúng creator</span><span data-lang="en" hidden>KOC or KOL? A decision matrix</span></a></h3>
+          <p class="blog-card__excerpt"><span data-lang="vi">Framework chọn creator theo awareness / consideration / conversion.</span><span data-lang="en" hidden>Framework for picking creators by stage.</span></p>
+        </div>
+      </article>
+      <article class="blog-card" data-stagger-item>
+        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--primary), var(--orange-700));"></div></a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta"><span class="tag tag--primary">Commerce</span><time>22 Mar 2026</time></div>
+          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">Shopee Mall vs TikTok Shop: Đặt chân đâu trước?</span><span data-lang="en" hidden>Shopee Mall vs TikTok Shop: Where first?</span></a></h3>
+          <p class="blog-card__excerpt"><span data-lang="vi">Playbook chọn platform theo danh mục và AOV.</span><span data-lang="en" hidden>Platform-selection playbook by category and AOV.</span></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 04 CTA -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-banner" data-animate>
+      <h2><span data-lang="vi">Đăng ký nhận insight mỗi tuần từ <em style="color:var(--primary);font-style:italic">SIA Weekly</em></span><span data-lang="en" hidden>Get weekly insights from <em style="color:var(--primary);font-style:italic">SIA Weekly</em></span></h2>
+      <p><span data-lang="vi">1 insight · 1 case study · 1 framework — gửi vào inbox mỗi sáng thứ Sáu.</span><span data-lang="en" hidden>1 insight · 1 case study · 1 framework — delivered every Friday morning.</span></p>
+      <div class="hero-cta">
+        <a href="#newsletter" class="btn btn--primary btn--lg btn--pill">
+          <span data-lang="vi">Đăng ký miễn phí</span><span data-lang="en" hidden>Subscribe — free</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="blog.html" class="btn btn--ghost btn--lg btn--pill">← <span data-lang="vi">Tất cả bài viết</span><span data-lang="en" hidden>All articles</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo/sia-logo-white.png" alt="SIA" height="40">
+        <p>SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg></a>
+        </div>
+      </div>
+      <div><div class="footer-title"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></div><ul class="footer-list"><li><a href="services-ima.html">SIA IMA</a></li><li><a href="services-event.html">SIA Event</a></li><li><a href="services-hub.html">SIA Hub</a></li><li><a href="services-ima.html">Creative Mega Livestream</a></li></ul></div>
+      <div><div class="footer-title"><span data-lang="vi">Công ty</span><span data-lang="en" hidden>Company</span></div><ul class="footer-list"><li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li><li><a href="showcase.html">Showcase</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li></ul></div>
+      <div><div class="footer-title"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></div><ul class="footer-list"><li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li><li><a href="tel:0988441630">0988 441 630</a></li><li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SIA Innovation Marketing Agency — All rights reserved.</span>
+      <span><a href="#" style="color:inherit;">Privacy</a> · <a href="#" style="color:inherit;">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Responsive article layout adjust -->
+<style>
+  @media (max-width: 1023px) {
+    .article-layout { grid-template-columns: 1fr !important; }
+    .article-toc { position: relative !important; top: 0 !important; }
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="assets/js/theme.js?v=13"></script>
+<script src="assets/js/swiper-init.js?v=13"></script>
+<script src="assets/js/main.js?v=13"></script>
+
+</body>
+</html>

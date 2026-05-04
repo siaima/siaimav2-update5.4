@@ -1,0 +1,67 @@
+/* ===== Keyframes ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== CSS-only entrance (fallback before GSAP loads) ===== */
+[data-animate] {
+  opacity: 0;
+}
+.no-js [data-animate] { opacity: 1; }
+
+/* ===== Marquee (logo wall fallback) ===== */
+.marquee {
+  display: flex;
+  gap: 48px;
+  animation: marquee-scroll 30s linear infinite;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-animate] { opacity: 1 !important; transform: none !important; }
+}
+
+/* ===== Micro interactions ===== */
+.hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.hover-lift:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.theme-toggle-icon {
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.icon-btn.theme-toggle:hover .theme-toggle-icon { transform: rotate(45deg); }
+[data-theme="dark"] .icon-btn.theme-toggle:hover .theme-toggle-icon { transform: rotate(-45deg); }
+
+/* Pulsing dot */
+.pulse-dot {
+  animation: pulse 2s ease-in-out infinite;
+}

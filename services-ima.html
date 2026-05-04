@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIA IMA · Innovation Marketing — SIA Innovation Marketing Agency</title>
+  <meta name="description" content="SIA IMA — tư vấn chiến lược, chiến dịch truyền thông tích hợp, Creative Mega Livestream, media production cho thương hiệu Việt Nam và quốc tế.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wdth,wght@0,75..125,100..700;1,75..125,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="assets/css/variables.css?v=12">
+  <link rel="stylesheet" href="assets/css/base.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=12">
+  <link rel="stylesheet" href="assets/css/animations.css?v=12">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    (function () {
+      var t = localStorage.getItem('sia-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="SIA Innovation Marketing Agency">
+      <img class="logo-img no-transition" src="assets/images/logo/sia-logo.png"
+           data-src-light="assets/images/logo/sia-logo.png"
+           data-src-dark="assets/images/logo/sia-logo-white.png"
+           alt="SIA" height="36">
+    </a>
+        <nav class="nav-menu" aria-label="Primary">
+      <a class="nav-item" href="index.html">
+        <span data-lang="vi">Về SIA IMA</span>
+        <span data-lang="en" hidden>About SIA</span>
+      </a>
+      <a class="nav-item active" href="services.html">
+        <span data-lang="vi">Dịch vụ</span>
+        <span data-lang="en" hidden>Services</span>
+      </a>
+      <a class="nav-item" href="community.html">
+        <span data-lang="vi">Cộng đồng</span>
+        <span data-lang="en" hidden>Community</span>
+      </a>
+      <a class="nav-item" href="showcase.html">Showcase</a>
+      <a class="nav-item" href="blog.html">Blog</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="vi" onclick="setLang('vi')">VI</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="icon-btn theme-toggle" onclick="toggleTheme()" aria-label="Chuyển chế độ sáng/tối">
+        <svg class="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+      </button>
+      <a href="contact.html" class="btn btn--primary btn--pill nav-cta" style="padding: 10px 18px; font-size: 13px;">
+        <span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span>
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a class="nav-item" href="index.html"><span data-lang="vi">Về SIA IMA</span><span data-lang="en" hidden>About SIA</span></a>
+  <a class="nav-item active" href="services.html"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+  <a class="nav-item" href="community.html"><span data-lang="vi">Cộng đồng</span><span data-lang="en" hidden>Community</span></a>
+  <a class="nav-item" href="showcase.html">Showcase</a>
+  <a class="nav-item" href="blog.html">Blog</a>
+  <div class="mobile-actions">
+    <a href="contact.html" class="btn btn--primary btn--pill btn--lg"><span data-lang="vi">Liên hệ ngay</span><span data-lang="en" hidden>Contact us</span></a>
+  </div>
+</div>
+
+<main>
+
+<!-- 01 SERVICE HERO -->
+<section class="service-hero service-hero--ima" id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <nav class="breadcrumb" data-hero>
+      <a href="index.html"><span data-lang="vi">Trang chủ</span><span data-lang="en" hidden>Home</span></a>
+      <span>/</span>
+      <a href="index.html#services"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></a>
+      <span>/</span>
+      <span class="breadcrumb__current">SIA IMA</span>
+    </nav>
+
+    <div class="service-hero__grid">
+      <div class="service-hero__text">
+        <div class="service-hero__badge" data-hero>
+          <span class="service-hero__badge-dot"></span>
+          <span data-lang="vi">INNOVATION MARKETING AGENCY</span>
+          <span data-lang="en" hidden>INNOVATION MARKETING AGENCY</span>
+        </div>
+
+        <h1 class="service-hero__title" data-hero>
+          <span class="service-hero__title-name">SIA IMA</span>
+          <span data-lang="vi" class="service-hero__title-desc">Từ Big Idea đến <em>Kết quả đo được</em></span>
+          <span data-lang="en" hidden class="service-hero__title-desc">From Big Idea to <em>Measurable Results</em></span>
+        </h1>
+
+        <p class="service-hero__subtitle" data-hero>
+          <span data-lang="vi">Xây dựng hệ sinh thái marketing tăng trưởng — nơi cộng đồng trở thành tài sản chiến lược và kết nối trở thành động lực phát triển bền vững cho doanh nghiệp.</span>
+          <span data-lang="en" hidden>Building a growth marketing ecosystem where community becomes a strategic asset and connection drives sustainable business growth.</span>
+        </p>
+
+        <div class="service-hero__actions" data-hero>
+          <a href="contact.html" class="btn btn--primary btn--pill btn--lg">
+            <span data-lang="vi">Nhận tư vấn IMA</span><span data-lang="en" hidden>Get IMA consultation</span>
+            <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#deliverables" class="btn btn--ghost btn--pill btn--lg">
+            <span data-lang="vi">Xem sản phẩm giao</span><span data-lang="en" hidden>View deliverables</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-hero__visual" data-hero>
+        <div class="service-hero__kpi-card">
+          <div class="service-hero__kpi">
+            <div class="service-hero__kpi-num">120K<span>+</span></div>
+            <div class="service-hero__kpi-label"><span data-lang="vi">Members in ecosystem</span><span data-lang="en" hidden>Members in ecosystem</span></div>
+          </div>
+          <div class="service-hero__kpi">
+            <div class="service-hero__kpi-num">150<span>+</span></div>
+            <div class="service-hero__kpi-label"><span data-lang="vi">Campaigns delivered</span><span data-lang="en" hidden>Campaigns delivered</span></div>
+          </div>
+          <div class="service-hero__kpi">
+            <div class="service-hero__kpi-num">25M<span>+</span></div>
+            <div class="service-hero__kpi-label"><span data-lang="vi">Avg. reach / campaign</span><span data-lang="en" hidden>Avg. reach / campaign</span></div>
+          </div>
+          <div class="service-hero__kpi">
+            <div class="service-hero__kpi-num">10K<span>+</span></div>
+            <div class="service-hero__kpi-label"><span data-lang="vi">Creators & KOL/KOC</span><span data-lang="en" hidden>Creators & KOL/KOC</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01B MISSION -->
+<section class="section section--tight" id="mission">
+  <div class="container">
+    <div class="section-header" data-animate style="text-align:left;max-width:100%;">
+      <p style="margin-bottom:20px;">
+        <span data-lang="vi">SIA IMA được thành lập với sứ mệnh tiên phong trong việc xây dựng và vận hành hệ sinh thái marketing tăng trưởng — nơi cộng đồng trở thành tài sản chiến lược và kết nối trở thành động lực phát triển bền vững cho doanh nghiệp.</span>
+        <span data-lang="en" hidden>SIA IMA was founded with a pioneering mission to build and operate a growth marketing ecosystem where community becomes a strategic asset and connection becomes the engine of sustainable business growth.</span>
+      </p>
+      <p style="margin-bottom:20px;">
+        <span data-lang="vi">Với định hướng kết nối local và global, SIA IMA không chỉ cung cấp dịch vụ marketing đơn thuần mà còn đồng hành cùng doanh nghiệp trong toàn bộ hành trình — từ định vị thương hiệu, xây dựng cộng đồng, triển khai chiến lược truyền thông đến kết nối giao thương và mở rộng thị phần.</span>
+        <span data-lang="en" hidden>With a local-to-global direction, SIA IMA goes beyond traditional marketing services and partners across the full journey — from brand positioning and community building to communication strategy, business matching, and market expansion.</span>
+      </p>
+      <p style="margin-bottom:24px;">
+        <span data-lang="vi">Nhờ sự thấu hiểu sâu sắc về nhu cầu của cả doanh nghiệp truyền thống lẫn hiện đại, SIA IMA kiến tạo lợi thế khác biệt thông qua khả năng kết hợp tư duy chiến lược với triển khai thực chiến — từ big idea đến kết quả đo được — giúp doanh nghiệp không chỉ tăng trưởng doanh thu mà còn xây dựng vị thế thương hiệu bền vững trên thị trường.</span>
+        <span data-lang="en" hidden>By deeply understanding the needs of both traditional and modern businesses, SIA IMA creates advantage by combining strategic thinking with execution discipline — from big idea to measurable outcomes — helping brands grow revenue and build lasting market position.</span>
+      </p>
+      <blockquote style="margin:0;padding:24px 28px;border-left:6px solid #ef4444;background:#f8f2f2;border-radius:10px;">
+        <span data-lang="vi" style="font-style:italic;font-weight:700;">"Chúng tôi không bán dịch vụ marketing. Chúng tôi xây dựng cỗ máy tăng trưởng cho doanh nghiệp — bằng cộng đồng, bằng kết nối, bằng sáng tạo đổi mới."</span>
+        <span data-lang="en" hidden style="font-style:italic;font-weight:700;">"We do not sell marketing services. We build growth engines for businesses through community, connection, and innovative creativity."</span>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- 02 DELIVERABLES -->
+<section class="section section--alt" id="deliverables">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow"><span data-lang="vi">Dịch vụ SIA IMA</span><span data-lang="en" hidden>SIA IMA services</span></span>
+      <h2><span data-lang="vi">Từ Big Idea đến <em style="color:var(--primary);font-style:italic">Kết quả đo được</em></span><span data-lang="en" hidden>From Big Idea to <em style="color:var(--primary);font-style:italic">Measurable Results</em></span></h2>
+    </div>
+    <div class="deliverable-grid" data-stagger>
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">01</div>
+        <h3><span data-lang="vi">Chiến lược Định vị Thương hiệu</span><span data-lang="en" hidden>Brand Strategy & Positioning</span></h3>
+        <p><span data-lang="vi">Xây dựng big idea, câu chuyện thương hiệu và chiến lược positioning giúp doanh nghiệp tạo chỗ đứng rõ ràng trong tâm trí khách hàng.</span><span data-lang="en" hidden>Build big ideas, brand storytelling, and positioning strategy to create clear market mindshare.</span></p>
+        <ul class="deliverable-card__list">
+          <li>Brand Strategy</li>
+          <li>Big Idea</li>
+          <li>Positioning</li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">02</div>
+        <h3><span data-lang="vi">PR & Truyền thông Tích hợp</span><span data-lang="en" hidden>PR & Integrated Communication</span></h3>
+        <p><span data-lang="vi">Chiến lược PR đa kênh, social media marketing, quản trị danh tiếng — từ media coverage đến viral organic trên các nền tảng.</span><span data-lang="en" hidden>Multi-channel PR strategy, social media marketing, and reputation management from media coverage to organic virality.</span></p>
+        <ul class="deliverable-card__list">
+          <li>PR</li>
+          <li>Social Media</li>
+          <li>Media Relations</li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card deliverable-card--highlight" data-stagger-item>
+        <div class="deliverable-card__num">03</div>
+        <div class="deliverable-card__badge">★ <span data-lang="vi">Nổi bật</span><span data-lang="en" hidden>Signature</span></div>
+        <h3><span data-lang="vi">KOL/KOC Booking & Creator Marketing</span><span data-lang="en" hidden>KOL/KOC Booking & Creator Marketing</span></h3>
+        <p><span data-lang="vi">Kết nối thương hiệu với mạng lưới 10,000+ creators. Từ seeding, review đến chiến dịch tích hợp — đảm bảo authentic và đo được conversion.</span><span data-lang="en" hidden>Connect brands with a 10,000+ creator network from seeding and review to integrated campaigns with measurable conversion.</span></p>
+        <ul class="deliverable-card__list">
+          <li>KOL Booking</li>
+          <li>Affiliate</li>
+          <li>UGC</li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">04</div>
+        <h3><span data-lang="vi">Sự kiện & Hội thảo Kết nối</span><span data-lang="en" hidden>Events & Connection Conferences</span></h3>
+        <p><span data-lang="vi">Tổ chức event, hội thảo và diễn đàn B2B kết nối doanh nghiệp — từ quy mô địa phương đến quốc tế. Tạo không gian networking và cơ hội giao thương thực chất.</span><span data-lang="en" hidden>Organize events, seminars, and B2B forums from local to international scale, creating meaningful networking and business opportunities.</span></p>
+        <ul class="deliverable-card__list">
+          <li>Event</li>
+          <li>Conference</li>
+          <li>B2B Matching</li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">05</div>
+        <h3><span data-lang="vi">Community Building & User Growth</span><span data-lang="en" hidden>Community Building & User Growth</span></h3>
+        <p><span data-lang="vi">Xây dựng và vận hành cộng đồng cho thương hiệu. Activate hệ sinh thái 120K+ members để tăng nhận diện, user base và loyalty dài hạn.</span><span data-lang="en" hidden>Build and operate brand communities while activating a 120K+ ecosystem to grow awareness, user base, and long-term loyalty.</span></p>
+        <ul class="deliverable-card__list">
+          <li>Community Ops</li>
+          <li>Growth</li>
+          <li>Retention</li>
+        </ul>
+      </article>
+
+      <article class="deliverable-card" data-stagger-item>
+        <div class="deliverable-card__num">06</div>
+        <h3><span data-lang="vi">Kết nối Giao thương Local & Global</span><span data-lang="en" hidden>Local & Global Business Matching</span></h3>
+        <p><span data-lang="vi">Cầu nối thương mại giữa doanh nghiệp Việt Nam với thị trường quốc tế. Hỗ trợ market entry, partnership matching và cross-border opportunities.</span><span data-lang="en" hidden>A trade bridge between Vietnamese businesses and international markets with market-entry and partnership matching support.</span></p>
+        <ul class="deliverable-card__list">
+          <li>Business Matching</li>
+          <li>Market Entry</li>
+          <li>Global Network</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow"><span data-lang="vi">Quy trình làm việc</span><span data-lang="en" hidden>How we work</span></span>
+      <h2><span data-lang="vi">5 bước từ <em style="color:var(--primary);font-style:italic">brief</em> đến <em style="color:var(--primary);font-style:italic">go-live</em></span><span data-lang="en" hidden>5 steps from <em style="color:var(--primary);font-style:italic">brief</em> to <em style="color:var(--primary);font-style:italic">go-live</em></span></h2>
+    </div>
+    <div class="process-timeline" data-stagger>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 01</div>
+        <h3><span data-lang="vi">Khám phá & Brief</span><span data-lang="en" hidden>Discovery & Brief</span></h3>
+        <p><span data-lang="vi">Workshop 60-90 phút với đội ngũ marketing — làm rõ mục tiêu, đối tượng, ngân sách.</span><span data-lang="en" hidden>60-90 min workshop with your marketing team — clarify goals, audience, budget.</span></p>
+        <div class="process-timeline__time">1–3 <span data-lang="vi">ngày</span><span data-lang="en" hidden>days</span></div>
+      </div>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 02</div>
+        <h3><span data-lang="vi">Chiến lược & Big Idea</span><span data-lang="en" hidden>Strategy & Big Idea</span></h3>
+        <p><span data-lang="vi">Insight research, competitive audit, chiến lược truyền thông và big idea chính.</span><span data-lang="en" hidden>Insight research, competitive audit, communications strategy and lead big idea.</span></p>
+        <div class="process-timeline__time">5–10 <span data-lang="vi">ngày</span><span data-lang="en" hidden>days</span></div>
+      </div>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 03</div>
+        <h3><span data-lang="vi">Sáng tạo & Production</span><span data-lang="en" hidden>Creative & Production</span></h3>
+        <p><span data-lang="vi">Creative concept, copy, key visual, TVC/video. Sản xuất theo brief đã chốt.</span><span data-lang="en" hidden>Creative concept, copy, key visual, TVC/video. Production as per approved brief.</span></p>
+        <div class="process-timeline__time">2–4 <span data-lang="vi">tuần</span><span data-lang="en" hidden>weeks</span></div>
+      </div>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 04</div>
+        <h3><span data-lang="vi">Triển khai & Tối ưu</span><span data-lang="en" hidden>Execution & Optimisation</span></h3>
+        <p><span data-lang="vi">Media buying, PR, KOL activation — tối ưu real-time dựa trên dashboard hàng ngày.</span><span data-lang="en" hidden>Media buying, PR, KOL activation — real-time optimisation from daily dashboards.</span></p>
+        <div class="process-timeline__time">4–12 <span data-lang="vi">tuần</span><span data-lang="en" hidden>weeks</span></div>
+      </div>
+      <div class="process-timeline__item" data-stagger-item>
+        <div class="process-timeline__step">Step 05</div>
+        <h3><span data-lang="vi">Báo cáo & Learning</span><span data-lang="en" hidden>Reporting & Learning</span></h3>
+        <p><span data-lang="vi">Báo cáo cuối, insight cho mùa tiếp theo, roadmap quý kế.</span><span data-lang="en" hidden>Post-campaign report, insights for the next season, roadmap for the next quarter.</span></p>
+        <div class="process-timeline__time">3–5 <span data-lang="vi">ngày</span><span data-lang="en" hidden>days</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PRICING -->
+<section class="section section--alt" id="pricing">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-eyebrow"><span data-lang="vi">Gói dịch vụ</span><span data-lang="en" hidden>Service packages</span></span>
+      <h2><span data-lang="vi">Chọn gói phù hợp với <em style="color:var(--primary);font-style:italic">quy mô</em> của bạn</span><span data-lang="en" hidden>Pick a package that matches <em style="color:var(--primary);font-style:italic">your scale</em></span></h2>
+      <p><span data-lang="vi">Giá tham khảo. Mọi dự án đều có báo giá riêng sau khi nhận brief.</span><span data-lang="en" hidden>Indicative pricing. Every project gets a custom quote after briefing.</span></p>
+    </div>
+    <div class="pricing-grid" data-stagger>
+      <article class="pricing-card" data-stagger-item>
+        <div class="pricing-card__tier">Starter</div>
+        <div class="pricing-card__price">50M<span>+ VND</span></div>
+        <p class="pricing-card__desc"><span data-lang="vi">Chiến dịch ngắn hạn, startup và brand mới.</span><span data-lang="en" hidden>Short campaigns, startups and new brands.</span></p>
+        <ul class="pricing-card__features">
+          <li>Brand strategy workshop</li>
+          <li>Social + KOL mini campaign</li>
+          <li>2-week delivery</li>
+          <li><span data-lang="vi">Báo cáo cơ bản</span><span data-lang="en" hidden>Basic report</span></li>
+        </ul>
+        <a href="contact.html" class="btn btn--ghost btn--pill"><span data-lang="vi">Nhận báo giá</span><span data-lang="en" hidden>Get quote</span></a>
+      </article>
+      <article class="pricing-card pricing-card--featured" data-stagger-item>
+        <div class="pricing-card__badge"><span data-lang="vi">Phổ biến</span><span data-lang="en" hidden>Most popular</span></div>
+        <div class="pricing-card__tier">Growth</div>
+        <div class="pricing-card__price">200M<span>+ VND</span></div>
+        <p class="pricing-card__desc"><span data-lang="vi">Chiến dịch 360° cho thương hiệu tăng trưởng.</span><span data-lang="en" hidden>360° campaigns for scaling brands.</span></p>
+        <ul class="pricing-card__features">
+          <li>Integrated 360° campaign</li>
+          <li>TVC + social content</li>
+          <li>Performance marketing</li>
+          <li>Creator seeding</li>
+          <li><span data-lang="vi">Dashboard real-time</span><span data-lang="en" hidden>Real-time dashboard</span></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary btn--pill"><span data-lang="vi">Nhận báo giá</span><span data-lang="en" hidden>Get quote</span></a>
+      </article>
+      <article class="pricing-card" data-stagger-item>
+        <div class="pricing-card__tier">Enterprise</div>
+        <div class="pricing-card__price">500M<span>+ VND</span></div>
+        <p class="pricing-card__desc"><span data-lang="vi">Mega campaign & Creative Mega Livestream.</span><span data-lang="en" hidden>Mega campaigns & Creative Mega Livestream.</span></p>
+        <ul class="pricing-card__features">
+          <li>Mega campaign / launch</li>
+          <li>Creative Mega Livestream</li>
+          <li>Full PR + media relations</li>
+          <li>Dedicated team 8-12 người</li>
+          <li>12-month retainer option</li>
+        </ul>
+        <a href="contact.html" class="btn btn--ghost btn--pill"><span data-lang="vi">Nhận báo giá</span><span data-lang="en" hidden>Get quote</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 05 CTA -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-banner" data-animate>
+      <h2><span data-lang="vi">Bắt đầu chiến dịch <em style="color:var(--primary);font-style:italic">IMA</em> của bạn hôm nay</span><span data-lang="en" hidden>Start your <em style="color:var(--primary);font-style:italic">IMA</em> campaign today</span></h2>
+      <p><span data-lang="vi">30 phút tư vấn miễn phí — phác thảo concept và ước tính ngân sách.</span><span data-lang="en" hidden>A free 30-minute consultation — concept sketch and budget estimate.</span></p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn--primary btn--lg btn--pill">
+          <span data-lang="vi">Đặt lịch tư vấn</span><span data-lang="en" hidden>Book a call</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="services-event.html" class="btn btn--ghost btn--lg btn--pill">→ SIA Event</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo/sia-logo-white.png" alt="SIA" height="40">
+        <p>SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg></a>
+        </div>
+      </div>
+      <div><div class="footer-title"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></div><ul class="footer-list"><li><a href="services-ima.html">SIA IMA</a></li><li><a href="services-event.html">SIA Event</a></li><li><a href="services-hub.html">SIA Hub</a></li><li><a href="services-ima.html">Creative Mega Livestream</a></li></ul></div>
+      <div><div class="footer-title"><span data-lang="vi">Công ty</span><span data-lang="en" hidden>Company</span></div><ul class="footer-list"><li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li><li><a href="showcase.html">Showcase</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li></ul></div>
+      <div><div class="footer-title"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></div><ul class="footer-list"><li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li><li><a href="tel:0988441630">0988 441 630</a></li><li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SIA Innovation Marketing Agency — All rights reserved.</span>
+      <span><a href="#" style="color:inherit;">Privacy</a> · <a href="#" style="color:inherit;">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="assets/js/theme.js?v=13"></script>
+<script src="assets/js/swiper-init.js?v=13"></script>
+<script src="assets/js/main.js?v=13"></script>
+
+</body>
+</html>
