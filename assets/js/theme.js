@@ -14,8 +14,8 @@
 
   function updateLogoSources(theme) {
     document.querySelectorAll('.logo-img').forEach(img => {
-      const darkSrc  = img.dataset.srcDark  || 'assets/images/logo/sia-logo-white.png';
-      const lightSrc = img.dataset.srcLight || 'assets/images/logo/sia-logo.png';
+      const darkSrc  = img.dataset.srcDark  || 'assets/images/showcase-safe/3192239ce92f083c.png';
+      const lightSrc = img.dataset.srcLight || 'assets/images/showcase-safe/d4e01287ec162def.png';
       img.src = theme === 'dark' ? darkSrc : lightSrc;
     });
   }

@@ -8,7 +8,7 @@
     {
       href: 'showcase-china-asean-digital-economy-openclaw-ai-industry-application-symposium.html',
       mediaClass: 'case-card__media case-card__media--blue',
-      mediaStyle: "background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/Sự kiện VERY DEMURE, VERY MINDFUL/Ảnh sự kiện/473285213_122128388174403251_1689216600735940338_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;",
+      mediaStyle: "background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/0da71898cc109f34.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;",
       tag: { vi: 'Event', en: 'Event' },
       meta: { vi: 'SIA Event · Trí tuệ nhân tạo & Vận hành doanh nghiệp · 2026', en: 'SIA Event · AI & Business Operations · 2026' },
       title: { vi: 'CHINA ASEAN DIGITAL ECONOMY & OPENCLAW AI INDUSTRY APPLICATION SYMPOSIUM', en: 'CHINA ASEAN DIGITAL ECONOMY & OPENCLAW AI INDUSTRY APPLICATION SYMPOSIUM' },
@@ -20,7 +20,7 @@
     {
       href: 'showcase-she-rise-2-cham-phay.html',
       mediaClass: 'case-card__media case-card__media--dark',
-      mediaStyle: "background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2026/SHE RISE %232 - CHẤM PHẨY/Ảnh sự kiện/647452312_122164766036403251_2622446514461473799_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;",
+      mediaStyle: "background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/f17c2b47c5f1396e.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;",
       tag: { vi: 'Event', en: 'Event' },
       meta: { vi: 'SIA Event · Phụ nữ & Sức khỏe tinh thần · 2026', en: 'SIA Event · Women & Mental Wellness · 2026' },
       title: { vi: 'SHE RISE #2 - CHẤM PHẨY', en: 'SHE RISE #2 - CHẤM PHẨY' },
@@ -32,7 +32,7 @@
     {
       href: 'showcase-she-rise-from-soul-to-shine-khai-mo-ve-dep-tu-ben-trong.html',
       mediaClass: 'case-card__media case-card__media--orange',
-      mediaStyle: "background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2026/SHE RISE %232 - CHẤM PHẨY/Ảnh sự kiện/647452312_122164766036403251_2622446514461473799_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;",
+      mediaStyle: "background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/f17c2b47c5f1396e.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;",
       tag: { vi: 'Event', en: 'Event' },
       meta: { vi: 'SIA Event · Phụ nữ & Phong cách sống · 2025', en: 'SIA Event · Women & Lifestyle · 2025' },
       title: { vi: 'SHE RISE: FROM SOUL TO SHINE - KHAI MỞ VẺ ĐẸP TỪ BÊN TRONG', en: 'SHE RISE: FROM SOUL TO SHINE - KHAI MỞ VẺ ĐẸP TỪ BÊN TRONG' },
@@ -44,7 +44,7 @@
     {
       href: 'showcase-su-kien-very-demure-very-mindful.html',
       mediaClass: 'case-card__media case-card__media--blue',
-      mediaStyle: "background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2026/SHE RISE %232 - CHẤM PHẨY/Ảnh sự kiện/647452312_122164766036403251_2622446514461473799_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;",
+      mediaStyle: "background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/f17c2b47c5f1396e.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;",
       tag: { vi: 'Event', en: 'Event' },
       meta: { vi: 'SIA Event · Thời trang & Phong cách sống · 2025', en: 'SIA Event · Fashion & Lifestyle · 2025' },
       title: { vi: 'SỰ KIỆN VERY DEMURE, VERY MINDFUL', en: 'VERY DEMURE, VERY MINDFUL EVENT' },
@@ -56,7 +56,7 @@
     {
       href: 'showcase-workshop-1-dao-tao-koc-inhouse-affiliate-livestream-cho-doanh-nghiep.html',
       mediaClass: 'case-card__media case-card__media--dark',
-      mediaStyle: "background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/Sự kiện VERY DEMURE, VERY MINDFUL/Ảnh sự kiện/473285213_122128388174403251_1689216600735940338_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;",
+      mediaStyle: "background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/0da71898cc109f34.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;",
       tag: { vi: 'Event', en: 'Event' },
       meta: { vi: 'SIA Event · Thương mại điện tử & Truyền thông số · 2025', en: 'SIA Event · Ecommerce & Digital Media · 2025' },
       title: { vi: 'WORKSHOP 1: ĐÀO TẠO KOC INHOUSE AFFILIATE & LIVESTREAM CHO DOANH NGHIỆP', en: 'WORKSHOP 1: INHOUSE KOC AFFILIATE & LIVESTREAM TRAINING' },
@@ -68,7 +68,7 @@
     {
       href: 'showcase-koc-connect-with-kotex-hanh-trinh-affiliate-tu-don-dau-tien-den-1000-don.html',
       mediaClass: 'case-card__media case-card__media--orange',
-      mediaStyle: "background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/Eventimage/Hình ảnh sự kiện 2025/KOC Connect with Kotex – Hành trình Affiliate_ Từ đơn đầu tiên đến 1000 đơn/579274134_806685565534913_549673301829335587_n.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;",
+      mediaStyle: "background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/02a33e13662fcc30.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;",
       tag: { vi: 'Event', en: 'Event' },
       meta: { vi: 'SIA Event · Marketing & Thương hiệu · 2025', en: 'SIA Event · Marketing & Branding · 2025' },
       title: { vi: 'KOC Connect with Kotex – Hành trình Affiliate: Từ đơn đầu tiên đến 1000 đơn', en: 'KOC Connect with Kotex – Affiliate Journey: From First Order to 1,000 Orders' },
