@@ -725,6 +725,15 @@
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
           mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
 }
+.logo-wall .logo-wall-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+  align-items: center;
+}
+.logo-wall .logo-wall-swiper .swiper-slide {
+  width: auto !important;
+  display: flex;
+  align-items: center;
+}
 .logo-marquee {
   display: flex;
   width: max-content;
@@ -755,6 +764,26 @@
   transition: opacity 0.2s ease, color 0.2s ease;
 }
 .logo-chip:hover { color: var(--primary); opacity: 1; }
+.logo-chip--image {
+  min-height: 72px;
+  padding: 12px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface);
+}
+.logo-chip__img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.82;
+  transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+.logo-chip--image:hover .logo-chip__img {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: translateY(-1px);
+}
 
 /* ===== Timeline (horizontal scroll) ===== */
 .event-timeline {
@@ -3343,6 +3372,12 @@
   background-size: cover;
   background-position: center;
 }
+.case-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* Author box */
 .author-box {
@@ -3454,6 +3489,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
+}
+.blog-card__media > div {
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 1023px) { .related-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px)  { .related-grid { grid-template-columns: 1fr; } }
@@ -3781,23 +3820,24 @@
 /* ===== V3: Services Overview ===== */
 .services-hero-stats {
   display: flex;
-  gap: var(--space-8);
+  gap: var(--space-10);
   justify-content: center;
   flex-wrap: wrap;
   margin-top: var(--space-8);
 }
 .services-hero-stat {
   text-align: center;
+  min-width: 132px;
 }
 .services-hero-stat__num {
-  font-size: 36px;
+  font-size: clamp(42px, 6vw, 60px);
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1;
   color: var(--primary);
 }
 .services-hero-stat__label {
-  font-size: var(--body-s);
+  font-size: var(--body-m);
   color: var(--text-secondary);
   margin-top: var(--space-2);
 }
@@ -4447,7 +4487,7 @@
 .gen-speaker-avatar {
   width: 96px;
   height: 96px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   object-fit: cover;
   background: var(--bg-surface-2);
   flex-shrink: 0;

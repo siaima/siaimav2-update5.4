@@ -26,6 +26,58 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
+
+  <style>
+    .clients-partner-strip {
+      margin-top: var(--space-6);
+      padding: var(--space-7) 0 var(--space-7);
+      overflow: hidden;
+    }
+    .logo-wall.clients-partner-strip {
+      margin-top: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      -webkit-mask-image: none;
+              mask-image: none;
+      overflow: hidden;
+    }
+    .clients-partner-strip .partner-marquee {
+      display: flex;
+      width: max-content;
+      align-items: center;
+      gap: 20px;
+      animation: showcasePartnerMarquee 26s linear infinite;
+      will-change: transform;
+    }
+    .clients-partner-strip .partner-logo-img {
+      height: 62px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+    @keyframes showcasePartnerMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .clients-partner-strip .partner-marquee { animation: none; }
+    }
+    @media (max-width: 1023px) {
+      .clients-partner-strip .partner-logo-img { height: 50px; }
+      .clients-partner-strip .partner-marquee { gap: 16px; }
+    }
+    @media (max-width: 640px) {
+      .clients-partner-strip {
+        margin-top: var(--space-5);
+        padding: var(--space-6) 0;
+      }
+      .clients-partner-strip .partner-logo-img { height: 42px; }
+      .clients-partner-strip .partner-marquee { gap: 14px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -199,7 +251,7 @@
     <div class="case-grid" data-stagger>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/0da71898cc109f34.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -225,7 +277,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/f17c2b47c5f1396e.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -251,7 +303,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/f17c2b47c5f1396e.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -277,7 +329,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/f17c2b47c5f1396e.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -303,7 +355,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/0da71898cc109f34.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -329,7 +381,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/02a33e13662fcc30.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -355,7 +407,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/54981de40855ad66.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -381,7 +433,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/79bda31378d80c95.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -407,7 +459,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/19fffcf9ffbbc664.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -433,7 +485,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/f8ff3754eaeae8d5.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -459,7 +511,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/20cebcc47e20bfac.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -485,7 +537,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/8815bdf842264c70.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -511,7 +563,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/5411b4ad1bc7c044.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -537,7 +589,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/3dab269d5e63a26c.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -563,7 +615,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/6f38b95475adb015.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -589,7 +641,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/ca99450436ba0fa7.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -615,7 +667,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/ed8b7913069159d1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -641,7 +693,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/5274567c8ec884a8.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -667,7 +719,7 @@
       </article>
       <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/7ff6b1f0a2e117c1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-          <span class="case-card__tag">Event</span>
+          <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
         <div class="case-card__body">
           <div class="case-card__meta">
@@ -718,22 +770,32 @@
       </h2>
     </div>
   </div>
-  <div class="logo-wall" data-animate>
-    <div class="swiper logo-wall-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><div class="logo-chip">Unilever</div></div>
-        <div class="swiper-slide"><div class="logo-chip">VinGroup</div></div>
-        <div class="swiper-slide"><div class="logo-chip">Masan</div></div>
-        <div class="swiper-slide"><div class="logo-chip">TH True Milk</div></div>
-        <div class="swiper-slide"><div class="logo-chip">Techcombank</div></div>
-        <div class="swiper-slide"><div class="logo-chip">Viettel</div></div>
-        <div class="swiper-slide"><div class="logo-chip">Shopee</div></div>
-        <div class="swiper-slide"><div class="logo-chip">TikTok Shop</div></div>
-        <div class="swiper-slide"><div class="logo-chip">Samsung</div></div>
-        <div class="swiper-slide"><div class="logo-chip">Honda</div></div>
-        <div class="swiper-slide"><div class="logo-chip">Pepsi</div></div>
-        <div class="swiper-slide"><div class="logo-chip">L'Oréal</div></div>
-      </div>
+  <div class="logo-wall clients-partner-strip" data-animate>
+    <div class="partner-marquee" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-TIKTOK.jpg" alt="TikTok">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-SHOPEE.jpg" alt="Shopee">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-LAZADA.jpg" alt="Lazada">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-HARAVAN.jpg" alt="Haravan">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-ZALO.jpg" alt="Zalo">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-UPBASE.jpg" alt="Upbase">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-LEMON8.jpg" alt="Lemon8">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/B-BYTEDANCE.jpg" alt="ByteDance">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/C-ASUS.jpg" alt="ASUS">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/C-CANON.jpg" alt="Canon">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/C-FUJIFILM.jpg" alt="Fujifilm">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/I-SUNLIFE.jpg" alt="SunLife">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-TIKTOK.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-SHOPEE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-LAZADA.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-HARAVAN.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-ZALO.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-UPBASE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-LEMON8.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/B-BYTEDANCE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/C-ASUS.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/C-CANON.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/C-FUJIFILM.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/I-SUNLIFE.jpg" alt="" aria-hidden="true">
     </div>
   </div>
 </section>

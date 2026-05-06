@@ -75,7 +75,7 @@
         </svg>
       </button>
 
-      <a href="#contact-form" class="btn btn--primary btn--pill nav-cta" style="padding: 10px 18px; font-size: 13px;">
+      <a href="#registration-form" class="btn btn--primary btn--pill nav-cta" style="padding: 10px 18px; font-size: 13px;">
         <span data-lang="vi">Gửi brief</span>
         <span data-lang="en" hidden>Send brief</span>
         <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -99,31 +99,7 @@
 </div>
 
 <main>
-<!-- ═══════════ 01 HERO ═══════════ -->
-<section class="page-hero page-hero--contact" id="hero">
-  <div class="hero-bg"></div>
-  <div class="container">
-    <div class="page-hero__inner">
-      <div class="hero-eyebrow" data-hero>
-        <span class="dot"></span>
-        <span data-lang="vi">SIA Partnership 2026</span>
-        <span data-lang="en" hidden>SIA Partnership 2026</span>
-      </div>
-
-      <h1 class="page-hero__title" data-hero>
-        <span data-lang="vi">Đăng ký trở thành <em style="color:var(--primary);font-style:italic">Đối tác</em> của SIA</span>
-        <span data-lang="en" hidden>Register to become an SIA <em style="color:var(--primary);font-style:italic">Partner</em></span>
-      </h1>
-
-      <p class="page-hero__subtitle" data-hero>
-        <span data-lang="vi">Điểm qua các sự kiện gần đây: Hơn 150+ chiến dịch và sự kiện, quy tụ 10.000+ người tham dự cùng 500+ thương hiệu đồng hành. Vui lòng điền form bên dưới để đăng ký trở thành Diễn giả (Speaker), Nhà tài trợ (Sponsor), hoặc Đơn vị triển lãm (Exhibitor).</span>
-        <span data-lang="en" hidden>Recent highlights: Over 150+ campaigns and events, gathering 10,000+ attendees and 500+ brands. Please fill out the form below to register as a Speaker, Sponsor, or Exhibitor.</span>
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ 02 FORM ═══════════ -->
+<!-- ═══════════ FORM ═══════════ -->
 <section class="section section--alt" id="registration-form">
   <div class="container">
     <div class="section-header" data-animate>
@@ -146,15 +122,9 @@
         
         <!-- Contact Info -->
         <h3 class="text-h4 mb-4"><span data-lang="vi">Thông tin liên hệ</span><span data-lang="en" hidden>Contact Info</span></h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label"><span data-lang="vi">Tên</span><span data-lang="en" hidden>First Name</span> *</label>
-            <input class="form-input" type="text" required placeholder="Nguyễn">
-          </div>
-          <div class="form-group">
-            <label class="form-label"><span data-lang="vi">Họ</span><span data-lang="en" hidden>Last Name</span> *</label>
-            <input class="form-input" type="text" required placeholder="Văn A">
-          </div>
+        <div class="form-group">
+          <label class="form-label"><span data-lang="vi">Họ và tên</span><span data-lang="en" hidden>Full name</span> *</label>
+          <input class="form-input" type="text" required placeholder="Nguyễn Văn A">
         </div>
         <div class="form-row">
           <div class="form-group">
@@ -170,7 +140,7 @@
         </div>
         <div class="form-group">
           <label class="form-label">
-            <span data-lang="vi">Hồ sơ LinkedIn</span><span data-lang="en" hidden>LinkedIn Profile</span>
+            <span data-lang="vi">Social của bạn</span><span data-lang="en" hidden>Your social profile</span>
           </label>
           <input class="form-input" type="url" placeholder="https://linkedin.com/in/yourprofile">
         </div>
@@ -196,8 +166,6 @@
 
         <div style="height: 1px; background: var(--border-default); margin: var(--space-8) 0;"></div>
 
-        <!-- Participation Role -->
-        <h3 class="text-h4 mb-4"><span data-lang="vi">Vai trò tham gia</span><span data-lang="en" hidden>Participation Role</span></h3>
         <div class="form-group">
           <label class="form-label">
             <span data-lang="vi">Bạn muốn tham gia với vai trò nào:</span><span data-lang="en" hidden>What roles do you want to present:</span> *
@@ -221,30 +189,6 @@
           <span data-lang="vi">Nếu bạn muốn trở thành nhà tài trợ, vui lòng xem trước tài liệu <a href="#" class="text-primary" style="text-decoration:underline;">Sponsor Deck</a>.</span>
           <span data-lang="en" hidden>If you are looking forward to becoming our sponsor, please check our <a href="#" class="text-primary" style="text-decoration:underline;">Sponsor Deck</a>.</span>
         </p>
-        
-        <div style="height: 1px; background: var(--border-default); margin: var(--space-8) 0;"></div>
-
-        <!-- Additional Information -->
-        <div class="form-group">
-          <label class="form-label" style="text-transform: none; letter-spacing: 0; font-size: var(--body-m); margin-bottom: 12px;">
-            <span data-lang="vi">Bạn có sẵn sàng tiếp nhận hồ sơ ứng tuyển từ các ứng viên cho tổ chức/công ty của mình trong sự kiện của chúng tôi không?</span>
-            <span data-lang="en" hidden>Would you be open to receiving Resumes for Job Applications to your organization/company during our event?</span> *
-          </label>
-          <div class="service-chips" role="group">
-            <label class="service-chip">
-              <input type="radio" name="resumes" value="yes" required>
-              <span><span data-lang="vi">Có</span><span data-lang="en" hidden>Yes</span></span>
-            </label>
-            <label class="service-chip">
-              <input type="radio" name="resumes" value="no" required>
-              <span><span data-lang="vi">Không</span><span data-lang="en" hidden>No</span></span>
-            </label>
-            <label class="service-chip">
-              <input type="radio" name="resumes" value="discuss_later" required>
-              <span><span data-lang="vi">Trao đổi sau</span><span data-lang="en" hidden>Discuss Later</span></span>
-            </label>
-          </div>
-        </div>
 
         <div class="form-group mt-6">
           <label class="form-label" for="f-message">

@@ -263,6 +263,90 @@
         margin-right: 0;
       }
     }
+    .home-partner-strip {
+      margin-top: var(--space-6);
+      padding: var(--space-7) 0 var(--space-7);
+      overflow: hidden;
+    }
+    .home-partner-strip .logo-wall {
+      margin-top: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      -webkit-mask-image: none;
+              mask-image: none;
+      overflow: hidden;
+    }
+    .home-partner-strip .partner-marquee {
+      display: flex;
+      width: max-content;
+      align-items: center;
+      gap: 20px;
+      animation: homePartnerMarquee 26s linear infinite;
+      will-change: transform;
+    }
+    .home-partner-strip .partner-logo-img {
+      height: 62px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+    @keyframes homePartnerMarquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .home-partner-strip .partner-marquee {
+        animation: none;
+      }
+    }
+    .services-community-stats {
+      margin-top: var(--space-8);
+      margin-bottom: 0;
+    }
+    #cases .cases-swiper .swiper-wrapper {
+      align-items: stretch;
+    }
+    #cases .cases-swiper .swiper-slide {
+      height: auto;
+      display: flex;
+    }
+    #cases .cases-swiper .case-card {
+      width: 100%;
+      height: 100%;
+    }
+    @media (max-width: 1023px) {
+      .home-partner-strip .partner-logo-img {
+        height: 50px;
+      }
+      .home-partner-strip .partner-marquee {
+        gap: 16px;
+      }
+      .services-community-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px) {
+      .home-partner-strip .partner-logo-img {
+        height: 42px;
+      }
+      .home-partner-strip {
+        margin-top: var(--space-5);
+        padding: var(--space-6) 0;
+      }
+      .home-partner-strip .partner-marquee {
+        gap: 14px;
+      }
+      .services-community-stats {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -405,8 +489,40 @@
   </div>
 </section>
 
+<!-- ═══════════ PARTNER STRIP ═══════════ -->
+<section class="home-partner-strip" aria-label="Đối tác đồng hành">
+  <div class="logo-wall" data-animate>
+    <div class="partner-marquee" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-TIKTOK.jpg" alt="TikTok">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-SHOPEE.jpg" alt="Shopee">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-LAZADA.jpg" alt="Lazada">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-HARAVAN.jpg" alt="Haravan">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-ZALO.jpg" alt="Zalo">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-UPBASE.jpg" alt="Upbase">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-LEMON8.jpg" alt="Lemon8">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/B-BYTEDANCE.jpg" alt="ByteDance">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/C-ASUS.jpg" alt="ASUS">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/C-CANON.jpg" alt="Canon">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/C-FUJIFILM.jpg" alt="Fujifilm">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/I-SUNLIFE.jpg" alt="SunLife">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-TIKTOK.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-SHOPEE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-LAZADA.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-HARAVAN.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-ZALO.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-UPBASE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/P-LEMON8.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/B-BYTEDANCE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/C-ASUS.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/C-CANON.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/C-FUJIFILM.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo/I-SUNLIFE.jpg" alt="" aria-hidden="true">
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ 02 INTRO: Who We Are + Stats ═══════════ -->
-<section class="section home-intro" id="about-sia">
+<section class="section home-intro" id="about-sia" hidden aria-hidden="true">
   <div class="container">
     <div class="home-intro__header" data-animate>
       <h2 class="hero-title">
@@ -566,6 +682,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setSlide(0);
   restartTimer();
+
+  const servicesSection = document.getElementById('services');
+  const timelineSection = document.getElementById('timeline');
+  if (servicesSection && timelineSection) {
+    servicesSection.insertAdjacentElement('afterend', timelineSection);
+  }
 });
 </script>
 
@@ -652,6 +774,43 @@ document.addEventListener('DOMContentLoaded', () => {
           <span data-lang="vi">Xem chi tiết</span><span data-lang="en" hidden>View details</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
+      </article>
+    </div>
+
+    <div class="hero-stats services-community-stats" data-stagger>
+      <article class="hero-stat" data-stagger-item>
+        <div class="hero-stat__number"><span class="counter" data-target="100000">0</span><span class="hero-stat__plus">+</span></div>
+        <div class="hero-stat__label">
+          <span data-lang="vi">Thành viên cộng đồng</span><span data-lang="en" hidden>Community members</span>
+        </div>
+        <div class="hero-stat__sub">
+          <span data-lang="vi">Trên 3 mạng lưới chính</span><span data-lang="en" hidden>Across 3 core networks</span>
+        </div>
+      </article>
+      <article class="hero-stat" data-stagger-item>
+        <div class="hero-stat__number"><span class="counter" data-target="10000">0</span><span class="hero-stat__plus">+</span></div>
+        <div class="hero-stat__label">
+          <span data-lang="vi">KOC &amp; Nhà sáng tạo</span><span data-lang="en" hidden>KOC &amp; Creators</span>
+        </div>
+        <div class="hero-stat__sub">HealthCare · Mom&amp;Baby · Tech</div>
+      </article>
+      <article class="hero-stat" data-stagger-item>
+        <div class="hero-stat__number"><span class="counter" data-target="10000">0</span><span class="hero-stat__plus">+</span></div>
+        <div class="hero-stat__label">
+          <span data-lang="vi">Nhà sáng lập &amp; Doanh nhân</span><span data-lang="en" hidden>Founders &amp; Entrepreneurs</span>
+        </div>
+        <div class="hero-stat__sub">
+          <span data-lang="vi">Trên toàn Việt Nam</span><span data-lang="en" hidden>Nationwide across Vietnam</span>
+        </div>
+      </article>
+      <article class="hero-stat" data-stagger-item>
+        <div class="hero-stat__number"><span class="counter" data-target="50">0</span><span class="hero-stat__plus">+</span></div>
+        <div class="hero-stat__label">
+          <span data-lang="vi">Thương hiệu toàn cầu</span><span data-lang="en" hidden>Global brands served</span>
+        </div>
+        <div class="hero-stat__sub">
+          <span data-lang="vi">Đã vào thị trường Việt Nam</span><span data-lang="en" hidden>Entered the Vietnam market</span>
+        </div>
       </article>
     </div>
   </div>
@@ -911,7 +1070,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </section>
 
 <!-- ═══════════ 02.5 MOMENTS GALLERY ═══════════ -->
-<section class="section" id="moments">
+<section class="section" id="moments" hidden aria-hidden="true">
   <div class="container" data-animate>
     <div class="moments-wrap">
       <div class="section-header text-left">
