@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wdth,wght@0,75..125,100..700;1,75..125,100..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
   <link rel="stylesheet" href="assets/css/variables.css?v=12">
@@ -24,17 +25,86 @@
     })();
   </script>
   <style>
-    .industry-grid--eight {
-      grid-template-columns: repeat(4, 1fr);
+    #industries {
+      padding-top: 48px;
+      padding-bottom: 48px;
     }
-    @media (max-width: 1023px) {
+    #industries .container {
+      max-width: 100%;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .industry-grid--eight {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .industry-grid--eight .industry-card {
+      padding: 16px;
+    }
+    .industry-grid--eight .industry-card__icon .material-symbols-rounded {
+      font-size: 28px;
+      line-height: 1;
+      font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 24;
+    }
+    #pricing .pricing-card__price {
+      font-size: 22px;
+      line-height: 1.32;
+      letter-spacing: -0.01em;
+      white-space: normal;
+      margin-bottom: var(--space-3);
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      #industries {
+        padding-top: 64px;
+        padding-bottom: 64px;
+      }
+      #industries .container {
+        max-width: 100%;
+        padding-left: 32px;
+        padding-right: 32px;
+      }
       .industry-grid--eight {
         grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      .industry-grid--eight .industry-card {
+        padding: 20px;
       }
     }
-    @media (max-width: 640px) {
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      #industries {
+        padding-top: 96px;
+        padding-bottom: 96px;
+      }
+      #industries .container {
+        max-width: 1320px;
+        padding-left: 64px;
+        padding-right: 64px;
+      }
       .industry-grid--eight {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+      }
+      .industry-grid--eight .industry-card {
+        padding: 24px;
+      }
+    }
+    @media (min-width: 1440px) {
+      #industries {
+        padding-top: 120px;
+        padding-bottom: 120px;
+      }
+      #industries .container {
+        max-width: 1440px;
+        padding-left: 120px;
+        padding-right: 120px;
+      }
+      .industry-grid--eight {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+      }
+      .industry-grid--eight .industry-card {
+        padding: 24px;
       }
     }
   </style>
@@ -178,7 +248,7 @@
     <div class="industry-grid industry-grid--eight" data-stagger>
       <article class="industry-card" data-stagger-item>
         <div class="industry-card__icon">
-          <span aria-hidden="true" style="font-size:24px;">💄</span>
+          <span class="material-symbols-rounded" aria-hidden="true">spa</span>
         </div>
         <h3 class="industry-card__title">Beauty & Personal Care</h3>
         <p class="industry-card__desc"><span data-lang="vi">Skincare, makeup, mỹ phẩm, nước hoa.</span><span data-lang="en" hidden>Skincare, makeup, cosmetics, perfumes.</span></p>
@@ -186,7 +256,7 @@
 
       <article class="industry-card" data-stagger-item>
         <div class="industry-card__icon">
-          <span aria-hidden="true" style="font-size:24px;">🛒</span>
+          <span class="material-symbols-rounded" aria-hidden="true">shopping_cart</span>
         </div>
         <h3 class="industry-card__title">FMCG & Consumer Goods</h3>
         <p class="industry-card__desc"><span data-lang="vi">Đồ uống, thực phẩm đóng gói, đồ gia dụng.</span><span data-lang="en" hidden>Beverages, packaged food, household goods.</span></p>
@@ -194,7 +264,7 @@
 
       <article class="industry-card" data-stagger-item>
         <div class="industry-card__icon">
-          <span aria-hidden="true" style="font-size:24px;">🏪</span>
+          <span class="material-symbols-rounded" aria-hidden="true">storefront</span>
         </div>
         <h3 class="industry-card__title">Retail & E-commerce</h3>
         <p class="industry-card__desc"><span data-lang="vi">Thương hiệu bán lẻ, sàn TMĐT, D2C brand.</span><span data-lang="en" hidden>Retail brands, e-commerce platforms, D2C brands.</span></p>
@@ -202,7 +272,7 @@
 
       <article class="industry-card" data-stagger-item>
         <div class="industry-card__icon">
-          <span aria-hidden="true" style="font-size:24px;">💊</span>
+          <span class="material-symbols-rounded" aria-hidden="true">medication</span>
         </div>
         <h3 class="industry-card__title">Healthcare & Wellness</h3>
         <p class="industry-card__desc"><span data-lang="vi">Dược phẩm, TPCN, phòng khám, spa.</span><span data-lang="en" hidden>Pharmaceutical, supplements, clinics, spa.</span></p>
@@ -210,7 +280,7 @@
 
       <article class="industry-card" data-stagger-item>
         <div class="industry-card__icon">
-          <span aria-hidden="true" style="font-size:24px;">🏦</span>
+          <span class="material-symbols-rounded" aria-hidden="true">account_balance</span>
         </div>
         <h3 class="industry-card__title">Banking & Finance</h3>
         <p class="industry-card__desc"><span data-lang="vi">Ngân hàng, ví điện tử, fintech, bảo hiểm.</span><span data-lang="en" hidden>Banks, e-wallets, fintech, insurance.</span></p>
@@ -218,7 +288,7 @@
 
       <article class="industry-card" data-stagger-item>
         <div class="industry-card__icon">
-          <span aria-hidden="true" style="font-size:24px;">🤖</span>
+          <span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>
         </div>
         <h3 class="industry-card__title">Tech & AI (Edtech)</h3>
         <p class="industry-card__desc"><span data-lang="vi">App công nghệ, SaaS, edtech, nền tảng học trực tuyến.</span><span data-lang="en" hidden>Tech apps, SaaS, edtech, online learning platforms.</span></p>
@@ -226,7 +296,7 @@
 
       <article class="industry-card" data-stagger-item>
         <div class="industry-card__icon">
-          <span aria-hidden="true" style="font-size:24px;">🌏</span>
+          <span class="material-symbols-rounded" aria-hidden="true">travel_explore</span>
         </div>
         <h3 class="industry-card__title">Travel - F&B - Hospitality</h3>
         <p class="industry-card__desc"><span data-lang="vi">Gộp nhóm ngành 07-08-09: du lịch, nhà hàng, khách sạn.</span><span data-lang="en" hidden>Merged verticals 07-08-09: travel, F&B, and hospitality.</span></p>
@@ -234,7 +304,7 @@
 
       <article class="industry-card" data-stagger-item>
         <div class="industry-card__icon">
-          <span aria-hidden="true" style="font-size:24px;">👗</span>
+          <span class="material-symbols-rounded" aria-hidden="true">checkroom</span>
         </div>
         <h3 class="industry-card__title">Fashion & Mobility</h3>
         <p class="industry-card__desc"><span data-lang="vi">Thời trang, phụ kiện, ô tô - xe máy - xe điện.</span><span data-lang="en" hidden>Fashion, accessories, automotive and mobility services.</span></p>
@@ -322,7 +392,7 @@
 </section>
 
 <!-- 04 PROCESS -->
-<section class="section" id="process">
+<section class="section" id="process" hidden aria-hidden="true">
   <div class="container">
     <div class="section-header" data-animate>
       <span class="section-eyebrow"><span data-lang="vi">Quy trình làm việc</span><span data-lang="en" hidden>How we work</span></span>
@@ -373,41 +443,43 @@
     </div>
     <div class="pricing-grid" data-stagger>
       <article class="pricing-card" data-stagger-item>
-        <div class="pricing-card__tier">Seed</div>
-        <div class="pricing-card__price">80M<span>+ VND</span></div>
-        <p class="pricing-card__desc"><span data-lang="vi">Brand mới cần test creator và format content.</span><span data-lang="en" hidden>New brands testing creators and content formats.</span></p>
+        <div class="pricing-card__tier">GÓI 01</div>
+        <div class="pricing-card__price">BOOKING KOL/KOC/PR CHO RA MẮT SẢN PHẨM &amp; SỰ KIỆN</div>
+        <p class="pricing-card__desc"><span data-lang="vi">“Sản phẩm sắp ra mắt / Sự kiện sắp tổ chức - làm sao thị trường khách hàng mục tiêu biết đến trong 1 tuần?”</span><span data-lang="en" hidden>“Launching a product or organizing an event - how to make target audiences know about it in one week?”</span></p>
         <ul class="pricing-card__features">
-          <li>20–50 KOC seeding</li>
-          <li><span data-lang="vi">5 content creator UGC</span><span data-lang="en" hidden>5 UGC content creators</span></li>
-          <li><span data-lang="vi">1 livestream thử nghiệm</span><span data-lang="en" hidden>1 pilot livestream</span></li>
-          <li><span data-lang="vi">Báo cáo cơ bản</span><span data-lang="en" hidden>Basic report</span></li>
+          <li><span data-lang="vi">30–50 KOL/KOC đúng lĩnh vực review</span><span data-lang="en" hidden>30-50 relevant KOL/KOC reviewers</span></li>
+          <li><span data-lang="vi">Sản xuất video & livestream giới thiệu</span><span data-lang="en" hidden>Intro videos and livestream production</span></li>
+          <li><span data-lang="vi">Booking PR báo chí, trang tin tức</span><span data-lang="en" hidden>Press and media booking</span></li>
+          <li><span data-lang="vi">Tăng nhận diện lượt reach từ 1-10 triệu trong 4 tuần, tăng lượt khách hàng biết đến, tham dự</span><span data-lang="en" hidden>Increase reach from 1-10 million in 4 weeks and boost awareness and attendance</span></li>
+          <li><span data-lang="vi">Khi nào cần: Ra mắt sản phẩm, khai trương cửa hàng/F&amp;B/khách sạn, sự kiện, triển lãm, rebrand, ra mắt app/khóa học</span><span data-lang="en" hidden>Use for launches, openings, events, exhibitions, rebrand, app/course launches</span></li>
         </ul>
         <a href="contact.html" class="btn btn--ghost btn--pill"><span data-lang="vi">Nhận báo giá</span><span data-lang="en" hidden>Get quote</span></a>
       </article>
       <article class="pricing-card pricing-card--featured" data-stagger-item>
         <div class="pricing-card__badge"><span data-lang="vi">Phổ biến</span><span data-lang="en" hidden>Most popular</span></div>
-        <div class="pricing-card__tier">Scale</div>
-        <div class="pricing-card__price">300M<span>+ VND</span></div>
-        <p class="pricing-card__desc"><span data-lang="vi">Chiến dịch 3–6 tháng tăng trưởng GMV mạnh.</span><span data-lang="en" hidden>3–6 month campaigns for aggressive GMV growth.</span></p>
+        <div class="pricing-card__tier">GÓI 02</div>
+        <div class="pricing-card__price">TĂNG TRƯỞNG DOANH SỐ QUA KOC/UGC REVIEW &amp; AFFILIATE</div>
+        <p class="pricing-card__desc"><span data-lang="vi">“Sản phẩm tốt - tại sao khách hàng chưa biết đến và chưa mua?” Biến review thật thành đơn hàng thật, phủ sóng với Video Review & Livestream.</span><span data-lang="en" hidden>“Good product - why don't customers know it yet and buy?” Turn authentic reviews into real orders with review videos and livestreams.</span></p>
         <ul class="pricing-card__features">
-          <li>100–300 creator</li>
-          <li>Affiliate + UGC engine</li>
-          <li>4–8 livestream / tháng</li>
-          <li>Social commerce shop setup</li>
-          <li><span data-lang="vi">Dashboard & insight monthly</span><span data-lang="en" hidden>Monthly dashboard & insight</span></li>
+          <li><span data-lang="vi">500+ video KOC/UGC review thật</span><span data-lang="en" hidden>500+ authentic KOC/UGC review videos</span></li>
+          <li><span data-lang="vi">500+ video affiliate đẩy traffic bán hàng</span><span data-lang="en" hidden>500+ affiliate videos driving sales traffic</span></li>
+          <li><span data-lang="vi">30+ phiên livestream/tháng (TikTok, Shopee)</span><span data-lang="en" hidden>30+ livestream sessions monthly (TikTok, Shopee)</span></li>
+          <li><span data-lang="vi">Set-up & vận hành gian hàng social commerce</span><span data-lang="en" hidden>Social commerce shop setup and operations</span></li>
+          <li><span data-lang="vi">Dashboard ROAS realtime</span><span data-lang="en" hidden>Realtime ROAS dashboard</span></li>
+          <li><span data-lang="vi">Khi nào cần: Thương hiệu mở rộng từ offline sang online; thương hiệu cần độ phủ nhận diện trên thị trường online & gia tăng doanh số</span><span data-lang="en" hidden>Use when expanding from offline to online and when needing online awareness and sales growth</span></li>
         </ul>
         <a href="contact.html" class="btn btn--primary btn--pill"><span data-lang="vi">Nhận báo giá</span><span data-lang="en" hidden>Get quote</span></a>
       </article>
       <article class="pricing-card" data-stagger-item>
-        <div class="pricing-card__tier">Flagship</div>
-        <div class="pricing-card__price">800M<span>+ VND</span></div>
-        <p class="pricing-card__desc"><span data-lang="vi">Mega campaign & Mega Livestream với KOC Hub.</span><span data-lang="en" hidden>Mega campaigns & Mega Livestream with KOC Hub.</span></p>
+        <div class="pricing-card__tier">GÓI 03</div>
+        <div class="pricing-card__price">XÂY DỰNG CỘNG ĐỒNG CREATOR - KOC HUB</div>
+        <p class="pricing-card__desc"><span data-lang="vi">Xây dựng cộng đồng creator riêng - tài sản dài hạn cho Brand/Platform.</span><span data-lang="en" hidden>Build a dedicated creator community as a long-term asset for brands/platforms.</span></p>
         <ul class="pricing-card__features">
-          <li>KOC Hub 500+ exclusive</li>
-          <li>Creative Mega Livestream</li>
-          <li>Multi-platform social commerce</li>
-          <li>Dedicated GMV growth team</li>
-          <li>Retainer 6–12 tháng</li>
+          <li><span data-lang="vi">Xây dựng Creator/KOC Hub 500+ thành viên</span><span data-lang="en" hidden>Build a 500+ member Creator/KOC Hub</span></li>
+          <li><span data-lang="vi">Triển khai các chiến dịch, minigame, workshop với KOC</span><span data-lang="en" hidden>Run campaigns, minigames and workshops with KOCs</span></li>
+          <li><span data-lang="vi">Ambassador program dài hạn</span><span data-lang="en" hidden>Long-term ambassador program</span></li>
+          <li><span data-lang="vi">Gia tăng giá trị thương hiệu và thực hiện các hoạt động LYT</span><span data-lang="en" hidden>Increase brand value and execute loyalty activities</span></li>
+          <li><span data-lang="vi">Khi nào cần: Đã qua giai đoạn ra mắt, muốn xây bền vững; brand Beauty/FMCG/Mẹ bé premium muốn xây cộng đồng Creators/Affiliate</span><span data-lang="en" hidden>Use after launch stage for sustainable growth, especially Beauty/FMCG/Mom-Baby premium brands</span></li>
         </ul>
         <a href="contact.html" class="btn btn--ghost btn--pill"><span data-lang="vi">Nhận báo giá</span><span data-lang="en" hidden>Get quote</span></a>
       </article>
@@ -441,16 +513,44 @@
         <img src="assets/images/showcase-safe/3192239ce92f083c.png" alt="SIA" height="40">
         <p>SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.</p>
         <div class="footer-social">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg></a>
+          <a href="https://www.facebook.com/SIA.InnovationmarketingAgency" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg></a>
+          <a href="https://www.linkedin.com/company/sia-innovation-marketing-agency/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="https://wa.me/84988441630" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0012.1.1C5.6.1.3 5.4.3 11.9c0 2.1.6 4.2 1.6 6L.1 23.9l6.2-1.7c1.7 1 3.7 1.5 5.8 1.5h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.1-1.2-6.1-3.5-8.4zm-8.4 18.1c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.6 9.6 0 01-1.5-5.1c0-5.3 4.3-9.7 9.7-9.7 2.6 0 5 .9 6.8 2.8a9.5 9.5 0 012.8 6.8c0 5.4-4.3 9.8-9.6 9.8zm5.3-7.2c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.1-3.6-.3-.5.3-.5.8-1.8.1-.2.1-.4 0-.6-.1-.1-.7-1.7-1-2.4-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9 0 1.8 1.3 3.5 1.5 3.8.2.2 2.5 3.9 6.1 5.3.8.4 1.5.6 2 .8.9.3 1.6.2 2.2.1.7-.1 1.8-.8 2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg></a>
         </div>
       </div>
-      <div><div class="footer-title"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></div><ul class="footer-list"><li><a href="services-ima.html">SIA IMA</a></li><li><a href="services-event.html">SIA Event</a></li><li><a href="services-hub.html">SIA Hub</a></li><li><a href="services-ima.html">Creative Mega Livestream</a></li></ul></div>
-      <div><div class="footer-title"><span data-lang="vi">Công ty</span><span data-lang="en" hidden>Company</span></div><ul class="footer-list"><li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li><li><a href="showcase.html">Showcase</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li></ul></div>
-      <div><div class="footer-title"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></div><ul class="footer-list"><li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li><li><a href="tel:0988441630">0988 441 630</a></li><li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li></ul></div>
+
+      <div>
+        <div class="footer-title"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></div>
+        <ul class="footer-list">
+          <li><a href="services-ima.html">Xây dựng chiến lược marketing tổng thể</a></li>
+          <li><a href="services-ima.html">PR& truyền thông tích hợp</a></li>
+          <li><a href="services-event.html">Tổ chức chuỗi sự kiện</a></li>
+          <li><a href="services-hub.html">Booking KOL/KOC</a></li>
+          <li><a href="services-hub.html">Xây dựng cộng đồng KOC affiliate</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title"><span data-lang="vi">Công ty</span><span data-lang="en" hidden>Company</span></div>
+        <ul class="footer-list">
+          <li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li>
+          <li><a href="showcase.html">Showcase</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></div>
+        <ul class="footer-list">
+          <li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li>
+          <li><a href="tel:+84978462589">+84978462589</a></li>
+          <li><a href="https://wa.me/84988441630" target="_blank" rel="noopener">WhatsApp: 098 8441630</a></li>
+          <li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li>
+        </ul>
+      </div>
     </div>
+
     <div class="footer-bottom">
       <span>© 2026 SIA Innovation Marketing Agency — All rights reserved.</span>
       <span><a href="#" style="color:inherit;">Privacy</a> · <a href="#" style="color:inherit;">Terms</a></span>

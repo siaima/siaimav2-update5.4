@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="light">
+<html lang="vi" data-theme="light" class="is-home">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -189,6 +189,142 @@
       padding: 0;
     }
     .hero-event__dot.is-active { background: var(--primary); }
+    .hero-cinematic .hero-event__controls {
+      justify-content: flex-end;
+      bottom: var(--space-6);
+    }
+    .hero-cinematic__inner {
+      max-width: min(1100px, 100%);
+      display: grid;
+      gap: var(--space-5);
+    }
+    .hero-cinematic__topline {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .hero-cinematic__metric-value {
+      color: rgba(255,255,255,0.88);
+      font-size: clamp(18px, 2.1vw, 28px);
+      letter-spacing: 0.03em;
+      font-weight: 560;
+      line-height: 1.2;
+      text-shadow: 0 8px 24px rgba(0,0,0,0.36);
+      transition: opacity 240ms ease, transform 240ms ease, filter 240ms ease;
+    }
+    .hero-cinematic__metric-value.is-switching {
+      opacity: 0.22;
+      transform: translateY(4px);
+      filter: blur(2px);
+    }
+    .hero-cinematic__title {
+      margin-bottom: 0;
+      color: var(--white);
+      font-size: clamp(54px, 8vw, 108px);
+      line-height: 0.96;
+      font-weight: 540;
+      letter-spacing: -0.04em;
+      text-shadow: 0 18px 54px rgba(0,0,0,0.52);
+      min-height: 1.05em;
+    }
+    [data-hero-rotate="input1-title"] {
+      transition: opacity 260ms ease, transform 260ms ease, filter 260ms ease;
+      display: inline-block;
+    }
+    [data-hero-rotate="input1-title"].is-switching {
+      opacity: 0.36;
+      transform: translateY(7px);
+      filter: blur(3px);
+    }
+    .hero-cinematic__title {
+      transition: opacity 260ms ease, transform 260ms ease, filter 260ms ease;
+    }
+    .hero-cinematic__title.is-switching {
+      opacity: 0.36;
+      transform: translateY(7px);
+      filter: blur(3px);
+    }
+    .hero-cinematic__divider {
+      height: 1px;
+      width: 100%;
+      background: rgba(255,255,255,0.3);
+      margin-top: var(--space-3);
+    }
+    .hero-cinematic__lower {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: clamp(20px, 3vw, 56px);
+      align-items: start;
+      margin-top: var(--space-2);
+    }
+    .hero-cinematic__overview-label {
+      display: inline-block;
+      color: rgba(255,255,255,0.62);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      margin-bottom: var(--space-3);
+      font-weight: 620;
+    }
+    .hero-cinematic .hero-subtitle {
+      max-width: 470px;
+      font-size: clamp(19px, 1.9vw, 32px);
+      line-height: 1.26;
+      color: rgba(255,255,255,0.9);
+    }
+    .hero-cinematic .hero-cta {
+      margin-top: var(--space-6);
+    }
+    .hero-cinematic__panels {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+    .hero-cinematic__panel {
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: var(--radius-lg);
+      padding: 14px 16px;
+      background: rgba(13,13,13,0.28);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .hero-cinematic__panel-title {
+      display: block;
+      color: rgba(255,255,255,0.62);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-weight: 620;
+    }
+    .hero-cinematic__panel-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 6px;
+    }
+    .hero-cinematic__panel-list li {
+      color: rgba(255,255,255,0.86);
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      line-height: 1.34;
+      text-transform: none;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px;
+      align-items: start;
+    }
+    .hero-cinematic__panel-list li::before {
+      content: '-';
+      color: rgba(255,255,255,0.72);
+      font-weight: 700;
+    }
+    .hero-cinematic__panel-list--ecosystem li {
+      font-size: 17px;
+      font-weight: 620;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.96);
+    }
 
     .home-intro {
       position: relative;
@@ -253,6 +389,25 @@
       }
       .hero-event__dot {
         width: 24px;
+      }
+      .hero-cinematic__topline {
+        justify-content: flex-start;
+      }
+      .hero-cinematic__metric-value {
+        font-size: 16px;
+      }
+      .hero-cinematic__title {
+        font-size: clamp(44px, 12vw, 72px);
+      }
+      .hero-cinematic__lower {
+        grid-template-columns: 1fr;
+        gap: var(--space-5);
+      }
+      .hero-cinematic__panels {
+        grid-template-columns: 1fr;
+      }
+      .hero-cinematic .hero-event__controls {
+        justify-content: flex-start;
       }
       .home-intro__header {
         text-align: left;
@@ -351,6 +506,70 @@
 </head>
 <body>
 
+<div class="home-loader" id="homeLoader" aria-hidden="true">
+  <div class="home-loader__stage home-loader__stage--counter" data-loader-counter>
+    <div class="home-loader__counter-wrap">
+      <div class="home-loader__project">
+        <span data-lang="vi">[ SIA IMA ]</span>
+        <span data-lang="en" hidden>[ SIA IMA ]</span>
+        <div class="home-loader__tag">
+          <span data-lang="vi">Innovation Marketing Agency</span>
+          <span data-lang="en" hidden>Innovation Marketing Agency</span>
+        </div>
+      </div>
+      <div class="home-loader__percent">
+        <div class="home-loader__metric"><span data-loader-percent>0</span><span aria-hidden="true">%</span></div>
+        <div class="home-loader__progress" aria-hidden="true"><span data-loader-bar></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-loader__stage home-loader__stage--strip" data-loader-strip>
+    <div class="home-loader__strip-grid" aria-hidden="true">
+      <div class="home-loader__strip-col home-loader__strip-col--a">
+        <img src="assets/images/siamoment/486406471_622145820655556_4208193635390877713_n.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/D2N.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/HA%CC%80NH%20TRI%CC%80NH%20TU%CC%9B%CC%80%20CA%CC%86N%20BE%CC%82%CC%81P%20NHO%CC%89%20%C4%90E%CC%82%CC%81N%20SHARK%20TANK.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/NA%CC%82NG%20CAO%20HIE%CC%A3%CC%82U%20SUA%CC%82%CC%81T%20SALE&amp;%20MARKETING.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/486406471_622145820655556_4208193635390877713_n.jpg" alt="" loading="eager" decoding="async">
+      </div>
+      <div class="home-loader__strip-col home-loader__strip-col--b">
+        <img src="assets/images/siamoment/487506738_625121820357956_1802010585951418351_n.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/DIGITAL%20ECONOMY%20&amp;%20OPENCLAW%20AI.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/K%20BEAUTY%20EXPO%20VIETNAM.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/WORKSHOP%20VERY%20DEMURE%20VERY%20MINDFUL.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/487506738_625121820357956_1802010585951418351_n.jpg" alt="" loading="eager" decoding="async">
+      </div>
+      <div class="home-loader__strip-col home-loader__strip-col--c">
+        <img src="assets/images/siamoment/491884455_641804195356385_3765043591363660112_n.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/FRUDENTIAL.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/KI%CC%81%20KE%CC%82%CC%81T%20TOA%CC%80N%20DIE%CC%A3%CC%82N.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/491884455_641804195356385_3765043591363660112_n.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/FRUDENTIAL.jpg" alt="" loading="eager" decoding="async">
+      </div>
+    </div>
+
+    <div class="home-loader__strip-single" aria-hidden="true">
+      <div class="home-loader__strip-col home-loader__strip-col--mobile">
+        <img src="assets/images/siamoment/486406471_622145820655556_4208193635390877713_n.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/487506738_625121820357956_1802010585951418351_n.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/491884455_641804195356385_3765043591363660112_n.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/D2N.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/DIGITAL%20ECONOMY%20&amp;%20OPENCLAW%20AI.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/FRUDENTIAL.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/HA%CC%80NH%20TRI%CC%80NH%20TU%CC%9B%CC%80%20CA%CC%86N%20BE%CC%82%CC%81P%20NHO%CC%89%20%C4%90E%CC%82%CC%81N%20SHARK%20TANK.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/K%20BEAUTY%20EXPO%20VIETNAM.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/KI%CC%81%20KE%CC%82%CC%81T%20TOA%CC%80N%20DIE%CC%A3%CC%82N.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/NA%CC%82NG%20CAO%20HIE%CC%A3%CC%82U%20SUA%CC%82%CC%81T%20SALE&amp;%20MARKETING.jpg" alt="" loading="eager" decoding="async">
+        <img src="assets/images/siamoment/WORKSHOP%20VERY%20DEMURE%20VERY%20MINDFUL.jpg" alt="" loading="eager" decoding="async">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="home-loader__veil"></div>
+</div>
+
 <!-- ═══════════ HEADER ═══════════ -->
 <header class="site-header">
   <div class="nav-container">
@@ -425,8 +644,30 @@
 
 <main>
 
-<!-- ═══════════ 01 HERO: Event Slider ═══════════ -->
-<section class="section-hero hero-event" id="hero" aria-label="SIA event highlights">
+<!-- ═══════════ 01 HERO: Event Slider (legacy hidden) ═══════════ -->
+<section class="section-hero hero-event" id="hero-legacy" aria-label="SIA event highlights" hidden aria-hidden="true">
+  <div class="hero-event__slides" aria-hidden="true">
+    <div class="hero-event__slide is-active" data-caption="Digital Economy &amp; OpenClaw AI">
+      <img src="assets/images/showcase-safe/039590090d75e843.jpg" alt="">
+    </div>
+    <div class="hero-event__slide" data-caption="Hành trình từ căn bếp nhỏ đến Shark Tank">
+      <img src="assets/images/showcase-safe/542678017b1d2249.jpg" alt="">
+    </div>
+    <div class="hero-event__slide" data-caption="K Beauty Expo Vietnam">
+      <img src="assets/images/showcase-safe/5aa42912f803d352.jpg" alt="">
+    </div>
+    <div class="hero-event__slide" data-caption="Nâng cao hiệu suất Sale &amp; Marketing">
+      <img src="assets/images/showcase-safe/5bbbf9e2b240398a.jpg" alt="">
+    </div>
+    <div class="hero-event__slide" data-caption="Workshop Very Demure Very Mindful">
+      <img src="assets/images/showcase-safe/70d5b5faa7ac087f.jpg" alt="">
+    </div>
+  </div>
+  <div class="hero-event__shade"></div>
+</section>
+
+<!-- ═══════════ 01 HERO: Cinematic Dynamic ═══════════ -->
+<section class="section-hero hero-event hero-cinematic" id="hero" aria-label="SIA hero intro">
   <div class="hero-event__slides" aria-hidden="true">
     <div class="hero-event__slide is-active" data-hero-slide data-caption="Digital Economy &amp; OpenClaw AI">
       <img src="assets/images/showcase-safe/039590090d75e843.jpg" alt="">
@@ -447,38 +688,63 @@
   <div class="hero-event__shade"></div>
 
   <div class="container">
-    <div class="hero-event__inner">
-      <div class="hero-event__eyebrow" data-hero>
-        <span data-lang="vi">SIA Innovation Marketing Agency</span>
-        <span data-lang="en" hidden>SIA Innovation Marketing Agency</span>
+    <div class="hero-event__inner hero-cinematic__inner">
+      <div class="hero-cinematic__topline" data-hero>
+        <span class="hero-cinematic__metric-value" data-hero-rotate="input1">Innovation</span>
       </div>
 
-      <h1 class="hero-title" data-hero>
-        <span data-lang="vi">Kết nối thương hiệu toàn cầu với cộng đồng Việt Nam.</span>
-        <span data-lang="en" hidden>Connecting global brands with Vietnam's communities.</span>
+      <h1 class="hero-title hero-cinematic__title" data-hero>
+        <span data-hero-rotate="input1-title">Innovation</span>
       </h1>
 
-      <p class="hero-subtitle" data-hero>
-        <span data-lang="vi">Từ sự kiện, cộng đồng đến chuyển đổi doanh thu — SIA kiến tạo những điểm chạm thật để thương hiệu bước vào thị trường nhanh hơn và sâu hơn.</span>
-        <span data-lang="en" hidden>From events and communities to revenue conversion, SIA creates real touchpoints that help brands enter the market faster and deeper.</span>
-      </p>
+      <div class="hero-cinematic__divider" data-hero aria-hidden="true"></div>
 
-      <div class="hero-cta" data-hero>
-        <a href="services.html" class="btn btn--primary btn--lg btn--pill">
-          <span data-lang="vi">Khám phá dịch vụ</span>
-          <span data-lang="en" hidden>Explore services</span>
-          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-        <a href="showcase.html" class="btn btn--ghost btn--lg btn--pill">
-          <span data-lang="vi">Xem dự án</span>
-          <span data-lang="en" hidden>View projects</span>
-        </a>
+      <div class="hero-cinematic__lower">
+        <div data-hero>
+          <span class="hero-cinematic__overview-label">Overview</span>
+          <p class="hero-subtitle">
+            <span data-lang="vi">Từ sự kiện, cộng đồng đến chuyển đổi doanh thu — SIA kiến tạo những điểm chạm thật để thương hiệu bước vào thị trường nhanh hơn và sâu hơn.</span>
+            <span data-lang="en" hidden>From events and communities to revenue conversion, SIA creates real touchpoints that help brands enter the market faster and deeper.</span>
+          </p>
+
+          <div class="hero-cta">
+            <a href="services.html" class="btn btn--primary btn--lg btn--pill">
+              <span data-lang="vi">Khám phá dịch vụ</span>
+              <span data-lang="en" hidden>Explore services</span>
+              <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="showcase.html" class="btn btn--ghost btn--lg btn--pill">
+              <span data-lang="vi">Xem dự án</span>
+              <span data-lang="en" hidden>View projects</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-cinematic__panels" data-hero>
+          <div class="hero-cinematic__panel">
+            <span class="hero-cinematic__panel-title">HỆ SINH THÁI TĂNG TRƯỞNG</span>
+            <ul class="hero-cinematic__panel-list hero-cinematic__panel-list--ecosystem">
+              <li>SIA IMA</li>
+              <li>SIA HUB</li>
+              <li>SIA EVENT</li>
+            </ul>
+          </div>
+          <div class="hero-cinematic__panel">
+            <span class="hero-cinematic__panel-title">DỊCH VỤ TRIỂN KHAI</span>
+            <ul class="hero-cinematic__panel-list">
+              <li>Xây dựng chiến lược marketing tổng thể</li>
+              <li>PR&amp; truyền thông tích hợp</li>
+              <li>Tổ chức chuỗi sự kiện</li>
+              <li>Booking KOL/KOC</li>
+              <li>Xây dựng cộng đồng KOC affiliate</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="hero-event__controls" aria-label="Event slide controls">
-    <div class="hero-event__caption" id="heroEventCaption">Digital Economy &amp; OpenClaw AI</div>
     <div class="hero-event__dots" role="tablist" aria-label="Event slides">
       <button class="hero-event__dot is-active" type="button" data-hero-dot="0" aria-label="Digital Economy &amp; OpenClaw AI"></button>
       <button class="hero-event__dot" type="button" data-hero-dot="1" aria-label="Hành trình từ căn bếp nhỏ đến Shark Tank"></button>
@@ -493,30 +759,104 @@
 <section class="home-partner-strip" aria-label="Đối tác đồng hành">
   <div class="logo-wall" data-animate>
     <div class="partner-marquee" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-TIKTOK.jpg" alt="TikTok">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-SHOPEE.jpg" alt="Shopee">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-LAZADA.jpg" alt="Lazada">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-HARAVAN.jpg" alt="Haravan">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-ZALO.jpg" alt="Zalo">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-UPBASE.jpg" alt="Upbase">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-LEMON8.jpg" alt="Lemon8">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/B-BYTEDANCE.jpg" alt="ByteDance">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/C-ASUS.jpg" alt="ASUS">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/C-CANON.jpg" alt="Canon">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/C-FUJIFILM.jpg" alt="Fujifilm">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/I-SUNLIFE.jpg" alt="SunLife">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-TIKTOK.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-SHOPEE.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-LAZADA.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-HARAVAN.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-ZALO.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-UPBASE.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/P-LEMON8.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/B-BYTEDANCE.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/C-ASUS.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/C-CANON.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/C-FUJIFILM.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo/I-SUNLIFE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-BYTEDANCE.jpg" alt="BYTEDANCE">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-LAZADA.jpg" alt="LAZADA">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-LEMON8.jpg" alt="LEMON8">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-SHOPEE.jpg" alt="SHOPEE">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-TIKTOK.jpg" alt="TIKTOK">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-ZALO.jpg" alt="ZALO">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-CU%CC%A3C%20SO%CC%9B%CC%89%20HU%CC%9B%CC%83U%20TRI%CC%81%20%20TUE%CC%A3%CC%82.jpg" alt="CỤC SỞ HỮU TRÍ TUỆ">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-HONGBANG.jpg" alt="HONGBANG">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-HO%CC%A3%CC%82I%20SO%CC%9B%CC%89%20HU%CC%9B%CC%83U%20TRI%CC%81%20%20TUE%CC%A3%CC%82.jpg" alt="HỘI SỞ HỮU TRÍ TUỆ">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-HUTECH.jpg" alt="HUTECH">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-JCI%20VIETNAM.jpg" alt="JCI VIETNAM">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-SO%CC%9B%CC%89%20KH%20&%20CN%20TP%20HCM.jpg" alt="SỞ KH & CN TP HCM">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-UEF.jpg" alt="UEF">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-VLU.jpg" alt="VLU">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-ASUS.jpg" alt="ASUS">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-CANON.jpg" alt="CANON">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-FUJIFILM.jpg" alt="FUJIFILM">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-KINGSTON.jpg" alt="KINGSTON">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-LEXAR.jpg" alt="LEXAR">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-NANLITE.jpg" alt="NANLITE">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-NIKON.jpg" alt="NIKON">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-SIGMA.jpg" alt="SIGMA">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-SUBARU.jpg" alt="SUBARU">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-TANCHONG%20MOTOR.jpg" alt="TANCHONG MOTOR">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-VIEWSONIC.jpg" alt="VIEWSONIC">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/I%20-%20FRUDENTIAL.jpg" alt="FRUDENTIAL">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/I-EXPORUM.jpg" alt="EXPORUM">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/I-MANULIFE.jpg" alt="MANULIFE">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/I-SUNLIFE.jpg" alt="SUNLIFE">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-ASKANY.jpg" alt="ASKANY">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-CLEAR.jpg" alt="CLEAR">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-E2E.jpg" alt="E2E">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-ECOCHIC.jpg" alt="ECOCHIC">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-FASTLINK.jpg" alt="FASTLINK">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-HARAVAN.jpg" alt="HARAVAN">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-HOLOLAB.jpg" alt="HOLOLAB">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-KOTEX.jpg" alt="KOTEX">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-MATBAO.jpg" alt="MATBAO">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-ONFLOW.jpg" alt="ONFLOW">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-PRENY.jpg" alt="PRENY">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-SOHACO.jpg" alt="SOHACO">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-UAN.jpg" alt="UAN">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-UPBASE.jpg" alt="UPBASE">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-AURORE.jpg" alt="AURORE">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-EDENA.jpg" alt="EDENA">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-HO%CC%82%CC%80%20MA%CC%82Y.jpg" alt="HỒ MÂY">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-LANGBIANGFARM.jpg" alt="LANGBIANGFARM">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-MARINA%20BAY.jpg" alt="MARINA BAY">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-MVILLAGE.jpg" alt="MVILLAGE">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-BYTEDANCE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-LAZADA.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-LEMON8.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-SHOPEE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-TIKTOK.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-ZALO.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-CU%CC%A3C%20SO%CC%9B%CC%89%20HU%CC%9B%CC%83U%20TRI%CC%81%20%20TUE%CC%A3%CC%82.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-HONGBANG.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-HO%CC%A3%CC%82I%20SO%CC%9B%CC%89%20HU%CC%9B%CC%83U%20TRI%CC%81%20%20TUE%CC%A3%CC%82.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-HUTECH.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-JCI%20VIETNAM.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-SO%CC%9B%CC%89%20KH%20&%20CN%20TP%20HCM.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-UEF.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-VLU.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-ASUS.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-CANON.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-FUJIFILM.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-KINGSTON.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-LEXAR.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-NANLITE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-NIKON.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-SIGMA.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-SUBARU.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-TANCHONG%20MOTOR.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-VIEWSONIC.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/I%20-%20FRUDENTIAL.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/I-EXPORUM.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/I-MANULIFE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/I-SUNLIFE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-ASKANY.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-CLEAR.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-E2E.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-ECOCHIC.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-FASTLINK.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-HARAVAN.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-HOLOLAB.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-KOTEX.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-MATBAO.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-ONFLOW.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-PRENY.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-SOHACO.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-UAN.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-UPBASE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-AURORE.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-EDENA.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-HO%CC%82%CC%80%20MA%CC%82Y.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-LANGBIANGFARM.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-MARINA%20BAY.jpg" alt="" aria-hidden="true">
+      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-MVILLAGE.jpg" alt="" aria-hidden="true">
     </div>
   </div>
 </section>
@@ -646,8 +986,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const slides = Array.from(document.querySelectorAll('[data-hero-slide]'));
-  const dots = Array.from(document.querySelectorAll('[data-hero-dot]'));
+  const heroSection = document.getElementById('hero');
+  const slides = heroSection ? Array.from(heroSection.querySelectorAll('[data-hero-slide]')) : [];
+  const dots = heroSection ? Array.from(heroSection.querySelectorAll('[data-hero-dot]')) : [];
   const caption = document.getElementById('heroEventCaption');
   if (!slides.length || !dots.length) return;
 
@@ -682,6 +1023,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setSlide(0);
   restartTimer();
+
+  const prefersReducedRotation = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const rotateInput1 = document.querySelector('[data-hero-rotate="input1"]');
+  const rotateInput1Title = document.querySelector('[data-hero-rotate="input1-title"]');
+
+  const input1Words = ['Inovation', 'Ecommerce', 'Marketing', 'Community', 'Affiliate', 'Booking KOL/KOC'];
+
+  function startTextRotor(target, words, intervalMs) {
+    if (!target || !words.length) return;
+    let wordIndex = 0;
+    target.textContent = words[wordIndex];
+    if (prefersReducedRotation || words.length === 1) return;
+
+    window.setInterval(() => {
+      target.classList.add('is-switching');
+      window.setTimeout(() => {
+        wordIndex = (wordIndex + 1) % words.length;
+        target.textContent = words[wordIndex];
+        target.classList.remove('is-switching');
+      }, 170);
+    }, intervalMs);
+  }
+
+  startTextRotor(rotateInput1, input1Words, 2300);
+  startTextRotor(rotateInput1Title, input1Words, 2300);
 
   const servicesSection = document.getElementById('services');
   const timelineSection = document.getElementById('timeline');
@@ -1437,8 +1803,17 @@ document.addEventListener('DOMContentLoaded', () => {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
             <div>
-              <div class="ci-label">Hotline</div>
-              <div class="ci-value">0988 441 630</div>
+              <div class="ci-label">Phone</div>
+              <a href="tel:+84978462589" class="ci-value" style="color:inherit;">+84978462589</a>
+            </div>
+          </li>
+          <li>
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.2 16.4l.5-2.2a5.2 5.2 0 1 1 2.1 1.2z"></path></svg>
+            </div>
+            <div>
+              <div class="ci-label">WhatsApp</div>
+              <a href="https://wa.me/84988441630" target="_blank" rel="noopener" class="ci-value" style="color:inherit;">098 8441630</a>
             </div>
           </li>
           <li>
@@ -1447,14 +1822,14 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div>
               <div class="ci-label">Email</div>
-              <div class="ci-value">sia.agency@siagroupco.com</div>
+              <a href="mailto:sia.agency@siagroupco.com" class="ci-value" style="color:inherit;">sia.agency@siagroupco.com</a>
             </div>
           </li>
         </ul>
       </div>
 
       <!-- Form -->
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn — SIA sẽ liên hệ sớm nhất!');">
+      <form class="contact-form">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="name">
@@ -1468,7 +1843,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span data-lang="vi">Số điện thoại *</span>
               <span data-lang="en" hidden>Phone *</span>
             </label>
-            <input id="phone" class="form-input" type="tel" required placeholder="0988 000 000">
+            <input id="phone" class="form-input" type="tel" required placeholder="+84978462589">
           </div>
         </div>
         <div class="form-group">
@@ -1481,12 +1856,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <span data-lang="en" hidden>Service needed</span>
           </label>
           <select id="need" class="form-select">
-            <option value="ima">SIA IMA — Innovation Marketing</option>
-            <option value="event">SIA Event — Brand Experience</option>
-            <option value="hub">SIA Hub — Influencer & Commerce</option>
-            <option value="other">
-              Other / Chưa rõ
-            </option>
+            <option value="marketing-strategy">Xây dựng chiến lược marketing tổng thể</option>
+            <option value="integrated-pr-comms">PR& truyền thông tích hợp</option>
+            <option value="event-series">Tổ chức chuỗi sự kiện</option>
+            <option value="booking-kol-koc">Booking KOL/KOC</option>
+            <option value="koc-affiliate-community">Xây dựng cộng đồng KOC affiliate</option>
           </select>
         </div>
         <div class="form-group">
@@ -1516,45 +1890,29 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/images/showcase-safe/3192239ce92f083c.png" alt="SIA" height="40">
-        <p>
-          SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.
-        </p>
+        <p>SIA Innovation Marketing Agency — Hệ sinh thái marketing tích hợp cho doanh nhân, thương hiệu và creator tại Việt Nam và quốc tế.</p>
         <div class="footer-social">
-          <a href="#" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg>
-          </a>
-          <a href="#" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="#" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
-          </a>
-          <a href="#" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1C4.3 20.5 12 20.5 12 20.5s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg>
-          </a>
+          <a href="https://www.facebook.com/SIA.InnovationmarketingAgency" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.4 11 10.1 11.9v-8.4H7v-3.5h3.1V9.4c0-3.1 1.8-4.8 4.6-4.8 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4C19.6 23 24 18 24 12z"/></svg></a>
+          <a href="https://www.linkedin.com/company/sia-innovation-marketing-agency/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="https://wa.me/84988441630" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0012.1.1C5.6.1.3 5.4.3 11.9c0 2.1.6 4.2 1.6 6L.1 23.9l6.2-1.7c1.7 1 3.7 1.5 5.8 1.5h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.1-1.2-6.1-3.5-8.4zm-8.4 18.1c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.6 9.6 0 01-1.5-5.1c0-5.3 4.3-9.7 9.7-9.7 2.6 0 5 .9 6.8 2.8a9.5 9.5 0 012.8 6.8c0 5.4-4.3 9.8-9.6 9.8zm5.3-7.2c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.1-3.6-.3-.5.3-.5.8-1.8.1-.2.1-.4 0-.6-.1-.1-.7-1.7-1-2.4-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9 0 1.8 1.3 3.5 1.5 3.8.2.2 2.5 3.9 6.1 5.3.8.4 1.5.6 2 .8.9.3 1.6.2 2.2.1.7-.1 1.8-.8 2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg></a>
         </div>
       </div>
 
       <div>
-        <div class="footer-title">
-          <span data-lang="vi">Dịch vụ</span>
-          <span data-lang="en" hidden>Services</span>
-        </div>
+        <div class="footer-title"><span data-lang="vi">Dịch vụ</span><span data-lang="en" hidden>Services</span></div>
         <ul class="footer-list">
-          <li><a href="services-ima.html">SIA IMA</a></li>
-          <li><a href="services-event.html">SIA Event</a></li>
-          <li><a href="services-hub.html">SIA Hub</a></li>
-          <li><a href="services-ima.html">Creative Mega Livestream</a></li>
+          <li><a href="services-ima.html">Xây dựng chiến lược marketing tổng thể</a></li>
+          <li><a href="services-ima.html">PR& truyền thông tích hợp</a></li>
+          <li><a href="services-event.html">Tổ chức chuỗi sự kiện</a></li>
+          <li><a href="services-hub.html">Booking KOL/KOC</a></li>
+          <li><a href="services-hub.html">Xây dựng cộng đồng KOC affiliate</a></li>
         </ul>
       </div>
 
       <div>
-        <div class="footer-title">
-          <span data-lang="vi">Công ty</span>
-          <span data-lang="en" hidden>Company</span>
-        </div>
+        <div class="footer-title"><span data-lang="vi">Công ty</span><span data-lang="en" hidden>Company</span></div>
         <ul class="footer-list">
-          <li><a href="about.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li>
+          <li><a href="index.html"><span data-lang="vi">Giới thiệu</span><span data-lang="en" hidden>About</span></a></li>
           <li><a href="showcase.html">Showcase</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></a></li>
@@ -1562,13 +1920,11 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div>
-        <div class="footer-title">
-          <span data-lang="vi">Liên hệ</span>
-          <span data-lang="en" hidden>Contact</span>
-        </div>
+        <div class="footer-title"><span data-lang="vi">Liên hệ</span><span data-lang="en" hidden>Contact</span></div>
         <ul class="footer-list">
           <li><a href="https://maps.google.com/?q=14+Ngõ+Bệ,+Tân+Bình" target="_blank" rel="noopener">14 Ngõ Bệ, Tân Bình</a></li>
-          <li><a href="tel:0988441630">0988 441 630</a></li>
+          <li><a href="tel:+84978462589">+84978462589</a></li>
+          <li><a href="https://wa.me/84988441630" target="_blank" rel="noopener">WhatsApp: 098 8441630</a></li>
           <li><a href="mailto:sia.agency@siagroupco.com">sia.agency@siagroupco.com</a></li>
         </ul>
       </div>
@@ -1576,10 +1932,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <div class="footer-bottom">
       <span>© 2026 SIA Innovation Marketing Agency — All rights reserved.</span>
-      <span>
-        <a href="#" style="color:inherit;">Privacy</a> ·
-        <a href="#" style="color:inherit;">Terms</a>
-      </span>
+      <span><a href="#" style="color:inherit;">Privacy</a> · <a href="#" style="color:inherit;">Terms</a></span>
     </div>
   </div>
 </footer>
