@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="assets/css/variables.css?v=12">
   <link rel="stylesheet" href="assets/css/base.css?v=12">
-  <link rel="stylesheet" href="assets/css/components.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=20">
   <link rel="stylesheet" href="assets/css/animations.css?v=12">
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -28,54 +28,207 @@
   </script>
 
   <style>
-    .clients-partner-strip {
-      margin-top: var(--space-6);
-      padding: var(--space-7) 0 var(--space-7);
+    .home-partners {
       overflow: hidden;
+      background: var(--bg-surface-2);
+      padding: clamp(72px, 8vw, 118px) 0;
     }
-    .logo-wall.clients-partner-strip {
-      margin-top: 0;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      -webkit-mask-image: none;
-              mask-image: none;
-      overflow: hidden;
+    [data-theme="dark"] .home-partners {
+      background: var(--bg-page);
     }
-    .clients-partner-strip .partner-marquee {
-      display: flex;
-      width: max-content;
+    .home-partners__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1.14fr);
+      gap: clamp(36px, 7vw, 96px);
       align-items: center;
-      gap: 20px;
-      animation: showcasePartnerMarquee 26s linear infinite;
+    }
+    .home-partners__content {
+      max-width: 540px;
+    }
+    .home-partners__eyebrow {
+      display: inline-block;
+      margin-bottom: var(--space-5);
+      color: var(--primary);
+      font-size: var(--label);
+      font-weight: 760;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .home-partners__title {
+      margin: 0 0 var(--space-8);
+      color: var(--text-primary);
+      font-size: clamp(30px, 4vw, var(--text-h2));
+      line-height: 1.16;
+      letter-spacing: 0;
+      max-width: 620px;
+    }
+    .home-partners__title em {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--orange-400) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-style: italic;
+    }
+    .home-partners__stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(30px, 4.5vw, 52px) clamp(28px, 4vw, 56px);
+    }
+    .home-partners__stat-number {
+      display: block;
+      color: var(--primary);
+      font-size: clamp(36px, 4vw, 58px);
+      line-height: 0.95;
+      font-weight: 760;
+      letter-spacing: 0;
+      margin-bottom: 10px;
+    }
+    .home-partners__stat-label {
+      color: var(--text-secondary);
+      font-size: var(--body-m);
+      line-height: 1.35;
+      font-weight: 540;
+    }
+    .home-partners__logo-wall {
+      position: relative;
+      height: min(670px, 64vw);
+      min-height: 520px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 11%, #000 89%, transparent 100%);
+              mask-image: linear-gradient(180deg, transparent 0, #000 11%, #000 89%, transparent 100%);
+    }
+    .home-partners__logo-wall::before,
+    .home-partners__logo-wall::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 110px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .home-partners__logo-wall::before {
+      top: 0;
+      background: linear-gradient(180deg, var(--bg-surface-2) 0%, color-mix(in srgb, var(--bg-surface-2) 0%, transparent) 100%);
+    }
+    .home-partners__logo-wall::after {
+      bottom: 0;
+      background: linear-gradient(0deg, var(--bg-surface-2) 0%, color-mix(in srgb, var(--bg-surface-2) 0%, transparent) 100%);
+    }
+    [data-theme="dark"] .home-partners__logo-wall::before {
+      background: linear-gradient(180deg, var(--bg-page) 0%, color-mix(in srgb, var(--bg-page) 0%, transparent) 100%);
+    }
+    [data-theme="dark"] .home-partners__logo-wall::after {
+      background: linear-gradient(0deg, var(--bg-page) 0%, color-mix(in srgb, var(--bg-page) 0%, transparent) 100%);
+    }
+    .home-partners__logo-column {
+      display: flex;
+      min-width: 0;
+      transform: translateY(-36px);
+    }
+    .home-partners__logo-column:nth-child(2) {
+      transform: translateY(34px);
+    }
+    .home-partners__logo-track {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      gap: 24px;
+      animation: homePartnerCards 32s linear infinite;
       will-change: transform;
     }
-    .clients-partner-strip .partner-logo-img {
-      height: 62px;
+    .home-partners__logo-column:nth-child(2) .home-partners__logo-track {
+      animation-duration: 38s;
+      animation-direction: reverse;
+    }
+    .home-partners__logo-card {
+      min-height: 174px;
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-lg);
+      background: var(--bg-surface);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(18px, 2.4vw, 30px);
+      overflow: hidden;
+      flex-shrink: 0;
+      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+    }
+    .home-partners__logo-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+    }
+    [data-theme="dark"] .home-partners__logo-card {
+      background: var(--bg-surface);
+      border-color: var(--border-default);
+      box-shadow: none;
+    }
+    .home-partners__logo-card img {
+      max-width: min(188px, 88%);
+      max-height: 84px;
       width: auto;
+      height: auto;
       object-fit: contain;
       display: block;
-      border-radius: 12px;
-      flex-shrink: 0;
+      transition: transform 0.35s ease, filter 0.35s ease;
     }
-    @keyframes showcasePartnerMarquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    .home-partners__logo-card:hover img {
+      transform: scale(1.04);
+      filter: saturate(1.05) contrast(1.02);
+    }
+    @keyframes homePartnerCards {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
     }
     @media (prefers-reduced-motion: reduce) {
-      .clients-partner-strip .partner-marquee { animation: none; }
+      .home-partners__logo-track {
+        animation: none;
+      }
     }
     @media (max-width: 1023px) {
-      .clients-partner-strip .partner-logo-img { height: 50px; }
-      .clients-partner-strip .partner-marquee { gap: 16px; }
+      .home-partners__grid {
+        grid-template-columns: 1fr;
+      }
+      .home-partners__content {
+        max-width: 760px;
+      }
+      .home-partners__logo-wall {
+        height: 560px;
+        min-height: 0;
+      }
     }
     @media (max-width: 640px) {
-      .clients-partner-strip {
-        margin-top: var(--space-5);
-        padding: var(--space-6) 0;
+      .home-partners {
+        padding: var(--space-16) 0;
       }
-      .clients-partner-strip .partner-logo-img { height: 42px; }
-      .clients-partner-strip .partner-marquee { gap: 14px; }
+      .home-partners__title {
+        margin-bottom: var(--space-7);
+      }
+      .home-partners__stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+      .home-partners__logo-wall {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        height: 430px;
+      }
+      .home-partners__logo-track {
+        gap: 14px;
+      }
+      .home-partners__logo-card {
+        min-height: 116px;
+        padding: 14px;
+      }
+      .home-partners__logo-card img {
+        max-width: 94%;
+        max-height: 60px;
+      }
     }
   </style>
 </head>
@@ -756,120 +909,108 @@
   </div>
 </section>
 
-<!-- 03 LOGO WALL CLIENTS -->
-<section class="section section--tight" id="clients">
+<!-- 03 PARTNER ECOSYSTEM -->
+<section class="section home-partners" id="clients" aria-labelledby="showcase-partners-title">
   <div class="container">
-    <div class="section-header" data-animate>
-      <span class="section-eyebrow">
-        <span data-lang="vi">Khách hàng đồng hành</span>
-        <span data-lang="en" hidden>Clients we work with</span>
-      </span>
-      <h2>
-        <span data-lang="vi">80+ thương hiệu tin tưởng — từ <em style="color:var(--primary);font-style:italic">FMCG</em> đến <em style="color:var(--primary);font-style:italic">Tech</em></span>
-        <span data-lang="en" hidden>80+ brands trust SIA — from <em style="color:var(--primary);font-style:italic">FMCG</em> to <em style="color:var(--primary);font-style:italic">Tech</em></span>
-      </h2>
-    </div>
-  </div>
-  <div class="logo-wall clients-partner-strip" data-animate>
-    <div class="partner-marquee" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-BYTEDANCE.jpg" alt="BYTEDANCE">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-LAZADA.jpg" alt="LAZADA">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-LEMON8.jpg" alt="LEMON8">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-SHOPEE.jpg" alt="SHOPEE">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-TIKTOK.jpg" alt="TIKTOK">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-ZALO.jpg" alt="ZALO">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-CU%CC%A3C%20SO%CC%9B%CC%89%20HU%CC%9B%CC%83U%20TRI%CC%81%20%20TUE%CC%A3%CC%82.jpg" alt="CỤC SỞ HỮU TRÍ TUỆ">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-HONGBANG.jpg" alt="HONGBANG">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-HO%CC%A3%CC%82I%20SO%CC%9B%CC%89%20HU%CC%9B%CC%83U%20TRI%CC%81%20%20TUE%CC%A3%CC%82.jpg" alt="HỘI SỞ HỮU TRÍ TUỆ">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-HUTECH.jpg" alt="HUTECH">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-JCI%20VIETNAM.jpg" alt="JCI VIETNAM">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-SO%CC%9B%CC%89%20KH%20&%20CN%20TP%20HCM.jpg" alt="SỞ KH & CN TP HCM">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-UEF.jpg" alt="UEF">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-VLU.jpg" alt="VLU">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-ASUS.jpg" alt="ASUS">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-CANON.jpg" alt="CANON">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-FUJIFILM.jpg" alt="FUJIFILM">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-KINGSTON.jpg" alt="KINGSTON">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-LEXAR.jpg" alt="LEXAR">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-NANLITE.jpg" alt="NANLITE">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-NIKON.jpg" alt="NIKON">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-SIGMA.jpg" alt="SIGMA">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-SUBARU.jpg" alt="SUBARU">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-TANCHONG%20MOTOR.jpg" alt="TANCHONG MOTOR">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-VIEWSONIC.jpg" alt="VIEWSONIC">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/I%20-%20FRUDENTIAL.jpg" alt="FRUDENTIAL">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/I-EXPORUM.jpg" alt="EXPORUM">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/I-MANULIFE.jpg" alt="MANULIFE">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/I-SUNLIFE.jpg" alt="SUNLIFE">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-ASKANY.jpg" alt="ASKANY">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-CLEAR.jpg" alt="CLEAR">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-E2E.jpg" alt="E2E">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-ECOCHIC.jpg" alt="ECOCHIC">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-FASTLINK.jpg" alt="FASTLINK">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-HARAVAN.jpg" alt="HARAVAN">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-HOLOLAB.jpg" alt="HOLOLAB">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-KOTEX.jpg" alt="KOTEX">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-MATBAO.jpg" alt="MATBAO">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-ONFLOW.jpg" alt="ONFLOW">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-PRENY.jpg" alt="PRENY">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-SOHACO.jpg" alt="SOHACO">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-UAN.jpg" alt="UAN">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-UPBASE.jpg" alt="UPBASE">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-AURORE.jpg" alt="AURORE">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-EDENA.jpg" alt="EDENA">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-HO%CC%82%CC%80%20MA%CC%82Y.jpg" alt="HỒ MÂY">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-LANGBIANGFARM.jpg" alt="LANGBIANGFARM">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-MARINA%20BAY.jpg" alt="MARINA BAY">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-MVILLAGE.jpg" alt="MVILLAGE">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-BYTEDANCE.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-LAZADA.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-LEMON8.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-SHOPEE.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-TIKTOK.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/P-ZALO.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-CU%CC%A3C%20SO%CC%9B%CC%89%20HU%CC%9B%CC%83U%20TRI%CC%81%20%20TUE%CC%A3%CC%82.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-HONGBANG.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-HO%CC%A3%CC%82I%20SO%CC%9B%CC%89%20HU%CC%9B%CC%83U%20TRI%CC%81%20%20TUE%CC%A3%CC%82.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-HUTECH.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-JCI%20VIETNAM.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-SO%CC%9B%CC%89%20KH%20&%20CN%20TP%20HCM.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-UEF.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/U-VLU.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-ASUS.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-CANON.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-FUJIFILM.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-KINGSTON.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-LEXAR.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-NANLITE.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-NIKON.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-SIGMA.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-SUBARU.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-TANCHONG%20MOTOR.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/C-VIEWSONIC.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/I%20-%20FRUDENTIAL.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/I-EXPORUM.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/I-MANULIFE.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/I-SUNLIFE.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-ASKANY.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-CLEAR.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-E2E.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-ECOCHIC.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-FASTLINK.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-HARAVAN.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-HOLOLAB.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-KOTEX.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-MATBAO.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-ONFLOW.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-PRENY.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-SOHACO.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-UAN.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/B-UPBASE.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-AURORE.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-EDENA.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-HO%CC%82%CC%80%20MA%CC%82Y.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-LANGBIANGFARM.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-MARINA%20BAY.jpg" alt="" aria-hidden="true">
-      <img class="partner-logo-img" src="assets/images/partnerlogo2/F-MVILLAGE.jpg" alt="" aria-hidden="true">
+    <div class="home-partners__grid">
+      <div class="home-partners__content" data-animate>
+        <span class="home-partners__eyebrow">
+          <span data-lang="vi">Đối tác đồng hành</span>
+          <span data-lang="en" hidden>Partner ecosystem</span>
+        </span>
+        <h2 class="home-partners__title" id="showcase-partners-title">
+          <span data-lang="vi">Hệ sinh thái đối tác tăng trưởng cùng <em>SIA IMA</em>.</span>
+          <span data-lang="en" hidden>A partner ecosystem growing with <em>SIA IMA</em>.</span>
+        </h2>
+
+        <div class="home-partners__stats" data-stagger>
+          <div class="home-partners__stat" data-stagger-item>
+            <span class="home-partners__stat-number">50+</span>
+            <span class="home-partners__stat-label">
+              <span data-lang="vi">Đối tác thương hiệu</span>
+              <span data-lang="en" hidden>Brand partners</span>
+            </span>
+          </div>
+          <div class="home-partners__stat" data-stagger-item>
+            <span class="home-partners__stat-number">10+</span>
+            <span class="home-partners__stat-label">
+              <span data-lang="vi">Nền tảng &amp; kênh bán hàng</span>
+              <span data-lang="en" hidden>Platforms &amp; commerce channels</span>
+            </span>
+          </div>
+          <div class="home-partners__stat" data-stagger-item>
+            <span class="home-partners__stat-number">20+</span>
+            <span class="home-partners__stat-label">
+              <span data-lang="vi">Tổ chức, hiệp hội &amp; trường đại học</span>
+              <span data-lang="en" hidden>Organizations, associations &amp; universities</span>
+            </span>
+          </div>
+          <div class="home-partners__stat" data-stagger-item>
+            <span class="home-partners__stat-number">100K+</span>
+            <span class="home-partners__stat-label">
+              <span data-lang="vi">Creators, KOC &amp; sinh viên trong hệ sinh thái</span>
+              <span data-lang="en" hidden>Creators, KOCs &amp; students in the ecosystem</span>
+            </span>
+          </div>
+          <div class="home-partners__stat" data-stagger-item>
+            <span class="home-partners__stat-number">500+</span>
+            <span class="home-partners__stat-label">
+              <span data-lang="vi">Chiến dịch / hoạt động đã triển khai</span>
+              <span data-lang="en" hidden>Campaigns / activations delivered</span>
+            </span>
+          </div>
+          <div class="home-partners__stat" data-stagger-item>
+            <span class="home-partners__stat-number">1M+</span>
+            <span class="home-partners__stat-label">
+              <span data-lang="vi">Điểm chạm nội dung &amp; cộng đồng</span>
+              <span data-lang="en" hidden>Content &amp; community touchpoints</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-partners__logo-wall" data-animate aria-hidden="true">
+        <div class="home-partners__logo-column">
+          <div class="home-partners__logo-track">
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/P-BYTEDANCE.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/P-SHOPEE.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/B-HARAVAN.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/C-CANON.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/I-SUNLIFE.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/U-HUTECH.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/B-KOTEX.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/F-MVILLAGE.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/P-BYTEDANCE.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/P-SHOPEE.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/B-HARAVAN.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/C-CANON.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/I-SUNLIFE.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/U-HUTECH.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/B-KOTEX.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/F-MVILLAGE.jpg" alt=""></div>
+          </div>
+        </div>
+        <div class="home-partners__logo-column">
+          <div class="home-partners__logo-track">
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/P-TIKTOK.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/P-LAZADA.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/P-ZALO.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/C-FUJIFILM.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/I-MANULIFE.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/U-UEF.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/B-UPBASE.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/F-LANGBIANGFARM.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/P-TIKTOK.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/P-LAZADA.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/P-ZALO.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/C-FUJIFILM.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/I-MANULIFE.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/U-UEF.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/B-UPBASE.jpg" alt=""></div>
+            <div class="home-partners__logo-card"><img src="assets/images/partnerlogo2/F-LANGBIANGFARM.jpg" alt=""></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -956,7 +1097,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="assets/js/theme.js?v=13"></script>
 <script src="assets/js/swiper-init.js?v=13"></script>
-<script src="assets/js/main.js?v=13"></script>
+<script src="assets/js/main.js?v=14"></script>
 
 </body>
 </html>

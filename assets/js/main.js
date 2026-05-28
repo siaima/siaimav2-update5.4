@@ -326,6 +326,46 @@ document.addEventListener('DOMContentLoaded', function () {
   window.handleContactSubmit = handleUnifiedSubmit;
   window.handleEventReg = handleUnifiedSubmit;
 
+  // ===== Split CTA cards =====
+  const initSplitCtas = () => {
+    document.querySelectorAll('.cta-banner').forEach((banner) => {
+      if (banner.dataset.ctaReady === 'true') return;
+      const currentTitle = banner.querySelector('h2');
+      const currentIntro = banner.querySelector('p');
+      const titleHtml = currentTitle && currentTitle.innerHTML.trim()
+        ? currentTitle.innerHTML.trim()
+        : 'Bắt đầu dự án cùng SIA IMA';
+      const introHtml = currentIntro && currentIntro.innerHTML.trim()
+        ? currentIntro.innerHTML.trim()
+        : 'Kết nối với đội ngũ SIA để biến brief thành kế hoạch triển khai rõ ràng.';
+
+      const showcaseCard = document.createElement('a');
+      showcaseCard.className = 'cta-banner__tile cta-banner__tile--showcase';
+      showcaseCard.href = 'showcase.html';
+      showcaseCard.innerHTML = `
+        <span class="cta-banner__eyebrow">Showcase</span>
+        <span class="cta-banner__arrow" aria-hidden="true">-></span>
+        <strong class="cta-banner__title">Dự án &<br>Case Study</strong>
+        <span class="cta-banner__intro">Xem các chiến dịch, sự kiện và hoạt động tăng trưởng đã triển khai.</span>
+      `;
+
+      const contactCard = document.createElement('a');
+      contactCard.className = 'cta-banner__tile cta-banner__tile--contact';
+      contactCard.href = 'contact.html';
+      contactCard.innerHTML = `
+        <span class="cta-banner__eyebrow">Liên hệ</span>
+        <span class="cta-banner__arrow" aria-hidden="true">-></span>
+        <span class="cta-banner__intro">${introHtml}</span>
+        <strong class="cta-banner__title">${titleHtml}</strong>
+        <span class="cta-banner__link-label">Trao đổi ngay <span aria-hidden="true">-></span></span>
+      `;
+
+      banner.replaceChildren(showcaseCard, contactCard);
+      banner.dataset.ctaReady = 'true';
+    });
+  };
+  initSplitCtas();
+
   // ===== Header scroll effect =====
   const header = document.querySelector('.site-header');
   if (header) {
@@ -515,7 +555,7 @@ document.addEventListener('DOMContentLoaded', function () {
     '.speaker-form-card',
     '.gen-stat-card', '.gen-chart-card', '.gen-speaker-card', '.gen-timeline-item',
     '.gen-logo-item', '.audience-card', '.value-card',
-    '.hero-stat', '.faq-item',
+    '.hero-stat', '.faq-item', '.cta-banner__tile',
     // Interactive
     '.btn', '.nav-link', '.nav-item',
     '.form-input', '.form-select', '.form-textarea', '.form-tab',

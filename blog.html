@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="assets/css/variables.css?v=12">
   <link rel="stylesheet" href="assets/css/base.css?v=12">
-  <link rel="stylesheet" href="assets/css/components.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=20">
   <link rel="stylesheet" href="assets/css/animations.css?v=12">
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -80,222 +80,217 @@
   </div>
 </div>
 
-<main x-data="{ filter: 'all', search: '' }">
+<main class="blog-index" x-data="{ filter: 'all', search: '', match(text) { const clean = value => value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); return !this.search || clean(text).includes(clean(this.search)); }, isArticleFilter() { return ['all', 'strategy', 'commerce', 'creator', 'brand'].includes(this.filter); } }">
 
-<!-- 01 HERO -->
-<section class="page-hero" id="hero">
-  <div class="hero-bg"></div>
+<!-- 01 NOW -->
+<section class="blog-compact-hero" id="hero">
   <div class="container">
-    <div class="page-hero__inner">
-      <span class="section-eyebrow" data-hero><span data-lang="vi">Blog & Insight</span><span data-lang="en" hidden>Blog & Insight</span></span>
-      <h1 class="page-hero__title" data-hero>
-        <span data-lang="vi">Insight <em style="color:var(--primary);font-style:italic">chiến lược</em> — đọc để <em style="color:var(--primary);font-style:italic">đi xa hơn</em></span>
-        <span data-lang="en" hidden><em style="color:var(--primary);font-style:italic">Strategic</em> insight — read to <em style="color:var(--primary);font-style:italic">go further</em></span>
-      </h1>
-      <p class="page-hero__subtitle" data-hero>
-        <span data-lang="vi">Quan điểm, framework và case study thực chiến từ đội ngũ SIA — marketing, livestream commerce, creator economy và brand building tại Việt Nam.</span>
-        <span data-lang="en" hidden>Perspectives, frameworks and battle-tested case studies from the SIA team — marketing, livestream commerce, creator economy and brand building in Vietnam.</span>
-      </p>
-
-      <!-- Search + categories -->
-      <div class="blog-controls" data-hero>
-        <div class="blog-search">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="search" x-model="search" placeholder="Tìm bài viết, chủ đề, tag..." aria-label="Search blog">
-        </div>
-        <div class="filter-chips" role="tablist" aria-label="Filter categories">
-          <button class="filter-chip" :class="{ 'is-active': filter === 'all' }" @click="filter = 'all'">
-            <span data-lang="vi">Tất cả</span><span data-lang="en" hidden>All</span>
-            <span class="filter-chip__count">18</span>
-          </button>
-          <button class="filter-chip" :class="{ 'is-active': filter === 'strategy' }" @click="filter = 'strategy'">
-            <span data-lang="vi">Chiến lược</span><span data-lang="en" hidden>Strategy</span>
-            <span class="filter-chip__count">6</span>
-          </button>
-          <button class="filter-chip" :class="{ 'is-active': filter === 'commerce' }" @click="filter = 'commerce'">
-            <span data-lang="vi">Livestream Commerce</span><span data-lang="en" hidden>Livestream Commerce</span>
-            <span class="filter-chip__count">5</span>
-          </button>
-          <button class="filter-chip" :class="{ 'is-active': filter === 'creator' }" @click="filter = 'creator'">
-            <span data-lang="vi">Creator Economy</span><span data-lang="en" hidden>Creator Economy</span>
-            <span class="filter-chip__count">4</span>
-          </button>
-          <button class="filter-chip" :class="{ 'is-active': filter === 'brand' }" @click="filter = 'brand'">
-            <span data-lang="vi">Brand Building</span><span data-lang="en" hidden>Brand Building</span>
-            <span class="filter-chip__count">3</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 02 FEATURED ARTICLE -->
-<section class="section section--tight" id="featured" x-show="filter === 'all' || filter === 'commerce'">
-  <div class="container">
-    <article class="blog-feature" data-animate>
-      <a href="blog-detail.html" class="blog-feature__media">
-        <div class="blog-feature__image" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);">
-          <span class="blog-feature__tag">★ <span data-lang="vi">Nổi bật</span><span data-lang="en" hidden>Featured</span></span>
-        </div>
-      </a>
-      <div class="blog-feature__body">
-        <div class="blog-feature__meta">
-          <span class="tag tag--primary">Livestream Commerce</span>
-          <time datetime="2026-04-12">12 Apr 2026</time>
-          <span>·</span>
-          <span>12 min read</span>
-        </div>
-        <h2 class="blog-feature__title">
-          <a href="blog-detail.html">
-            <span data-lang="vi">Mega Livestream 5 tỷ/đêm: Điều gì thực sự diễn ra sau 4 giờ on-air?</span>
-            <span data-lang="en" hidden>5B VND Mega Livestream: What actually happens in those 4 on-air hours?</span>
-          </a>
-        </h2>
-        <p class="blog-feature__excerpt">
-          <span data-lang="vi">Phân tích chi tiết kịch bản, chiến lược SKU, đội host và công cụ realtime dashboard giúp chuyển đổi tăng 3.8x so với livestream thông thường.</span>
-          <span data-lang="en" hidden>A detailed look at scripts, SKU strategy, host teams and realtime dashboards that lift conversion 3.8x versus ordinary livestreams.</span>
+    <div class="blog-compact-hero__bar" data-animate>
+      <div>
+        <span class="section-eyebrow"><span data-lang="vi">Blog & Insight</span><span data-lang="en" hidden>Blog & Insight</span></span>
+        <h1><span data-lang="vi">Now</span><span data-lang="en" hidden>Now</span></h1>
+        <p>
+          <span data-lang="vi">Insight ngắn, framework thực chiến và ghi chú vận hành từ SIA.</span>
+          <span data-lang="en" hidden>Short insights, field-tested frameworks and operating notes from SIA.</span>
         </p>
-        <div class="blog-feature__author">
-          <div class="blog-feature__avatar" aria-hidden="true">MA</div>
-          <div>
-            <div class="blog-feature__author-name">Minh Anh Nguyen</div>
-            <div class="blog-feature__author-role"><span data-lang="vi">Head of Livestream</span><span data-lang="en" hidden>Head of Livestream</span></div>
-          </div>
-        </div>
-        <a href="blog-detail.html" class="btn btn--primary btn--pill">
-          <span data-lang="vi">Đọc bài viết</span><span data-lang="en" hidden>Read article</span>
-          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
       </div>
-    </article>
-  </div>
-</section>
-
-<!-- 03 ARTICLE GRID -->
-<section class="section" id="articles">
-  <div class="container">
-    <div class="section-header" data-animate>
-      <span class="section-eyebrow"><span data-lang="vi">Bài viết mới</span><span data-lang="en" hidden>Latest articles</span></span>
-      <h2><span data-lang="vi">Khám phá theo <em style="color:var(--primary);font-style:italic">chủ đề</em> bạn quan tâm</span><span data-lang="en" hidden>Browse by <em style="color:var(--primary);font-style:italic">topic</em> you care about</span></h2>
+      <div class="blog-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" x-model="search" placeholder="Search..." aria-label="Search blog">
+      </div>
     </div>
 
-    <div class="blog-grid" data-stagger>
-
-      <article class="blog-card" data-stagger-item data-cat="strategy" x-show="filter === 'all' || filter === 'strategy'">
-        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));"></div></a>
-        <div class="blog-card__body">
-          <div class="blog-card__meta"><span class="tag">Strategy</span><time>10 Apr 2026</time></div>
-          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">Brand architecture: Khi nào nên tách, khi nào nên gộp?</span><span data-lang="en" hidden>Brand architecture: When to split, when to consolidate?</span></a></h3>
-          <p class="blog-card__excerpt"><span data-lang="vi">Bài học từ 30 portfolio lớn tại Việt Nam: đâu là tín hiệu thực sự để cắt sub-brand.</span><span data-lang="en" hidden>Lessons from 30 big portfolios in Vietnam: the real signals to cut sub-brands.</span></p>
-          <div class="blog-card__footer"><span>8 min read</span></div>
-        </div>
-      </article>
-
-      <article class="blog-card" data-stagger-item data-cat="commerce" x-show="filter === 'all' || filter === 'commerce'">
-        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--orange-400), var(--primary));"></div></a>
-        <div class="blog-card__body">
-          <div class="blog-card__meta"><span class="tag tag--primary">Commerce</span><time>08 Apr 2026</time></div>
-          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">TikTok Shop 2026: 7 xu hướng mọi brand Việt phải biết</span><span data-lang="en" hidden>TikTok Shop 2026: 7 trends every VN brand must know</span></a></h3>
-          <p class="blog-card__excerpt"><span data-lang="vi">Phân tích algorithm mới và chiến thuật hoạt động với các flagship shop.</span><span data-lang="en" hidden>Dissecting the new algorithm and what flagship shops do differently.</span></p>
-          <div class="blog-card__footer"><span>10 min read</span></div>
-        </div>
-      </article>
-
-      <article class="blog-card" data-stagger-item data-cat="creator" x-show="filter === 'all' || filter === 'creator'">
-        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--secondary-light), var(--blue-600));"></div></a>
-        <div class="blog-card__body">
-          <div class="blog-card__meta"><span class="tag">Creator</span><time>05 Apr 2026</time></div>
-          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">KOC hay KOL? Bảng công cụ chọn đúng creator mỗi giai đoạn</span><span data-lang="en" hidden>KOC or KOL? A decision matrix for every funnel stage</span></a></h3>
-          <p class="blog-card__excerpt"><span data-lang="vi">Framework chọn creator theo mục tiêu awareness / consideration / conversion.</span><span data-lang="en" hidden>A framework for picking creators by awareness / consideration / conversion goals.</span></p>
-          <div class="blog-card__footer"><span>7 min read</span></div>
-        </div>
-      </article>
-
-      <article class="blog-card" data-stagger-item data-cat="brand" x-show="filter === 'all' || filter === 'brand'">
-        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--orange-200), var(--orange-400));"></div></a>
-        <div class="blog-card__body">
-          <div class="blog-card__meta"><span class="tag">Brand</span><time>02 Apr 2026</time></div>
-          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">Brand love là gì và đo bằng cách nào?</span><span data-lang="en" hidden>What is brand love and how to measure it?</span></a></h3>
-          <p class="blog-card__excerpt"><span data-lang="vi">3 chỉ số thực sự phản ánh sức khoẻ thương hiệu — vượt xa NPS.</span><span data-lang="en" hidden>3 metrics that truly reflect brand health — beyond NPS.</span></p>
-          <div class="blog-card__footer"><span>6 min read</span></div>
-        </div>
-      </article>
-
-      <article class="blog-card" data-stagger-item data-cat="strategy" x-show="filter === 'all' || filter === 'strategy'">
-        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--gray-700), var(--black));"></div></a>
-        <div class="blog-card__body">
-          <div class="blog-card__meta"><span class="tag">Strategy</span><time>28 Mar 2026</time></div>
-          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">GenZ Việt mua gì, xem gì & vì sao?</span><span data-lang="en" hidden>What GenZ Vietnam buys, watches & why</span></a></h3>
-          <p class="blog-card__excerpt"><span data-lang="vi">Dữ liệu khảo sát 2500 bạn GenZ Việt & những insight ít ai bàn.</span><span data-lang="en" hidden>A 2500-respondent survey of Vietnamese GenZ, with rarely-discussed insights.</span></p>
-          <div class="blog-card__footer"><span>11 min read</span></div>
-        </div>
-      </article>
-
-      <article class="blog-card" data-stagger-item data-cat="commerce" x-show="filter === 'all' || filter === 'commerce'">
-        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--primary), var(--orange-700));"></div></a>
-        <div class="blog-card__body">
-          <div class="blog-card__meta"><span class="tag tag--primary">Commerce</span><time>22 Mar 2026</time></div>
-          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">Shopee Mall vs TikTok Shop: Đặt chân đâu trước?</span><span data-lang="en" hidden>Shopee Mall vs TikTok Shop: Where to go first?</span></a></h3>
-          <p class="blog-card__excerpt"><span data-lang="vi">Playbook chọn platform theo danh mục sản phẩm và giá trị AOV.</span><span data-lang="en" hidden>A platform-selection playbook by category and AOV.</span></p>
-          <div class="blog-card__footer"><span>9 min read</span></div>
-        </div>
-      </article>
-
-      <article class="blog-card" data-stagger-item data-cat="creator" x-show="filter === 'all' || filter === 'creator'">
-        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--blue-300), var(--secondary));"></div></a>
-        <div class="blog-card__body">
-          <div class="blog-card__meta"><span class="tag">Creator</span><time>18 Mar 2026</time></div>
-          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">UGC: Cách brand Việt đang làm đúng (và sai)</span><span data-lang="en" hidden>UGC: What VN brands get right (and wrong)</span></a></h3>
-          <p class="blog-card__excerpt"><span data-lang="vi">10 ví dụ thực tế: khi UGC tạo niềm tin, khi nó phá vỡ thương hiệu.</span><span data-lang="en" hidden>10 real examples: when UGC builds trust, when it breaks a brand.</span></p>
-          <div class="blog-card__footer"><span>8 min read</span></div>
-        </div>
-      </article>
-
-      <article class="blog-card" data-stagger-item data-cat="strategy" x-show="filter === 'all' || filter === 'strategy'">
-        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--orange-300), var(--orange-600));"></div></a>
-        <div class="blog-card__body">
-          <div class="blog-card__meta"><span class="tag">Strategy</span><time>12 Mar 2026</time></div>
-          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">360° campaign hay luôn là câu trả lời?</span><span data-lang="en" hidden>Is 360° always the right answer?</span></a></h3>
-          <p class="blog-card__excerpt"><span data-lang="vi">Khi nào chiến dịch tập trung 1 channel lại hiệu quả hơn 360°.</span><span data-lang="en" hidden>When a single-channel focus outperforms 360°.</span></p>
-          <div class="blog-card__footer"><span>6 min read</span></div>
-        </div>
-      </article>
-
-      <article class="blog-card" data-stagger-item data-cat="brand" x-show="filter === 'all' || filter === 'brand'">
-        <a href="blog-detail.html" class="blog-card__media"><div style="background: linear-gradient(135deg, var(--surface-2), var(--warm-gray));"></div></a>
-        <div class="blog-card__body">
-          <div class="blog-card__meta"><span class="tag">Brand</span><time>05 Mar 2026</time></div>
-          <h3 class="blog-card__title"><a href="blog-detail.html"><span data-lang="vi">Tone of voice: Công cụ khác biệt mà brand Việt bỏ quên</span><span data-lang="en" hidden>Tone of voice: The differentiator VN brands forget</span></a></h3>
-          <p class="blog-card__excerpt"><span data-lang="vi">Framework 4 chiều xây TOV và ví dụ thực tế từ 5 brand hàng đầu.</span><span data-lang="en" hidden>A 4-axis TOV framework with real examples from 5 top brands.</span></p>
-          <div class="blog-card__footer"><span>7 min read</span></div>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="showcase-loadmore" data-animate>
-      <a href="#" class="btn btn--ghost btn--pill btn--lg">
-        <span data-lang="vi">Tải thêm bài viết</span><span data-lang="en" hidden>Load more</span>
-      </a>
-      <p class="showcase-loadmore__note"><span data-lang="vi">Đang hiển thị 9 / 18 bài viết</span><span data-lang="en" hidden>Showing 9 of 18 posts</span></p>
+    <div class="blog-filter-row" role="tablist" aria-label="Filter categories" data-animate>
+      <button class="filter-chip" :class="{ 'is-active': filter === 'all' }" @click="filter = 'all'">
+        <span data-lang="vi">Tất cả</span><span data-lang="en" hidden>All</span>
+        <span class="filter-chip__count">6</span>
+      </button>
+      <button class="filter-chip" :class="{ 'is-active': filter === 'strategy' }" @click="filter = 'strategy'">
+        <span data-lang="vi">Chiến lược</span><span data-lang="en" hidden>Strategy</span>
+        <span class="filter-chip__count">2</span>
+      </button>
+      <button class="filter-chip" :class="{ 'is-active': filter === 'commerce' }" @click="filter = 'commerce'">
+        <span data-lang="vi">Livestream</span><span data-lang="en" hidden>Livestream</span>
+        <span class="filter-chip__count">2</span>
+      </button>
+      <button class="filter-chip" :class="{ 'is-active': filter === 'creator' }" @click="filter = 'creator'">
+        <span data-lang="vi">Creator</span><span data-lang="en" hidden>Creator</span>
+        <span class="filter-chip__count">1</span>
+      </button>
+      <button class="filter-chip" :class="{ 'is-active': filter === 'brand' }" @click="filter = 'brand'">
+        <span data-lang="vi">Brand</span><span data-lang="en" hidden>Brand</span>
+        <span class="filter-chip__count">1</span>
+      </button>
     </div>
   </div>
 </section>
 
-<!-- 04 NEWSLETTER -->
-<section class="section section--alt" id="newsletter">
+<!-- 02 INSIGHT GRID -->
+<section class="blog-compact-section" id="articles" x-show="isArticleFilter()">
   <div class="container">
-    <div class="newsletter" data-animate>
-      <div class="newsletter__text">
-        <span class="section-eyebrow"><span data-lang="vi">Nhận insight mới</span><span data-lang="en" hidden>Get new insights</span></span>
-        <h2><span data-lang="vi">Đăng ký nhận bản tin <em style="color:var(--primary);font-style:italic">SIA Weekly</em></span><span data-lang="en" hidden>Subscribe to <em style="color:var(--primary);font-style:italic">SIA Weekly</em></span></h2>
-        <p><span data-lang="vi">Mỗi thứ Sáu — 1 insight, 1 case study, 1 framework thực chiến. Không spam.</span><span data-lang="en" hidden>Every Friday — 1 insight, 1 case study, 1 battle-tested framework. No spam.</span></p>
-      </div>
-      <form class="newsletter__form">
+    <div class="insight-grid">
+      <article class="insight-card" x-show="(filter === 'all' || filter === 'commerce') && match('Mega Livestream 5 tỷ đêm Điều gì thực sự diễn ra sau 4 giờ on air commerce livestream conversion')">
+        <a href="blog-detail.html" class="insight-card__media"><img src="assets/images/siamoment/DIGITAL ECONOMY & OPENCLAW AI.jpg" alt=""></a>
+        <div class="insight-card__body">
+          <div class="insight-card__meta"><span>Commerce</span><time datetime="2026-04-12">12 Apr 2026</time></div>
+          <h2><a href="blog-detail.html"><span data-lang="vi">Mega Livestream 5 tỷ/đêm: Điều gì thực sự diễn ra sau 4 giờ on-air?</span><span data-lang="en" hidden>5B VND Mega Livestream: What actually happens in those 4 on-air hours?</span></a></h2>
+          <p><span data-lang="vi">Kịch bản, SKU, host team và dashboard realtime phía sau một phiên livestream tăng trưởng.</span><span data-lang="en" hidden>Scripts, SKUs, host teams and realtime dashboards behind a growth livestream.</span></p>
+          <span class="insight-card__read">12 min read</span>
+        </div>
+      </article>
+
+      <article class="insight-card" x-show="(filter === 'all' || filter === 'strategy') && match('Brand architecture Khi nào nên tách khi nào nên gộp strategy thương hiệu')">
+        <a href="blog-detail.html" class="insight-card__media"><img src="assets/images/siamoment/KÍ KẾT TOÀN DIỆN.jpg" alt=""></a>
+        <div class="insight-card__body">
+          <div class="insight-card__meta"><span>Strategy</span><time datetime="2026-04-10">10 Apr 2026</time></div>
+          <h2><a href="blog-detail.html"><span data-lang="vi">Brand architecture: Khi nào nên tách, khi nào nên gộp?</span><span data-lang="en" hidden>Brand architecture: When to split, when to consolidate?</span></a></h2>
+          <p><span data-lang="vi">Bài học từ 30 portfolio lớn: đâu là tín hiệu thật để cắt sub-brand.</span><span data-lang="en" hidden>Lessons from 30 large portfolios: the real signals to cut sub-brands.</span></p>
+          <span class="insight-card__read">8 min read</span>
+        </div>
+      </article>
+
+      <article class="insight-card" x-show="(filter === 'all' || filter === 'commerce') && match('TikTok Shop 2026 7 xu hướng mọi brand Việt phải biết commerce')">
+        <a href="blog-detail.html" class="insight-card__media"><img src="assets/images/siamoment/K BEAUTY EXPO VIETNAM.jpg" alt=""></a>
+        <div class="insight-card__body">
+          <div class="insight-card__meta"><span>Commerce</span><time datetime="2026-04-08">08 Apr 2026</time></div>
+          <h2><a href="blog-detail.html"><span data-lang="vi">TikTok Shop 2026: 7 xu hướng mọi brand Việt phải biết</span><span data-lang="en" hidden>TikTok Shop 2026: 7 trends every VN brand must know</span></a></h2>
+          <p><span data-lang="vi">Algorithm, flagship shop và cách đội vận hành ra quyết định theo tín hiệu mới.</span><span data-lang="en" hidden>Algorithms, flagship shops and how teams act on new signals.</span></p>
+          <span class="insight-card__read">10 min read</span>
+        </div>
+      </article>
+
+      <article class="insight-card" x-show="(filter === 'all' || filter === 'creator') && match('KOC hay KOL Bảng công cụ chọn đúng creator mỗi giai đoạn funnel')">
+        <a href="blog-detail.html" class="insight-card__media"><img src="assets/images/siamoment/WORKSHOP VERY DEMURE VERY MINDFUL.jpg" alt=""></a>
+        <div class="insight-card__body">
+          <div class="insight-card__meta"><span>Creator</span><time datetime="2026-04-05">05 Apr 2026</time></div>
+          <h2><a href="blog-detail.html"><span data-lang="vi">KOC hay KOL? Bảng công cụ chọn đúng creator mỗi giai đoạn</span><span data-lang="en" hidden>KOC or KOL? A decision matrix for every funnel stage</span></a></h2>
+          <p><span data-lang="vi">Framework chọn creator theo awareness, consideration và conversion.</span><span data-lang="en" hidden>A creator framework for awareness, consideration and conversion.</span></p>
+          <span class="insight-card__read">7 min read</span>
+        </div>
+      </article>
+
+      <article class="insight-card" x-show="(filter === 'all' || filter === 'brand') && match('Brand love là gì và đo bằng cách nào brand sức khoẻ thương hiệu')">
+        <a href="blog-detail.html" class="insight-card__media"><img src="assets/images/siamoment/FRUDENTIAL.jpg" alt=""></a>
+        <div class="insight-card__body">
+          <div class="insight-card__meta"><span>Brand</span><time datetime="2026-04-02">02 Apr 2026</time></div>
+          <h2><a href="blog-detail.html"><span data-lang="vi">Brand love là gì và đo bằng cách nào?</span><span data-lang="en" hidden>What is brand love and how to measure it?</span></a></h2>
+          <p><span data-lang="vi">3 chỉ số phản ánh sức khoẻ thương hiệu, vượt ra ngoài NPS.</span><span data-lang="en" hidden>3 metrics that reflect brand health, beyond NPS.</span></p>
+          <span class="insight-card__read">6 min read</span>
+        </div>
+      </article>
+
+      <article class="insight-card" x-show="(filter === 'all' || filter === 'strategy') && match('GenZ Việt mua gì xem gì và vì sao strategy khảo sát')">
+        <a href="blog-detail.html" class="insight-card__media"><img src="assets/images/siamoment/NÂNG CAO HIỆU SUẤT SALE& MARKETING.jpg" alt=""></a>
+        <div class="insight-card__body">
+          <div class="insight-card__meta"><span>Strategy</span><time datetime="2026-03-28">28 Mar 2026</time></div>
+          <h2><a href="blog-detail.html"><span data-lang="vi">GenZ Việt mua gì, xem gì & vì sao?</span><span data-lang="en" hidden>What GenZ Vietnam buys, watches & why</span></a></h2>
+          <p><span data-lang="vi">Dữ liệu khảo sát 2500 bạn GenZ Việt và những insight ít ai bàn.</span><span data-lang="en" hidden>A 2500-respondent survey of Vietnamese GenZ with rarely discussed insights.</span></p>
+          <span class="insight-card__read">11 min read</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 CHANGELOG -->
+<section class="blog-compact-section blog-compact-section--tight" id="changelog" x-show="filter === 'all'">
+  <div class="container">
+    <div class="blog-section-heading">
+      <h2><span data-lang="vi">Changelog</span><span data-lang="en" hidden>Changelog</span></h2>
+      <p><span data-lang="vi">Những cập nhật nhanh từ thị trường, nền tảng và cách SIA đang thử nghiệm.</span><span data-lang="en" hidden>Quick updates from the market, platforms and SIA experiments.</span></p>
+    </div>
+    <div class="insight-mini-grid">
+      <article class="insight-mini">
+        <span class="insight-mini__dot"></span>
+        <h3><a href="blog-detail.html">TikTok Shop siết chuẩn livestream 2026</a></h3>
+        <p>Checklist mới cho đội vận hành trước giờ on-air.</p>
+        <time>22 Apr 2026</time>
+      </article>
+      <article class="insight-mini">
+        <span class="insight-mini__dot"></span>
+        <h3><a href="blog-detail.html">Creator brief nên ngắn đến đâu?</a></h3>
+        <p>Mẫu brief 1 trang giúp creator giữ cá tính mà vẫn đúng brand.</p>
+        <time>18 Apr 2026</time>
+      </article>
+      <article class="insight-mini">
+        <span class="insight-mini__dot"></span>
+        <h3><a href="blog-detail.html">Dashboard nào đáng xem mỗi sáng?</a></h3>
+        <p>5 chỉ số đủ để founder không bị chìm trong báo cáo.</p>
+        <time>15 Apr 2026</time>
+      </article>
+      <article class="insight-mini">
+        <span class="insight-mini__dot"></span>
+        <h3><a href="blog-detail.html">Brand guideline cho social team</a></h3>
+        <p>Cách chuyển guideline dày thành hệ quy chiếu dùng được hằng ngày.</p>
+        <time>09 Apr 2026</time>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PRESS -->
+<section class="blog-compact-section" id="press" x-show="filter === 'all'">
+  <div class="container">
+    <div class="blog-section-heading">
+      <h2><span data-lang="vi">Press</span><span data-lang="en" hidden>Press</span></h2>
+      <p><span data-lang="vi">Góc nhìn, sự kiện và case study được chọn lọc từ hệ sinh thái SIA.</span><span data-lang="en" hidden>Selected perspectives, events and case studies from the SIA ecosystem.</span></p>
+    </div>
+    <div class="insight-grid insight-grid--press">
+      <article class="insight-card">
+        <a href="blog-detail.html" class="insight-card__media"><img src="assets/images/siamoment/HÀNH TRÌNH TỪ CĂN BẾP NHỎ ĐẾN SHARK TANK.jpg" alt=""></a>
+        <div class="insight-card__body">
+          <div class="insight-card__meta"><span>Case study</span><time>26 Mar 2026</time></div>
+          <h2><a href="blog-detail.html">Từ bếp nhỏ đến Shark Tank: câu chuyện tăng trưởng cộng đồng</a></h2>
+          <p>Brand story, founder voice và cách biến một khoảnh khắc truyền thông thành tài sản dài hạn.</p>
+        </div>
+      </article>
+      <article class="insight-card">
+        <a href="blog-detail.html" class="insight-card__media"><img src="assets/images/siamoment/D2N.jpg" alt=""></a>
+        <div class="insight-card__body">
+          <div class="insight-card__meta"><span>Event</span><time>20 Mar 2026</time></div>
+          <h2><a href="blog-detail.html">Commerce workshop: từ nội dung đến chuyển đổi</a></h2>
+          <p>Những ghi chú vận hành sau chuỗi workshop dành cho đội sale và marketing.</p>
+        </div>
+      </article>
+      <article class="insight-card">
+        <a href="blog-detail.html" class="insight-card__media"><img src="assets/images/siamoment/487506738_625121820357956_1802010585951418351_n.jpg" alt=""></a>
+        <div class="insight-card__body">
+          <div class="insight-card__meta"><span>Brand</span><time>12 Mar 2026</time></div>
+          <h2><a href="blog-detail.html">SIA Moment: khi sự kiện trở thành nội dung thương hiệu</a></h2>
+          <p>Cách thiết kế điểm chạm để mỗi sự kiện có đời sống tiếp sau ngày diễn ra.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 05 ARCHIVE -->
+<section class="blog-compact-section blog-compact-section--tight" id="archive" x-show="filter === 'all'">
+  <div class="container">
+    <div class="blog-section-heading">
+      <h2><span data-lang="vi">Archive</span><span data-lang="en" hidden>Archive</span></h2>
+    </div>
+    <div class="archive-list">
+      <a href="blog-detail.html"><span>Shopee Mall vs TikTok Shop: Đặt chân đâu trước?</span><time>22 Mar 2026</time></a>
+      <a href="blog-detail.html"><span>UGC: Cách brand Việt đang làm đúng và sai</span><time>18 Mar 2026</time></a>
+      <a href="blog-detail.html"><span>360 campaign hay luôn là câu trả lời?</span><time>12 Mar 2026</time></a>
+      <a href="blog-detail.html"><span>Tone of voice: Công cụ khác biệt mà brand Việt bỏ quên</span><time>05 Mar 2026</time></a>
+      <a href="blog-detail.html"><span>Livestream script: 15 phút đầu quyết định điều gì?</span><time>27 Feb 2026</time></a>
+      <a href="blog-detail.html"><span>Founder-led content: Khi nào nên tự xuất hiện?</span><time>18 Feb 2026</time></a>
+      <a href="blog-detail.html"><span>Community launch: 30 ngày đầu cần đo gì?</span><time>08 Feb 2026</time></a>
+    </div>
+  </div>
+</section>
+
+<!-- 06 NEWSLETTER -->
+<section class="blog-compact-cta" id="newsletter">
+  <div class="container">
+    <div class="blog-compact-cta__inner" data-animate>
+      <h2><span data-lang="vi">Built for the future.<br>Available today.</span><span data-lang="en" hidden>Built for the future.<br>Available today.</span></h2>
+      <form class="blog-compact-cta__form">
         <input type="email" required placeholder="you@brand.com" aria-label="Email">
         <button type="submit" class="btn btn--primary btn--pill">
-          <span data-lang="vi">Đăng ký</span><span data-lang="en" hidden>Subscribe</span>
+          <span data-lang="vi">Nhận SIA Weekly</span><span data-lang="en" hidden>Get SIA Weekly</span>
         </button>
       </form>
     </div>
@@ -361,7 +356,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="assets/js/theme.js?v=13"></script>
 <script src="assets/js/swiper-init.js?v=13"></script>
-<script src="assets/js/main.js?v=13"></script>
+<script src="assets/js/main.js?v=14"></script>
 
 </body>
 </html>

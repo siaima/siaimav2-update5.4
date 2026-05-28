@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="assets/css/variables.css?v=12">
   <link rel="stylesheet" href="assets/css/base.css?v=12">
-  <link rel="stylesheet" href="assets/css/components.css?v=12">
+  <link rel="stylesheet" href="assets/css/components.css?v=20">
   <link rel="stylesheet" href="assets/css/animations.css?v=12">
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -30,11 +30,11 @@
     [x-cloak] { display: none !important; }
 
     /* ── Hero 2-column layout ── */
-    .event-hero { padding: 16px 0 80px; }
+    .event-hero { padding: 24px 0 52px; }
     .event-hero__grid {
       display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 56px;
+      grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+      gap: 28px;
       align-items: start;
     }
     @media (max-width: 1023px) {
@@ -57,6 +57,7 @@
       background: var(--bg-surface-2);
       box-shadow: var(--shadow-md);
       position: relative;
+      border: 1px solid var(--border-default);
     }
     .event-poster img {
       width: 100%; height: auto;
@@ -78,11 +79,19 @@
     }
 
     /* meta blocks */
-    .meta-block { display: flex; flex-direction: column; gap: 14px; }
+    .meta-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
     .meta-row {
       display: flex;
       gap: 12px;
       align-items: flex-start;
+      padding: 14px;
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-lg);
+      background: var(--bg-surface);
     }
     .meta-row__icon {
       flex-shrink: 0;
@@ -97,6 +106,9 @@
     .meta-row__text { font-size: 14px; line-height: 1.4; padding-top: 2px; }
     .meta-row__title { font-weight: 600; color: var(--text-primary); }
     .meta-row__sub { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+    @media (max-width: 640px) {
+      .meta-block { grid-template-columns: 1fr; }
+    }
 
     .aside-divider {
       height: 1px;
@@ -155,6 +167,9 @@
     }
 
     /* ── Right main column ── */
+    .event-hero__main {
+      min-width: 0;
+    }
     .event-hero__title {
       font-size: 44px;
       font-weight: 800;
@@ -211,6 +226,7 @@
       background: var(--bg-surface);
       box-shadow: var(--shadow-sm);
       overflow: hidden;
+      height: 100%;
     }
     .register-card__header {
       padding: 22px 24px 18px;
@@ -332,6 +348,7 @@
     .event-about__article {
       max-width: 760px;
       margin: 0 auto;
+      text-align: center;
     }
     .event-about__article h2 {
       font-size: 28px;
@@ -348,7 +365,7 @@
       font-size: 16px;
       line-height: 1.75;
       color: var(--text-primary);
-      margin: 0 0 18px;
+      margin: 0 auto 18px;
     }
     .event-about__article ul {
       padding-left: 22px;
@@ -731,81 +748,67 @@
     }
 
     /* ── Section 1: Organizers — full-width horizontal grid ── */
-    #organizers .gen-logo-section {
+    #organizers {
+      padding: 34px 0 72px;
+    }
+    #organizers .section-header {
+      margin-bottom: 28px;
+    }
+    #organizers .section-header h2 {
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.12;
+      margin-bottom: 0;
+    }
+    #organizers .event-logo-wall {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      margin-top: 40px;
-      align-items: start;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 0;
+      align-items: stretch;
     }
-    #organizers .gen-logo-category {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0;
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      width: 100%;
-    }
-    #organizers .gen-logo-category-title {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      margin: 0 0 16px;
-      text-align: center;
-    }
-    #organizers .gen-logo-grid {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-    #organizers .gen-logo-item {
+    #organizers .event-logo-card {
+      min-height: 78px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 40px;
-      padding: 4px 8px;
-      background: transparent;
-      border: 0;
-      border-radius: 0;
-      font-size: 12px;
-      font-weight: 700;
+      padding: 16px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-default);
+      background: var(--bg-surface);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      font-size: clamp(13px, 1.2vw, 18px);
+      font-weight: 760;
+      line-height: 1.1;
       color: var(--text-primary);
-      letter-spacing: 0.01em;
-      white-space: nowrap;
+      letter-spacing: 0;
     }
-    /* For future logo image swap (transparent PNG) */
-    #organizers .gen-logo-item img {
-      max-height: 40px;
-      max-width: 100%;
+    #organizers .event-logo-card--wide {
+      grid-column: span 2;
+    }
+    #organizers .event-logo-card img {
+      max-height: 44px;
+      max-width: 180px;
       width: auto;
       height: auto;
       display: block;
       object-fit: contain;
     }
+    [data-theme="dark"] #organizers .event-logo-card {
+      background: rgba(255,255,255,0.045);
+      border-color: rgba(255,255,255,0.12);
+    }
     @media (max-width: 1023px) {
-      #organizers .gen-logo-section {
+      #organizers .event-logo-wall {
         grid-template-columns: repeat(2, 1fr);
-        gap: 28px;
+        gap: 12px;
       }
+      #organizers .event-logo-card--wide { grid-column: span 1; }
     }
     @media (max-width: 540px) {
-      #organizers .gen-logo-section {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      #organizers .gen-logo-item {
-        min-height: 32px;
-        font-size: 11px;
-      }
-      #organizers .gen-logo-item img { max-height: 32px; }
+      #organizers .event-logo-wall { grid-template-columns: 1fr 1fr; }
+      #organizers .event-logo-card { min-height: 66px; padding: 12px; font-size: 12px; }
+      #organizers .event-logo-card img { max-height: 34px; max-width: 130px; }
     }
   </style>
 </head>
@@ -876,6 +879,10 @@
   <!-- ═══════════ HERO 2-COLUMN ═══════════ -->
   <section class="event-hero" id="register">
     <div class="container">
+      <h1 class="sr-only">
+        <span data-lang="vi">China ASEAN Digital Economy & OpenClaw AI</span>
+        <span data-lang="en" hidden>China ASEAN Digital Economy & OpenClaw AI</span>
+      </h1>
       <div class="event-hero__grid">
 
         <!-- LEFT — Sticky aside -->
@@ -905,62 +912,10 @@
             </div>
           </div>
 
-          <div class="aside-divider"></div>
-
-          <div>
-            <div class="aside-section-label"><span data-lang="vi">Tổ chức bởi</span><span data-lang="en" hidden>Hosted by</span></div>
-            <div class="hosted-row">
-              <div class="hosted-logo">
-                <img src="assets/images/showcase-safe/3192239ce92f083c.png" alt="SIA">
-              </div>
-              <div>
-                <div class="hosted-name">JCI Vietnam · TREVI Tân</div>
-                <div class="hosted-role"><span data-lang="vi">Co-host: MATBAO · Sponsor: HIU · SIA · Tech Insider · Vihat</span><span data-lang="en" hidden>Co-host: MATBAO · Sponsor: HIU · SIA · Tech Insider · Vihat</span></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="aside-divider"></div>
-
-          <div>
-            <div class="aside-section-label">
-              <span data-lang="vi">6 diễn giả · 200+ chỗ</span><span data-lang="en" hidden>6 speakers · 200+ seats</span>
-            </div>
-            <div class="avatar-stack">
-              <div class="avatar-stack__items">
-                <span class="avatar-stack__item">JC</span>
-                <span class="avatar-stack__item">ZL</span>
-                <span class="avatar-stack__item">BT</span>
-                <span class="avatar-stack__item">NV</span>
-                <span class="avatar-stack__item">TV</span>
-                <span class="avatar-stack__item">TH</span>
-              </div>
-              <span class="avatar-stack__count"><span data-lang="vi">Diễn giả từ VN · Trung Quốc</span><span data-lang="en" hidden>Speakers from VN · China</span></span>
-            </div>
-          </div>
         </aside>
 
-        <!-- RIGHT — Title + Register card -->
+        <!-- RIGHT — Register card -->
         <div class="event-hero__main">
-          <div class="status-strip">
-            <span class="status-pill status-pill--live">
-              <span data-lang="vi">Đang mở đăng ký</span><span data-lang="en" hidden>Registration open</span>
-            </span>
-            <span class="status-pill">Symposium</span>
-            <span class="status-pill"><span data-lang="vi">Có phiên dịch VI · CN</span><span data-lang="en" hidden>Interpretation VI · CN</span></span>
-            <span class="status-pill">China × ASEAN</span>
-          </div>
-
-          <h1 class="event-hero__title">
-            <span data-lang="vi">China ASEAN Digital Economy & OpenClaw AI</span>
-            <span data-lang="en" hidden>China ASEAN Digital Economy & OpenClaw AI</span>
-          </h1>
-
-          <p class="event-hero__subtitle">
-            <span data-lang="vi"><strong>Industry Application Symposium</strong> — diễn đàn kết nối nền kinh tế số Trung Quốc – ASEAN và ứng dụng AI OpenClaw cho doanh nghiệp Việt Nam. 6 diễn giả quốc tế, 1 ngày trọn vẹn: talkshow buổi sáng, workshop & showcase buổi chiều.</span>
-            <span data-lang="en" hidden><strong>Industry Application Symposium</strong> — a forum connecting the China–ASEAN digital economy with OpenClaw AI applications for Vietnamese enterprises. 6 international speakers, one full day: morning talkshow, afternoon workshop & showcase.</span>
-          </p>
-
           <!-- Register card with tier selection + form -->
           <div class="register-card" x-data="eventReg()">
             <div class="register-card__header">
@@ -1062,41 +1017,18 @@
   <section class="section section--alt" id="organizers">
     <div class="container">
       <div class="section-header" data-animate>
-        <span class="section-eyebrow"><span data-lang="vi">Đơn vị đồng hành</span><span data-lang="en" hidden>Partners</span></span>
         <h2><span data-lang="vi">Nhà tổ chức & <em style="color:var(--primary);font-style:italic">Đối tác</em></span><span data-lang="en" hidden>Hosts & <em style="color:var(--primary);font-style:italic">Partners</em></span></h2>
       </div>
 
-      <div class="gen-logo-section" data-animate>
-        <div class="gen-logo-category">
-          <div class="gen-logo-category-title"><span data-lang="vi">Nhà tổ chức</span><span data-lang="en" hidden>Hosted by</span></div>
-          <div class="gen-logo-grid">
-            <div class="gen-logo-item">JCI Vietnam</div>
-            <div class="gen-logo-item">TREVI Tân</div>
-          </div>
-        </div>
-
-        <div class="gen-logo-category">
-          <div class="gen-logo-category-title">Co-host</div>
-          <div class="gen-logo-grid">
-            <div class="gen-logo-item">MATBAO</div>
-          </div>
-        </div>
-
-        <div class="gen-logo-category">
-          <div class="gen-logo-category-title"><span data-lang="vi">Đơn vị tài trợ</span><span data-lang="en" hidden>Sponsors</span></div>
-          <div class="gen-logo-grid">
-            <div class="gen-logo-item">Hong Bang Int'l University</div>
-            <div class="gen-logo-item">SIA Innovation Marketing</div>
-          </div>
-        </div>
-
-        <div class="gen-logo-category">
-          <div class="gen-logo-category-title"><span data-lang="vi">Đối tác truyền thông</span><span data-lang="en" hidden>Media Partners</span></div>
-          <div class="gen-logo-grid">
-            <div class="gen-logo-item">Tech Insider</div>
-            <div class="gen-logo-item">Vihat Solutions</div>
-          </div>
-        </div>
+      <div class="event-logo-wall" data-animate aria-label="Partners and organizers">
+        <div class="event-logo-card"><img src="assets/images/partnerlogo2/U-JCI VIETNAM.jpg" alt="JCI Vietnam"></div>
+        <div class="event-logo-card">TREVI Tân</div>
+        <div class="event-logo-card"><img src="assets/images/partnerlogo2/B-MATBAO.jpg" alt="MATBAO"></div>
+        <div class="event-logo-card"><img src="assets/images/partnerlogo2/U-HONGBANG.jpg" alt="Hong Bang International University"></div>
+        <div class="event-logo-card">Tech Insider</div>
+        <div class="event-logo-card">IP Vietnam</div>
+        <div class="event-logo-card">Vihat Solutions</div>
+        <div class="event-logo-card event-logo-card--wide"><img src="assets/images/logo/SIA-inno-logo/SIA-innovation-logo.png" alt="SIA Innovation Marketing"></div>
       </div>
     </div>
   </section>
@@ -1441,7 +1373,7 @@
 
 <script src="assets/js/theme.js?v=13"></script>
 <script src="assets/js/swiper-init.js?v=13"></script>
-<script src="assets/js/main.js?v=13"></script>
+<script src="assets/js/main.js?v=14"></script>
 
 </body>
 </html>
