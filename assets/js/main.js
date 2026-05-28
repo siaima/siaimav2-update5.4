@@ -555,7 +555,7 @@ document.addEventListener('DOMContentLoaded', function () {
     '.speaker-form-card',
     '.gen-stat-card', '.gen-chart-card', '.gen-speaker-card', '.gen-timeline-item',
     '.gen-logo-item', '.audience-card', '.value-card',
-    '.hero-stat', '.faq-item', '.cta-banner__tile',
+    '.hero-stat', '.faq-item',
     // Interactive
     '.btn', '.nav-link', '.nav-item',
     '.form-input', '.form-select', '.form-textarea', '.form-tab',

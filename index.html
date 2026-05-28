@@ -17,7 +17,7 @@
   <!-- Project CSS (cache-bust via version query) -->
   <link rel="stylesheet" href="assets/css/variables.css?v=12">
   <link rel="stylesheet" href="assets/css/base.css?v=12">
-  <link rel="stylesheet" href="assets/css/components.css?v=20">
+  <link rel="stylesheet" href="assets/css/components.css?v=26">
   <link rel="stylesheet" href="assets/css/animations.css?v=12">
 
   <!-- Alpine.js -->
@@ -421,7 +421,13 @@
     .home-partners {
       overflow: hidden;
       background: var(--bg-surface-2);
-      padding: clamp(72px, 8vw, 118px) 0;
+      padding: clamp(72px, 8vw, 118px) 0 clamp(28px, 4vw, 52px);
+    }
+    #contact {
+      padding-top: clamp(28px, 4vw, 52px);
+    }
+    #contact .contact-wrap {
+      margin-top: 0;
     }
     [data-theme="dark"] .home-partners {
       background: var(--bg-page);
@@ -624,7 +630,7 @@
     }
     @media (max-width: 640px) {
       .home-partners {
-        padding: var(--space-16) 0;
+        padding: var(--space-16) 0 var(--space-8);
       }
       .home-partners__title {
         margin-bottom: var(--space-7);
@@ -1232,10 +1238,6 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="container">
     <div class="story-grid">
       <div class="story-grid__text" data-animate>
-        <span class="section-eyebrow">
-          <span data-lang="vi">Câu chuyện SIA</span>
-          <span data-lang="en" hidden>Our story</span>
-        </span>
         <h2>
           <span data-lang="vi">Từ một <em style="color:var(--primary);font-style:italic">ý tưởng</em> đến hệ sinh thái marketing tích hợp</span>
           <span data-lang="en" hidden>From a single <em style="color:var(--primary);font-style:italic">idea</em> to an integrated marketing ecosystem</span>
@@ -1325,12 +1327,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <span data-lang="en" hidden>Mission</span>
         </div>
         <h3 class="mvv-card__title">
-          <span data-lang="vi">Kết nối con người, dữ liệu và ý tưởng</span>
-          <span data-lang="en" hidden>Connecting people, data and ideas</span>
+          <span data-lang="vi">Biến cộng đồng thành tài sản tăng trưởng cho thương hiệu</span>
+          <span data-lang="en" hidden>Turning communities into growth assets for brands</span>
         </h3>
         <p class="mvv-card__desc">
-          <span data-lang="vi">Xây dựng một hệ sinh thái nơi thương hiệu, creator và người tiêu dùng đồng hành cùng nhau — tạo ra giá trị có thể đo lường, có thể mở rộng và có trách nhiệm.</span>
-          <span data-lang="en" hidden>Build an ecosystem where brands, creators and consumers grow together — creating value that is measurable, scalable and responsible.</span>
+          <span data-lang="vi">Xây dựng hệ sinh thái kết nối thương hiệu, creator, người tiêu dùng và đối tác để tạo ra tăng trưởng có thể đo lường và mở rộng.</span>
+          <span data-lang="en" hidden>Build an ecosystem connecting brands, creators, consumers and partners to create measurable, scalable growth.</span>
         </p>
       </article>
 
@@ -1343,12 +1345,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <span data-lang="en" hidden>Vision</span>
         </div>
         <h3 class="mvv-card__title">
-          <span data-lang="vi">Agency dẫn đầu Creator Commerce Đông Nam Á</span>
-          <span data-lang="en" hidden>Leading Creator Commerce agency in Southeast Asia</span>
+          <span data-lang="vi">Trở thành Innovation Marketing Agency dẫn đầu khu vực</span>
+          <span data-lang="en" hidden>Becoming the region's leading Innovation Marketing Agency</span>
         </h3>
         <p class="mvv-card__desc">
-          <span data-lang="vi">Đến 2030, SIA trở thành điểm đến đầu tiên cho doanh nghiệp muốn tăng trưởng thông qua hệ sinh thái creator — từ Việt Nam lan toả ra khu vực.</span>
-          <span data-lang="en" hidden>By 2030, SIA will be the first stop for businesses seeking growth through the creator ecosystem — from Vietnam across the region.</span>
+          <span data-lang="vi">Đồng hành cùng doanh nghiệp trong hành trình tăng trưởng từ Việt Nam ra Đông Nam Á thông qua cộng đồng, dữ liệu và thương mại sáng tạo.</span>
+          <span data-lang="en" hidden>Partner with businesses on their growth journey from Vietnam to Southeast Asia through community, data and creative commerce.</span>
         </p>
       </article>
 
@@ -1361,12 +1363,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <span data-lang="en" hidden>Core values</span>
         </div>
         <h3 class="mvv-card__title">
-          <span data-lang="vi">Ownership · Creativity · Data · Community</span>
-          <span data-lang="en" hidden>Ownership · Creativity · Data · Community</span>
+          <span data-lang="vi">Chiến lược rõ · Triển khai thật · Kết quả đo được</span>
+          <span data-lang="en" hidden>Clear strategy · Real execution · Measurable results</span>
         </h3>
         <p class="mvv-card__desc">
-          <span data-lang="vi">Bốn nguyên lý định hướng mọi hành động: làm chủ công việc, sáng tạo không giới hạn, quyết định bằng dữ liệu và xây cộng đồng bền vững.</span>
-          <span data-lang="en" hidden>Four principles guiding every action: own the work, create without limits, decide by data and build resilient communities.</span>
+          <span data-lang="vi">Mọi hoạt động của SIA IMA được dẫn dắt bởi tư duy chiến lược, khả năng thực thi và cam kết tạo ra giá trị tăng trưởng thực tế.</span>
+          <span data-lang="en" hidden>Every SIA IMA activity is guided by strategic thinking, execution capability and a commitment to creating real growth value.</span>
         </p>
       </article>
     </div>
@@ -1391,88 +1393,47 @@ document.addEventListener('DOMContentLoaded', () => {
       </p>
     </div>
 
-    <div class="gen-timeline timeline-events-swiper home-events-swiper swiper" id="home-timeline" style="margin-top: 24px;">
-      <div class="gen-timeline-track swiper-wrapper">
-        <div class="gen-timeline-item swiper-slide">
-          <div class="gen-timeline-dot"></div>
-          <div class="gen-timeline-header">
-            <div class="gen-timeline-date">23 · 09 · 2025</div>
-            <span class="gen-timeline-tag gen-timeline-tag--brand">E-Commerce</span>
-          </div>
-          <div class="gen-timeline-title">WORKSHOP 1: ĐÀO TẠO KOC INHOUSE AFFILIATE & LIVESTREAM CHO DOANH NGHIỆP</div>
-          <div class="gen-timeline-sub">Thương mại điện tử & Truyền thông số · SIA</div>
-          <div class="gen-timeline-desc">
-            <span data-lang="vi">Buổi đào tạo thực chiến về cách xây dựng đội ngũ KOC nội bộ, triển khai chiến lược Affiliate Booking và thiết lập hệ th…</span>
-            <span data-lang="en" hidden>Buổi đào tạo thực chiến về cách xây dựng đội ngũ KOC nội bộ, triển khai chiến lược Affiliate Booking và thiết lập hệ th…</span>
-          </div>
-          <a href="showcase-workshop-1-dao-tao-koc-inhouse-affiliate-livestream-cho-doanh-nghiep.html" class="gen-timeline-link card-stretch-link">TÌM HIỂU THÊM →</a>
-        </div>
-        <div class="gen-timeline-item swiper-slide">
-          <div class="gen-timeline-dot"></div>
-          <div class="gen-timeline-header">
-            <div class="gen-timeline-date">01 · 11 · 2025</div>
-            <span class="gen-timeline-tag gen-timeline-tag--brand">Lifestyle</span>
-          </div>
-          <div class="gen-timeline-title">SỰ KIỆN VERY DEMURE, VERY MINDFUL</div>
-          <div class="gen-timeline-sub">Thời trang & Phong cách sống · SIA</div>
-          <div class="gen-timeline-desc">
-            <span data-lang="vi">Workshop kết hợp trưng bày thời trang và panel talk truyền cảm hứng dành riêng cho phái đẹp. Sự kiện tập trung vào việc…</span>
-            <span data-lang="en" hidden>Workshop kết hợp trưng bày thời trang và panel talk truyền cảm hứng dành riêng cho phái đẹp. Sự kiện tập trung vào việc…</span>
-          </div>
-          <a href="showcase-su-kien-very-demure-very-mindful.html" class="gen-timeline-link card-stretch-link">TÌM HIỂU THÊM →</a>
-        </div>
-        <div class="gen-timeline-item swiper-slide">
-          <div class="gen-timeline-dot"></div>
-          <div class="gen-timeline-header">
-            <div class="gen-timeline-date">17 · 12 · 2025</div>
-            <span class="gen-timeline-tag gen-timeline-tag--brand">Women</span>
-          </div>
-          <div class="gen-timeline-title">SHE RISE: FROM SOUL TO SHINE - KHAI MỞ VẺ ĐẸP TỪ BÊN TRONG</div>
-          <div class="gen-timeline-sub">Phụ nữ & Phong cách sống · SIA</div>
-          <div class="gen-timeline-desc">
-            <span data-lang="vi">Sự kiện dành riêng cho phái đẹp nhằm kết nối và tái tạo năng lượng thông qua buổi panel talk truyền cảm hứng và worksho…</span>
-            <span data-lang="en" hidden>Sự kiện dành riêng cho phái đẹp nhằm kết nối và tái tạo năng lượng thông qua buổi panel talk truyền cảm hứng và worksho…</span>
-          </div>
-          <a href="showcase-she-rise-from-soul-to-shine-khai-mo-ve-dep-tu-ben-trong.html" class="gen-timeline-link card-stretch-link">TÌM HIỂU THÊM →</a>
-        </div>
-        <div class="gen-timeline-item swiper-slide">
-          <div class="gen-timeline-dot"></div>
-          <div class="gen-timeline-header">
-            <div class="gen-timeline-date">05 · 03 · 2026</div>
-            <span class="gen-timeline-tag gen-timeline-tag--brand">Women</span>
-          </div>
-          <div class="gen-timeline-title">SHE RISE #2 - CHẤM PHẨY</div>
-          <div class="gen-timeline-sub">Phụ nữ & Sức khỏe tinh thần · SIA</div>
-          <div class="gen-timeline-desc">
-            <span data-lang="vi">Không gian thư giãn dành cho phụ nữ hiện đại tạm rời xa áp lực với những vai trò trong xã hội để phục hồi năng lượng th…</span>
-            <span data-lang="en" hidden>Không gian thư giãn dành cho phụ nữ hiện đại tạm rời xa áp lực với những vai trò trong xã hội để phục hồi năng lượng th…</span>
-          </div>
-          <a href="showcase-she-rise-2-cham-phay.html" class="gen-timeline-link card-stretch-link">TÌM HIỂU THÊM →</a>
-        </div>
-        <div class="gen-timeline-item swiper-slide" style="border-color:var(--primary);">
-          <div class="gen-timeline-dot gen-timeline-dot--live"></div>
-          <div class="gen-timeline-header">
-            <div class="gen-timeline-date" style="color:var(--primary)">17 · 04 · 2026</div>
-            <span class="gen-timeline-tag gen-timeline-tag--brand">Event</span>
-          </div>
-          <div class="gen-timeline-title">CHINA ASEAN DIGITAL ECONOMY & OPENCLAW AI INDUSTRY APPLICATION SYMPOSIUM</div>
-          <div class="gen-timeline-sub">Trí tuệ nhân tạo & Vận hành doanh nghiệp · SIA</div>
-          <div class="gen-timeline-desc">
-            <span data-lang="vi">Hội thảo về trí tuệ nhân tạo quy tụ các chuyên gia hàng đầu từ Silicon Valley và Trung Quốc. Sự kiện tập trung vào việc…</span>
-            <span data-lang="en" hidden>Hội thảo về trí tuệ nhân tạo quy tụ các chuyên gia hàng đầu từ Silicon Valley và Trung Quốc. Sự kiện tập trung vào việc…</span>
-          </div>
-          <a href="showcase-china-asean-digital-economy-openclaw-ai-industry-application-symposium.html" class="gen-timeline-link card-stretch-link">XEM CHI TIẾT →</a>
+    <div class="community-year-board home-event-board" data-animate>
+      <div class="community-year-row">
+        <div class="community-year-row__events" aria-label="5 sự kiện gần nhất của SIA">
+          <a class="community-event-mini" href="showcase-su-kien-very-demure-very-mindful.html">
+            <span class="community-event-mini__date">01 · 11 · 2025</span>
+            <span class="community-event-mini__tag">Mindful</span>
+            <strong>Sự kiện Very Demure, Very Mindful</strong>
+            <span class="community-event-mini__speakers">Bianca Nguyễn · Hoàng Mai Linh</span>
+          </a>
+          <a class="community-event-mini" href="showcase-she-rise-from-soul-to-shine-khai-mo-ve-dep-tu-ben-trong.html">
+            <span class="community-event-mini__date">17 · 12 · 2025</span>
+            <span class="community-event-mini__tag">SHE RISE</span>
+            <strong>SHE RISE - From Soul to Shine</strong>
+            <span class="community-event-mini__speakers">Tô Nhi A · Hoàng Mai Linh</span>
+          </a>
+          <a class="community-event-mini" href="showcase-she-rise-2-cham-phay.html">
+            <span class="community-event-mini__date">05 · 03 · 2026</span>
+            <span class="community-event-mini__tag">SHE RISE</span>
+            <strong>SHE RISE #2 - Chấm phẩy</strong>
+            <span class="community-event-mini__speakers">Tô Nhi A · Hoàng Mai Linh</span>
+          </a>
+          <a class="community-event-mini" href="showcase-china-asean-digital-economy-openclaw-ai-industry-application-symposium.html">
+            <span class="community-event-mini__date">17 · 04 · 2026</span>
+            <span class="community-event-mini__tag">AI</span>
+            <strong>China ASEAN Digital Economy & OpenClaw AI</strong>
+            <span class="community-event-mini__speakers">Đào Trung Thành · SIA Expert Panel</span>
+          </a>
+          <a class="community-event-mini" href="showcase-world-ip-day-2026.html">
+            <span class="community-event-mini__date">23-24 · 04 · 2026</span>
+            <span class="community-event-mini__tag">IP</span>
+            <strong>World IP Day 2026</strong>
+            <span class="community-event-mini__speakers">Lê Huy Anh · Lâm Quang Thành</span>
+          </a>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
     </div>
 
-    <div style="margin-top: 48px; text-align: center;" data-animate>
-      <a href="services-event.html" class="btn btn--primary btn--pill btn--lg">
-        <span data-lang="vi">Xem tất cả sự kiện</span>
-        <span data-lang="en" hidden>See all events</span>
+    <div style="margin-top: 36px; text-align: center;" data-animate>
+      <a href="community.html#sia-community" class="btn btn--primary btn--pill btn--lg">
+        <span data-lang="vi">Xem chi tiết sự kiện</span>
+        <span data-lang="en" hidden>See event details</span>
         <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
@@ -1680,26 +1641,6 @@ document.addEventListener('DOMContentLoaded', () => {
               <p class="case-card__desc">
                 <span data-lang="vi">Ra mắt sản phẩm với chiến dịch 360: PR, social, KOL, livestream, event — đạt 200% KPI lead.</span>
                 <span data-lang="en" hidden>360 launch campaign across PR, social, KOL, livestream, event — hitting 200% of lead KPI.</span>
-              </p>
-              <a href="showcase-detail.html" class="case-card__link card-stretch-link">
-                <span data-lang="vi">Xem dự án</span><span data-lang="en" hidden>View project</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-            </div>
-          </article>
-        </div>
-
-        <div class="swiper-slide">
-          <article class="case-card">
-            <div class="case-card__media" style="background:linear-gradient(135deg,#3D3D3D,var(--secondary));">
-              <span class="case-card__tag" style="background:rgba(255,255,255,0.14);color:var(--white);">★ Content Studio</span>
-            </div>
-            <div class="case-card__body">
-              <div class="case-card__meta">Fashion · Media · 2026</div>
-              <h3 class="case-card__title">Content Studio Reel</h3>
-              <p class="case-card__desc">
-                <span data-lang="vi">Sản xuất 120 clip short-form trong 30 ngày, tối ưu cho TikTok Shop và Reels.</span>
-                <span data-lang="en" hidden>120 short-form clips in 30 days, optimised for TikTok Shop and Reels.</span>
               </p>
               <a href="showcase-detail.html" class="case-card__link card-stretch-link">
                 <span data-lang="vi">Xem dự án</span><span data-lang="en" hidden>View project</span>
@@ -1927,10 +1868,6 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="contact-wrap" data-animate>
       <!-- Info -->
       <div class="contact-info">
-        <span class="section-eyebrow">
-          <span data-lang="vi">Bắt đầu ngay</span>
-          <span data-lang="en" hidden>Get started</span>
-        </span>
         <h2 class="mt-4 mb-4">
           <span data-lang="vi">Hãy kể cho chúng tôi về <em style="color:var(--primary);font-style:italic">bài toán</em> của bạn</span>
           <span data-lang="en" hidden>Tell us about <em style="color:var(--primary);font-style:italic">your challenge</em></span>
@@ -2098,7 +2035,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- Project JS -->
 <script src="assets/js/theme.js?v=13"></script>
 <script src="assets/js/swiper-init.js?v=16"></script>
-<script src="assets/js/main.js?v=14"></script>
+<script src="assets/js/main.js?v=15"></script>
 <script src="assets/js/latest-showcase.js?v=2"></script>
 
 </body>

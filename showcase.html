@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="assets/css/variables.css?v=12">
   <link rel="stylesheet" href="assets/css/base.css?v=12">
-  <link rel="stylesheet" href="assets/css/components.css?v=20">
+  <link rel="stylesheet" href="assets/css/components.css?v=22">
   <link rel="stylesheet" href="assets/css/animations.css?v=12">
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -31,7 +31,7 @@
     .home-partners {
       overflow: hidden;
       background: var(--bg-surface-2);
-      padding: clamp(72px, 8vw, 118px) 0;
+      padding: clamp(38px, 5vw, 72px) 0 clamp(72px, 8vw, 118px);
     }
     [data-theme="dark"] .home-partners {
       background: var(--bg-page);
@@ -40,7 +40,13 @@
       display: grid;
       grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1.14fr);
       gap: clamp(36px, 7vw, 96px);
-      align-items: center;
+      align-items: start;
+    }
+    #cases {
+      padding-bottom: clamp(44px, 5vw, 72px);
+    }
+    #cases + .home-partners {
+      margin-top: 0;
     }
     .home-partners__content {
       max-width: 540px;
@@ -204,7 +210,7 @@
     }
     @media (max-width: 640px) {
       .home-partners {
-        padding: var(--space-16) 0;
+        padding: var(--space-12) 0 var(--space-16);
       }
       .home-partners__title {
         margin-bottom: var(--space-7);
@@ -1097,7 +1103,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="assets/js/theme.js?v=13"></script>
 <script src="assets/js/swiper-init.js?v=13"></script>
-<script src="assets/js/main.js?v=14"></script>
+<script src="assets/js/main.js?v=15"></script>
 
 </body>
 </html>

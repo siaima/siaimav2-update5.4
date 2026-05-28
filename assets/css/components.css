@@ -1528,10 +1528,11 @@ html.sia-ready .home-loader {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
 }
 .cta-banner__eyebrow {
+  display: block;
   font-size: var(--caption);
   font-weight: 800;
   letter-spacing: 0.12em;
-  line-height: 1;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 .cta-banner__arrow {
@@ -1567,16 +1568,25 @@ html.sia-ready .home-loader {
   letter-spacing: -0.02em;
 }
 .cta-banner__intro {
+  display: block;
   max-width: 360px;
   margin-top: var(--space-5);
   color: currentColor;
   opacity: 0.78;
   font-size: var(--body-l);
-  line-height: 1.45;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+.cta-banner__tile--contact .cta-banner__intro {
+  max-width: 440px;
+  margin-top: var(--space-3);
+  font-size: clamp(17px, 1.55vw, 20px);
+  line-height: 1.58;
 }
 .cta-banner__tile--showcase .cta-banner__intro {
   margin-top: auto;
   font-size: var(--body-m);
+  line-height: 1.58;
 }
 .cta-banner__link-label {
   width: min(220px, 100%);
@@ -4913,6 +4923,10 @@ html.sia-ready .home-loader {
 }
 
 /* Community events by year */
+#sia-community {
+  scroll-margin-top: calc(var(--nav-height) + 28px);
+}
+
 .community-year-board {
   display: grid;
   gap: var(--space-8);
@@ -4921,25 +4935,45 @@ html.sia-ready .home-loader {
 
 .community-year-row {
   display: grid;
-  grid-template-columns: 116px minmax(0, 1fr);
-  gap: var(--space-5);
-  align-items: stretch;
+  gap: 14px;
 }
 
 .community-year-row__head {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border-default);
+  align-items: baseline;
+  gap: 14px;
+  padding-left: 2px;
 }
 
 .community-year-row__head span {
   color: var(--text-primary);
-  font-size: clamp(26px, 3vw, 40px);
+  font-size: clamp(24px, 2.8vw, 34px);
   font-weight: 740;
-  line-height: 0.95;
+  line-height: 1.08;
   letter-spacing: 0;
+}
+
+.community-year-row__head mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.18em;
+  background: transparent;
+  color: var(--primary);
+  font: inherit;
+  isolation: isolate;
+}
+
+.community-year-row__head mark::after {
+  content: "";
+  position: absolute;
+  left: 0.04em;
+  right: 0.04em;
+  bottom: 0.04em;
+  z-index: -1;
+  height: 0.28em;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--primary) 18%, transparent);
 }
 
 .community-year-row__head small {
@@ -4952,21 +4986,40 @@ html.sia-ready .home-loader {
 }
 
 .community-year-row__events {
+  position: relative;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(150px, 1fr);
+  grid-auto-columns: calc((100% - 40px) / 5);
   grid-template-rows: 1fr;
   gap: 10px;
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  padding: 14px 2px 12px;
-  border-top: 1px solid var(--border-default);
+  padding: 20px 2px 12px;
   scrollbar-width: thin;
-  scrollbar-color: rgba(232, 80, 42, 0.35) transparent;
+  scrollbar-color: color-mix(in srgb, var(--secondary) 12%, var(--bg-page)) transparent;
+}
+
+.community-year-row__events::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 2px;
+  right: 2px;
+  height: 2px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--secondary) 18%, transparent) 8%,
+      color-mix(in srgb, var(--secondary) 48%, var(--border-default)) 34%,
+      color-mix(in srgb, var(--secondary) 34%, var(--border-default)) 72%,
+      transparent 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.68);
+  pointer-events: none;
 }
 
 .community-year-row__events::-webkit-scrollbar {
-  height: 6px;
+  height: 4px;
 }
 
 .community-year-row__events::-webkit-scrollbar-track {
@@ -4975,17 +5028,17 @@ html.sia-ready .home-loader {
 
 .community-year-row__events::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: rgba(232, 80, 42, 0.28);
+  background: color-mix(in srgb, var(--secondary) 12%, var(--bg-page));
 }
 
 .community-event-mini {
-  min-height: 168px;
-  min-width: 150px;
+  min-height: 154px;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 14px;
+  gap: 7px;
+  min-width: 0;
+  padding: 13px;
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--bg-surface) 86%, transparent);
@@ -5003,23 +5056,17 @@ html.sia-ready .home-loader {
 .community-event-mini::before {
   content: "";
   position: absolute;
-  top: -19px;
-  left: 16px;
-  width: 9px;
-  height: 9px;
+  top: -18px;
+  left: 18px;
+  z-index: 1;
+  width: 12px;
+  height: 12px;
   border-radius: 999px;
   background: var(--secondary);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--secondary) 16%, transparent);
-}
-
-.community-event-mini.is-highlight {
-  border-color: var(--primary);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 8%, var(--bg-surface)) 0%, var(--bg-surface) 100%);
-}
-
-.community-event-mini.is-highlight::before {
-  background: var(--primary);
-  box-shadow: 0 0 0 5px color-mix(in srgb, var(--primary) 18%, transparent), 0 0 18px color-mix(in srgb, var(--primary) 34%, transparent);
+  border: 2px solid var(--bg-surface);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--secondary) 14%, transparent),
+    0 8px 18px color-mix(in srgb, var(--secondary) 22%, transparent);
 }
 
 .community-event-mini__date {
@@ -5031,14 +5078,36 @@ html.sia-ready .home-loader {
   text-transform: uppercase;
 }
 
+.community-event-mini__tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  max-width: 82px;
+  min-height: 20px;
+  padding: 4px 8px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--primary) 24%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--primary) 8%, var(--bg-surface));
+  color: var(--primary);
+  font-size: 9px;
+  font-weight: 760;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .community-event-mini strong {
   display: -webkit-box;
-  min-height: 54px;
   overflow: hidden;
   color: var(--text-primary);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 760;
-  line-height: 1.36;
+  line-height: 1.32;
   letter-spacing: 0;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -5049,7 +5118,7 @@ html.sia-ready .home-loader {
   overflow: hidden;
   margin-top: auto;
   color: var(--text-secondary);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 520;
   line-height: 1.4;
   -webkit-line-clamp: 2;
@@ -5080,36 +5149,22 @@ html.sia-ready .home-loader {
   box-shadow: none;
 }
 
-[data-theme="dark"] .community-event-mini.is-highlight {
-  background: linear-gradient(180deg, rgba(232, 80, 42, 0.12) 0%, rgba(255, 255, 255, 0.035) 100%);
-  border-color: var(--primary);
-}
-
-@media (min-width: 1180px) {
-  .community-year-row__events {
-    grid-auto-columns: minmax(0, 1fr);
-  }
-
-  .community-year-row__events > .community-event-mini:nth-last-child(n+7),
-  .community-year-row__events > .community-event-mini:nth-last-child(n+7) ~ .community-event-mini {
-    min-width: 150px;
-  }
+[data-theme="dark"] .community-event-mini__tag {
+  background: color-mix(in srgb, var(--primary) 16%, transparent);
+  border-color: color-mix(in srgb, var(--primary) 36%, transparent);
 }
 
 @media (max-width: 1023px) {
   .community-year-row {
     grid-template-columns: 1fr;
-    gap: var(--space-3);
   }
 
   .community-year-row__head {
-    flex-direction: row;
-    align-items: baseline;
     justify-content: space-between;
   }
 
   .community-year-row__events {
-    grid-auto-columns: minmax(170px, 40vw);
+    grid-auto-columns: calc((100% - 20px) / 3);
   }
 }
 
@@ -5124,6 +5179,44 @@ html.sia-ready .home-loader {
     padding-left: 16px;
     padding-right: 16px;
     grid-auto-columns: minmax(168px, 72vw);
+  }
+
+  .community-event-mini {
+    min-height: 148px;
+    padding: 12px;
+  }
+
+.community-event-mini__tag {
+    max-width: 76px;
+    right: 10px;
+  }
+}
+
+#timeline {
+  padding-top: clamp(52px, 5.6vw, 78px);
+  padding-bottom: clamp(34px, 4.2vw, 58px);
+  background: var(--bg-surface-2);
+}
+
+#timeline .section-header {
+  margin-bottom: 14px;
+}
+
+#timeline .section-header p {
+  margin-top: 10px;
+}
+
+.home-event-board {
+  margin-top: 8px;
+}
+
+[data-theme="dark"] #timeline {
+  background: var(--bg-page);
+}
+
+@media (min-width: 1180px) {
+  .home-event-board .community-year-row__events {
+    grid-auto-columns: calc((100% - 40px) / 5);
   }
 }
 
