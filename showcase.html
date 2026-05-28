@@ -295,120 +295,56 @@
   </div>
 </div>
 
-<main>
+<main class="showcase-index blog-index" x-data="showcaseInfinite()">
 
-<!-- 01 HERO -->
-<section class="page-hero" id="hero">
-  <div class="hero-bg"></div>
+<!-- 01 NOW -->
+<section class="blog-compact-hero" id="hero">
   <div class="container">
-    <div class="page-hero__inner">
-      <div class="hero-eyebrow" data-hero>
-        <span class="dot"></span>
-        <span data-lang="vi">Showcase · Case studies</span>
-        <span data-lang="en" hidden>Showcase · Case studies</span>
+    <div class="blog-compact-hero__bar" data-animate>
+      <div>
+        <span class="section-eyebrow"><span data-lang="vi">Showcase & Case Study</span><span data-lang="en" hidden>Showcase & Case Study</span></span>
+        <h1><span data-lang="vi">Now</span><span data-lang="en" hidden>Now</span></h1>
+        <p>
+          <span data-lang="vi">Những sự kiện, workshop và hoạt động cộng đồng mới nhất từ hệ sinh thái SIA.</span>
+          <span data-lang="en" hidden>Latest events, workshops and community activations from the SIA ecosystem.</span>
+        </p>
       </div>
-      <h1 class="page-hero__title" data-hero>
-        <span data-lang="vi">Chiến dịch thương hiệu có <em>kết quả đo lường được</em></span>
-        <span data-lang="en" hidden>Brand campaigns with <em>measurable results</em></span>
-      </h1>
-      <p class="page-hero__subtitle" data-hero>
-        <span data-lang="vi">Hơn 150 chiến dịch triển khai cho 80+ thương hiệu trong 5 năm — từ Creative Mega Livestream, brand experience đến KOC commerce. Mỗi case study dưới đây đều có KPI cụ thể.</span>
-        <span data-lang="en" hidden>Over 150 campaigns delivered for 80+ brands in 5 years — from Creative Mega Livestream and brand experience to KOC commerce. Every case study below has concrete KPIs.</span>
-      </p>
-      <div class="page-hero__stats" data-hero>
-        <div class="page-hero__stat">
-          <div class="page-hero__stat-num">150<span>+</span></div>
-          <div class="page-hero__stat-label"><span data-lang="vi">Chiến dịch</span><span data-lang="en" hidden>Campaigns</span></div>
-        </div>
-        <div class="page-hero__stat">
-          <div class="page-hero__stat-num">80<span>+</span></div>
-          <div class="page-hero__stat-label"><span data-lang="vi">Thương hiệu</span><span data-lang="en" hidden>Brands</span></div>
-        </div>
-        <div class="page-hero__stat">
-          <div class="page-hero__stat-num">50B<span>+</span></div>
-          <div class="page-hero__stat-label"><span data-lang="vi">Attendees livestream</span><span data-lang="en" hidden>VND livestream GMV</span></div>
-        </div>
-        <div class="page-hero__stat">
-          <div class="page-hero__stat-num">25M<span>+</span></div>
-          <div class="page-hero__stat-label"><span data-lang="vi">Reach / tháng</span><span data-lang="en" hidden>Reach / month</span></div>
-        </div>
+      <div class="blog-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" x-model.debounce.150ms="search" placeholder="Search..." aria-label="Search showcase">
       </div>
+    </div>
+
+    <div class="blog-filter-row" role="tablist" aria-label="Filter showcase" data-animate>
+      <button class="filter-chip" :class="{ 'is-active': filter === 'all' }" @click="filter = 'all'">
+        <span data-lang="vi">Tất cả</span><span data-lang="en" hidden>All</span>
+        <span class="filter-chip__count" x-text="countFor('all')">19</span>
+      </button>
+      <button class="filter-chip" :class="{ 'is-active': filter === '2026' }" @click="filter = '2026'">
+        <span>2026</span>
+        <span class="filter-chip__count" x-text="countFor('2026')">3</span>
+      </button>
+      <button class="filter-chip" :class="{ 'is-active': filter === '2025' }" @click="filter = '2025'">
+        <span>2025</span>
+        <span class="filter-chip__count" x-text="countFor('2025')">12</span>
+      </button>
+      <button class="filter-chip" :class="{ 'is-active': filter === '2024' }" @click="filter = '2024'">
+        <span>2024</span>
+        <span class="filter-chip__count" x-text="countFor('2024')">4</span>
+      </button>
+      <button class="filter-chip" :class="{ 'is-active': filter === 'event' }" @click="filter = 'event'">
+        <span>Event</span>
+        <span class="filter-chip__count" x-text="countFor('event')">19</span>
+      </button>
     </div>
   </div>
 </section>
 
-<!-- 02 FILTERS + GRID -->
-<section class="section section--alt" id="cases">
-  <div class="container" x-data="{ filter: 'all' }">
-    <div class="showcase-controls" data-animate>
-      <div class="showcase-filters">
-        <button class="filter-chip" :class="{ active: filter === 'all' }" @click="filter = 'all'">
-          <span data-lang="vi">Tất cả</span><span data-lang="en" hidden>All</span>
-          <span class="filter-chip__count">19</span>
-        </button>
-        <button class="filter-chip" :class="{ active: filter === 'ima' }" @click="filter = 'ima'">IMA <span class="filter-chip__count">0</span></button>
-        <button class="filter-chip" :class="{ active: filter === 'event' }" @click="filter = 'event'">Event <span class="filter-chip__count">19</span></button>
-        <button class="filter-chip" :class="{ active: filter === 'hub' }" @click="filter = 'hub'">Hub <span class="filter-chip__count">0</span></button>
-        <button class="filter-chip" :class="{ active: filter === 'livestream' }" @click="filter = 'livestream'">Livestream <span class="filter-chip__count">0</span></button>
-      </div>
-      <div class="showcase-sort">
-        <label for="sort" class="sort-label"><span data-lang="vi">Sắp xếp:</span><span data-lang="en" hidden>Sort:</span></label>
-        <select class="form-select sort-select" id="sort">
-          <option><span data-lang="vi">Mới nhất</span></option>
-          <option><span data-lang="vi">Nổi bật</span></option>
-          <option><span data-lang="vi">Hiệu quả cao nhất</span></option>
-        </select>
-      </div>
-    </div>
-
-    <!-- FEATURED CASE (large hero card) -->
-    <article class="case-feature" data-animate :class="{ 'is-hidden': !['all','livestream','hub'].includes(filter) }">
-      <div class="case-feature__media case-feature__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.28), rgba(16,18,24,.28)), url('assets/images/showcase-safe/4e11556edba9f5f0.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-        <span class="case-card__tag">Featured</span>
-        <div class="case-feature__numbers">
-          <div>
-            <div class="case-feature__num">1500+</div>
-            <div class="case-feature__num-label">Attendees</div>
-          </div>
-          <div>
-            <div class="case-feature__num">01</div>
-            <div class="case-feature__num-label"><span data-lang="vi">Sự kiện</span><span data-lang="en" hidden>Viewers</span></div>
-          </div>
-          <div>
-            <div class="case-feature__num">2026</div>
-            <div class="case-feature__num-label"><span data-lang="vi">Năm</span><span data-lang="en" hidden>Orders</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="case-feature__body">
-        <div class="case-feature__meta">
-          <span class="case-feature__cat">Trí tuệ nhân tạo & Vận hành doanh nghiệp</span>
-          <span class="case-feature__date">17/04/2026 · 2026</span>
-        </div>
-        <h2 class="case-feature__title">
-          <span data-lang="vi">CHINA ASEAN DIGITAL ECONOMY & OPENCLAW AI INDUSTRY APPLICATION SYMPOSIUM</span>
-          <span data-lang="en" hidden>CHINA ASEAN DIGITAL ECONOMY & OPENCLAW AI INDUSTRY APPLICATION SYMPOSIUM</span>
-        </h2>
-        <p class="case-feature__desc">
-          <span data-lang="vi">Hội thảo về trí tuệ nhân tạo quy tụ các chuyên gia hàng đầu từ Silicon Valley và Trung Quốc. Sự kiện tập trung vào việc chuyển đổi từ dùng AI để hỗ trợ sang AI tự vận hành toàn bộ quy trình…</span>
-          <span data-lang="en" hidden>Hội thảo về trí tuệ nhân tạo quy tụ các chuyên gia hàng đầu từ Silicon Valley và Trung Quốc. Sự kiện tập trung vào việc chuyển đổi từ dùng AI để hỗ trợ sang AI tự vận hành toàn bộ quy trình…</span>
-        </p>
-        <div class="case-feature__tags">
-          <span class="tag tag--primary">Livestream</span>
-          <span class="tag">TikTok Shop</span>
-          <span class="tag">Beauty</span>
-          <span class="tag">Performance</span>
-        </div>
-        <a href="showcase-china-asean-digital-economy-openclaw-ai-industry-application-symposium.html" class="btn btn--primary btn--pill">
-          <span data-lang="vi">Xem chi tiết case</span><span data-lang="en" hidden>View full case</span>
-          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-    </article>
-
-    <!-- CASE GRID -->
-    <div class="case-grid" data-stagger>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+<!-- 02 SHOWCASE GRID -->
+<section class="blog-compact-section showcase-list-section" id="cases">
+  <div class="container">
+    <div class="case-grid showcase-infinite-grid" x-ref="grid" data-stagger>
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/0da71898cc109f34.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -434,7 +370,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/f17c2b47c5f1396e.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -460,7 +396,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/f17c2b47c5f1396e.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -486,7 +422,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/f17c2b47c5f1396e.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -512,7 +448,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/0da71898cc109f34.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -538,7 +474,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/02a33e13662fcc30.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -564,7 +500,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/54981de40855ad66.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -590,7 +526,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/79bda31378d80c95.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -616,7 +552,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/19fffcf9ffbbc664.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -642,7 +578,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/f8ff3754eaeae8d5.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -668,7 +604,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/20cebcc47e20bfac.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -694,7 +630,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/8815bdf842264c70.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -720,7 +656,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/5411b4ad1bc7c044.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -746,7 +682,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/3dab269d5e63a26c.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -772,7 +708,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/6f38b95475adb015.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -798,7 +734,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/ca99450436ba0fa7.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -824,7 +760,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--dark" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/ed8b7913069159d1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -850,7 +786,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--orange" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/5274567c8ec884a8.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -876,7 +812,7 @@
           </a>
         </div>
       </article>
-      <article class="case-card case-card--item" data-stagger-item :class="{ 'is-hidden': !['all','event'].includes(filter) }">
+      <article class="case-card case-card--item" data-stagger-item x-show="isVisible($el)" x-transition.opacity.duration.180ms>
         <div class="case-card__media case-card__media--blue" style="background-image: linear-gradient(rgba(16,18,24,.22), rgba(16,18,24,.22)), url('assets/images/showcase-safe/7ff6b1f0a2e117c1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
           <span class="case-card__tag">Tệp khách tham dự</span>
         </div>
@@ -904,13 +840,15 @@
       </article>
     </div>
 
-    <div class="showcase-loadmore" data-animate>
-      <button class="btn btn--ghost btn--pill btn--lg">
-        <span data-lang="vi">Xem thêm case studies</span>
-        <span data-lang="en" hidden>Load more cases</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <p class="showcase-loadmore__note" data-loadmore-note><span data-lang="vi">Đang hiển thị 19 trên 19 case studies</span><span data-lang="en" hidden>Showing 19 of 19 case studies</span></p>
+    <div class="showcase-infinite-sentinel" x-ref="sentinel" aria-live="polite">
+      <span x-show="filteredCards().length && visible < filteredCards().length">
+        <span data-lang="vi">Đang nạp thêm showcase...</span>
+        <span data-lang="en" hidden>Loading more showcases...</span>
+      </span>
+      <span x-show="!filteredCards().length">
+        <span data-lang="vi">Không tìm thấy showcase phù hợp.</span>
+        <span data-lang="en" hidden>No matching showcases found.</span>
+      </span>
     </div>
   </div>
 </section>
@@ -1104,6 +1042,77 @@
 <script src="assets/js/theme.js?v=13"></script>
 <script src="assets/js/swiper-init.js?v=13"></script>
 <script src="assets/js/main.js?v=15"></script>
+<script>
+  function showcaseInfinite() {
+    return {
+      filter: 'all',
+      search: '',
+      visible: 6,
+      perPage: 6,
+      observer: null,
+      init() {
+        this.$watch('filter', () => this.resetList());
+        this.$watch('search', () => this.resetList());
+        this.$nextTick(() => this.observeSentinel());
+      },
+      normalize(value) {
+        return (value || '').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      },
+      cards() {
+        return this.$refs.grid ? Array.from(this.$refs.grid.querySelectorAll('.case-card--item')) : [];
+      },
+      cardText(card) {
+        return this.normalize(card.textContent);
+      },
+      cardMeta(card) {
+        return this.normalize(card.querySelector('.case-card__meta')?.textContent || '');
+      },
+      matchesFilter(card) {
+        const text = this.cardMeta(card);
+        if (this.filter === 'all') return true;
+        if (this.filter === 'event') return text.includes('sia event');
+        return text.includes(this.filter);
+      },
+      matchesSearch(card) {
+        const query = this.normalize(this.search);
+        return !query || this.cardText(card).includes(query);
+      },
+      matches(card) {
+        return this.matchesFilter(card) && this.matchesSearch(card);
+      },
+      filteredCards() {
+        return this.cards().filter(card => this.matches(card));
+      },
+      isVisible(card) {
+        return this.matches(card) && this.filteredCards().indexOf(card) < this.visible;
+      },
+      countFor(filter) {
+        return this.cards().filter(card => {
+          const text = this.cardMeta(card);
+          if (filter === 'all') return true;
+          if (filter === 'event') return text.includes('sia event');
+          return text.includes(filter);
+        }).length;
+      },
+      resetList() {
+        this.visible = this.perPage;
+      },
+      loadMore() {
+        const total = this.filteredCards().length;
+        if (this.visible < total) {
+          this.visible = Math.min(this.visible + this.perPage, total);
+        }
+      },
+      observeSentinel() {
+        if (!this.$refs.sentinel || !('IntersectionObserver' in window)) return;
+        this.observer = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) this.loadMore();
+        }, { rootMargin: '520px 0px' });
+        this.observer.observe(this.$refs.sentinel);
+      }
+    };
+  }
+</script>
 
 </body>
 </html>
