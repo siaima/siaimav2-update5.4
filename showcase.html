@@ -295,7 +295,7 @@
   </div>
 </div>
 
-<main class="showcase-index blog-index" x-data="showcaseInfinite()">
+<main class="showcase-index blog-index" x-data="showcaseLoadMore()">
 
 <!-- 01 NOW -->
 <section class="blog-compact-hero" id="hero">
@@ -840,11 +840,16 @@
       </article>
     </div>
 
-    <div class="showcase-infinite-sentinel" x-ref="sentinel" aria-live="polite">
-      <span x-show="filteredCards().length && visible < filteredCards().length">
-        <span data-lang="vi">Đang nạp thêm showcase...</span>
-        <span data-lang="en" hidden>Loading more showcases...</span>
-      </span>
+    <div class="showcase-loadmore" aria-live="polite">
+      <button class="btn btn--ghost btn--pill btn--lg" type="button" x-show="filteredCards().length && visible < filteredCards().length" @click="loadMore()">
+        <span data-lang="vi">Xem thêm showcase</span>
+        <span data-lang="en" hidden>Load more showcases</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <p class="showcase-loadmore__note" x-show="filteredCards().length">
+        <span data-lang="vi">Đang hiển thị </span><span x-text="Math.min(visible, filteredCards().length)"></span><span data-lang="vi"> / </span><span x-text="filteredCards().length"></span><span data-lang="vi"> showcase</span>
+        <span data-lang="en" hidden>Showing </span><span data-lang="en" hidden x-text="Math.min(visible, filteredCards().length)"></span><span data-lang="en" hidden> / </span><span data-lang="en" hidden x-text="filteredCards().length"></span><span data-lang="en" hidden> showcases</span>
+      </p>
       <span x-show="!filteredCards().length">
         <span data-lang="vi">Không tìm thấy showcase phù hợp.</span>
         <span data-lang="en" hidden>No matching showcases found.</span>
@@ -1043,17 +1048,15 @@
 <script src="assets/js/swiper-init.js?v=13"></script>
 <script src="assets/js/main.js?v=15"></script>
 <script>
-  function showcaseInfinite() {
+  function showcaseLoadMore() {
     return {
       filter: 'all',
       search: '',
-      visible: 6,
-      perPage: 6,
-      observer: null,
+      visible: 9,
+      perPage: 9,
       init() {
         this.$watch('filter', () => this.resetList());
         this.$watch('search', () => this.resetList());
-        this.$nextTick(() => this.observeSentinel());
       },
       normalize(value) {
         return (value || '').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -1102,13 +1105,6 @@
         if (this.visible < total) {
           this.visible = Math.min(this.visible + this.perPage, total);
         }
-      },
-      observeSentinel() {
-        if (!this.$refs.sentinel || !('IntersectionObserver' in window)) return;
-        this.observer = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) this.loadMore();
-        }, { rootMargin: '520px 0px' });
-        this.observer.observe(this.$refs.sentinel);
       }
     };
   }

@@ -2827,11 +2827,14 @@ html.sia-ready .home-loader {
   display: none;
 }
 
-.showcase-infinite-sentinel {
+.showcase-index .showcase-loadmore {
   min-height: 56px;
   display: grid;
   place-items: center;
   margin-top: var(--space-10);
+}
+
+.showcase-index .showcase-loadmore__note {
   color: var(--text-tertiary);
   font-size: var(--caption);
 }
