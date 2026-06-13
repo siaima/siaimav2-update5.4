@@ -6118,6 +6118,10 @@ html.sia-ready .home-loader {
   position: relative;
 }
 
+.community-year-row::after {
+  display: none;
+}
+
 .community-year-row__head {
   display: flex;
   align-items: baseline;
@@ -6185,30 +6189,40 @@ html.sia-ready .home-loader {
 }
 
 .community-year-row__events {
-  --community-row-pad-x: clamp(24px, 3vw, 36px);
+  --community-event-gap: clamp(20px, 2vw, 24px);
   position: relative;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% - 48px) / 4);
+  grid-auto-columns: calc((100% - (var(--community-event-gap) * 3)) / 4);
   grid-template-rows: 1fr;
-  gap: 16px;
+  align-items: stretch;
+  gap: var(--community-event-gap);
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
-  margin: -8px 0 -42px;
-  padding: 42px 0 48px;
+  margin: -8px 0 -28px;
+  padding: 42px 0 42px;
+  cursor: grab;
+  scroll-behavior: smooth;
   scroll-padding-inline: 0;
+  scroll-snap-type: x mandatory;
   scrollbar-width: thin;
-  scrollbar-color: rgba(232, 80, 42, 0.42) rgba(255, 255, 255, 0.06);
+  scrollbar-color: rgba(232, 80, 42, 0.26) rgba(13, 13, 13, 0.04);
+}
+
+.community-year-row__events.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
 }
 
 .community-year-row__events::before {
   content: "";
   position: absolute;
   top: 24px;
-  left: 0;
-  right: 0;
+  left: var(--community-timeline-line-left, 0px);
+  z-index: 1;
+  width: 100%;
   height: 2px;
   border-radius: 999px;
   background:
@@ -6224,17 +6238,17 @@ html.sia-ready .home-loader {
 }
 
 .community-year-row__events::-webkit-scrollbar {
-  height: 6px;
+  height: 5px;
 }
 
 .community-year-row__events::-webkit-scrollbar-track {
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(13, 13, 13, 0.04);
 }
 
 .community-year-row__events::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(232, 80, 42, 0.58), rgba(44, 110, 138, 0.48));
+  background: linear-gradient(90deg, rgba(232, 80, 42, 0.26), rgba(44, 110, 138, 0.18));
 }
 
 .is-community .community-year-row__events {
@@ -6250,25 +6264,30 @@ html.sia-ready .home-loader {
 }
 
 .community-event-mini {
-  min-height: 150px;
+  --community-event-card-pad: clamp(16px, 1.7vw, 20px);
+  min-height: 0;
+  height: 100%;
+  align-self: stretch;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 16px;
-  border: 1px solid var(--community-roadmap-card-border);
+  overflow: visible;
+  padding: var(--community-event-card-pad);
+  border: 1px solid rgba(232, 80, 42, 0.12);
   border-radius: 16px;
-  background: var(--community-roadmap-card-bg);
-  color: var(--community-roadmap-title);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.13);
-  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  background: #ffffff;
+  color: #1d1d1f;
+  box-shadow: 0 18px 50px rgba(20, 20, 20, 0.06);
+  scroll-snap-align: start;
+  transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease, background 250ms ease;
+  user-select: none;
 }
 
 .community-event-mini:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 120, 80, 0.46);
-  background: var(--community-roadmap-card-bg-hover);
-  box-shadow: 0 16px 30px rgba(232, 80, 42, 0.12);
+  border-color: rgba(232, 80, 42, 0.28);
+  background: #fffdfa;
+  box-shadow: 0 22px 58px rgba(20, 20, 20, 0.1);
 }
 
 .community-event-mini::before {
@@ -6276,43 +6295,47 @@ html.sia-ready .home-loader {
   position: absolute;
   top: -22px;
   left: 18px;
-  z-index: 1;
+  z-index: 3;
   width: 8px;
   height: 8px;
   border-radius: 999px;
   background: var(--primary);
-  border: 1px solid rgba(255, 255, 255, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.78);
   box-shadow:
-    0 0 0 4px rgba(232, 80, 42, 0.13),
-    0 0 18px rgba(232, 80, 42, 0.26);
+    0 0 0 5px rgba(232, 80, 42, 0.13),
+    0 0 0 10px rgba(232, 80, 42, 0.06),
+    0 0 18px rgba(232, 80, 42, 0.24);
 }
 
 .community-event-mini__date {
+  display: block;
+  min-height: 24px;
   color: var(--primary);
-  font-size: 12px;
-  font-weight: 720;
+  font-size: 13px;
+  font-weight: 760;
   line-height: 1.2;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding-right: 92px;
+  padding-right: 112px;
 }
 
 .community-event-mini__tag {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: clamp(14px, 1.7vw, 18px);
+  right: clamp(14px, 1.7vw, 18px);
   display: inline-flex;
+  justify-content: center;
   align-items: center;
-  max-width: 92px;
-  min-height: 22px;
-  padding: 4px 8px;
+  max-width: min(116px, 38%);
+  min-height: 26px;
+  padding: 6px 10px;
   overflow: hidden;
-  border: 1px solid rgba(255, 120, 80, 0.32);
+  border: 1px solid rgba(232, 80, 42, 0.12);
   border-radius: 999px;
-  background: rgba(232, 80, 42, 0.11);
-  color: rgba(255, 146, 112, 0.98);
+  background: rgba(232, 80, 42, 0.08);
+  color: var(--primary-dark);
   font-size: 10px;
-  font-weight: 760;
+  font-weight: 720;
   line-height: 1;
   letter-spacing: 0.06em;
   text-overflow: ellipsis;
@@ -6323,10 +6346,12 @@ html.sia-ready .home-loader {
 .community-event-mini strong {
   display: -webkit-box;
   overflow: hidden;
-  color: var(--community-roadmap-card-title);
-  font-size: 15px;
-  font-weight: 720;
-  line-height: 1.3;
+  min-height: calc(2em * 1.22);
+  margin-top: 10px;
+  color: #1d1d1f;
+  font-size: clamp(16.5px, 1.35vw, 19px);
+  font-weight: 780;
+  line-height: 1.22;
   letter-spacing: 0;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -6335,33 +6360,84 @@ html.sia-ready .home-loader {
 .community-event-mini__speakers {
   display: -webkit-box;
   overflow: hidden;
-  padding-top: 12px;
-  border-top: 1px solid var(--community-roadmap-divider);
-  margin-top: auto;
-  color: var(--community-roadmap-card-meta);
-  font-size: 11px;
+  min-height: calc(2em * 1.45);
+  margin-top: 8px;
+  margin-bottom: 10px;
+  color: #6b7280;
+  font-size: 13px;
   font-weight: 520;
-  line-height: 1.4;
+  line-height: 1.45;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
 .community-event-mini__speakers::before {
   content: "Diễn giả: ";
-  color: var(--community-roadmap-card-meta-label);
-  font-weight: 650;
+  color: #8b9099;
+  font-weight: 700;
+}
+
+.community-event-mini__media {
+  display: block;
+  position: relative;
+  min-height: 0;
+  width: auto;
+  height: clamp(155px, 11.2vw, 165px);
+  margin: 0 calc(var(--community-event-card-pad) * -1) calc(var(--community-event-card-pad) * -1);
+  overflow: hidden;
+  border-radius: 0 0 15px 15px;
+  background-color: #f1eee9;
+  background-image:
+    linear-gradient(180deg, rgba(13, 13, 13, 0) 48%, rgba(13, 13, 13, 0.28) 100%),
+    var(--community-event-image);
+  background-position: center;
+  background-size: cover;
+  transition: transform 250ms ease, filter 250ms ease;
+}
+
+.community-event-mini:hover .community-event-mini__media {
+  transform: scale(1.03);
+  filter: saturate(1.04) contrast(1.02);
 }
 
 .community-event-mini::after {
-  content: "Xem event site ->";
+  content: "Xem event site  \2192";
+  position: absolute;
+  right: clamp(14px, 1.5vw, 18px);
+  bottom: clamp(14px, 1.5vw, 18px);
+  z-index: 2;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
-  color: rgba(114, 174, 200, 0.94);
+  min-height: 32px;
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(29, 29, 31, 0.72);
+  backdrop-filter: blur(10px) saturate(1.12);
+  -webkit-backdrop-filter: blur(10px) saturate(1.12);
+  color: #ffffff;
+  box-shadow: 0 12px 26px rgba(13, 13, 13, 0.2);
   font-size: 10px;
-  font-weight: 780;
-  line-height: 1.2;
-  letter-spacing: 0.1em;
+  font-weight: 760;
+  line-height: 1;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  white-space: nowrap;
+  transition: transform 250ms ease, box-shadow 250ms ease, background 250ms ease, border-color 250ms ease;
+}
+
+.community-event-mini:hover::after {
+  transform: translateY(-2px);
+  border-color: rgba(232, 80, 42, 0.36);
+  background: rgba(232, 80, 42, 0.88);
+  box-shadow: 0 16px 30px rgba(232, 80, 42, 0.24);
+}
+
+[data-theme="dark"] .community-event-mini {
+  border-color: rgba(240, 122, 92, 0.18);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
 }
 
 @media (max-width: 1023px) {
@@ -6377,13 +6453,13 @@ html.sia-ready .home-loader {
   }
 
   .community-event-mini {
-    min-height: 148px;
+    min-height: 0;
   }
 }
 
 @media (max-width: 900px) {
   .community-year-row__events {
-    grid-auto-columns: minmax(236px, 42vw);
+    grid-auto-columns: calc((100% - var(--community-event-gap)) / 2);
   }
 
 }
@@ -6394,19 +6470,49 @@ html.sia-ready .home-loader {
   }
 
   .community-year-row__events {
-    grid-auto-columns: minmax(232px, 82vw);
+    grid-auto-columns: 100%;
+    margin-bottom: -24px;
     padding-top: 38px;
-    padding-bottom: 46px;
+    padding-bottom: 38px;
   }
 
   .community-event-mini {
-    min-height: 148px;
-    padding: 14px;
+    --community-event-card-pad: 16px;
+    min-height: 0;
+    padding: 16px;
+    border-radius: 16px;
   }
 
   .community-event-mini__tag {
-    max-width: 76px;
-    right: 10px;
+    max-width: 104px;
+    min-height: 24px;
+    padding: 6px 9px;
+    right: 14px;
+  }
+
+  .community-event-mini__date {
+    padding-right: 108px;
+  }
+
+  .community-event-mini strong {
+    font-size: clamp(17px, 4.8vw, 19px);
+  }
+
+  .community-event-mini__speakers {
+    font-size: 13px;
+  }
+
+  .community-event-mini__media {
+    height: clamp(158px, 41vw, 165px);
+    border-radius: 0 0 15px 15px;
+  }
+
+  .community-event-mini::after {
+    right: 12px;
+    bottom: 12px;
+    min-height: 31px;
+    padding: 8px 12px;
+    font-size: 10px;
   }
 
 }
@@ -6435,7 +6541,7 @@ html.sia-ready .home-loader {
 
 @media (min-width: 1180px) {
   .home-event-board .community-year-row__events {
-    grid-auto-columns: calc((100% - 48px) / 4);
+    grid-auto-columns: calc((100% - (var(--community-event-gap) * 3)) / 4);
   }
 }
 
